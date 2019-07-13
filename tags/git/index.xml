@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Better BibTeX for Zotero</title>
+    <link>/zotero-better-bibtex/tags/git/</link>
+    <description>Recent content in git on Better BibTeX for Zotero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="/zotero-better-bibtex/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Automatic export</title>
+      <link>/zotero-better-bibtex/exporting/auto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/auto/</guid>
+      <description>When exporting using BBT you will be offered a new export option: Keep updated. Checking this option registers the export for automation; any changes to the collection or library you exported after you&amp;rsquo;ve completed the current export will trigger an automatic re-export to update the bib file. You can review/remove exports from the BBT preferences. While I&amp;rsquo;ve gone to some lengths to make sure performance is OK, don&amp;rsquo;t go overboard with the number of auto-exports you have going.</description>
+    </item>
+    
+  </channel>
+</rss>

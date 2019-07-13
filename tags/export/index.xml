@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>export on Better BibTeX for Zotero</title>
+    <link>/zotero-better-bibtex/tags/export/</link>
+    <description>Recent content in export on Better BibTeX for Zotero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="/zotero-better-bibtex/tags/export/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exporting items</title>
+      <link>/zotero-better-bibtex/exporting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/</guid>
+      <description>Better BibTex adds a couple of export formats to Zotero&amp;rsquo;s export dialog and several ways to improve export for plaintext-based authoring. The Better BibTeX configuration pane can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo; where you can tweak the exports, such as
+ Omitting fields from exports to slim down your bib files. Configuring how citation keys are generated. And really a ton more.  Additionally you can automate exporting (parts of) your library either using auto-export or pull export.</description>
+    </item>
+    
+    <item>
+      <title>Automatic export</title>
+      <link>/zotero-better-bibtex/exporting/auto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/auto/</guid>
+      <description>When exporting using BBT you will be offered a new export option: Keep updated. Checking this option registers the export for automation; any changes to the collection or library you exported after you&amp;rsquo;ve completed the current export will trigger an automatic re-export to update the bib file. You can review/remove exports from the BBT preferences. While I&amp;rsquo;ve gone to some lengths to make sure performance is OK, don&amp;rsquo;t go overboard with the number of auto-exports you have going.</description>
+    </item>
+    
+    <item>
+      <title>Pull export</title>
+      <link>/zotero-better-bibtex/exporting/pull/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/pull/</guid>
+      <description>You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?`[collectionID]`.`[format]`, where collectionID is:
+ the ID you get by right-clicking your collection and selecting &amp;ldquo;Show collection key&amp;rdquo; the path &amp;ldquo;/[library id]/full/path/to/collection&amp;rdquo; (the library id is the first number from the key you get in the option above; it&amp;rsquo;s always &amp;lsquo;0&amp;rsquo; for your personal library)  or any multiple of those, separated by a &amp;lsquo;+&amp;rsquo; sign.
+The format is either &amp;lsquo;bibtex&amp;rsquo; or &amp;lsquo;biblatex&amp;rsquo;, and determines the translator used for export.</description>
+    </item>
+    
+    <item>
+      <title>Export</title>
+      <link>/zotero-better-bibtex/installation/preferences/export/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/installation/preferences/export/</guid>
+      <description>Export unicode as plain-text latex commands (recommended) default: yes
+BibTeX has really spotty Unicode support, so you generally want this on. It will translate things like accented characters to their equivalent LaTeX constructs on export.
+Disregard name prefixes when sorting default: no
+Name handling is a lot more complex than I had ever thought it to be. A lot more complex. BibTeX has really limited ways of dealing with names with particles (van, von, de, etc).</description>
+    </item>
+    
+    <item>
+      <title>Bundled translators</title>
+      <link>/zotero-better-bibtex/installation/bundled-translators/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/installation/bundled-translators/</guid>
+      <description>Better BibTeX bundles 5 translators you might care about:
+Export These translators are supported by the auto-export functionality built into Better BibTeX:
+ Better BibLaTeX exports references in BibLaTeX format (but better, natch) Better BibTeX exports references in BibTeX format Better CSL JSON exports references in pandoc-compatible CSL-JSON format, with added citation keys and parsing of metadata Better CSL YAML exports the same as the Better CSL JSON exporter, but in YAML format Collected Notes exports just notes &amp;ndash; standalone notes and notes attached to references, not the extra field &amp;ndash; to HTML.</description>
+    </item>
+    
+    <item>
+      <title>Frequently Asked Questions</title>
+      <link>/zotero-better-bibtex/support/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/support/faq/</guid>
+      <description>Are there any plans to support Firefox 57+? BBT lives where Zotero lives, and Zotero only has standalone these days. BBT is installed inside Zotero instead of in the browser. Please see the installation instructions to get started with BBT.
+BBT is changing the capitalization of my titles &amp;ndash; why? There isn&amp;rsquo;t a straightforward one-to-one mapping for all Zotero to Bib(La)TeX fields. For most I can make reasonable choices, but there are some things where Better BibTeX takes a little more liberties with your references in order to get sensible output.</description>
+    </item>
+    
+    <item>
+      <title>Performance</title>
+      <link>/zotero-better-bibtex/support/performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/support/performance/</guid>
+      <description>The Better BibTeX exporters are a lot slower than the standard Zotero Bib(La)TeX exporters. If you have a small library, you will not likely notice this, but if you have several thousand references, and you are in the habit of exporting substantial parts of your library, this gets annoying really fast.
+To deal with this problem, Better BibTeX implements an extensive caching system. With a filled cache, Better BibTeX is substantially faster than the default Zotero exporters.</description>
+    </item>
+    
+  </channel>
+</rss>

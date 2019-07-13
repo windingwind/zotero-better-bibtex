@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>overleaf on Better BibTeX for Zotero</title>
+    <link>/zotero-better-bibtex/tags/overleaf/</link>
+    <description>Recent content in overleaf on Better BibTeX for Zotero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="/zotero-better-bibtex/tags/overleaf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Automatic export</title>
+      <link>/zotero-better-bibtex/exporting/auto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/auto/</guid>
+      <description>When exporting using BBT you will be offered a new export option: Keep updated. Checking this option registers the export for automation; any changes to the collection or library you exported after you&amp;rsquo;ve completed the current export will trigger an automatic re-export to update the bib file. You can review/remove exports from the BBT preferences. While I&amp;rsquo;ve gone to some lengths to make sure performance is OK, don&amp;rsquo;t go overboard with the number of auto-exports you have going.</description>
+    </item>
+    
+    <item>
+      <title>Cite as you Write</title>
+      <link>/zotero-better-bibtex/citing/cayw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/citing/cayw/</guid>
+      <description>Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!
+Editor integration vim Graciously supplied by David Lukes:
+paste it in your .vimrc (and modify to your liking):
+function! ZoteroCite() &amp;quot; pick a format based on the filetype (customize at will) let format = &amp;amp;filetype =~ &#39;.*tex&#39; ? &#39;citep&#39; : &#39;pandoc&#39; let api_call = &#39;http://127.</description>
+    </item>
+    
+  </channel>
+</rss>
