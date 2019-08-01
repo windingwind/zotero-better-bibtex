@@ -1334,6 +1334,7 @@ Better BibTeX for Zotero
 <li><a href="#add-arxiv-data">Add arXiv data</a></li>
 <li><a href="#custom-field-order">Custom field order</a></li>
 <li><a href="#detect-and-protect-latex-math-formulas">Detect and protect LaTeX math formulas</a></li>
+<li><a href="#detect-and-protect-mathjax">Detect and protect MathJax</a></li>
 <li><a href="#replace-director-with-author-for-videorecording-and-film-references">Replace <code>director</code> with <code>author</code> for <code>videoRecording</code> and <code>film</code> references</a></li>
 <li><a href="#changing-the-reference-type-from-collection-to-book">Changing the reference type from collection to book</a></li>
 </ul></li>
@@ -1543,6 +1544,23 @@ But please fix your postscripts to test for the translator context.</p>
 
 <pre><code>if (Translator.BetterTeX &amp;&amp; reference.has.title) {
   reference.add({ name: 'title', value: item.title.replace(/(\$.*?\$)/g, '&lt;script&gt;{$1}&lt;/script&gt;') });
+}
+</code></pre>
+
+<h3 id="detect-and-protect-mathjax">Detect and protect MathJax</h3>
+
+<pre><code>if (Translator.BetterTeX) {
+  // different for bibtex and biblatex exporters
+  const note = ['annotation', 'note'].find(field =&gt; reference.has[field])
+
+  if (note) {
+    let notes = item.notes.map(note =&gt; `&lt;div&gt;${note}&lt;/div&gt;`).join('')
+    notes = notes
+      .replace(/(\$\$[\s\S]*?\$\$)/g, '&lt;script&gt;$1&lt;/script&gt;')
+      .replace(/\\\(/g, '&lt;script&gt;$')
+      .replace(/\\\)/g, '$&lt;/script&gt;')
+    this.add({ name: note, value: notes, html: true });
+  }
 }
 </code></pre>
 
