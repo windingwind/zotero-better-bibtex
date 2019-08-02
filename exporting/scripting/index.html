@@ -1559,7 +1559,7 @@ But please fix your postscripts to test for the translator context.</p>
       .replace(/(\$\$[\s\S]*?\$\$)/g, '&lt;script&gt;$1&lt;/script&gt;')
       .replace(/\\\(/g, '&lt;script&gt;$')
       .replace(/\\\)/g, '$&lt;/script&gt;')
-    this.add({ name: note, value: notes, html: true });
+    reference.add({ name: note, value: notes, html: true });
   }
 }
 </code></pre>
