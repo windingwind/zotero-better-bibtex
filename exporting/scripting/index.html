@@ -1325,7 +1325,9 @@ Better BibTeX for Zotero
 <li>
 <ul>
 <li><a href="#you-wanted-customized">You wanted customized&hellip;</a></li>
-<li><a href="#the-api-for-the-better-bib-la-tex-context">The API (for the Better Bib(La)TeX context)</a></li>
+<li><a href="#the-api-for-better-bibtex-and-better-biblatex">The API for <code>Better BibTeX</code> and <code>Better BibLaTeX</code></a></li>
+<li><a href="#the-api-for-bettercsljson-and-bettercslyaml">The API for <code>BetterCSLJSON</code> and <code>BetterCSLYAML</code></a></li>
+<li><a href="#debugging">Debugging</a></li>
 <li><a href="#samples">Samples</a>
 <ul>
 <li><a href="#add-accessdate-url-for-bibtex">Add accessdate, url for BibTeX</a></li>
@@ -1420,11 +1422,9 @@ here (it&rsquo;s how the examples got here). Postscripts are available in 4 of t
 <p>You should really test for the translator context in your postscripts using the <code>Translator.&lt;name&gt;</code> tests mentioned above. If you don&rsquo;t because you have a postscript that pre-date postscript CSL support, you will probably be using the legacy use of <code>this</code> to set things on the reference being built, and calling <code>this.add</code> in those postscripts; since, for CSL postscripts, <code>this</code> is not set, it will make the script will non-fatally error out, so you&rsquo;re very probably good to go as-is.
 But please fix your postscripts to test for the translator context.</p>
 
-<h2 id="the-api-for-the-better-bib-la-tex-context">The API (for the Better Bib(La)TeX context)</h2>
+<h2 id="the-api-for-better-bibtex-and-better-biblatex">The API for <code>Better BibTeX</code> and <code>Better BibLaTeX</code></h2>
 
-<p>The postscript should be a <code>javascript</code> snippet. You can access the data with following objects or functions.</p>
-
-<p>In <code>BetterBibLaTeX</code> and <code>BetterBibTeX</code>,</p>
+<p>The postscript should be a <code>javascript</code> snippet. You can access the data with following objects and methods:</p>
 
 <ul>
 <li><code>reference</code> is the BibTeX reference you are building, and the reference has a number of fields.</li>
@@ -1440,17 +1440,52 @@ But please fix your postscripts to test for the translator context.</p>
 <p>e.g. you can see whether the <code>year</code> field has been set by testing for <code>reference.has.year</code></p>
 
 <ul>
-<li><code>reference.add</code> is the function to add or modify keys in <code>reference.has</code>.</li>
+<li><p><code>reference.add</code> is the function to add or modify keys in <code>reference.has</code>. It accepts the following named parameters in the form of an object:</p>
+
+<ul>
+<li><code>name</code>: name of the bib(la)tex field to output</li>
+<li><code>value</code>: the value for the field <em>without</em> LaTeX encoding</li>
+<li><code>bibtex</code>: the value for the field <em>with LaTeX encoding already applied</em>. If both <code>bibtex</code> and <code>value</code> are present, <code>bibtex</code> takes precedence</li>
+<li><code>enc</code>: specifies how to encode the <code>value</code> field. Valid values are:</li>
+<li><code>latex</code>: encode markup and special characters to LaTeX. This is the default, if you don&rsquo;t provide an <code>enc</code> parameter, <code>latex</code> is assumed</li>
+<li><code>verbatim</code>: encode under <code>verbatim</code> rules</li>
+<li><code>literal</code>: encode under <code>literal</code> rules</li>
+<li><code>raw</code>: assume <code>value</code> is already LaTeX-encoded (same as passing the value in <code>bibtex</code>)</li>
+<li><code>url</code>: encode as verbatim url</li>
+<li><code>sep</code>: if <code>value</code> is an array, and <code>enc</code> is <code>latex</code>, encode each array element using <code>latex</code> and join the results with the string in <code>sep</code>. Defaults to an empty string.</li>
+<li><code>html</code>: boolean indicating whether the <code>value</code> is full HTML (really only useful for notes)</li>
+</ul></li>
 </ul>
 
-<p>e.g. change the value of year in output <code>reference.add({name: 'year', value: your_year_value})</code></p>
+<p>e.g. change the value of year in output <code>reference.add({name: 'year', value: &quot;your_year_value&quot;})</code></p>
 
-<p>In <code>BetterCSLJSON</code> and <code>BetterCSLYAML</code>:</p>
+<ul>
+<li><code>reference.addCreators</code> adds the contents of <code>item.creators</code> to <code>reference</code>.</li>
+</ul>
+
+<p>author encoding has a fair number of moving bits and generates multiple fields (<code>author</code>, <code>editor</code>, etc), this function is here so you can manipulate <code>item.creators</code> and call <code>reference.addCreators</code> to <em>replace</em>
+  the existing creator fields on <code>reference</code>.</p>
+
+<ul>
+<li><code>reference.remove</code> removes a field previously added by <code>reference.add</code> or <code>reference.addCreators</code></li>
+</ul>
+
+<h2 id="the-api-for-bettercsljson-and-bettercslyaml">The API for <code>BetterCSLJSON</code> and <code>BetterCSLYAML</code></h2>
 
 <ul>
 <li><code>reference</code> is the CSL object being built. Any changes made to this object will directly change the CSL object being output.</li>
 <li><code>item</code> is the Zotero reference it&rsquo;s being built from.</li>
 </ul>
+
+<h2 id="debugging">Debugging</h2>
+
+<p>There isn&rsquo;t much in place in terms of debugging, as tranlators (and
+thus postscripts) are not allowed to do any UI work. You can do
+old-fashioned <code>printf</code>-style debugging by calling <code>Zotero.debug(...)</code>
+in your postscript &ndash; it will output the string you pass into the
+Zotero debug log which you can inspect from the <code>Help</code> menu. You
+can for example do <code>Zotero.debug(JSON.stringify(item))</code> to see what
+the Zotero item looks like to the translator.</p>
 
 <h2 id="samples">Samples</h2>
 
