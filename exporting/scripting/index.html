@@ -1547,8 +1547,7 @@ the Zotero item looks like to the translator.</p>
   // https://github.com/retorquere/zotero-better-bibtex/issues/512
 
   const order = ['author', 'date', 'title', 'publisher'];
-  const keys = Object.keys(reference.has)
-  for (const field of keys.sort((a, b) =&gt; ((order.indexOf(a) + 1) || (keys.length + order.length + 1)) - ((order.indexOf(b) + 1) || (keys.length + order.length + 1)))) {
+  for (const field of order.concat(Object.keys(reference.has).filter(field =&gt; !order.includes(field)))) {
     const value = reference.has[field]
     delete reference.has[field]
     reference.has[field] = value
