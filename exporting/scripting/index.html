@@ -1446,12 +1446,15 @@ But please fix your postscripts to test for the translator context.</p>
 <li><code>name</code>: name of the bib(la)tex field to output</li>
 <li><code>value</code>: the value for the field <em>without</em> LaTeX encoding</li>
 <li><code>bibtex</code>: the value for the field <em>with LaTeX encoding already applied</em>. If both <code>bibtex</code> and <code>value</code> are present, <code>bibtex</code> takes precedence</li>
-<li><code>enc</code>: specifies how to encode the <code>value</code> field. Valid values are:</li>
+<li><code>enc</code>: specifies how to encode the <code>value</code> field. Valid values are:
+
+<ul>
 <li><code>latex</code>: encode markup and special characters to LaTeX. This is the default, if you don&rsquo;t provide an <code>enc</code> parameter, <code>latex</code> is assumed</li>
 <li><code>verbatim</code>: encode under <code>verbatim</code> rules</li>
 <li><code>literal</code>: encode under <code>literal</code> rules</li>
 <li><code>raw</code>: assume <code>value</code> is already LaTeX-encoded (same as passing the value in <code>bibtex</code>)</li>
 <li><code>url</code>: encode as verbatim url</li>
+</ul></li>
 <li><code>sep</code>: if <code>value</code> is an array, and <code>enc</code> is <code>latex</code>, encode each array element using <code>latex</code> and join the results with the string in <code>sep</code>. Defaults to an empty string.</li>
 <li><code>html</code>: boolean indicating whether the <code>value</code> is full HTML (really only useful for notes)</li>
 </ul></li>
