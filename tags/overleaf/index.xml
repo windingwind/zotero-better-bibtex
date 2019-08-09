@@ -25,10 +25,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/citing/cayw/</guid>
-      <description>Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!
-Editor integration vim Graciously supplied by David Lukes:
-paste it in your .vimrc (and modify to your liking):
-function! ZoteroCite() &amp;quot; pick a format based on the filetype (customize at will) let format = &amp;amp;filetype =~ &#39;.*tex&#39; ? &#39;citep&#39; : &#39;pandoc&#39; let api_call = &#39;http://127.</description>
+      <description>PSA: as of Zotero 5.0.71, access to this URL will no longer work from the browser for security reasons; curl and other programmatic access will work. In 5.0.71 and 5.0.72 you were required to send a User-Agent header (anything will work, as long as it&amp;rsquo;s there, curl sends a user-agent header by default); as of 5.0.73, the user agent requirement was dropped.
+Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!</description>
     </item>
     
   </channel>
