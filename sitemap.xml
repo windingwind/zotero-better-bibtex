@@ -63,12 +63,23 @@
   </url>
   
   <url>
+    <loc>/zotero-better-bibtex/tags/automatic-export/</loc>
+  </url>
+  
+  <url>
     <loc>/zotero-better-bibtex/citing/aux-scanner/</loc>
   </url>
   
   <url>
+    <loc>/zotero-better-bibtex/tags/cache/</loc>
+  </url>
+  
+  <url>
     <loc>/zotero-better-bibtex/categories/</loc>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/tags/citation-keys/</loc>
   </url>
   
   <url>
@@ -76,11 +87,43 @@
   </url>
   
   <url>
+    <loc>/zotero-better-bibtex/tags/cite-as-you-write/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/tags/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/tags/export/</loc>
+  </url>
+  
+  <url>
     <loc>/zotero-better-bibtex/support/faq/</loc>
   </url>
   
   <url>
+    <loc>/zotero-better-bibtex/tags/git/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/tags/import/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/tags/overleaf/</loc>
+  </url>
+  
+  <url>
     <loc>/zotero-better-bibtex/support/performance/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/tags/preferences/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/tags/scripting/</loc>
   </url>
   
   <url>
@@ -89,66 +132,10 @@
   
   <url>
     <loc>/zotero-better-bibtex/tags/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/zotero-better-bibtex/support/translations/</loc>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/automatic-export/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/cache/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/citation-keys/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/cite-as-you-write/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/configuration/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/export/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/git/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/import/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/overleaf/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/preferences/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/tags/scripting/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
