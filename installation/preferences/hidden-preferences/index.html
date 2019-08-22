@@ -1358,6 +1358,8 @@ Better BibTeX for Zotero
 <li><a href="#scrubdatabase">scrubDatabase</a></li>
 <li><a href="#skipwords">skipWords</a></li>
 <li><a href="#suppressbraceprotection">suppressBraceProtection</a></li>
+<li><a href="#suppressnocase">suppressNoCase</a></li>
+<li><a href="#suppresssentencecase">suppressSentenceCase</a></li>
 <li><a href="#suppresstitlecase">suppressTitleCase</a></li>
 </ul></li>
 </ul></li>
@@ -1567,6 +1569,22 @@ time it takes before BBT moves from &ldquo;Waiting for Zotero&rdquo;. After that
 
 <p>If you&rsquo;re dead-set on ignoring both BibTeX/BibLaTeX best practice and the Zotero recommendations on title/sentence
 casing, set this preference to &ldquo;true&rdquo; to suppress <a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">automatic brace-protection for words with uppercase letters</a>.</p>
+
+<h4 id="suppressnocase">suppressNoCase</h4>
+
+<p>default: <code>no</code></p>
+
+<p>On import, BBT will add case-protection (&lt;span class=&ldquo;nocase&rdquo;&gt;&hellip;&lt;span&gt;) to titles that have words in {Braces}. There&rsquo;s plenty of bib(la)tex files
+out there that do this a little overzealously, and you may not like the resulting HTML code in your items (even though this is what the braces mean in bib(la)tex, and
+Zotero supports it. If you turn this off, the markup is omitted during import.</p>
+
+<h4 id="suppresssentencecase">suppressSentenceCase</h4>
+
+<p>default: <code>no</code></p>
+
+<p>Bib(La)TeX references ought to be stored in Title Case; Zotero references are expected to be entered as sentence-case. With this option on, BBT will try to sentence-case
+during import. This sentence-casing uses heuristics, no natural language processing is performed, and the results are not perfect. You can suppress this, but you may then also want
+to enable suppressTitleCase (which has its own problems, see the help entry for that option on this page).</p>
 
 <h4 id="suppresstitlecase">suppressTitleCase</h4>
 
