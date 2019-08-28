@@ -1485,6 +1485,7 @@ the following URL parameters:</p>
 <li><code>exportNotes</code>: set to <code>true</code> to export notes</li>
 <li><code>useJournalAbbreviation</code>: set to <code>true</code> to use journal abbreviations</li>
 </ul></li>
+<li><code>json</code>: the full pick information Zotero provides.</li>
 </ul>
 
 <p>The picker passes the following data along with your picked references if you filled them out:</p>
@@ -1534,6 +1535,34 @@ or <code>\parencite</code> AND there is one reference only, in which case the st
 hides the author; for multiple references with <code>locator</code>s, <code>prefix</code>es or <code>suffix</code>es, the <code>s</code>-affixed variant of the
 command is generated</li>
 </ul>
+
+<p>Some of the formatters use abbreviated labels for the results if you include a locator. The defaults are:
+| locator label | abbreviation |
+| &mdash;&mdash;&mdash; | &mdash; |
+| article | art. |
+| chapter | ch. |
+| subchapter | subch. |
+| column | col. |
+| figure | fig. |
+| line | l. |
+| note | n. |
+| issue | no. |
+| opus | op. |
+| page | p. |
+| paragraph | para. |
+| subparagraph | subpara. |
+| part | pt. |
+| rule | r. |
+| section | sec. |
+| subsection | subsec. |
+| Section | Sec. |
+| sub verbo | sv. |
+| schedule | sch. |
+| title | tit. |
+| verse | vrs. |
+| volume | vol. |</p>
+
+<p>In your call to the CAYW URL, you can override the abbreviations by adding them to the query, e.g. <a href="http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;page=&amp;Section=sec.">http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;page=&amp;Section=sec.</a>, page-picks will have no label, and Section-picks will get <code>sec.</code> rather than <code>Sec.</code>.</p>
 
 <p>The <code>clipboard</code> option can be used as a workaround for editors that haven&rsquo;t gotten around to integrating this yet. If
 you use this option you will probably want to bind to a hotkey, either system-wide (which is going to be platform-dependent, I know
