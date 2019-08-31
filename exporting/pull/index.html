@@ -1374,12 +1374,22 @@ option above; it&rsquo;s always &lsquo;0&rsquo; for your personal library)</li>
 <pre><code>\addbibresource[location=remote]{http://127.0.0.1:23119/better-bibtex/collection?/0/8CV58ZVD.biblatex}
 </code></pre>
 
+<p><code>format</code> can be:</p>
+
+<ul>
+<li><code>biblatex</code> for BibLaTeX</li>
+<li><code>bibtex</code> for BibTeX</li>
+<li><code>csljson</code> for CSL-JSON</li>
+<li><code>cslyaml</code> for CSL-JSON in YAML format</li>
+<li>the value of <code>translatorID</code> taken from the header of any existing Zotero translator to get an export in that translator format</li>
+</ul>
+
 <p><strong>Pull export will <em>only</em> work if you are compiling your document on the
 same system your Zotero client with BBT runs on</strong>. <em>Technically</em>
 it can be made to work for pulling from other systems, but it&rsquo;s
 even more arcane to set up than <a href="/zotero-better-bibtex/exporting/auto/#git-support">git support</a>.</p>
 
-<p>Note that as of Zotero 5.0.71, access to this URL will no longer work from the browser for security reasons; <code>curl</code> and other programmatic access will work if you make sure you send a <code>User-Agent</code> header (<code>curl</code> does so by default).</p>
+<p>Note that as of Zotero 5.0.71, access to this URL will no longer work from the browser for security reasons; <code>curl</code> and other programmatic access will work.</p>
 
 
 <footer class=" footline" >
