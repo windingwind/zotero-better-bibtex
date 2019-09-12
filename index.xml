@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/exporting/pull/</guid>
-      <description>You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?`[collectionID]`.`[format]`, where collectionID is:
+      <description>You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?`[collectionID]`.`[format]`[^1], where collectionID is:
  the ID you get by right-clicking your collection and selecting &amp;ldquo;Show collection key&amp;rdquo; the path &amp;ldquo;/[library id]/full/path/to/collection&amp;rdquo; (the library id is the first number from the key you get in the option above; it&amp;rsquo;s always &amp;lsquo;0&amp;rsquo; for your personal library)  or any multiple of those, separated by a &amp;lsquo;+&amp;rsquo; sign.
 The format is either &amp;lsquo;bibtex&amp;rsquo; or &amp;lsquo;biblatex&amp;rsquo;, and determines the translator used for export.</description>
     </item>
