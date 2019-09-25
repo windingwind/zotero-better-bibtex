@@ -1387,7 +1387,15 @@ this will always be slow. This is also why you cannot set up auto-exports with f
 to get it over with, export your entire library (once, no need to tick &lsquo;Keep Updated&rsquo;) using the &lsquo;Better BibTeX&rsquo; format
 and go grab coffee (or lunch, depending on the size of your library). After that, things should be <em>much</em> better.</p>
 
-<p>Here are some numbers from a test with a library consisting of 1241 references with 284 attachments (the attachments are only linked to, not exported):</p>
+<p>Here are some numbers from a test with a library consisting of:</p>
+
+<ul>
+<li>24352 items</li>
+<li>424 notes</li>
+<li>10407 attachments</li>
+</ul>
+
+<p>(attachments are not exported for this test, but they still required serialization and handling):</p>
 
 <table>
 <thead>
@@ -1400,17 +1408,17 @@ and go grab coffee (or lunch, depending on the size of your library). After that
 <tbody>
 <tr>
 <td>Zotero</td>
-<td>14.1s</td>
+<td>112s</td>
 </tr>
 
 <tr>
 <td>Better BibTeX, empty cache</td>
-<td>53.0s</td>
+<td>235s</td>
 </tr>
 
 <tr>
 <td>Better BibTeX, filled cache</td>
-<td>3.7s</td>
+<td>51s</td>
 </tr>
 </tbody>
 </table>
