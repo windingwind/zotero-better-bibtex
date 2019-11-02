@@ -1321,8 +1321,7 @@ Better BibTeX for Zotero
 <li><a href="#pinning-fixating-the-citation-key">Pinning (fixating) the citation key</a></li>
 <li><a href="#add-your-own-biblatex-fields">Add your own BibLaTeX fields</a>
 <ul>
-<li><a href="#square-brackets">Square brackets []</a></li>
-<li><a href="#json5">JSON5</a></li>
+<li><a href="#latex-fields">LaTeX fields</a></li>
 <li><a href="#csl-fields">CSL fields</a></li>
 <li><a href="#changing-the-exported-reference-type">Changing the exported reference type</a></li>
 </ul></li>
@@ -1377,44 +1376,27 @@ The Better BibTeX <a href="/zotero-better-bibtex/installation/preferences/">conf
 <h2 id="pinning-fixating-the-citation-key">Pinning (fixating) the citation key</h2>
 
 <p>By default, BBT will generate citation keys from your items using the <a href="/zotero-better-bibtex/citing/">formatting pattern</a> you specified. If you want the key to be stable even when you change the item,
-you can fixate its citation key to a value of your choosing by adding the text <code>Citation Key: [your citekey]</code> anywhere in the <code>extra</code> field of the item.</p>
+you can fixate its citation key to a value of your choosing by adding the text <code>Citation Key: [your citekey]</code> on a line of its own in the <code>extra</code> field of the item.</p>
 
 <h2 id="add-your-own-biblatex-fields">Add your own BibLaTeX fields</h2>
 
-<p>You can add your own fields to the export which are not derived from regular Zotero item fields by adding them in the <code>extra</code> field in Zotero in one of three ways:</p>
+<h3 id="latex-fields">LaTeX fields</h3>
 
-<h3 id="square-brackets">Square brackets []</h3>
+<p>You can add your own fields to the export which are not derived from regular Zotero item fields by adding them in the <code>extra</code> field:</p>
 
-<p>You can add any field you like by using something like</p>
+<p>either by using lines such as</p>
 
-<pre><code>bibtex[origdate=1856;origtitle=An Old Title]
+<pre><code>tex.origdate= 1856
+tex.origtitle= All This &amp; More
 </code></pre>
 
-<p>This format is very rigid, it has no quoting syntax, so you can&rsquo;t have <code>=</code>, <code>[</code>, <code>]</code> or <code>;</code> in your key names or values.</p>
+<p>or</p>
 
-<h3 id="json5">JSON5</h3>
-
-<p>If you need more flexibility, you can use the <a href="http://json5.org/">JSON5</a> format
-instead:</p>
-
-<pre><code>bibtex{
-  origdate: 1856,
-  origtitle: &quot;Can contain = and ';' just fine&quot;
-}
+<pre><code>tex.origdate: 1856
+tex.origtitle: All This &amp; More
 </code></pre>
 
-<p>The marker for these fields can be either <code>bibtex</code>, <code>biblatex</code> or <code>biblatexdata</code> (which are all the same to BBT), but when importing BibTeX files with
-fields not supported by Zotero, the <code>bibtex</code> marker will be used. These fields are assumed to be valid LaTeX, and will
-be exported exactly as entered.</p>
-
-<p>If you want to have regular text in these fields and have BBT LaTeX-encode them, add an asterisk (<code>*</code>) after the marker, so
-something like</p>
-
-<pre><code>bibtex*{
-  origdate: 1856,
-  origtitle: &quot;Things like _ and $ will be escaped&quot;
-}
-</code></pre>
+<p>The difference between lines with an <code>=</code> or an <code>:</code> is that the fields marked with <code>=</code> are considered to be valid (&ldquo;raw&rdquo;) latex and will be passed on into the generated files as-is. The lines marked with <code>:</code> are assumed to be plain-text and LaTeX special characters (such as the <code>&amp;</code> above) will be escaped.</p>
 
 <h3 id="csl-fields">CSL fields</h3>
 
