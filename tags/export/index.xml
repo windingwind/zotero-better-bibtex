@@ -36,10 +36,9 @@ The format is either &amp;lsquo;bibtex&amp;rsquo; or &amp;lsquo;biblatex&amp;rsq
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/installation/preferences/export/</guid>
-      <description>Export unicode as plain-text latex commands (recommended) default: yes
-BibTeX has really spotty Unicode support, so you generally want this on. It will translate things like accented characters to their equivalent LaTeX constructs on export.
-Disregard name prefixes when sorting default: no
-Name handling is a lot more complex than I had ever thought it to be. A lot more complex. BibTeX has really limited ways of dealing with names with particles (van, von, de, etc).</description>
+      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
+The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
+Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
     </item>
     
     <item>
