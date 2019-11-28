@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.60.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1317,13 +1317,10 @@ Better BibTeX for Zotero
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#submitting-an-issue">Submitting an issue</a></li>
-<li><a href="#known-problems">Known problems</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#submitting-an-issue">Submitting an issue</a></li>
+    <li><a href="#known-problems">Known problems</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -1349,65 +1346,52 @@ Better BibTeX for Zotero
 
   
 
-  
-
-<p>Before all else, <strong><em>thank you for taking the time for submitting an issue</em></strong>, and I&rsquo;m sorry that I&rsquo;ve probably
+  <p>Before all else, <em><strong>thank you for taking the time for submitting an issue</strong></em>, and I'm sorry that I've probably
 interrupted your flow.</p>
-
-<p>Your report matters to me. I love hearing my software helps you, and it pains me to know that things aren&rsquo;t working for
+<p>Your report matters to me. I love hearing my software helps you, and it pains me to know that things aren't working for
 you.</p>
-
 <p>If you have any questions on the use of the plugin, please do not hesitate to file a GitHub issue to ask for help.</p>
-
-<p>If you&rsquo;re reporting a bug in the plugin, please take a moment to glance through the Support Request Guidelines below; it will
+<p>If you're reporting a bug in the plugin, please take a moment to glance through the Support Request Guidelines below; it will
 make sure I get your problem fixed as quick as possible. The guidelines are very detailed, perhaps to the point of being off-putting, but please do not fret; these guidelines simply
 express my ideal bug submission. I of course prefer very clearly documented issue reports over fuzzy ones, but I prefer
 fuzzy ones over missed ones.</p>
-
 <h2 id="submitting-an-issue">Submitting an issue</h2>
-
 <p>You can report problems with BBT by <a href="https://github.com/retorquere/zotero-better-bibtex/issues/new">opening a new issue</a> on github.
 Unfortunately, my time is extremely limited for a number of very great reasons (you shall have to trust me on this). Because of this, I
 cannot accept bug reports or support requests on anything but the latest version. By the time I get to your issue, the latest
 version might have bumped up already, and you will have to upgrade (you might have auto-upgraded already however) and
 re-verify that your issue still exists. Apologies for the inconvenience, but such are the breaks.</p>
-
 <ul>
 <li>You can send off an debug report by selecting <code>Send Better BibTeX debug report</code> from the <code>Help</code> menu. Post the resulting ID
 (displayed in red) in a github issue.</li>
 <li>You can send off an debug report for a specific collection or (selection of) items that fails to export by selecting those, right-clicking
 and choosing <code>Send Better BibTeX debug report</code></li>
 </ul>
-
-<p>That in itself will in many cases give me what I need. Don&rsquo;t forget to copy the generated ID to paste it into the github
+<p>That in itself will in many cases give me what I need. Don't forget to copy the generated ID to paste it into the github
 issue; you cannot call it up later (although you can just do it again).</p>
-
 <p>For the fastest fix:</p>
-
 <ul>
-<li><strong>Please be around</strong> for follow-up questions and verification I&rsquo;ve fixed the problem. It&rsquo;s really frustrating for me to get a bug report, work feverishly to get it fixed, and then the reporter having no time to verify it is actually addressed.</li>
-<li><strong>Please include <em>specifics</em> of what doesn&rsquo;t work</strong>. I use this plugin every day myself, so &ldquo;it doesn&rsquo;t work&rdquo; is trivially
+<li><strong>Please be around</strong> for follow-up questions and verification I've fixed the problem. It's really frustrating for me to get a bug report, work feverishly to get it fixed, and then the reporter having no time to verify it is actually addressed.</li>
+<li><strong>Please include <em>specifics</em> of what doesn't work</strong>. I use this plugin every day myself, so &ldquo;it doesn't work&rdquo; is trivially
 false. Please tell me what you expected and what you see happening, and the relevant difference between them.</li>
-<li><strong>Please don&rsquo;t file a jumble of problems in one issue</strong>. Posting a slew of separate issues is much preferred, as I can
+<li><strong>Please don't file a jumble of problems in one issue</strong>. Posting a slew of separate issues is much preferred, as I can
 more easily tackle them one by one.</li>
-<li><strong>Do not hijack existing issues</strong>. You can chime in on existing issues if you&rsquo;re close to certain it is the same problem,
+<li><strong>Do not hijack existing issues</strong>. You can chime in on existing issues if you're close to certain it is the same problem,
 otherwise, open a new issue. I rather have duplicate issues than issues I cannot close because they are in fact two or
 more issues.</li>
-<li><strong>If your problem pertains to <em>importing BibTeX files</em>,</strong> you <strong><em>must</em></strong> put up a sample for me to reproduce the issue with.
+<li><strong>If your problem pertains to <em>importing BibTeX files</em>,</strong> you <em><strong>must</strong></em> put up a sample for me to reproduce the issue with.
 <em>Do not</em> paste the sample in the issue, as the issue tracker will format it into oblivion. Instead, choose one of
 these options:
-
 <ul>
 <li>Post an URL in the issue where I can download your sample, or</li>
 <li>Put the sample in a <a href="https://gist.github.com/">gist</a> and post the URL of the gist into the issue</li>
-</ul></li>
-<li><strong>If your problem pertains to BBT interfering with other plugins</strong> (which wouldn&rsquo;t be the first time), and this interference
-has something to do with importing, you <strong><em>must</em></strong> include a sample file that triggers the issue. I know it may seem
-that &ldquo;any file triggers it&rdquo; &ndash; I need a <em>specific</em> file that does so I know we&rsquo;re looking at the same problem.</li>
 </ul>
-
+</li>
+<li><strong>If your problem pertains to BBT interfering with other plugins</strong> (which wouldn't be the first time), and this interference
+has something to do with importing, you <em><strong>must</strong></em> include a sample file that triggers the issue. I know it may seem
+that &ldquo;any file triggers it&rdquo; &ndash; I need a <em>specific</em> file that does so I know we're looking at the same problem.</li>
+</ul>
 <h2 id="known-problems">Known problems</h2>
-
 <p>If Zotero stalls after installing BBT, it is often a one-time thing as the <a href="/zotero-better-bibtex/support/performance/">cache fills</a>.</p>
 
 
@@ -1552,90 +1536,8 @@ that &ldquo;any file triggers it&rdquo; &ndash; I need a <em>specific</em> file 
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         

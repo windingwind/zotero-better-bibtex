@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.60.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1322,7 +1322,7 @@ Better BibTeX for Zotero
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1352,32 +1352,22 @@ Better BibTeX for Zotero
 
 
 
-<p>You can fetch your bibliography on the url <a href="http://127.0.0.1:23119/better-bibtex/collection?`[collectionID]`.`[format]`">http://127.0.0.1:23119/better-bibtex/collection?`[collectionID]`.`[format]`</a> <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>, where collectionID is:</p>
-
+<p>You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?<code>[collectionID]`.</code>[format]` <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, where collectionID is:</p>
 <ul>
 <li>the ID you get by right-clicking your collection and selecting &ldquo;Show collection key&rdquo;</li>
 <li>the path &ldquo;/[library id]/full/path/to/collection&rdquo; (the library id is the first number from the key you get in the
-option above; it&rsquo;s always &lsquo;0&rsquo; for your personal library)</li>
+option above; it's always &lsquo;0&rsquo; for your personal library)</li>
 </ul>
-
 <p>or any multiple of those, separated by a &lsquo;+&rsquo; sign.</p>
-
 <p>The format is either &lsquo;bibtex&rsquo; or &lsquo;biblatex&rsquo;, and determines the translator used for export.</p>
-
 <p>You can add options to the export as URL parameters:</p>
-
 <ul>
 <li><code>&amp;exportNotes=[true|false]</code></li>
 <li><code>&amp;useJournalAbbreviation=[true|false]</code></li>
 </ul>
-
 <p>You can fetch your library as part of your build, using something like <code>curl</code> from your Makefile, or with a BibLaTeX remote statement like</p>
-
 <pre><code>\addbibresource[location=remote]{http://127.0.0.1:23119/better-bibtex/collection?/0/8CV58ZVD.biblatex}
-</code></pre>
-
-<p><code>format</code> can be:</p>
-
+</code></pre><p><code>format</code> can be:</p>
 <ul>
 <li><code>biblatex</code> for BibLaTeX</li>
 <li><code>bibtex</code> for BibTeX</li>
@@ -1385,22 +1375,19 @@ option above; it&rsquo;s always &lsquo;0&rsquo; for your personal library)</li>
 <li><code>cslyaml</code> for CSL-JSON in YAML format</li>
 <li>the value of <code>translatorID</code> taken from the header of any existing Zotero translator to get an export in that translator format</li>
 </ul>
-
 <p><strong>Pull export will <em>only</em> work if you are compiling your document on the
 same system your Zotero client with BBT runs on</strong>. <em>Technically</em>
-it can be made to work for pulling from other systems, but it&rsquo;s
+it can be made to work for pulling from other systems, but it's
 even more arcane to set up than <a href="/zotero-better-bibtex/exporting/auto/#git-support">git support</a>.</p>
-
 <p>Note that as of Zotero 5.0.71, access to this URL will no longer work from the browser for security reasons; <code>curl</code> and other programmatic access will work.</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">Replace portnumber <code>23119</code> with <code>24119</code> for Juris-M.
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>Replace portnumber <code>23119</code> with <code>24119</code> for Juris-M.</p>
+</li>
 </ol>
-</div>
+</section>
 
 
 <footer class=" footline" >
@@ -1542,90 +1529,8 @@ even more arcane to set up than <a href="/zotero-better-bibtex/exporting/auto/#g
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         

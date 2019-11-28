@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.60.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1323,27 +1323,25 @@ Better BibTeX for Zotero
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#you-wanted-customized">You wanted customized&hellip;</a></li>
-<li><a href="#the-api-for-better-bibtex-and-better-biblatex">The API for <code>Better BibTeX</code> and <code>Better BibLaTeX</code></a></li>
-<li><a href="#the-api-for-bettercsljson-and-bettercslyaml">The API for <code>BetterCSLJSON</code> and <code>BetterCSLYAML</code></a></li>
-<li><a href="#debugging">Debugging</a></li>
-<li><a href="#samples">Samples</a>
-<ul>
-<li><a href="#add-accessdate-url-for-bibtex">Add accessdate, url for BibTeX</a></li>
-<li><a href="#comma-s-in-keywords">Comma&rsquo;s in keywords</a></li>
-<li><a href="#add-doi-in-note-field">Add DOI in note field</a></li>
-<li><a href="#add-arxiv-data">Add arXiv data</a></li>
-<li><a href="#custom-field-order">Custom field order</a></li>
-<li><a href="#detect-and-protect-latex-math-formulas">Detect and protect LaTeX math formulas</a></li>
-<li><a href="#detect-and-protect-mathjax">Detect and protect MathJax</a></li>
-<li><a href="#replace-director-with-author-for-videorecording-and-film-references">Replace <code>director</code> with <code>author</code> for <code>videoRecording</code> and <code>film</code> references</a></li>
-<li><a href="#changing-the-reference-type-from-collection-to-book">Changing the reference type from collection to book</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#you-wanted-customized">You wanted customized</a></li>
+    <li><a href="#the-api-for-better-bibtex-and-better-biblatex">The API for Better BibTeX and Better BibLaTeX</a></li>
+    <li><a href="#the-api-for-bettercsljson-and-bettercslyaml">The API for BetterCSLJSON and BetterCSLYAML</a></li>
+    <li><a href="#debugging">Debugging</a></li>
+    <li><a href="#samples">Samples</a>
+      <ul>
+        <li><a href="#add-accessdate-url-for-bibtex">Add accessdate, url for BibTeX</a></li>
+        <li><a href="#commas-in-keywords">Comma's in keywords</a></li>
+        <li><a href="#add-doi-in-note-field">Add DOI in note field</a></li>
+        <li><a href="#add-arxiv-data">Add arXiv data</a></li>
+        <li><a href="#custom-field-order">Custom field order</a></li>
+        <li><a href="#detect-and-protect-latex-math-formulas">Detect and protect LaTeX math formulas</a></li>
+        <li><a href="#detect-and-protect-mathjax">Detect and protect MathJax</a></li>
+        <li><a href="#replace-director-with-author-for-videorecording-and-film-references">Replace director with author for videoRecording and film references</a></li>
+        <li><a href="#changing-the-reference-type-from-collection-to-book">Changing the reference type from collection to book</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -1374,33 +1372,24 @@ Better BibTeX for Zotero
 
 
 
-
-
 <h2 id="you-wanted-customized">You wanted customized&hellip;</h2>
-
 <p>You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by
 default) where you can edit a javascript snippet which will be executed for each reference generated in the Bib(La)TeX
 exporter. In this code, you have access to the reference just before it will be written out and cached. There is an API
-to do this, and it&rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&rsquo;ll add it
-here (it&rsquo;s how the examples got here). Postscripts are available in 4 of the translators:</p>
-
+to do this, and it's fairly stable, but usually you can just open a new issue and ask me to write it, and I'll add it
+here (it's how the examples got here). Postscripts are available in 4 of the translators:</p>
 <ol>
 <li>BetterBibLaTeX</li>
 <li>BetterBibTeX</li>
 <li>BetterCSLJSON</li>
 <li>BetterCSLYAML</li>
 </ol>
-
 <p>You can (and totally should) check in which translator your postscript is running, which you can do by testing for
 <code>Translator.&lt;id&gt;</code> where <code>&lt;id&gt;</code> is one of these four names, using something like</p>
-
 <pre><code>if (Translator.BetterBibLaTeX) {
   ...
 }
-</code></pre>
-
-<p>or alternately on the full name using a switch</p>
-
+</code></pre><p>or alternately on the full name using a switch</p>
 <pre><code>switch (Translator.header.label) {
   case 'Better BibLaTeX':
     ...
@@ -1415,91 +1404,70 @@ here (it&rsquo;s how the examples got here). Postscripts are available in 4 of t
     ...
     break;
 }
-</code></pre>
-
-<p>If you want to run a postscript in the CSL translators but don&rsquo;t care whether it will output YAML or JSON, you can test for <code>Translator.BetterCSL</code>, which will be true when either one of <code>BetterCSLJSON</code> or <code>BetterCSLYAML</code> is active. Analogously, <code>Translator.BetterTeX</code> will be true if either of <code>Better BibTeX</code> or <code>Better BibLaTeX</code> is active.</p>
-
+</code></pre><p>If you want to run a postscript in the CSL translators but don't care whether it will output YAML or JSON, you can test for <code>Translator.BetterCSL</code>, which will be true when either one of <code>BetterCSLJSON</code> or <code>BetterCSLYAML</code> is active. Analogously, <code>Translator.BetterTeX</code> will be true if either of <code>Better BibTeX</code> or <code>Better BibLaTeX</code> is active.</p>
 <p>In the postscript, the reference being built is available as <code>reference</code>, and the Zotero item it is being built from is available as <code>item</code>. For backwards compatibility, in the <code>BetterBib(La)TeX</code> contexts, the reference being built is also available as <code>this</code>, and the Zotero item it is being built from as <code>this.item</code>, but use of these is discouraged now.</p>
-
-<p>You should really test for the translator context in your postscripts using the <code>Translator.&lt;name&gt;</code> tests mentioned above. If you don&rsquo;t because you have a postscript that pre-date postscript CSL support, you will probably be using the legacy use of <code>this</code> to set things on the reference being built, and calling <code>this.add</code> in those postscripts; since, for CSL postscripts, <code>this</code> is not set, it will make the script will non-fatally error out, so you&rsquo;re very probably good to go as-is.
+<p>You should really test for the translator context in your postscripts using the <code>Translator.&lt;name&gt;</code> tests mentioned above. If you don't because you have a postscript that pre-date postscript CSL support, you will probably be using the legacy use of <code>this</code> to set things on the reference being built, and calling <code>this.add</code> in those postscripts; since, for CSL postscripts, <code>this</code> is not set, it will make the script will non-fatally error out, so you're very probably good to go as-is.
 But please fix your postscripts to test for the translator context.</p>
-
 <h2 id="the-api-for-better-bibtex-and-better-biblatex">The API for <code>Better BibTeX</code> and <code>Better BibLaTeX</code></h2>
-
 <p>The postscript should be a <code>javascript</code> snippet. You can access the data with following objects and methods:</p>
-
 <ul>
-<li><code>reference</code> is the BibTeX reference you are building, and the reference has a number of fields.</li>
-<li><code>item</code> is the Zotero item that&rsquo;s the source of the reference.</li>
-</ul>
-
+<li>
+<p><code>reference</code> is the BibTeX reference you are building, and the reference has a number of fields.</p>
+</li>
+<li>
+<p><code>item</code> is the Zotero item that's the source of the reference.</p>
 <p>e.g. you can access the date in zotero item <code>item.date</code>.</p>
-
-<ul>
-<li><code>reference.has</code> is a dictionary of fields for output.</li>
-</ul>
-
+</li>
+<li>
+<p><code>reference.has</code> is a dictionary of fields for output.</p>
 <p>e.g. you can see whether the <code>year</code> field has been set by testing for <code>reference.has.year</code></p>
-
-<ul>
-<li><p><code>reference.add</code> is the function to add or modify keys in <code>reference.has</code>. It accepts the following named parameters in the form of an object:</p>
-
+</li>
+<li>
+<p><code>reference.add</code> is the function to add or modify keys in <code>reference.has</code>. It accepts the following named parameters in the form of an object:</p>
 <ul>
 <li><code>name</code>: name of the bib(la)tex field to output</li>
 <li><code>value</code>: the value for the field <em>without</em> LaTeX encoding</li>
 <li><code>bibtex</code>: the value for the field <em>with LaTeX encoding already applied</em>. If both <code>bibtex</code> and <code>value</code> are present, <code>bibtex</code> takes precedence</li>
 <li><code>enc</code>: specifies how to encode the <code>value</code> field. Valid values are:
-
 <ul>
-<li><code>latex</code>: encode markup and special characters to LaTeX. This is the default, if you don&rsquo;t provide an <code>enc</code> parameter, <code>latex</code> is assumed</li>
+<li><code>latex</code>: encode markup and special characters to LaTeX. This is the default, if you don't provide an <code>enc</code> parameter, <code>latex</code> is assumed</li>
 <li><code>verbatim</code>: encode under <code>verbatim</code> rules</li>
 <li><code>literal</code>: encode under <code>literal</code> rules</li>
 <li><code>raw</code>: assume <code>value</code> is already LaTeX-encoded (same as passing the value in <code>bibtex</code>)</li>
 <li><code>url</code>: encode as verbatim url</li>
-</ul></li>
+</ul>
+</li>
 <li><code>sep</code>: if <code>value</code> is an array, and <code>enc</code> is <code>latex</code>, encode each array element using <code>latex</code> and join the results with the string in <code>sep</code>. Defaults to an empty string.</li>
 <li><code>html</code>: boolean indicating whether the <code>value</code> is full HTML (really only useful for notes)</li>
-</ul></li>
 </ul>
-
 <p>e.g. change the value of year in output <code>reference.add({name: 'year', value: &quot;your_year_value&quot;})</code></p>
-
-<ul>
-<li><code>reference.addCreators</code> adds the contents of <code>item.creators</code> to <code>reference</code>.</li>
-</ul>
-
+</li>
+<li>
+<p><code>reference.addCreators</code> adds the contents of <code>item.creators</code> to <code>reference</code>.</p>
 <p>author encoding has a fair number of moving bits and generates multiple fields (<code>author</code>, <code>editor</code>, etc), this function is here so you can manipulate <code>item.creators</code> and call <code>reference.addCreators</code> to <em>replace</em>
-  the existing creator fields on <code>reference</code>.</p>
-
-<ul>
-<li><code>reference.remove</code> removes a field previously added by <code>reference.add</code> or <code>reference.addCreators</code></li>
+the existing creator fields on <code>reference</code>.</p>
+</li>
+<li>
+<p><code>reference.remove</code> removes a field previously added by <code>reference.add</code> or <code>reference.addCreators</code></p>
+</li>
 </ul>
-
 <h2 id="the-api-for-bettercsljson-and-bettercslyaml">The API for <code>BetterCSLJSON</code> and <code>BetterCSLYAML</code></h2>
-
 <ul>
 <li><code>reference</code> is the CSL object being built. Any changes made to this object will directly change the CSL object being output.</li>
-<li><code>item</code> is the Zotero reference it&rsquo;s being built from.</li>
+<li><code>item</code> is the Zotero reference it's being built from.</li>
 </ul>
-
-<p>There isn&rsquo;t really an API. You can use regular javascript to manipulate the <code>reference</code> object, which is a <a href="http://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables">CSL-JSON</a> object.</p>
-
+<p>There isn't really an API. You can use regular javascript to manipulate the <code>reference</code> object, which is a <a href="http://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables">CSL-JSON</a> object.</p>
 <h2 id="debugging">Debugging</h2>
-
-<p>There isn&rsquo;t much in place in terms of debugging, as tranlators (and
+<p>There isn't much in place in terms of debugging, as tranlators (and
 thus postscripts) are not allowed to do any UI work. You can do
 old-fashioned <code>printf</code>-style debugging by calling <code>Zotero.debug(...)</code>
 in your postscript &ndash; it will output the string you pass into the
 Zotero debug log which you can inspect from the <code>Help</code> menu. You
 can for example do <code>Zotero.debug(JSON.stringify(item))</code> to see what
 the Zotero item looks like to the translator.</p>
-
 <h2 id="samples">Samples</h2>
-
 <h3 id="add-accessdate-url-for-bibtex">Add accessdate, url for BibTeX</h3>
-
-<p>Since BibTeX doesn&rsquo;t really have well-defined behavior across styles the way BibLaTeX does, BBT can&rsquo;t generate URL data which is compatible with all BibTeX styles. If you know the style you use yourself, you can add the data in the format you want using a postscript. The script below will add a note for the last accessed date, and a <code>\url</code> tag within the <code>howpublished</code> field, but only for BibTeX, not for BibLaTeX, and only for <code>webpage</code> entries:</p>
-
+<p>Since BibTeX doesn't really have well-defined behavior across styles the way BibLaTeX does, BBT can't generate URL data which is compatible with all BibTeX styles. If you know the style you use yourself, you can add the data in the format you want using a postscript. The script below will add a note for the last accessed date, and a <code>\url</code> tag within the <code>howpublished</code> field, but only for BibTeX, not for BibLaTeX, and only for <code>webpage</code> entries:</p>
 <pre><code>if (Translator.BetterBibTeX &amp;&amp; item.itemType === 'webpage') {
     if (item.accessDate) {
       reference.add({ name: 'note', value: &quot;(accessed &quot; + item.accessDate + &quot;)&quot; });
@@ -1508,44 +1476,27 @@ the Zotero item looks like to the translator.</p>
       reference.add({ name: 'howpublished', bibtex: &quot;{\\url{&quot; + reference.enc_verbatim({value: item.url}) + &quot;}}&quot; });
     }
   }
-</code></pre>
-
-<h3 id="comma-s-in-keywords">Comma&rsquo;s in keywords</h3>
-
+</code></pre><h3 id="commas-in-keywords">Comma's in keywords</h3>
 <p>If you want to retain commas in your keywords (e.g. for chemical elements) and separate with a comma-space, you could do:</p>
-
 <pre><code>if (Translator.BetterTeX) {
   reference.add({ name: 'keywords', value: item.tags, sep: ', ' });
 }
-</code></pre>
-
-<p>as the default encoder knows what to do with arrays, if you give it a separator.</p>
-
+</code></pre><p>as the default encoder knows what to do with arrays, if you give it a separator.</p>
 <h3 id="add-doi-in-note-field">Add DOI in note field</h3>
-
 <pre><code>if (Translator.BetterTeX &amp;&amp; item.DOI) {
   var doi = item.DOI;
   if (doi.indexOf('doi:') != 0) { doi = 'doi:' + doi; }
   reference.add({ name: 'note', duplicate: true, value: '[' + doi + ']' });
 }
-</code></pre>
-
-<h3 id="add-arxiv-data">Add arXiv data</h3>
-
-<p>arXiv is a bit of an odd duck. It really isn&rsquo;t a journal, so it shouldn&rsquo;t be the journal title, and their own recommendations on how to include arXiv IDs is a little lacking: <a href="https://arxiv.org/help/faq/references">this</a> doesn&rsquo;t say where to include the <code>arXiv:...</code> identfier, and <a href="https://arxiv.org/help/hypertex/bibstyles">this</a> says <em>not</em> to include it. Nor does it give any recommendations on how to achieve the <a href="https://arxiv.org/help/faq/references">desired output</a>.</p>
-
-<p>But for arguments&rsquo; sake, let&rsquo;s say you get the desired output by including an empty <code>journaltitle</code> field (ugh) and stuff the <code>arXiv:...</code> ID in the <code>pages</code> field (<em>ugh</em>). You could do that with the following postscript:</p>
-
+</code></pre><h3 id="add-arxiv-data">Add arXiv data</h3>
+<p>arXiv is a bit of an odd duck. It really isn't a journal, so it shouldn't be the journal title, and their own recommendations on how to include arXiv IDs is a little lacking: <a href="https://arxiv.org/help/faq/references">this</a> doesn't say where to include the <code>arXiv:...</code> identfier, and <a href="https://arxiv.org/help/hypertex/bibstyles">this</a> says <em>not</em> to include it. Nor does it give any recommendations on how to achieve the <a href="https://arxiv.org/help/faq/references">desired output</a>.</p>
+<p>But for arguments&rsquo; sake, let's say you get the desired output by including an empty <code>journaltitle</code> field (ugh) and stuff the <code>arXiv:...</code> ID in the <code>pages</code> field (<em>ugh</em>). You could do that with the following postscript:</p>
 <pre><code>if (Translator.BetterTeX &amp;&amp; item.arXiv.id) {
   reference.add({ name: 'pages', value: item.arXiv.id });
   if (!reference.has.journaltitle) { reference.add({ name: 'journaltitle', bibtex: '{}' }); }
 }
-</code></pre>
-
-<h3 id="custom-field-order">Custom field order</h3>
-
+</code></pre><h3 id="custom-field-order">Custom field order</h3>
 <p>Specify the ordering of the listing of fields in an exported Biblatex/Bibtex entry. Your postscript:</p>
-
 <pre><code>if (Translator.BetterTeX) {
   // the bib(la)tex fields are ordered according to this array.
   // If a field is not in this list, it will show up at after the ordered fields.
@@ -1560,38 +1511,15 @@ the Zotero item looks like to the translator.</p>
     }
   }
 }
-</code></pre>
-
-<p>In Zotero when using an Export Format of Better Biblatex we&rsquo;ll get something like the following entry &hellip;</p>
-
-<pre><code>@book{nietzsche_1974_gay,
-  <u>author</u> = {Nietzsche, Friedrich Wilhelm},
-  <u>date</u> = {1974-03},
-  <u>title</u> = {The {{Gay Science}}: {{With}} a {{Prelude}} in {{Rhymes}} and an {{Appendix}} of {{Songs}}},
-  <u>publisher</u> = {{Random House}},
-  origdate = {1882},
-  shorthand = {GS},
-  keywords = {Philosophy / General,Philosophy / History  Surveys / Modern},
-  translator = {Kaufmann, Walter},
-  timestamp = {2016-06-05T20:12:28Z},
-  pagetotal = {407},
-  shorttitle = {The {{Gay Science}}},
-  isbn = {0-394-71985-9},
-  edition = {1}
-}
-</code></pre>
-
+</code></pre><p>In Zotero when using an Export Format of Better Biblatex we'll get something like the following entry &hellip;</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Further details <a href="https://github.com/retorquere/zotero-better-bibtex/issues/512">Export to Biblatex/Bibtex. Custom field order. #512</a>.</p>
-
 <h3 id="detect-and-protect-latex-math-formulas">Detect and protect LaTeX math formulas</h3>
-
 <pre><code>if (Translator.BetterTeX &amp;&amp; reference.has.title) {
   reference.add({ name: 'title', value: item.title.replace(/(\$.*?\$)/g, '&lt;script&gt;{$1}&lt;/script&gt;') });
 }
-</code></pre>
-
-<h3 id="detect-and-protect-mathjax">Detect and protect MathJax</h3>
-
+</code></pre><h3 id="detect-and-protect-mathjax">Detect and protect MathJax</h3>
 <pre><code>if (Translator.BetterTeX) {
   // different for bibtex and biblatex exporters
   const note = ['annotation', 'note'].find(field =&gt; reference.has[field])
@@ -1605,12 +1533,8 @@ the Zotero item looks like to the translator.</p>
     reference.add({ name: note, value: notes, html: true });
   }
 }
-</code></pre>
-
-<h3 id="replace-director-with-author-for-videorecording-and-film-references">Replace <code>director</code> with <code>author</code> for <code>videoRecording</code> and <code>film</code> references</h3>
-
+</code></pre><h3 id="replace-director-with-author-for-videorecording-and-film-references">Replace <code>director</code> with <code>author</code> for <code>videoRecording</code> and <code>film</code> references</h3>
 <p>Creator handling is fairly complicated, so to change the authors/editors/creators of any kind, you must change them on <code>item</code> and then call <code>addCreators</code> to do the needful. <code>addCreators</code> will <em>replace</em> the existing creators that were added to <code>reference</code> with the current state in <code>item.creators</code>, however you left it.</p>
-
 <pre><code>if (Translator.BetterBibLaTeX) {
   switch (item.itemType) {
     case 'videoRecording':
@@ -1622,15 +1546,11 @@ the Zotero item looks like to the translator.</p>
       break;
   }
 }
-</code></pre>
-
-<h3 id="changing-the-reference-type-from-collection-to-book">Changing the reference type from collection to book</h3>
-
+</code></pre><h3 id="changing-the-reference-type-from-collection-to-book">Changing the reference type from collection to book</h3>
 <pre><code>if (Translator.BetterBibLaTeX) {
   if (reference.referencetype === 'collection') reference.referencetype = 'book'
 }
 </code></pre>
-
 
 <footer class=" footline" >
 	
@@ -1771,90 +1691,8 @@ the Zotero item looks like to the translator.</p>
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         

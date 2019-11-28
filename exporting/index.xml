@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/exporting/auto/</guid>
-      <description>When exporting using BBT you will be offered a new export option: Keep updated. Checking this option registers the export for automation; any changes to the collection or library you exported after you&amp;rsquo;ve completed the current export will trigger an automatic re-export to update the bib file. You can review/remove exports from the BBT preferences. While I&amp;rsquo;ve gone to some lengths to make sure performance is OK, don&amp;rsquo;t go overboard with the number of auto-exports you have going.</description>
+      <description>When exporting using BBT you will be offered a new export option: Keep updated. Checking this option registers the export for automation; any changes to the collection or library you exported after you&#39;ve completed the current export will trigger an automatic re-export to update the bib file. You can review/remove exports from the BBT preferences. While I&#39;ve gone to some lengths to make sure performance is OK, don&#39;t go overboard with the number of auto-exports you have going.</description>
     </item>
     
     <item>
@@ -25,8 +25,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/exporting/pull/</guid>
-      <description>You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?`[collectionID]`.`[format]` 1, where collectionID is:
- the ID you get by right-clicking your collection and selecting &amp;ldquo;Show collection key&amp;rdquo; the path &amp;ldquo;/[library id]/full/path/to/collection&amp;rdquo; (the library id is the first number from the key you get in the option above; it&amp;rsquo;s always &amp;lsquo;0&amp;rsquo; for your personal library)  or any multiple of those, separated by a &amp;lsquo;+&amp;rsquo; sign.
+      <description>You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?[collectionID]`.[format]` 1, where collectionID is:
+ the ID you get by right-clicking your collection and selecting &amp;ldquo;Show collection key&amp;rdquo; the path &amp;ldquo;/[library id]/full/path/to/collection&amp;rdquo; (the library id is the first number from the key you get in the option above; it&#39;s always &amp;lsquo;0&amp;rsquo; for your personal library)  or any multiple of those, separated by a &amp;lsquo;+&amp;rsquo; sign.
 The format is either &amp;lsquo;bibtex&amp;rsquo; or &amp;lsquo;biblatex&amp;rsquo;, and determines the translator used for export.</description>
     </item>
     
@@ -36,7 +36,7 @@ The format is either &amp;lsquo;bibtex&amp;rsquo; or &amp;lsquo;biblatex&amp;rsq
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/exporting/scripting/</guid>
-      <description>You wanted customized&amp;hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each reference generated in the Bib(La)TeX exporter. In this code, you have access to the reference just before it will be written out and cached. There is an API to do this, and it&amp;rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&amp;rsquo;ll add it here (it&amp;rsquo;s how the examples got here).</description>
+      <description>You wanted customized&amp;hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each reference generated in the Bib(La)TeX exporter. In this code, you have access to the reference just before it will be written out and cached. There is an API to do this, and it&#39;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&#39;ll add it here (it&#39;s how the examples got here).</description>
     </item>
     
     <item>
@@ -45,8 +45,8 @@ The format is either &amp;lsquo;bibtex&amp;rsquo; or &amp;lsquo;biblatex&amp;rsq
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/exporting/advanced/</guid>
-      <description>You are a hardcore LaTeX user If you&amp;rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
- You can add literal LaTeX anywhere in your reference by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.</description>
+      <description>You are a hardcore LaTeX user If you&#39;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
+ You can add literal LaTeX anywhere in your reference by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&#39;re wrapped in &amp;lt;script&amp;gt;.</description>
     </item>
     
   </channel>

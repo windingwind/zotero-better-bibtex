@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.60.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1323,23 +1323,21 @@ Better BibTeX for Zotero
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#editor-integration">Editor integration</a>
-<ul>
-<li><a href="#vim">vim</a></li>
-<li><a href="#zotero-citations-for-atom">Zotero Citations for Atom</a></li>
-<li><a href="#vs-code-citation-picker-for-zotero">VS Code Citation Picker for Zotero</a></li>
-<li><a href="#scrivener-2-0-marked-2-for-mac">Scrivener 2.0/Marked 2 for Mac</a></li>
-<li><a href="#scrivener-1-0-for-windows">Scrivener 1.0 for Windows</a></li>
-<li><a href="#linux">Linux</a></li>
-<li><a href="#overleaf">Overleaf</a></li>
-</ul></li>
-<li><a href="#diy">DIY</a></li>
-<li><a href="#playing-around">Playing around</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#editor-integration">Editor integration</a>
+      <ul>
+        <li><a href="#vim">vim</a></li>
+        <li><a href="#zotero-citations-for-atom">Zotero Citations for Atom</a></li>
+        <li><a href="#vs-code-citation-picker-for-zotero">VS Code Citation Picker for Zotero</a></li>
+        <li><a href="#scrivener-20marked-2-for-mac">Scrivener 2.0/Marked 2 for Mac</a></li>
+        <li><a href="#scrivener-10-for-windows">Scrivener 1.0 for Windows</a></li>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#overleaf">Overleaf</a></li>
+      </ul>
+    </li>
+    <li><a href="#diy">DIY</a></li>
+    <li><a href="#playing-around">Playing around</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -1374,20 +1372,12 @@ Better BibTeX for Zotero
 
 
 
-
-
 <p><strong>PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; <code>curl</code> and other programmatic such as from editors access will work.</strong></p>
-
 <p>Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!</p>
-
 <h2 id="editor-integration">Editor integration</h2>
-
 <h3 id="vim">vim</h3>
-
 <p>Graciously supplied by David Lukes:</p>
-
 <p>paste it in your .vimrc (and modify to your liking):</p>
-
 <pre><code>function! ZoteroCite()
   &quot; pick a format based on the filetype (customize at will)
   let format = &amp;filetype =~ '.*tex' ? 'citep' : 'pandoc'
@@ -1398,42 +1388,25 @@ endfunction
 
 noremap &lt;leader&gt;z &quot;=ZoteroCite()&lt;CR&gt;p
 inoremap &lt;C-z&gt; &lt;C-r&gt;=ZoteroCite()&lt;CR&gt;
-</code></pre>
-
-<p>This inserts the citation at the cursor using the shortcut ctrl-z (in insert mode) or <code>&lt;leader&gt;</code>z (in normal, visual etc. modes, <code>&lt;leader&gt;</code> being backslash by default).</p>
-
+</code></pre><p>This inserts the citation at the cursor using the shortcut ctrl-z (in insert mode) or <code>&lt;leader&gt;</code>z (in normal, visual etc. modes, <code>&lt;leader&gt;</code> being backslash by default).</p>
 <h3 id="zotero-citations-for-atom">Zotero Citations for Atom</h3>
-
 <p>A sample implementation of real integration (rather than the working-but-clunky workarounds using paste) can be found in the <a href="https://atom.io/packages/zotero-citations">Zotero Citations</a> package for the <a href="http://atom.io">Atom</a> editor.</p>
-
 <h3 id="vs-code-citation-picker-for-zotero">VS Code Citation Picker for Zotero</h3>
-
-<p>If you don&rsquo;t feel like typing citations out (and let&rsquo;s be honest, you don&rsquo;t), executing <a href="https://marketplace.visualstudio.com/items?itemName=mblode.zotero">VS Code Citation Picker for Zotero</a> extension for the <a href="https://code.visualstudio.com/">VS Code</a> editor will call up a graphical picker which will insert these for you, formatted and all.</p>
-
-<h3 id="scrivener-2-0-marked-2-for-mac">Scrivener 2.0/Marked 2 for Mac</h3>
-
+<p>If you don't feel like typing citations out (and let's be honest, you don't), executing <a href="https://marketplace.visualstudio.com/items?itemName=mblode.zotero">VS Code Citation Picker for Zotero</a> extension for the <a href="https://code.visualstudio.com/">VS Code</a> editor will call up a graphical picker which will insert these for you, formatted and all.</p>
+<h3 id="scrivener-20marked-2-for-mac">Scrivener 2.0/Marked 2 for Mac</h3>
 <p>Dave Smith has gracefully written <a href="http://davepwsmith.github.io/academic-scrivener-howto/">instructions</a> on how to set up Scrivener 2.0 and Marked 2 for OSX to use the CAYW picker, including ready-to-run apps</p>
-
-<h3 id="scrivener-1-0-for-windows">Scrivener 1.0 for Windows</h3>
-
+<h3 id="scrivener-10-for-windows">Scrivener 1.0 for Windows</h3>
 <p>Emilie has writen <a href="https://github.com/AmomentOfMusic/Zotero_scrivener_picker_windows">instructions</a> for using the CAYW picker for Scrivener 1.0 in Windows 10, with the necessary files</p>
-
 <h3 id="linux">Linux</h3>
-
 <ul>
 <li>Emma Reisz has gracefully written <a href="https://emmareisz.github.io/zotpicknix/">instructions and scripts</a> for setting up CAYW on Linux.</li>
-<li>ConorIA has more versatile solution called <a href="https://gitlab.com/ConorIA/shell-scripts/tree/master/zotero4overleaf">zotero4overleaf</a>, which was inspired by Emma&rsquo;s scripts. This should allow use with Overleaf, which is pretty insane that it&rsquo;s possible if you think about it.</li>
+<li>ConorIA has more versatile solution called <a href="https://gitlab.com/ConorIA/shell-scripts/tree/master/zotero4overleaf">zotero4overleaf</a>, which was inspired by Emma's scripts. This should allow use with Overleaf, which is pretty insane that it's possible if you think about it.</li>
 </ul>
-
 <h3 id="overleaf">Overleaf</h3>
-
 <p>David Lukes takes Overleaf integration one step further with a GreaseMonkey/TamperMonkey <a href="https://gist.github.com/dlukes/5289eaa12d591dc21745fdef42098a17">userscript</a> which not only allows popping up the CAYW picker straight from your browser, no other tools required, but adds a hotkey to refresh your bib file on Overleaf. This should work with the free subscription, no fiddling with git or dropbox required.</p>
-
 <h2 id="diy">DIY</h2>
-
-<p>BBT exposes an URL at <a href="http://127.0.0.1:23119/better-bibtex/cayw">http://127.0.0.1:23119/better-bibtex/cayw</a> <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>. The url accepts
+<p>BBT exposes an URL at http://127.0.0.1:23119/better-bibtex/cayw <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. The url accepts
 the following URL parameters:</p>
-
 <table>
 <thead>
 <tr>
@@ -1441,44 +1414,38 @@ the following URL parameters:</p>
 <th></th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>probe</code></td>
 <td>If set to any non-empty value, returns <code>ready</code>. You can use this to test whether BBT CAYW picking is live; it will not pop up the picker</td>
 </tr>
-
 <tr>
 <td><code>format</code></td>
 <td>Set the output format</td>
 </tr>
-
 <tr>
 <td><code>clipboard</code></td>
 <td>Any non-empty value will copy the results to the clipboard</td>
 </tr>
-
 <tr>
 <td><code>minimize</code></td>
 <td>Any non-empty value minimize all Firefox windows after a pick</td>
 </tr>
 </tbody>
 </table>
-
 <p>The following formats are available:</p>
-
 <ul>
 <li><code>latex</code>. Generates <a href="https://ctan.org/pkg/natbib">natbib</a> citation commands. Extra URL parameters allowed:
-
 <ul>
 <li><code>command</code>: the citation command to use (if unspecified, defaults to <code>cite</code>)</li>
-</ul></li>
+</ul>
+</li>
 <li><code>cite</code> is an alias for <code>latex</code> with the assumption you want the cite command to be <code>cite</code></li>
 <li><code>biblatex</code>. Generates <a href="https://ctan.org/pkg/biblatex">biblatex</a> citation commands. Extra URL parameters allowed:
-
 <ul>
 <li><code>command</code>: the citation command to use (if unspecified, defaults to <code>autocite</code>)</li>
-</ul></li>
+</ul>
+</li>
 <li><code>mmd</code>: MultiMarkdown</li>
 <li><code>pandoc</code>. Accepts additional URL parameter <code>brackets</code>; any non-empty value surrounds the citation with brackets</li>
 <li><code>asciidoctor-bibtex</code></li>
@@ -1486,17 +1453,15 @@ the following URL parameters:</p>
 <li><code>formatted-citation</code>: output formatted citation as per the current Zotero quick-export setting, if it is set to a citation style, and not an export format</li>
 <li><code>formatted-bibliography</code>: output formatted bibliography as per the current Zotero quick-export setting, if it is set to a citation style, and not an export format</li>
 <li><code>translate</code> invokes a Zotero export translator. Extra URL parameters allowed:
-
 <ul>
 <li><code>translator</code>: stripped name of one of the BBT translators (lowercased, remove &lsquo;better&rsquo;, and only the letters, e.g.  <code>biblatex</code> or <code>csljson</code>), or a translator ID. Defaults to <code>biblatex</code>.</li>
 <li><code>exportNotes</code>: set to <code>true</code> to export notes</li>
 <li><code>useJournalAbbreviation</code>: set to <code>true</code> to use journal abbreviations</li>
-</ul></li>
+</ul>
+</li>
 <li><code>json</code>: the full pick information Zotero provides.</li>
 </ul>
-
 <p>The picker passes the following data along with your picked references if you filled them out:</p>
-
 <table>
 <thead>
 <tr>
@@ -1504,47 +1469,39 @@ the following URL parameters:</p>
 <th></th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>locator</code></td>
 <td>the place within the work (e.g. page number)</td>
 </tr>
-
 <tr>
 <td><code>prefix</code></td>
 <td>for stuff like &ldquo;see &hellip;&rdquo;</td>
 </tr>
-
 <tr>
 <td><code>suffix</code></td>
 <td>for stuff after the citations</td>
 </tr>
-
 <tr>
 <td><code>suppress author</code></td>
 <td>if you only want the year</td>
 </tr>
 </tbody>
 </table>
-
 <p>However not all output formats support these. Pandoc and scannable cite are the richest ones, supporting all 4. MultiMarkdown supports
 none. The <code>formatted-</code> formats will ignore these. LaTeX supports all 4, in a way:</p>
-
 <ul>
 <li>in the <code>latex</code> (<a href="https://ctan.org/pkg/natbib"><code>natbib</code></a>) format: if you choose <code>suppress author</code> for none or all of your references in a pick, you
 will get the citation as you would normally enter it, such as <code>\cite{author1,author2}</code>, or
 <code>\citeyear{author1,author2}</code>. If you use <code>locator</code>, <code>prefix</code>, <code>suffix</code> in any one of them, or you use <code>suppress author</code>
 for some but not for others, the picker will write them out all separate, like <code>\cite[p. 1]{author1}\citeyear{author2}</code>,
-as natbib doesn&rsquo;t seem to have a good mechanism for combined citations that mix different prefixes/suffixes/locators.</li>
+as natbib doesn't seem to have a good mechanism for combined citations that mix different prefixes/suffixes/locators.</li>
 <li>in the <a href="https://ctan.org/pkg/biblatex"><code>biblatex</code></a> format: <code>suppress author</code> is ignored unless the command is one of <code>\cite</code>, <code>\autocite</code>
 or <code>\parencite</code> AND there is one reference only, in which case the starred variant of the command is returned, which
 hides the author; for multiple references with <code>locator</code>s, <code>prefix</code>es or <code>suffix</code>es, the <code>s</code>-affixed variant of the
 command is generated</li>
 </ul>
-
 <p>Some of the formatters use abbreviated labels for the results if you include a locator. The defaults are:</p>
-
 <table>
 <thead>
 <tr>
@@ -1552,141 +1509,111 @@ command is generated</li>
 <th>abbreviation</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>article</td>
 <td>art.</td>
 </tr>
-
 <tr>
 <td>chapter</td>
 <td>ch.</td>
 </tr>
-
 <tr>
 <td>subchapter</td>
 <td>subch.</td>
 </tr>
-
 <tr>
 <td>column</td>
 <td>col.</td>
 </tr>
-
 <tr>
 <td>figure</td>
 <td>fig.</td>
 </tr>
-
 <tr>
 <td>line</td>
 <td>l.</td>
 </tr>
-
 <tr>
 <td>note</td>
 <td>n.</td>
 </tr>
-
 <tr>
 <td>issue</td>
 <td>no.</td>
 </tr>
-
 <tr>
 <td>opus</td>
 <td>op.</td>
 </tr>
-
 <tr>
 <td>page</td>
 <td>p.</td>
 </tr>
-
 <tr>
 <td>paragraph</td>
 <td>para.</td>
 </tr>
-
 <tr>
 <td>subparagraph</td>
 <td>subpara.</td>
 </tr>
-
 <tr>
 <td>part</td>
 <td>pt.</td>
 </tr>
-
 <tr>
 <td>rule</td>
 <td>r.</td>
 </tr>
-
 <tr>
 <td>section</td>
 <td>sec.</td>
 </tr>
-
 <tr>
 <td>subsection</td>
 <td>subsec.</td>
 </tr>
-
 <tr>
 <td>Section</td>
 <td>Sec.</td>
 </tr>
-
 <tr>
 <td>sub verbo</td>
 <td>sv.</td>
 </tr>
-
 <tr>
 <td>schedule</td>
 <td>sch.</td>
 </tr>
-
 <tr>
 <td>title</td>
 <td>tit.</td>
 </tr>
-
 <tr>
 <td>verse</td>
 <td>vrs.</td>
 </tr>
-
 <tr>
 <td>volume</td>
 <td>vol.</td>
 </tr>
 </tbody>
 </table>
-
-<p>In your call to the CAYW URL, you can override the abbreviations by adding them to the query, e.g. <a href="http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;page=&amp;Section=sec.">http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;page=&amp;Section=sec.</a>, page-picks will have no label, and Section-picks will get <code>sec.</code> rather than <code>Sec.</code>.</p>
-
-<p>The <code>clipboard</code> option can be used as a workaround for editors that haven&rsquo;t gotten around to integrating this yet. If
+<p>In your call to the CAYW URL, you can override the abbreviations by adding them to the query, e.g. http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;page=&amp;Section=sec., page-picks will have no label, and Section-picks will get <code>sec.</code> rather than <code>Sec.</code>.</p>
+<p>The <code>clipboard</code> option can be used as a workaround for editors that haven't gotten around to integrating this yet. If
 you use this option you will probably want to bind to a hotkey, either system-wide (which is going to be platform-dependent, I know
 <a href="http://www.autohotkey.com">AutoHotKey</a> works for windows, for OSX <a href="https://pqrs.org/osx/karabiner/">Karabiner</a> ought to
 do the job, and for Linux you could give <a href="https://github.com/polyethene/IronAHK">IronAHK</a> or
 <a href="https://code.google.com/p/autokey/">autokey</a> a shot).</p>
-
-<p>For example, if you call up <a href="http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;clipboard=yes">http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;clipboard=yes</a>, the Zotero citation picker will pop up. If you then select two references that happen to have cite keys <code>adams2001</code> and <code>brigge2002</code>, then</p>
-
+<p>For example, if you call up http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;clipboard=yes, the Zotero citation picker will pop up. If you then select two references that happen to have cite keys <code>adams2001</code> and <code>brigge2002</code>, then</p>
 <ul>
 <li>the response body will be <code>[#adams2001][][#brigge2002][]</code>, and</li>
 <li><code>[#adams2001][][#brigge2002][]</code> will be left on the clipboard</li>
 </ul>
-
 <p>More of a gimmick than anything else, but if you add <code>select=true</code>, BBT will select the picked items in Zotero.</p>
-
 <h2 id="playing-around">Playing around</h2>
-
 <p>For testing for other markdown formatters, you can construct simple references yourself, using the <code>playground</code> formatter, with parameters:</p>
-
 <ul>
 <li><code>citeprefix</code>, default empty, for text to put before the full citation.</li>
 <li><code>citepostfix</code>, default empty, for text to put after the full citation.</li>
@@ -1694,19 +1621,16 @@ do the job, and for Linux you could give <a href="https://github.com/polyethene/
 <li><code>keypostfix</code>, default empty, for text to put after each individual citekey</li>
 <li><code>separator</code>, default <code>,</code>, for text to put between citekeys</li>
 </ul>
-
 <p>Alternately, the <code>json</code> formatter will just give you the picks as JSON which you can turn into pretty much anything if you can code.</p>
-
 <p>but if you need an extra format, just ask.</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">For Juris-M, the port number <code>23119</code> must be replaced with <code>24119</code>.
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>For Juris-M, the port number <code>23119</code> must be replaced with <code>24119</code>.</p>
+</li>
 </ol>
-</div>
+</section>
 
 
 <footer class=" footline" >
@@ -1848,90 +1772,8 @@ do the job, and for Linux you could give <a href="https://github.com/polyethene/
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
             
         
