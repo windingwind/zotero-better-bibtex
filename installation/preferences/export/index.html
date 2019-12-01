@@ -1401,7 +1401,7 @@ or bibtex will error out).</p>
 <ul>
 <li>no</li>
 <li>in a note field</li>
-<li>in a URL field (requires custom style for url field support)</li>
+<li>in a URL field</li>
 </ul>
 <h3 id="biblatex">BibLaTeX</h3>
 <h4 id="export-unicode-as-plaintext-latex-commands">Export unicode as plain-text latex commands</h4>
@@ -1414,7 +1414,9 @@ superior, but the LaTeX world moves slowly, so many people won't have it yet. Bu
 you can enable it here</p>
 <h3 id="fields">Fields</h3>
 <h4 id="when-a-reference-has-both-a-doi-and-a-url-export">When a reference has both a DOI and a URL, export</h4>
-<p>Does what it says on the tin, really. If a reference has both a DOI and an URL, you can choose to have them both exported, or either one of them.</p>
+<p>Does what it says on the tin, really. If a reference has both a DOI and an URL, you can choose to have them both exported, or either one of them. Note that for BibTeX,
+you must load the <code>url</code> package when you have <code>doi</code> or <code>url</code> fields. <code>doi</code> and <code>url</code> fields are so-called <code>verbatim</code> fields with different escaping rules, and
+BibTeX compilation will likely error out without the package loaded.</p>
 <p>Options:</p>
 <ul>
 <li>both</li>
