@@ -1338,6 +1338,8 @@ Better BibTeX for Zotero
       <ul>
         <li></li>
         <li><a href="#string-definitions-1">@string definitions</a></li>
+        <li><a href="#import">Import</a></li>
+        <li><a href="#export">Export</a></li>
       </ul>
     </li>
   </ul>
@@ -1397,6 +1399,36 @@ when set to &lsquo;match&rsquo;, only @strings declared in the @strings section 
 <li>Assume single-word fields to be @string vars</li>
 <li>Match against the @string vars below</li>
 </ul>
+<h3 id="import">Import</h3>
+<h4 id="sentence-case-titles-on-import">Sentence-case titles on import:</h4>
+<p>Bib(La)TeX references ought to be stored in Title Case; Zotero references are expected to be entered as sentence-case. With this option on, BBT will try to sentence-case
+during import. This sentence-casing uses heuristics, no natural language processing is performed, and the results are not perfect. You can turn this off, but you may then also want
+to disable exportTitleCase (which has its own problems, see the help entry for that option on this page). With &lsquo;yes, but try to exclude already-sentence-cased titles&rsquo;, BBT will attempt to detect
+titles that are already sentence cased and leave them as-is on import.</p>
+<p>Options:</p>
+<ul>
+<li>yes, but try to exclude already-sentence-cased titles</li>
+<li>yes</li>
+<li>no (import titles as-is)</li>
+</ul>
+<h4 id="insert-case-protection-for-braces">Insert case-protection for braces:</h4>
+<p>On import, BBT will add case-protection (<!-- raw HTML omitted -->&hellip;<!-- raw HTML omitted -->) to titles that have words in {Braces}. There's plenty of bib(la)tex files
+out there that do this a little overzealously, and you may not like the resulting HTML code in your items, even though this is what the braces mean in bib(la)tex, and
+Zotero supports it. If you turn this off, the markup is omitted during import. In <code>strict</code> mode, all braces that bib(la)tex would interpret as case protection (<a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">which is
+not all of them</a>) are converted to <code>span</code> elements. In <code>as-needed</code> mode, the number of <code>span</code> elements is minimized.</p>
+<p>Options:</p>
+<ul>
+<li>minimal</li>
+<li>yes</li>
+<li>no</li>
+</ul>
+<h3 id="export">Export</h3>
+<h4 id="apply-title-casing-to-titles">Apply title-casing to titles</h4>
+<p>If you're dead-set on ignoring both BibTeX/BibLaTeX best practice and the Zotero recommendations on title/sentence
+casing, you can turn this off to suppress <a href="/zotero-better-bibtex/support/faq/#bbt-is-changing-the-capitalization-of-my-titles-why">title casing for English references</a>.</p>
+<h4 id="apply-brace-protection-to-capitalized-words">Apply brace-protection to capitalized words</h4>
+<p>If you're dead-set on ignoring both BibTeX/BibLaTeX best practice and the Zotero recommendations on title/sentence
+casing, you can turn this off to suppress <a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">automatic brace-protection for words with uppercase letters</a>.</p>
 <h4 id="warn-me-when-changing-citation-keys-in-bulk">Warn me when changing citation keys in bulk</h4>
 <p>For those who are curious about what the <code>Clear/Generate BibTeX key</code> right-click options do, this will warn
 you if you are doing this on more than 10 (default) at the same time, to prevent your curiosity from changing
