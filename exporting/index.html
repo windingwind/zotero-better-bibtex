@@ -1382,14 +1382,12 @@ tex.origtitle= All This &amp; More
 tex.origtitle: All This &amp; More
 </code></pre><p>The difference between lines with an <code>=</code> or an <code>:</code> is that the fields marked with <code>=</code> are considered to be valid (&ldquo;raw&rdquo;) latex and will be passed on into the generated files as-is. The lines marked with <code>:</code> are assumed to be plain-text and LaTeX special characters (such as the <code>&amp;</code> above) will be escaped.</p>
 <h3 id="csl-fields">CSL fields</h3>
-<p>The final way to add fields is by using CSL fields in the format <code>{:original-date: 1856}</code> or <code>Original Date: 1856</code> on a line of its own. These fields will not only be
-exported to Bib(La)TeX, but will also be <a href="https://forums.zotero.org/discussion/3673/original-date-of-publication/">picked up</a> by the Zotero Bibliography manager, even
-though not all Zotero styles yet support this.</p>
+<p>The final way to add fields is by using <a href="https://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables">CSL fields</a> in the
+format <code>{:original-date: 1856}</code> or <code>Original Date: 1856</code> on a line of its own. These fields will not only be exported to Bib(La)TeX, but will
+also be <a href="https://forums.zotero.org/discussion/3673/original-date-of-publication/">picked up</a> by the Zotero Bibliography manager, even though not all Zotero styles yet support this.</p>
 <p>Note that the default biblatex styles do not seem to support origdate; you can find possible solutions for this at Stack
-Exchange
-<a href="http://tex.stackexchange.com/questions/142999/the-proper-way-to-cite-the-earliest-publication-date-in-brackets-followed-by">here</a>
-and
-<a href="http://tex.stackexchange.com/questions/55859/getting-origyear-to-work-in-biblatex">here</a>.</p>
+Exchange <a href="http://tex.stackexchange.com/questions/142999/the-proper-way-to-cite-the-earliest-publication-date-in-brackets-followed-by">here</a>
+and <a href="http://tex.stackexchange.com/questions/55859/getting-origyear-to-work-in-biblatex">here</a>.</p>
 <h3 id="changing-the-exported-reference-type">Changing the exported reference type</h3>
 <p>If you add a field called <code>referencetype</code> using either one of these methods, that value will be used as the reference type
 instead of the one usually inferred from the Zotero reference type. You can use this to create, for example,
