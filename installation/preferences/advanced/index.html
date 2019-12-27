@@ -1403,7 +1403,7 @@ when set to &lsquo;match&rsquo;, only @strings declared in the @strings section 
 <h4 id="sentence-case-titles-on-import">Sentence-case titles on import:</h4>
 <p>Bib(La)TeX references ought to be stored in Title Case; Zotero references are expected to be entered as sentence-case. With this option on, BBT will try to sentence-case
 during import. This sentence-casing uses heuristics, no natural language processing is performed, and the results are not perfect. You can turn this off, but you may then also want
-to disable exportTitleCase (which has its own problems, see the help entry for that option on this page). With &lsquo;yes, but try to exclude already-sentence-cased titles&rsquo;, BBT will attempt to detect
+to disable <code>Apply title-casing to titles</code> (which has its own problems, see the help entry for that option on this page). With &lsquo;yes, but try to exclude already-sentence-cased titles&rsquo;, BBT will attempt to detect
 titles that are already sentence cased and leave them as-is on import.</p>
 <p>Options:</p>
 <ul>
@@ -1414,7 +1414,7 @@ titles that are already sentence cased and leave them as-is on import.</p>
 <h4 id="insert-case-protection-for-braces">Insert case-protection for braces:</h4>
 <p>On import, BBT will add case-protection (<!-- raw HTML omitted -->&hellip;<!-- raw HTML omitted -->) to titles that have words in {Braces}. There's plenty of bib(la)tex files
 out there that do this a little overzealously, and you may not like the resulting HTML code in your items, even though this is what the braces mean in bib(la)tex, and
-Zotero supports it. If you turn this off, the markup is omitted during import. In <code>strict</code> mode, all braces that bib(la)tex would interpret as case protection (<a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">which is
+Zotero supports it. If you turn this off, the markup is omitted during import. When you select <code>yes</code>, all braces that bib(la)tex would interpret as case protection (<a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">which is
 not all of them</a>) are converted to <code>span</code> elements. In <code>as-needed</code> mode, the number of <code>span</code> elements is minimized.</p>
 <p>Options:</p>
 <ul>
