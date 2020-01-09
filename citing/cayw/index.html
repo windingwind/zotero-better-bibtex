@@ -1372,7 +1372,7 @@ Better BibTeX for Zotero
 
 
 
-<p><strong>PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; <code>curl</code> and other programmatic such as from editors access will work.</strong></p>
+<p><strong>PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; <code>curl</code> and other programmatic access such as from editors access will work.</strong></p>
 <p>Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!</p>
 <h2 id="editor-integration">Editor integration</h2>
 <h3 id="vim">vim</h3>
@@ -1429,7 +1429,15 @@ the following URL parameters:</p>
 </tr>
 <tr>
 <td><code>minimize</code></td>
-<td>Any non-empty value minimize all Firefox windows after a pick</td>
+<td>Any non-empty value will minimize Zotero windows after a pick</td>
+</tr>
+<tr>
+<td><code>texstudio</code></td>
+<td>Any non-empty value will try to push the pick to TeXstudio</td>
+</tr>
+<tr>
+<td><code>selected</code></td>
+<td>Any non-empty value will use the current selection in Zotero rather than popping up the pick window</td>
 </tr>
 </tbody>
 </table>
