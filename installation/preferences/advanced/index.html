@@ -1386,7 +1386,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>Snippet of javascript to run <a href="/zotero-better-bibtex/exporting/scripting/">after each reference generation</a>.</p>
 <h4 id="string-definitions">@string definitions</h4>
 <p>default: <code>&lt;not set&gt;</code></p>
-<p>If you have externally maintained @string vars paste them here and they will be resolved for subsequent imports</p>
+<p>If you have externally maintained <code>@string</code> vars paste them here and they will be resolved for subsequent imports. These should be entered as <code>@string</code> declarations, such as <code>@string{IEEE_J_PWRE = &quot;{IEEE} Transactions on Power Electronics&quot;}</code>, not just the var name.</p>
 <h3 id="export">Export</h3>
 <h4 id="apply-title-casing-to-titles">Apply title-casing to titles</h4>
 <p>default: <code>yes</code></p>
@@ -1396,6 +1396,14 @@ casing, you can turn this off to suppress <a href="/zotero-better-bibtex/support
 <p>default: <code>yes</code></p>
 <p>If you're dead-set on ignoring both BibTeX/BibLaTeX best practice and the Zotero recommendations on title/sentence
 casing, you can turn this off to suppress <a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">automatic brace-protection for words with uppercase letters</a>.</p>
+<h4 id="retain-export-cache-across-upgrades">Retain export cache across upgrades</h4>
+<p>default: <code>no</code></p>
+<p>By default, BBT clears all caches whenever BBT or Zotero is upgraded. I can't realistically predict whether a change in Zotero or BBT is going to affect the output
+generated for any given item, so to be sure you always have the latest export-affecting fixes, the caches are discarded when a new version of either is detected. If you
+have a very large library however, of which you regularly export significant portions, you might want to retain the cached items even if that does come with the risk that
+you get wrong output on export that has been fixed in the interim.</p>
+<p>If you turn this on, the <em>only</em> problem with export you are allowed to report is that the cache is getting dropped on upgrade. Before you report absolutely <em>anything</em> else, you <em>must</em>
+clear the cache and reproduce the problem. When you turn this off, the cache will be dropped.</p>
 <h3 id="import">Import</h3>
 <h4 id="sentence-case-titles-on-import">Sentence-case titles on import:</h4>
 <p>default: <code>yes, but try to exclude already-sentence-cased titles</code></p>
