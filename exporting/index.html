@@ -1326,6 +1326,7 @@ Better BibTeX for Zotero
         <li><a href="#changing-the-exported-reference-type">Changing the exported reference type</a></li>
       </ul>
     </li>
+    <li><a href="#background-exports">Background exports</a></li>
   </ul>
 </nav>
     </div>
@@ -1392,6 +1393,14 @@ and <a href="http://tex.stackexchange.com/questions/55859/getting-origyear-to-wo
 <p>If you add a field called <code>referencetype</code> using either one of these methods, that value will be used as the reference type
 instead of the one usually inferred from the Zotero reference type. You can use this to create, for example,
 <code>@customa{citekeyhere, ....}</code> type references.</p>
+<h2 id="background-exports">Background exports</h2>
+<p>To help out with larger libraries, BBT will export using an isolated thread (&ldquo;worker thread&rdquo;), which will prevent Zotero from locking up during exports.
+This was introduced in 5.2.0; at time of writing it passes all tests, and feedback so far has been positive, but it's a wild departure from how Zotero exports work, so
+I consider it experimental at this stage. If you are experiencing errors,</p>
+<ul>
+<li>please do report them, and</li>
+<li>you can (temporarily I hope) disable by going into the BBT advanced preferences and set the number of workers to <code>0</code>.</li>
+</ul>
 
 
 
