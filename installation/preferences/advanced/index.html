@@ -1390,20 +1390,14 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h3 id="export">Export</h3>
 <h4 id="apply-title-casing-to-titles">Apply title-casing to titles</h4>
 <p>default: <code>yes</code></p>
-<p>If you're dead-set on ignoring both BibTeX/BibLaTeX best practice and the Zotero recommendations on title/sentence
-casing, you can turn this off to suppress <a href="/zotero-better-bibtex/support/faq/#bbt-is-changing-the-capitalization-of-my-titles-why">title casing for English references</a>.</p>
+<p>If you're dead-set on ignoring both BibTeX/BibLaTeX best practice (see the BBT FAQ) and the Zotero recommendations on title/sentence casing, you can turn this off to suppress <a href="/zotero-better-bibtex/support/faq/#bbt-is-changing-the-capitalization-of-my-titles-why">title casing for English references</a></p>
 <h4 id="apply-brace-protection-to-capitalized-words">Apply brace-protection to capitalized words</h4>
 <p>default: <code>yes</code></p>
-<p>If you're dead-set on ignoring both BibTeX/BibLaTeX best practice and the Zotero recommendations on title/sentence
-casing, you can turn this off to suppress <a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">automatic brace-protection for words with uppercase letters</a>.</p>
+<p>If you're dead-set on ignoring both BibTeX/BibLaTeX best practice (see the BBT FAQ) and the Zotero recommendations on title/sentence casing, you can turn this off to suppress <a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">automatic brace-protection for words with uppercase letters</a>.</p>
 <h4 id="retain-export-cache-across-upgrades">Retain export cache across upgrades</h4>
 <p>default: <code>no</code></p>
-<p>By default, BBT clears all caches whenever BBT or Zotero is upgraded. I can't realistically predict whether a change in Zotero or BBT is going to affect the output
-generated for any given item, so to be sure you always have the latest export-affecting fixes, the caches are discarded when a new version of either is detected. If you
-have a very large library however, of which you regularly export significant portions, you might want to retain the cached items even if that does come with the risk that
-you get wrong output on export that has been fixed in the interim.</p>
-<p>If you turn this on, the <em>only</em> problem with export you are allowed to report is that the cache is getting dropped on upgrade. Before you report absolutely <em>anything</em> else, you <em>must</em>
-clear the cache and reproduce the problem. When you turn this off, the cache will be dropped.</p>
+<p>By default, BBT clears all caches whenever BBT or Zotero is upgraded. I can't realistically predict whether a change in Zotero or BBT is going to affect the output generated for any given item, so to be sure you always have the latest export-affecting fixes, the caches are discarded when a new version of either is detected. If you have a very large library however, of which you regularly export significant portions, you might want to retain the cached items even if that does come with the risk that you get wrong output on export that has been fixed in the interim.</p>
+<p>If you turn this on, the <em>only</em> problem with export you are allowed to report is that the cache is getting dropped on upgrade. Before you report absolutely <em>anything</em> else, you <em>must</em> clear the cache and reproduce the problem. When you change this setting, as with any setting change, the cache will be dropped.</p>
 <h4 id="parallel-background-exports">Parallel background exports:</h4>
 <p>default: <code>1</code></p>
 <p>BBT can now perform its exports in a separate thread, and should no longer block Zotero's UI pretty much regardless of how large your library is.
@@ -1412,10 +1406,10 @@ and get the old (blocking) behavior back.</p>
 <h3 id="import">Import</h3>
 <h4 id="sentence-case-titles-on-import">Sentence-case titles on import:</h4>
 <p>default: <code>yes, but try to exclude already-sentence-cased titles</code></p>
-<p>Bib(La)TeX references ought to be stored in Title Case; Zotero references are expected to be entered as sentence-case. With this option on, BBT will try to sentence-case
-during import. This sentence-casing uses heuristics, no natural language processing is performed, and the results are not perfect. You can turn this off, but you may then also want
-to disable <code>Apply title-casing to titles</code> (which has its own problems, see the help entry for that option on this page). With &lsquo;yes, but try to exclude already-sentence-cased titles&rsquo;, BBT will attempt to detect
-titles that are already sentence cased and leave them as-is on import.</p>
+<p>Bib(La)TeX references ought to be stored in Title Case; Zotero references are expected to be entered as sentence-case.</p>
+<p>With this option on, BBT will try to sentence-case during import. This sentence-casing uses heuristics, no natural language processing is performed, and the results are not perfect.</p>
+<p>You can turn this off, but you may then also want to disable <code>Apply title-casing to titles</code> (which has its own problems, see the help entry for that option on this page).
+With &lsquo;yes, but try to exclude already-sentence-cased titles&rsquo;, BBT will attempt to detect titles that are already sentence cased and leave them as-is on import.</p>
 <p>Options:</p>
 <ul>
 <li>yes, but try to exclude already-sentence-cased titles</li>
@@ -1424,10 +1418,9 @@ titles that are already sentence cased and leave them as-is on import.</p>
 </ul>
 <h4 id="insert-case-protection-for-braces">Insert case-protection for braces:</h4>
 <p>default: <code>minimal</code></p>
-<p>On import, BBT will add case-protection (<!-- raw HTML omitted -->&hellip;<!-- raw HTML omitted -->) to titles that have words in {Braces}. There's plenty of bib(la)tex files
-out there that do this a little overzealously, and you may not like the resulting HTML code in your items, even though this is what the braces mean in bib(la)tex, and
-Zotero supports it. If you turn this off, the markup is omitted during import. When you select <code>yes</code>, all braces that bib(la)tex would interpret as case protection (<a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">which is
-not all of them</a>) are converted to <code>span</code> elements. In <code>as-needed</code> mode, the number of <code>span</code> elements is minimized.</p>
+<p>On import, BBT will add case-protection (<!-- raw HTML omitted -->&hellip;<!-- raw HTML omitted -->) to titles that have words in {Braces}.</p>
+<p>There's plenty of bib(la)tex files out there that do this a little overzealously, and you may not like the resulting HTML code in your items, even though this is what the braces mean in bib(la)tex, and Zotero supports it.</p>
+<p>If you turn this off, the markup is omitted during import. When you select &lsquo;yes&rsquo;, all braces that bib(la)tex would interpret as case protection (<a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">which is not all of them</a>) are converted to <code>span</code> elements. In <code>minimal</code> mode, the number of <code>span</code> elements is minimized.</p>
 <p>Options:</p>
 <ul>
 <li>minimal</li>
