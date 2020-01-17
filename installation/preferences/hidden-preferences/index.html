@@ -1450,9 +1450,11 @@ if a math-mode command is available. Only useful when <code>mapUnicode</code> is
 <p>Any characters entered here will prefer a text-mode LaTeX-command counterpart over a math-mode, if a text-mode command is available.
 Only useful when <code>mapUnicode</code> is <code>conservative</code>. Characters specified in <code>mapMath</code> take presedence over characters specified in <code>mapText</code>.</p>
 <h3 id="mapunicode">mapUnicode</h3>
-<p>default: <code>conservative</code></p>
+<p>default: <code>minimal-packages</code></p>
 <p>When a unicode character can be exported as either a math-mode or text-mode command, map to:</p>
 <ul>
+<li><code>minimal-packages</code>: if both a math-mode and a text-mode mapping is available, use the version that does not require
+extra packages to be loaded.</li>
 <li><code>conservative</code>: if both a math-mode and a text-mode mapping is available, stay in the mode of the previously mapped
 character if possible. This minimizes the number of generated <code>$</code>s in the output.</li>
 <li><code>text</code>: if both a math-mode and a text-mode mapping is available, prefer text.</li>
