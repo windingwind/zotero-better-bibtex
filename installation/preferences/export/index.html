@@ -1339,7 +1339,7 @@ Better BibTeX for Zotero
         <li><a href="#bibtex">BibTeX</a></li>
         <li><a href="#biblatex">BibLaTeX</a></li>
         <li><a href="#fields">Fields</a></li>
-        <li><a href="#journal-abbreviations">Journal abbreviations</a></li>
+        <li><a href="#miscellaneous">Miscellaneous</a></li>
       </ul>
     </li>
   </ul>
@@ -1438,14 +1438,7 @@ BibTeX compilation will likely error out without the package loaded.</p>
 <li>for JabRef 3</li>
 <li>for JabRef 4</li>
 </ul>
-<h4 id="include-comments-about-potential-problems-with-the-references">Include comments about potential problems with the references</h4>
-<p>default: <code>no</code></p>
-<p>Generate quality reports for exported references.</p>
-<h4 id="include-automatic-tags-in-export">Include automatic tags in export</h4>
-<p>default: <code>yes</code></p>
-<p>Some importers or Zotero extensions (such as the ShortDOI manager for example) create tags on items that are more for item management than that
-they are descriptive of the item. When this is off, such tags will not be included in the export.</p>
-<h3 id="journal-abbreviations">Journal abbreviations</h3>
+<h3 id="miscellaneous">Miscellaneous</h3>
 <h4 id="automatically-abbreviate-journal-title-if-none-is-set-explicitly">Automatically abbreviate journal title if none is set explicitly</h4>
 <p>default: <code>no</code></p>
 <p>If set, generates journal abbreviations on export using the Zotero journal abbreviator, according to the abbreviation style selected in the list below the checkbox.</p>
@@ -1453,6 +1446,31 @@ they are descriptive of the item. When this is off, such tags will not be includ
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>Select the style for auto-abbreviation. Only applicable to Juris-M; in Zotero, the style for automatic
 abbreviation is not configurable.</p>
+<h4 id="include-comments-about-potential-problems-with-the-references">Include comments about potential problems with the references</h4>
+<p>default: <code>no</code></p>
+<p>Generate quality reports for exported references.</p>
+<h4 id="include-automatic-tags-in-export">Include automatic tags in export</h4>
+<p>default: <code>yes</code></p>
+<p>Some importers or Zotero extensions (such as the ShortDOI manager for example) create tags on items that are more for item management than that
+they are descriptive of the item. When this is off, such tags will not be included in the export.</p>
+<h4 id="when-converting-to-plain-text-latex-commands">When converting to plain-text latex commands:</h4>
+<p>default: <code>Minimize the number of switches between math-mode and text-mode</code></p>
+<p>When a unicode character can be exported as either a math-mode or text-mode command, map to:</p>
+<ul>
+<li><code>minimal-packages</code>: if both a math-mode and a text-mode mapping is available, use the version that does not require
+extra packages to be loaded.</li>
+<li><code>conservative</code>: if both a math-mode and a text-mode mapping is available, stay in the mode of the previously mapped
+character if possible. This minimizes the number of generated <code>$</code>s in the output.</li>
+<li><code>text</code>: if both a math-mode and a text-mode mapping is available, prefer text.</li>
+<li><code>math</code>: if both a math-mode and a text-mode mapping is available, prefer math.</li>
+</ul>
+<p>Options:</p>
+<ul>
+<li>Minimize additional latex packages required</li>
+<li>Minimize the number of switches between math-mode and text-mode</li>
+<li>Prefer text-mode replacements</li>
+<li>Prefer math-mode replacements</li>
+</ul>
 <h4 id="automatic-export">Automatic export</h4>
 <p>default: <code>On Change</code></p>
 <p>Determines when <a href="/zotero-better-bibtex/exporting/">automatic exports</a> are kicked off. Having it disabled still marks
