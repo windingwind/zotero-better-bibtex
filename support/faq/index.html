@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.63.1" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1365,15 +1365,15 @@ days</a>. BBT is installed
 inside Zotero instead of in the browser. Please see the <a href="/zotero-better-bibtex/installation/">installation
 instructions</a> to get started with BBT.</p>
 <h2 id="bbt-is-changing-the-capitalization-of-my-titles----why">BBT is changing the capitalization of my titles &ndash; why?</h2>
-<p>There isn't a straightforward one-to-one mapping for all Zotero to Bib(La)TeX
+<p>There isn&rsquo;t a straightforward one-to-one mapping for all Zotero to Bib(La)TeX
 fields. For most I can make reasonable choices, but there are some things where
 Better BibTeX takes a little more liberties with your references in order to get
 sensible output.</p>
 <p>Title fields in particular are a total mess. Zotero <a href="https://zotero-manual.github.io/zotero-manual/adding-items#sentence-and-title-case">recommends having your
 titles in sentence
 case</a>
-because that's what the embedded citation processor expects, but of course,
-BibLaTeX expects your titles to be in Title Case&hellip; <em>but only if they're in
+because that&rsquo;s what the embedded citation processor expects, but of course,
+BibLaTeX expects your titles to be in Title Case&hellip; <em>but only if they&rsquo;re in
 English</em>. Nice. In order to translate the Zotero recommendation into Bib(La)TeX
 best practice, BBT will title-case the titles of English references. English
 references, as far as BBT is concerned, are those references that have their
@@ -1403,18 +1403,18 @@ Except, those Title Cased words which BBT changed itself will <em>not</em> be wr
 in double-braces, as it <em>is</em> OK for the styles to change casing for those,
 depending on the style at play. So <code>I like ISDN heaps better than dialup</code> would
 output to <code>I Like {{ISDN}} Heaps Better than Dialup</code>. Apparently non-English
-titles are supposed to be in sentence case, so BBT doesn't touch those.</p>
-<p>You can steer this process somewhat by enclosing the parts you don't want case
+titles are supposed to be in sentence case, so BBT doesn&rsquo;t touch those.</p>
+<p>You can steer this process somewhat by enclosing the parts you don&rsquo;t want case
 manipulation on in <code>&lt;span class=&quot;nocase&quot;&gt;...&lt;/span&gt;</code>. Anything between those
-won't be touched by Zotero or BBT. This is formally supported by Zotero and will
+won&rsquo;t be touched by Zotero or BBT. This is formally supported by Zotero and will
 work in the Word/LibreOffice plugins as well as in the BibTeX export. This will
 be required for words you wish to always keep lowercase, for example. Also, if
-you don't generally use Zotero for generating bibliographies but just for BibTeX
+you don&rsquo;t generally use Zotero for generating bibliographies but just for BibTeX
 reference management, you can turn on the hidden preference
 <a href="/zotero-better-bibtex/installation/preferences/hidden-preferences/#suppresstitlecase">suppressTitleCase</a> to keep BBT
 from applying title-casing, but take note that if you do this, the
 bibliographies you get from Zotero and the bibliograhies you get through
-Bib(La)TeX will differ, and you can't complain about this.</p>
+Bib(La)TeX will differ, and you can&rsquo;t complain about this.</p>
 <h2 id="why-the-double-braces">Why the double braces?</h2>
 <p>But why then the double-braces (<code>{{...}}</code>) rather than the commonly recommended
 single braces (<code>{...}</code>)?</p>
@@ -1430,7 +1430,7 @@ surprise to me. So <code>\emph{Homo sapiens}</code> is case-protected (will not 
 recapitalized by Bib(La)TeX), but <code>{\emph{Homo sapiens}}</code> <em>is not</em>
 case-protected so it <em>will</em> be recapitalized. So to get predictable
 behavior, this is written out as <code>{{\emph{Homo sapiens}}}</code>.</li>
-<li>casing behavior over the <em>whole</em> reference field depends on <a href="https://github.com/retorquere/zotero-better-bibtex/issues/541#issuecomment-240156274">whether there's
+<li>casing behavior over the <em>whole</em> reference field depends on <a href="https://github.com/retorquere/zotero-better-bibtex/issues/541#issuecomment-240156274">whether there&rsquo;s
 a slash-command at the first
 position</a>
 of the title?</li>
@@ -1446,7 +1446,7 @@ now ignores exactly that pattern (see
 <p>The double-bracing is the only unambiguous rule I could construct that
 consistently gets the rendered reference right (so far).</p>
 <p>Bib(La)TeX provides a never-ending stream of edge cases, which BBT tries to
-decide algorithmically. I try to keep the resulting file as pretty as I can (I'm
+decide algorithmically. I try to keep the resulting file as pretty as I can (I&rsquo;m
 sensitive to the aesthetics myself), but the target is best described as &ldquo;given
 reasonable input, generate well-rendering output&rdquo;, and
 reasonable-to-well-rendering in the BBT case will have to include &ldquo;follows
@@ -1459,7 +1459,7 @@ LaTeX over pretty-looking LaTeX&rdquo;.</p>
 <li>If you have dynamic (query-based) groups these will not be imported.</li>
 <li>If you have set a default folder for the pdf files in your JabRef
 preferences, the file paths in your JabRef database will be relative to that
-directory, but BBT can't read those preferences, so all attachments will
+directory, but BBT can&rsquo;t read those preferences, so all attachments will
 fail to import. You can fix this by going into Jabref and selecting <code>File</code> -
 <code>Library properties</code> option, then filling out the path to the attachments
 directory in <code>general file directory</code>.</li>
