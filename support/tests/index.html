@@ -1375,12 +1375,12 @@ Better BibTeX for Zotero
 <p>then a few things I&rsquo;d really prefer you do before anything else. <strong>In principle</strong> the tests are safe to run on the user account that also has your own library. I&rsquo;ve been doing this for years. Still, it would be good to verify rather than trust this. The next steps are all reversible if things don&rsquo;t go as expected.</p>
 <ul>
 <li>Make sure Zotero is not running. If you&rsquo;re on a Mac, that means <code>cmd-Q</code></li>
-<li>copy the Zotero profiles to a safe place. The profiles live in <code>~/Library/Application\ Support/Zotero/</code> if you&rsquo;re on a Mac, <code>~/.zotero</code> if you&rsquo;re on Linux.</li>
+<li>copy the Zotero profiles to a safe place. The profiles live in <code>~/Library/Application\ Support/Zotero</code> if you&rsquo;re on a Mac, <code>~/.zotero</code> if you&rsquo;re on Linux.</li>
 <li><code>mv ~/Zotero ~/Zotero.saved</code></li>
 <li><code>touch ~/Zotero</code></li>
 </ul>
 <p>this is all temporary, and when all is verified to be setup correctly, we&rsquo;ll undo them.</p>
-<p><code>~/Library/Application\ Support/Zotero/</code> holds the administration of your Zotero profiles. The test setup will add a new profile leaving your existing profile(s) untouched. But better safe than sorry, which is why we&rsquo;re holding a copy.</p>
+<p><code>~/Library/Application\ Support/Zotero</code> / <code>~/.zotero</code> holds the administration of your Zotero profiles. The test setup will add a new profile leaving your existing profile(s) untouched. But better safe than sorry, which is why we&rsquo;re holding a copy.</p>
 <p>The <code>mv</code> sets aside your library so that Zotero won&rsquo;t be able to find it. The <code>touch</code> creates an empty file in its place. The tests don&rsquo;t use that location, they use <code>~/.BBTZ5TEST</code> instead, but if for whatever reason that doesn&rsquo;t work, Zotero will try to write to <code>~/Zotero/something</code>, and since <code>~/Zotero</code> is now a file instead of a directory, Zotero will complain loudly if that happens, and we know we must back out.</p>
 <p>Now then:</p>
 <ul>
