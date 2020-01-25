@@ -1366,7 +1366,12 @@ Better BibTeX for Zotero
 
 
 <p>Please <strong>DO NOT DO THIS</strong> without an open issue on the github tracker. I&rsquo;ve been running tests this way for years, but I&rsquo;d still prefer to guide you through this to prevent any risks to your citation library. The test suite has only been tested on MacOS and Linux. I doubt it&rsquo;ll run on Windows, and I don&rsquo;t know what will go wrong when you test. If you&rsquo;re on Windows, <strong>DO NOT</strong> run this on the same account that holds your actual Zotero library.</p>
-<p>The tests require an installed Zotero, python 3.6+, and node 12+</p>
+<p>The tests require an installed Zotero, python 3.6+, and node 12+, a working <code>gcc</code>, and libgit. On MacOS, that requires:</p>
+<ul>
+<li><code>brew install libgit2</code></li>
+<li>if <code>xcode-select -p</code> doesn&rsquo;t respond with <code>/Applications/Xcode.app/Contents/Developer</code>: <code>xcode-select --install</code> (select <code>install</code>, not <code>get Xcode</code> in the popup that follows).</li>
+</ul>
+<p>Then:</p>
 <ul>
 <li><code>git clone https://github.com/retorquere/zotero-better-bibtex.git</code></li>
 <li><code>cd zotero-better-bibtex</code></li>
