@@ -39,5 +39,14 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
       <description>BBT is currently available in English, German, French and Brazilian Portuguese. You can help out by adding new translations or fixing existing ones on Crowdin.</description>
     </item>
     
+    <item>
+      <title>Running the BBT test suite</title>
+      <link>/zotero-better-bibtex/support/tests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/support/tests/</guid>
+      <description>Please DO NOT DO THIS without an open issue on the github tracker. I&amp;rsquo;ve been running tests this way for years, but I&amp;rsquo;d still prefer to guide you through this to prevent any risks to your citation library. The test suite has only been tested on MacOS and Linux. I doubt it&amp;rsquo;ll run on Windows, and I don&amp;rsquo;t know what will go wrong when you test. If you&amp;rsquo;re on Windows, DO NOT run this on the same account that holds your actual Zotero library.</description>
+    </item>
+    
   </channel>
 </rss>

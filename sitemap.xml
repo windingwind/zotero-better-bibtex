@@ -27,7 +27,15 @@
   </url>
   
   <url>
+    <loc>/zotero-better-bibtex/support/faq/</loc>
+  </url>
+  
+  <url>
     <loc>/zotero-better-bibtex/exporting/pull/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/support/performance/</loc>
   </url>
   
   <url>
@@ -36,6 +44,14 @@
   
   <url>
     <loc>/zotero-better-bibtex/exporting/advanced/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/support/translations/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/support/tests/</loc>
   </url>
   
   <url>
@@ -99,10 +115,6 @@
   </url>
   
   <url>
-    <loc>/zotero-better-bibtex/support/faq/</loc>
-  </url>
-  
-  <url>
     <loc>/zotero-better-bibtex/tags/git/</loc>
   </url>
   
@@ -112,10 +124,6 @@
   
   <url>
     <loc>/zotero-better-bibtex/tags/overleaf/</loc>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/support/performance/</loc>
   </url>
   
   <url>
@@ -132,10 +140,6 @@
   
   <url>
     <loc>/zotero-better-bibtex/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>/zotero-better-bibtex/support/translations/</loc>
   </url>
   
 </urlset>
