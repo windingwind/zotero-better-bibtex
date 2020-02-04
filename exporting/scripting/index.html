@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.63.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1505,7 +1505,7 @@ the Zotero item looks like to the translator.</p>
 <pre><code>if (Translator.BetterTeX &amp;&amp; item.DOI) {
   var doi = item.DOI;
   if (doi.indexOf('doi:') != 0) { doi = 'doi:' + doi; }
-  reference.add({ name: 'note', duplicate: true, value: '[' + doi + ']' });
+  reference.add({ name: 'note', value: '[' + doi + ']' });
 }
 </code></pre><h3 id="add-arxiv-data">Add arXiv data</h3>
 <p>arXiv is a bit of an odd duck. It really isn&rsquo;t a journal, so it shouldn&rsquo;t be the journal title, and their own recommendations on how to include arXiv IDs is a little lacking: <a href="https://arxiv.org/help/faq/references">this</a> doesn&rsquo;t say where to include the <code>arXiv:...</code> identfier, and <a href="https://arxiv.org/help/hypertex/bibstyles">this</a> says <em>not</em> to include it. Nor does it give any recommendations on how to achieve the <a href="https://arxiv.org/help/faq/references">desired output</a>.</p>
