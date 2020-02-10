@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.64.0" />
+    <meta name="generator" content="Hugo 0.64.1" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1370,6 +1370,7 @@ Better BibTeX for Zotero
         <li><a href="#maptext">mapText</a></li>
         <li><a href="#newtranslatorsaskrestart">newTranslatorsAskRestart</a></li>
         <li><a href="#parseparticles">parseParticles</a></li>
+        <li><a href="#postscriptoverride">postscriptOverride</a></li>
         <li><a href="#rawimports">rawImports</a></li>
         <li><a href="#rawlatag">rawLaTag</a></li>
         <li><a href="#relativefilepaths">relativeFilePaths</a></li>
@@ -1476,6 +1477,15 @@ but you can disable this by checking &ldquo;Do not ask again&rdquo; in that dial
 <h3 id="parseparticles">parseParticles</h3>
 <p>default: <code>yes</code></p>
 <p>Name particle handling. Only turn on when requested and we&rsquo;re talking about it on github.</p>
+<h3 id="postscriptoverride">postscriptOverride</h3>
+<p>default: <code>&lt;not set&gt;</code></p>
+<p>You can use a custom postscript per export directory:</p>
+<ol>
+<li>Edit the hidden preference <code>postscriptOverride</code>, and set it to a filename like <code>postscript.js</code></li>
+<li>In the directory where you intend to export to, create a file called <code>postscript.js</code> (or whatever you set the preference to) and add the postscript you want there</li>
+<li>Export to that directory.</li>
+</ol>
+<p>A postscript override will disable caching for that export.</p>
 <h3 id="rawimports">rawImports</h3>
 <p>default: <code>no</code></p>
 <p>When you set this on, BBT will import bib files leaving any LaTeX commands as-is, and add the #LaTeX tag for raw re-exports.</p>
