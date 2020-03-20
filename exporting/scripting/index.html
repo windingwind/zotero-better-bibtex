@@ -1528,7 +1528,7 @@ the Zotero item looks like to the translator.</p>
 <p>Since BibTeX doesn&rsquo;t really have well-defined behavior across styles the way BibLaTeX does, BBT can&rsquo;t generate URL data which is compatible with all BibTeX styles. If you know the style you use yourself, you can add the data in the format you want using a postscript. The script below will add a note for the last accessed date, and a <code>\url</code> tag within the <code>howpublished</code> field, but only for BibTeX, not for BibLaTeX, and only for <code>webpage</code> entries:</p>
 <pre><code>if (Translator.BetterBibTeX &amp;&amp; item.itemType === 'webpage') {
     if (item.accessDate) {
-      reference.add({ name: 'note', value: &quot;(accessed &quot; + item.accessDate + &quot;)&quot; });
+      reference.add({ name: 'note', value: &quot;(accessed &quot; + item.accessDate.replace(/\s*T?\d+:\d+:\d+.*/, '') + &quot;)&quot; });
     }
     if (item.url) {
       reference.add({ name: 'howpublished', bibtex: &quot;{\\url{&quot; + reference.enc_verbatim({value: item.url}) + &quot;}}&quot; });
