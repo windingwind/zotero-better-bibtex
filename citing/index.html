@@ -1494,6 +1494,8 @@ More than four authors: First letters of last names of first three authors conca
   
     <li><code>authshort</code> / <code>edtrshort</code>: The last name if one author is given; the first character of up to three authors&rsquo; last names if more than one author is given. A plus character is added, if there are more than three authors.</li>
   
+    <li><code>date</code>: The date of the publication</li>
+  
     <li><code>firstpage</code>: The number of the first page of the publication (Caution: this will return the lowest number found in the pages field, since BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.)</li>
   
     <li><code>journal</code>: returns the journal abbreviation, or, if not found, the journal title, If &lsquo;automatic journal abbreviation&rsquo; is enabled in the BBT settings,
@@ -1506,6 +1508,8 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
     <li><code>library</code>: returns the name of the shared group library, or nothing if the reference is in your personal library</li>
   
     <li><code>month</code>: the month of the publication</li>
+  
+    <li><code>origdate</code>: the original date of the publication</li>
   
     <li><code>origyear</code>: the original year of the publication</li>
   
@@ -1523,7 +1527,7 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
   
   <li><code>0</code>: a pseudo-function that sets the citekey disambiguation postfix to numeric (<code>-1</code>, <code>-2</code>, etc, like the standard Zotero Bib(La)TeX translators do) rather than alphabetic (<code>a</code>, <code>b</code>, <code>c</code>). Does not add any text to the citekey otherwise.</li>
   <li><code>&gt;X</code>: a pseudo-function which aborts the current pattern generation if what came before it is <code>X</code> characters or less (<code>[&gt;0]</code> is a typical use. You would typically use this with something like <code>[auth][&gt;0][year] | [title][year]</code> which means if there's no author you get <code>title-year</code> rather than just <code>year</code>.</li>
-  <li><code>=typeName</code>: a pseudo-function that aborts the current pattern generation if the Zotero reference type does not equal <code>typeName</code>. You can test for multiple typenames at once by separating them with slashes (<code>[=journalArticle/report]</code>). Valid typeNames are: .</li>
+  <li><code>=typeName</code>: a pseudo-function that aborts the current pattern generation if the Zotero reference type does not equal <code>typeName</code>. You can test for multiple typenames at once by separating them with slashes (<code>[=journalArticle/report]</code>). Valid typeNames are: , <code>artwork</code><code>attachment</code><code>audioRecording</code><code>bill</code><code>blogPost</code><code>book</code><code>bookSection</code><code>case</code><code>classic**</code><code>computerProgram</code><code>conferencePaper</code><code>dictionaryEntry</code><code>document</code><code>email</code><code>encyclopediaArticle</code><code>film</code><code>forumPost</code><code>gazette**</code><code>hearing</code><code>instantMessage</code><code>interview</code><code>journalArticle</code><code>letter</code><code>magazineArticle</code><code>manuscript</code><code>map</code><code>newspaperArticle</code><code>note</code><code>patent</code><code>podcast</code><code>presentation</code><code>radioBroadcast</code><code>regulation**</code><code>report</code><code>standard**</code><code>statute</code><code>thesis</code><code>treaty**</code><code>tvBroadcast</code><code>videoRecording</code><code>webpage</code>.</li>
 </ul>
 
 <p><strong>Note</strong>: the functions above all have the <code>clean</code> filter (see below) automatically applied to them. If you want more control, <code>auth</code>, <code>authIni</code>, <code>edtr</code>, &hellip; and all the author-related fields that mimic the JabRef equivalents also have capitalized versions (so <code>Auth</code>, <code>AuthIni</code>, <code>Edtr</code>, &hellip;) which follow the same algorithm but do not have any cleaning (diacritic folding, space removal, stripping of invalid citekey characters) applied. These can be used to pass through the filters specified below much like the fields from the table above. See also &ldquo;usage note&rdquo; below. For all the non-author fields, you can use the unprocessed reference fields directly:</p>
@@ -1808,11 +1812,15 @@ you want the spaces in the value passed in to be replaced with those spaces in t
   
     <li><code>fold</code>: tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
   
+    <li><code>format-date</code>: formats date as by replacing y, m and d in the format</li>
+  
     <li><code>lower</code>: Forces the text inserted by the field marker to be in lowercase. For example, <code>[auth:lower]</code> expands the last name of the first author in lowercase.</li>
   
     <li><code>nopunct</code>: Removes punctuation</li>
   
     <li><code>nopunctordash</code>: Removes punctuation and word-connecting dashes</li>
+  
+    <li><code>numeric</code>: returns the value if it&rsquo;s an integer</li>
   
     <li><code>postfix</code>: postfixes with its parameter, so <code>postfix=_</code> will add an underscore to the end if, and only if, the value
 it is supposed to postfix isn&rsquo;t empty</li>
