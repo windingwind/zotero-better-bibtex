@@ -1577,7 +1577,7 @@ the Zotero item looks like to the translator.</p>
 }
 </code></pre><h3 id="or-detect-and-protect-simple-latex-commands">Or, detect and protect (simple) LaTeX commands</h3>
 <pre><code>if (Translator.BetterTeX &amp;&amp; reference.has.journal) {
-  reference.add({ name: 'journal', value: item.publicationTitle.replace(/(\\\w+)/g, '&lt;script&gt;{$1}&lt;/script&gt;') });
+  reference.add({ name: 'journal', value: reference.has.journal.value.replace(/(\\\w+)/g, '&lt;script&gt;{$1}&lt;/script&gt;') });
 }
 </code></pre><h3 id="detect-and-protect-mathjax">Detect and protect MathJax</h3>
 <pre><code>if (Translator.BetterTeX) {
