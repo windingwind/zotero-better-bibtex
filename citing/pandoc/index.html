@@ -1453,7 +1453,8 @@ Better BibTeX for Zotero
 
 <p>You can convert a Pandoc-compatible markdown source to a LibreOffice or Word document with live citation fields connecting to Zotero. Download the <a href="../zotero.lua">Pandoc filter</a></p>
 <p>Add some metadata to your markdown file in a YAML header:</p>
-<pre><code># all the regular stuff you have here
+<pre><code>---
+# all the regular stuff you have here
 zotero:
   bibliography: http://127.0.0.1:23119/better-bibtex/library?/1/library.json
   scannable-cite: false # only relevant when your compiling to scannable-cite .odt
