@@ -1494,10 +1494,17 @@ of its own.</p>
 <li>when you export to CSL, it is attempted to map it to the corrsponding CSL fields; if none are available, it is available under their <em>zotero</em> name</li>
 <li>when you export to Better BibTeX/Better BibLaTeX, it is attempted to map it to the corresponding zotero fields; if none are available, it is available under their <em>csl variable</em> name</li>
 </ul>
+<p>There&rsquo;s three type of fields:</p>
+<ul>
+<li>text</li>
+<li>date</li>
+<li>name</li>
+</ul>
+<p>Text is just that. For dates, BBT will do its darndest to parse the crazy dates so many people seem intent in using but if you want consistent results, stick to <code>YYYY-MM-DD</code>. For names, use either just text (equivalent to a single-part name in Zotero), or <code>&lt;family name&gt; || &lt;given name&gt;</code>.</p>
 <h2 id="bbt-specific">BBT-specific</h2>
 <p>There is also a BBT-specific extra-field format that looks like</p>
 <pre><code>tex.field: value
-</code></pre><p>It is important to note that these BBT-specific fields are not recognized by any other exporter. These fields are simply copied to the output, so if you have</p>
+</code></pre><p>These fields are simply copied to the output by BBT, so if you have</p>
 <pre><code>tex.bestfield: philosophy
 </code></pre><p>you will end up with</p>
 <pre><code>  bestfield = {philosophy}
@@ -1508,7 +1515,9 @@ tex.formula= $\sum\limits_{i=1}^{n} -p(m_{i})\log_{2}(p(m_{i}))$
 </code></pre><p>and not</p>
 <pre><code>tex.corp= Black &amp; Decker
 tex.formula: $\sum\limits_{i=1}^{n} -p(m_{i})\log_{2}(p(m_{i}))$
-</code></pre><h2 id="labelvariable-list">Label/variable list</h2>
+</code></pre><p>It is important to note that these BBT-specific fields are not recognized by any other exporter. They might end up in notes for some other exporters; there&rsquo;s nothing I can do about that.</p>
+<h2 id="labelvariable-list">Label/variable list</h2>
+<p><em>note</em>: I list the Zotero fields here, not the bibtex fields. The Zotero fields are translated to bibtex fields but that translation is pretty complicated and I don&rsquo;t have a simple description of it at this time.</p>
 <table>
 <thead>
 <tr>
