@@ -51,15 +51,19 @@
   </url>
   
   <url>
-    <loc>/zotero-better-bibtex/exporting/advanced/</loc>
-  </url>
-  
-  <url>
     <loc>/zotero-better-bibtex/citing/aux-scanner/</loc>
   </url>
   
   <url>
+    <loc>/zotero-better-bibtex/exporting/extra-fields/</loc>
+  </url>
+  
+  <url>
     <loc>/zotero-better-bibtex/support/translations/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/exporting/advanced/</loc>
   </url>
   
   <url>

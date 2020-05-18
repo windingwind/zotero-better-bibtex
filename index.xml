@@ -84,16 +84,6 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
     </item>
     
     <item>
-      <title>Advanced</title>
-      <link>/zotero-better-bibtex/exporting/advanced/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/exporting/advanced/</guid>
-      <description>You are a hardcore LaTeX user If you&amp;rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
- You can add literal LaTeX anywhere in your reference by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.</description>
-    </item>
-    
-    <item>
       <title>AUX Scanner</title>
       <link>/zotero-better-bibtex/citing/aux-scanner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -103,12 +93,31 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
     </item>
     
     <item>
+      <title>Extra fields</title>
+      <link>/zotero-better-bibtex/exporting/extra-fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/extra-fields/</guid>
+      <description>In some cases the Zotero fields do not offer a place to enter the data you need to get your references just right. For this Zotero has a so-called &amp;ldquo;cheater syntax&amp;rdquo; which allows you to add extra &amp;ldquo;fields&amp;rdquo; as separate lines in the extra field all items in Zotero have. These fields are supported by the citation processor inside Zotero, and BBT understands them too, and adds one &amp;ldquo;cheater syntax of its own.</description>
+    </item>
+    
+    <item>
       <title>Translations</title>
       <link>/zotero-better-bibtex/support/translations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/support/translations/</guid>
       <description>BBT is currently available in English, German, French and Brazilian Portuguese. You can help out by adding new translations or fixing existing ones on Crowdin.</description>
+    </item>
+    
+    <item>
+      <title>Advanced</title>
+      <link>/zotero-better-bibtex/exporting/advanced/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/advanced/</guid>
+      <description>You are a hardcore LaTeX user If you&amp;rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
+ You can add literal LaTeX anywhere in your reference by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.</description>
     </item>
     
     <item>

@@ -40,6 +40,15 @@ The format is either &amp;lsquo;bibtex&amp;rsquo; or &amp;lsquo;biblatex&amp;rsq
     </item>
     
     <item>
+      <title>Extra fields</title>
+      <link>/zotero-better-bibtex/exporting/extra-fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/extra-fields/</guid>
+      <description>In some cases the Zotero fields do not offer a place to enter the data you need to get your references just right. For this Zotero has a so-called &amp;ldquo;cheater syntax&amp;rdquo; which allows you to add extra &amp;ldquo;fields&amp;rdquo; as separate lines in the extra field all items in Zotero have. These fields are supported by the citation processor inside Zotero, and BBT understands them too, and adds one &amp;ldquo;cheater syntax of its own.</description>
+    </item>
+    
+    <item>
       <title>Advanced</title>
       <link>/zotero-better-bibtex/exporting/advanced/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
