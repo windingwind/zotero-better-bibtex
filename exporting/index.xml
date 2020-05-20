@@ -20,6 +20,16 @@
     </item>
     
     <item>
+      <title>From Markdown to live citations</title>
+      <link>/zotero-better-bibtex/exporting/pandoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/pandoc/</guid>
+      <description>In addition to LaTeX, BBT plays very well with pandoc:
+ you can drag and drop citations from Zotero into your markdown documents. you can cite as you write in your favorite editor with varying levels of comfort, mostly depending on how easy (VSCode, Sublime) or hard (looking at you Scrivener) it is to extend your editor. you can even convert your markdown document into a LibreOffice/Word document with actual live Zotero references as if you had entered them into Zotero all along (see below)  Use CSL, not bibtex with pandoc Many tutorials on the use of pandoc to generate documents with citations seem to use bibtex as a bibliography format.</description>
+    </item>
+    
+    <item>
       <title>Pull export</title>
       <link>/zotero-better-bibtex/exporting/pull/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

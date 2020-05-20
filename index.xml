@@ -43,14 +43,12 @@ BBT is changing the capitalization of my titles &amp;ndash; why? There isn&amp;r
     
     <item>
       <title>From Markdown to live citations</title>
-      <link>/zotero-better-bibtex/citing/pandoc/</link>
+      <link>/zotero-better-bibtex/exporting/pandoc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/zotero-better-bibtex/citing/pandoc/</guid>
-      <description>You can convert a Pandoc-compatible markdown source to a LibreOffice or Word document with live citation fields connecting to Zotero. Download the Pandoc filter
-Add some metadata to your markdown file in a YAML header:
---- # all the regular stuff you have here zotero: bibliography: http://127.0.0.1:23119/better-bibtex/library?/1/library.json scannable-cite: false # only relevant when your compiling to scannable-cite .odt ... or you can specify them on the pandoc command line:
-pandoc -s --lua-filter=zotero.</description>
+      <guid>/zotero-better-bibtex/exporting/pandoc/</guid>
+      <description>In addition to LaTeX, BBT plays very well with pandoc:
+ you can drag and drop citations from Zotero into your markdown documents. you can cite as you write in your favorite editor with varying levels of comfort, mostly depending on how easy (VSCode, Sublime) or hard (looking at you Scrivener) it is to extend your editor. you can even convert your markdown document into a LibreOffice/Word document with actual live Zotero references as if you had entered them into Zotero all along (see below)  Use CSL, not bibtex with pandoc Many tutorials on the use of pandoc to generate documents with citations seem to use bibtex as a bibliography format.</description>
     </item>
     
     <item>
