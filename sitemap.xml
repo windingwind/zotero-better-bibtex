@@ -47,15 +47,11 @@
   </url>
   
   <url>
-    <loc>/zotero-better-bibtex/exporting/scripting/</loc>
-  </url>
-  
-  <url>
     <loc>/zotero-better-bibtex/citing/aux-scanner/</loc>
   </url>
   
   <url>
-    <loc>/zotero-better-bibtex/exporting/extra-fields/</loc>
+    <loc>/zotero-better-bibtex/exporting/scripting/</loc>
   </url>
   
   <url>
@@ -63,11 +59,15 @@
   </url>
   
   <url>
-    <loc>/zotero-better-bibtex/exporting/advanced/</loc>
+    <loc>/zotero-better-bibtex/exporting/extra-fields/</loc>
   </url>
   
   <url>
     <loc>/zotero-better-bibtex/support/tests/</loc>
+  </url>
+  
+  <url>
+    <loc>/zotero-better-bibtex/exporting/advanced/</loc>
   </url>
   
   <url>

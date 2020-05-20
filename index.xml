@@ -73,15 +73,6 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
     </item>
     
     <item>
-      <title>Scripting</title>
-      <link>/zotero-better-bibtex/exporting/scripting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/exporting/scripting/</guid>
-      <description>You wanted customized&amp;hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each reference generated in the Bib(La)TeX exporter. In this code, you have access to the reference just before it will be written out and cached. There is an API to do this, and it&amp;rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&amp;rsquo;ll add it here (it&amp;rsquo;s how the examples got here).</description>
-    </item>
-    
-    <item>
       <title>AUX Scanner</title>
       <link>/zotero-better-bibtex/citing/aux-scanner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -91,12 +82,12 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
     </item>
     
     <item>
-      <title>Extra fields</title>
-      <link>/zotero-better-bibtex/exporting/extra-fields/</link>
+      <title>Scripting</title>
+      <link>/zotero-better-bibtex/exporting/scripting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/zotero-better-bibtex/exporting/extra-fields/</guid>
-      <description>In some cases the Zotero fields do not offer a place to enter the data you need to get your references just right. For this Zotero has a so-called &amp;ldquo;cheater syntax&amp;rdquo; which allows you to add extra &amp;ldquo;fields&amp;rdquo; as separate lines in the extra field all items in Zotero have. These fields are supported by the citation processor inside Zotero, and BBT understands them too, and adds one &amp;ldquo;cheater syntax of its own.</description>
+      <guid>/zotero-better-bibtex/exporting/scripting/</guid>
+      <description>You wanted customized&amp;hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each reference generated in the Bib(La)TeX exporter. In this code, you have access to the reference just before it will be written out and cached. There is an API to do this, and it&amp;rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&amp;rsquo;ll add it here (it&amp;rsquo;s how the examples got here).</description>
     </item>
     
     <item>
@@ -109,13 +100,12 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
     </item>
     
     <item>
-      <title>Advanced</title>
-      <link>/zotero-better-bibtex/exporting/advanced/</link>
+      <title>Extra fields</title>
+      <link>/zotero-better-bibtex/exporting/extra-fields/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/zotero-better-bibtex/exporting/advanced/</guid>
-      <description>You are a hardcore LaTeX user If you&amp;rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
- You can add literal LaTeX anywhere in your reference by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.</description>
+      <guid>/zotero-better-bibtex/exporting/extra-fields/</guid>
+      <description>In some cases the Zotero fields do not offer a place to enter the data you need to get your references just right. For this Zotero has a so-called &amp;ldquo;cheater syntax&amp;rdquo; which allows you to add extra &amp;ldquo;fields&amp;rdquo; as separate lines in the extra field all items in Zotero have. These fields are supported by the citation processor inside Zotero, and BBT understands them too, and adds one &amp;ldquo;cheater syntax of its own.</description>
     </item>
     
     <item>
@@ -125,6 +115,16 @@ To deal with this problem, Better BibTeX implements an extensive caching system.
       
       <guid>/zotero-better-bibtex/support/tests/</guid>
       <description>Please DO NOT DO THIS without an open issue on the github tracker. I&amp;rsquo;ve been running tests this way for years, but I&amp;rsquo;d still prefer to guide you through this to prevent any risks to your citation library. The test suite has only been tested on MacOS and Linux. I doubt it&amp;rsquo;ll run on Windows, and I don&amp;rsquo;t know what will go wrong when you test. If you&amp;rsquo;re on Windows, DO NOT run this on the same account that holds your actual Zotero library.</description>
+    </item>
+    
+    <item>
+      <title>Advanced</title>
+      <link>/zotero-better-bibtex/exporting/advanced/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/advanced/</guid>
+      <description>You are a hardcore LaTeX user If you&amp;rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
+ You can add literal LaTeX anywhere in your reference by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.</description>
     </item>
     
     <item>
