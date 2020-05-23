@@ -1513,25 +1513,25 @@ here (it&rsquo;s how the examples got here). Postscripts are available in 4 of t
 </ol>
 <p>You can (and totally should) check in which translator your postscript is running, which you can do by testing for
 <code>Translator.&lt;id&gt;</code> where <code>&lt;id&gt;</code> is one of these four names, using something like</p>
-<pre><code>if (Translator.BetterBibLaTeX) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterBibLaTeX</span>) {
   ...
 }
-</code></pre><p>or alternately on the full name using a switch</p>
-<pre><code>switch (Translator.header.label) {
-  case 'Better BibLaTeX':
+</code></pre></div><p>or alternately on the full name using a switch</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">label</span>) {
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;Better BibLaTeX&#39;</span><span style="color:#f92672">:</span>
     ...
-    break;
-  case 'Better BibTeX':
+    <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;Better BibTeX&#39;</span><span style="color:#f92672">:</span>
     ...
-    break;
-  case 'Better CSL JSON':
+    <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;Better CSL JSON&#39;</span><span style="color:#f92672">:</span>
     ...
-    break;
-  case 'Better CSL YAML':
+    <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;Better CSL YAML&#39;</span><span style="color:#f92672">:</span>
     ...
-    break;
+    <span style="color:#66d9ef">break</span>;
 }
-</code></pre><p>If you want to run a postscript in the CSL translators but don&rsquo;t care whether it will output YAML or JSON, you can test for <code>Translator.BetterCSL</code>, which will be true when either one of <code>BetterCSLJSON</code> or <code>BetterCSLYAML</code> is active. Analogously, <code>Translator.BetterTeX</code> will be true if either of <code>Better BibTeX</code> or <code>Better BibLaTeX</code> is active.</p>
+</code></pre></div><p>If you want to run a postscript in the CSL translators but don&rsquo;t care whether it will output YAML or JSON, you can test for <code>Translator.BetterCSL</code>, which will be true when either one of <code>BetterCSLJSON</code> or <code>BetterCSLYAML</code> is active. Analogously, <code>Translator.BetterTeX</code> will be true if either of <code>Better BibTeX</code> or <code>Better BibLaTeX</code> is active.</p>
 <p>In the postscript, the reference being built is available as <code>reference</code>, and the Zotero item it is being built from is available as <code>item</code>. For backwards compatibility, in the <code>BetterBib(La)TeX</code> contexts, the reference being built is also available as <code>this</code>, and the Zotero item it is being built from as <code>this.item</code>, but use of these is discouraged now.</p>
 <p>You should really test for the translator context in your postscripts using the <code>Translator.&lt;name&gt;</code> tests mentioned above. If you don&rsquo;t because you have a postscript that pre-date postscript CSL support, you will probably be using the legacy use of <code>this</code> to set things on the reference being built, and calling <code>this.add</code> in those postscripts; since, for CSL postscripts, <code>this</code> is not set, it will make the script will non-fatally error out, so you&rsquo;re very probably good to go as-is.
 But please fix your postscripts to test for the translator context.</p>
@@ -1595,90 +1595,90 @@ the Zotero item looks like to the translator.</p>
 <h2 id="samples">Samples</h2>
 <h3 id="add-accessdate-url-for-bibtex">Add accessdate, url for BibTeX</h3>
 <p>Since BibTeX doesn&rsquo;t really have well-defined behavior across styles the way BibLaTeX does, BBT can&rsquo;t generate URL data which is compatible with all BibTeX styles. If you know the style you use yourself, you can add the data in the format you want using a postscript. The script below will add a note for the last accessed date, and a <code>\url</code> tag within the <code>howpublished</code> field, but only for BibTeX, not for BibLaTeX, and only for <code>webpage</code> entries:</p>
-<pre><code>if (Translator.BetterBibTeX &amp;&amp; item.itemType === 'webpage') {
-    if (item.accessDate) {
-      reference.add({ name: 'note', value: &quot;(accessed &quot; + item.accessDate.replace(/\s*T?\d+:\d+:\d+.*/, '') + &quot;)&quot; });
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterBibTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">itemType</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;webpage&#39;</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">accessDate</span>) {
+      <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;note&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;(accessed &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">accessDate</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s*T?\d+:\d+:\d+.*/</span>, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;)&#34;</span> });
     }
-    if (item.url) {
-      reference.add({ name: 'howpublished', bibtex: &quot;{\\url{&quot; + reference.enc_verbatim({value: item.url}) + &quot;}}&quot; });
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">url</span>) {
+      <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;howpublished&#39;</span>, <span style="color:#a6e22e">bibtex</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;{\\url{&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">enc_verbatim</span>({<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">url</span>}) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;}}&#34;</span> });
     }
   }
-</code></pre><h3 id="commas-in-keywords">Comma&rsquo;s in keywords</h3>
+</code></pre></div><h3 id="commas-in-keywords">Comma&rsquo;s in keywords</h3>
 <p>If you want to retain commas in your keywords (e.g. for chemical elements) and separate with a comma-space, you could do:</p>
-<pre><code>if (Translator.BetterTeX) {
-  reference.add({ name: 'keywords', value: item.tags, sep: ', ' });
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span>) {
+  <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;keywords&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">tags</span>, <span style="color:#a6e22e">sep</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;, &#39;</span> });
 }
-</code></pre><p>as the default encoder knows what to do with arrays, if you give it a separator.</p>
+</code></pre></div><p>as the default encoder knows what to do with arrays, if you give it a separator.</p>
 <h3 id="add-doi-in-note-field">Add DOI in note field</h3>
-<pre><code>if (Translator.BetterTeX &amp;&amp; item.DOI) {
-  var doi = item.DOI;
-  if (doi.indexOf('doi:') != 0) { doi = 'doi:' + doi; }
-  reference.add({ name: 'note', value: '[' + doi + ']' });
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">DOI</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doi</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">DOI</span>;
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">doi</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39;doi:&#39;</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) { <span style="color:#a6e22e">doi</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;doi:&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">doi</span>; }
+  <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;note&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;[&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">doi</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;]&#39;</span> });
 }
-</code></pre><h3 id="add-arxiv-data">Add arXiv data</h3>
+</code></pre></div><h3 id="add-arxiv-data">Add arXiv data</h3>
 <p>arXiv is a bit of an odd duck. It really isn&rsquo;t a journal, so it shouldn&rsquo;t be the journal title, and their own recommendations on how to include arXiv IDs is a little lacking: <a href="https://arxiv.org/help/faq/references">this</a> doesn&rsquo;t say where to include the <code>arXiv:...</code> identfier, and <a href="https://arxiv.org/help/hypertex/bibstyles">this</a> says <em>not</em> to include it. Nor does it give any recommendations on how to achieve the <a href="https://arxiv.org/help/faq/references">desired output</a>.</p>
 <p>But for arguments&rsquo; sake, let&rsquo;s say you get the desired output by including an empty <code>journaltitle</code> field (ugh) and stuff the <code>arXiv:...</code> ID in the <code>pages</code> field (<em>ugh</em>). You could do that with the following postscript:</p>
-<pre><code>if (Translator.BetterTeX &amp;&amp; item.arXiv.id) {
-  reference.add({ name: 'pages', value: item.arXiv.id });
-  if (!reference.has.journaltitle) { reference.add({ name: 'journaltitle', bibtex: '{}' }); }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">arXiv</span>.<span style="color:#a6e22e">id</span>) {
+  <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;pages&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">arXiv</span>.<span style="color:#a6e22e">id</span> });
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>.<span style="color:#a6e22e">journaltitle</span>) { <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;journaltitle&#39;</span>, <span style="color:#a6e22e">bibtex</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{}&#39;</span> }); }
 }
-</code></pre><h3 id="custom-field-order">Custom field order</h3>
+</code></pre></div><h3 id="custom-field-order">Custom field order</h3>
 <p>Specify the ordering of the listing of fields in an exported Biblatex/Bibtex entry. Your postscript:</p>
-<pre><code>if (Translator.BetterTeX) {
-  // the bib(la)tex fields are ordered according to this array.
-  // If a field is not in this list, it will show up after the ordered fields.
-  // https://github.com/retorquere/zotero-better-bibtex/issues/512
-
-  const order = ['author', 'date', 'title', 'publisher']
-  for (const [field, value] of order.filter(front =&gt; reference.has[first]).concat(Object.keys(reference.has).filter(other =&gt; !order.includes(other))).map(f =&gt; [f, reference.has[f]])) {
-    delete reference.has[field]
-    reference.has[field] = value
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span>) {
+  <span style="color:#75715e">// the bib(la)tex fields are ordered according to this array.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// If a field is not in this list, it will show up after the ordered fields.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// https://github.com/retorquere/zotero-better-bibtex/issues/512
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">order</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;author&#39;</span>, <span style="color:#e6db74">&#39;date&#39;</span>, <span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#e6db74">&#39;publisher&#39;</span>]
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">field</span>, <span style="color:#a6e22e">value</span>] <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">front</span> =&gt; <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>[<span style="color:#a6e22e">first</span>]).<span style="color:#a6e22e">concat</span>(Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>).<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">other</span> =&gt; <span style="color:#f92672">!</span><span style="color:#a6e22e">order</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">other</span>))).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">f</span> =&gt; [<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>[<span style="color:#a6e22e">f</span>]])) {
+    <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>[<span style="color:#a6e22e">field</span>]
+    <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>[<span style="color:#a6e22e">field</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>
   }
 }
-</code></pre><p>In Zotero when using an Export Format of Better Biblatex we&rsquo;ll get something like the following entry &hellip;</p>
+</code></pre></div><p>In Zotero when using an Export Format of Better Biblatex we&rsquo;ll get something like the following entry &hellip;</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Further details <a href="https://github.com/retorquere/zotero-better-bibtex/issues/512">Export to Biblatex/Bibtex. Custom field order. #512</a>.</p>
 <h3 id="detect-and-protect-latex-math-formulas">Detect and protect LaTeX math formulas</h3>
-<pre><code>if (Translator.BetterTeX &amp;&amp; reference.has.title) {
-  reference.add({ name: 'title', value: item.title.replace(/(\$.*?\$)/g, '&lt;script&gt;{$1}&lt;/script&gt;') });
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>.<span style="color:#a6e22e">title</span>) {
+  <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/(\$.*?\$)/g</span>, <span style="color:#e6db74">&#39;&lt;script&gt;{$1}&lt;/script&gt;&#39;</span>) });
 }
-</code></pre><h3 id="or-detect-and-protect-simple-latex-commands">Or, detect and protect (simple) LaTeX commands</h3>
-<pre><code>if (Translator.BetterTeX &amp;&amp; reference.has.journal) {
-  reference.add({ name: 'journal', value: reference.has.journal.value.replace(/(\\\w+)/g, '&lt;script&gt;{$1}&lt;/script&gt;') });
+</code></pre></div><h3 id="or-detect-and-protect-simple-latex-commands">Or, detect and protect (simple) LaTeX commands</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>.<span style="color:#a6e22e">journal</span>) {
+  <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;journal&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>.<span style="color:#a6e22e">journal</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/(\\\w+)/g</span>, <span style="color:#e6db74">&#39;&lt;script&gt;{$1}&lt;/script&gt;&#39;</span>) });
 }
-</code></pre><h3 id="detect-and-protect-mathjax">Detect and protect MathJax</h3>
-<pre><code>if (Translator.BetterTeX) {
-  // different for bibtex and biblatex exporters
-  const note = ['annotation', 'note'].find(field =&gt; reference.has[field])
+</code></pre></div><h3 id="detect-and-protect-mathjax">Detect and protect MathJax</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span>) {
+  <span style="color:#75715e">// different for bibtex and biblatex exporters
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">note</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;annotation&#39;</span>, <span style="color:#e6db74">&#39;note&#39;</span>].<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">field</span> =&gt; <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>[<span style="color:#a6e22e">field</span>])
 
-  if (note) {
-    let notes = item.notes.map(note =&gt; `&lt;div&gt;${note}&lt;/div&gt;`).join('')
-    notes = notes
-      .replace(/(\$\$[\s\S]*?\$\$)/g, '&lt;script&gt;$1&lt;/script&gt;')
-      .replace(/\\\(/g, '&lt;script&gt;$')
-      .replace(/\\\)/g, '$&lt;/script&gt;')
-    reference.add({ name: note, value: notes, html: true });
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">note</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">notes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">notes</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">note</span> =&gt; <span style="color:#e6db74">`&lt;div&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">note</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/div&gt;`</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>)
+    <span style="color:#a6e22e">notes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">notes</span>
+      .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/(\$\$[\s\S]*?\$\$)/g</span>, <span style="color:#e6db74">&#39;&lt;script&gt;$1&lt;/script&gt;&#39;</span>)
+      .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\\\(/g</span>, <span style="color:#e6db74">&#39;&lt;script&gt;$&#39;</span>)
+      .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\\\)/g</span>, <span style="color:#e6db74">&#39;$&lt;/script&gt;&#39;</span>)
+    <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">note</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">notes</span>, <span style="color:#a6e22e">html</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> });
   }
 }
-</code></pre><h3 id="replace-director-with-author-for-videorecording-and-film-references">Replace <code>director</code> with <code>author</code> for <code>videoRecording</code> and <code>film</code> references</h3>
+</code></pre></div><h3 id="replace-director-with-author-for-videorecording-and-film-references">Replace <code>director</code> with <code>author</code> for <code>videoRecording</code> and <code>film</code> references</h3>
 <p>Creator handling is fairly complicated, so to change the authors/editors/creators of any kind, you must change them on <code>item</code> and then call <code>addCreators</code> to do the needful. <code>addCreators</code> will <em>replace</em> the existing creators that were added to <code>reference</code> with the current state in <code>item.creators</code>, however you left it.</p>
-<pre><code>if (Translator.BetterBibLaTeX) {
-  switch (item.itemType) {
-    case 'videoRecording':
-    case 'film':
-      for (const creator of item.creators) {
-        if (creator.creatorType === 'director') creator.creatorType = 'author'
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterBibLaTeX</span>) {
+  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">itemType</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;videoRecording&#39;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;film&#39;</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">creator</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">creators</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">creator</span>.<span style="color:#a6e22e">creatorType</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;director&#39;</span>) <span style="color:#a6e22e">creator</span>.<span style="color:#a6e22e">creatorType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;author&#39;</span>
       }
-      reference.addCreators();
-      break;
+      <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">addCreators</span>();
+      <span style="color:#66d9ef">break</span>;
   }
 }
-</code></pre><h3 id="changing-the-reference-type-from-collection-to-book">Changing the reference type from collection to book</h3>
-<pre><code>if (Translator.BetterBibLaTeX) {
-  if (reference.referencetype === 'collection') reference.referencetype = 'book'
+</code></pre></div><h3 id="changing-the-reference-type-from-collection-to-book">Changing the reference type from collection to book</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterBibLaTeX</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">referencetype</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;collection&#39;</span>) <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">referencetype</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;book&#39;</span>
 }
-</code></pre>
+</code></pre></div>
 
 <footer class="footline">
 	

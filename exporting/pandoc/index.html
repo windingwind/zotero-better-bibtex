@@ -1529,17 +1529,17 @@ and this unspoken difference can be another cause of loss.</li>
 <li>download the <a href="../zotero.lua">Pandoc filter</a></li>
 <li>add some metadata to your markdown file in a YAML header:</li>
 </ul>
-<pre><code>---
-# all the regular stuff you have here
-zotero:
-  library: &lt;group name&gt; # omitted to use your personal library
-  scannable-cite: false # only relevant when your compiling to scannable-cite .odt
-  client: &lt;zotero or jurism&gt; # defaults to zotero
-  author-in-text: false # when true, enabled fake author-name-only cites by replacing it with the text of the last names of the authors
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#75715e"># all the regular stuff you have here</span>
+<span style="color:#66d9ef">zotero</span>:
+  <span style="color:#66d9ef">library</span>: &lt;group name&gt; <span style="color:#75715e"># omitted to use your personal library</span>
+  <span style="color:#66d9ef">scannable-cite</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># only relevant when your compiling to scannable-cite .odt</span>
+  <span style="color:#66d9ef">client</span>: &lt;zotero or jurism&gt; <span style="color:#75715e"># defaults to zotero</span>
+  <span style="color:#66d9ef">author-in-text</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># when true, enabled fake author-name-only cites by replacing it with the text of the last names of the authors</span>
 ...
-</code></pre><p>or you can specify them on the pandoc command line:</p>
-<pre><code>pandoc -s --lua-filter=zotero.lua --metadata=zotero_scannable_cite:true --metadata=client=jurism ...
-</code></pre><p>And hey presto, a live LibreOffice/Word file, or an ODT file with
+</code></pre></div><p>or you can specify them on the pandoc command line:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pandoc -s --lua-filter<span style="color:#f92672">=</span>zotero.lua --metadata<span style="color:#f92672">=</span>zotero_scannable_cite:true --metadata<span style="color:#f92672">=</span>client<span style="color:#f92672">=</span>jurism ...
+</code></pre></div><p>And hey presto, a live LibreOffice/Word file, or an ODT file with
 scannable cites. When you first open the document with live citations, open the Zotero
 document preferences and click <code>OK</code> <em>before</em> you refresh, or you&rsquo;ll get a confirmation
 popup for each citation. Also, the Word document is sometimes deemed

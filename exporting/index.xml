@@ -75,7 +75,7 @@ The format is either &amp;lsquo;bibtex&amp;rsquo; or &amp;lsquo;biblatex&amp;rsq
       
       <guid>/zotero-better-bibtex/exporting/json-rpc/</guid>
       <description>You can call into BBT using JSON-RPC on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:
-curl http://localhost:23119/better-bibtex/json-rpc -X POST -H &amp;quot;Content-Type: application/json&amp;quot; -H &amp;quot;Accept: application/json&amp;quot; --data-binary &#39;{&amp;quot;jsonrpc&amp;quot;: &amp;quot;2.0&amp;quot;, &amp;quot;method&amp;quot;: &amp;quot;collection.scanAUX&amp;quot;, &amp;quot;params&amp;quot;: [&amp;quot;/My Library/thesis/article1&amp;quot;, &amp;quot;/Users/phantom/Downloads/output.aux&amp;quot;] }&#39; The available methods are:
+curl http://localhost:23119/better-bibtex/json-rpc -X POST -H &amp;#34;Content-Type: application/json&amp;#34; -H &amp;#34;Accept: application/json&amp;#34; --data-binary &amp;#39;{&amp;#34;jsonrpc&amp;#34;: &amp;#34;2.0&amp;#34;, &amp;#34;method&amp;#34;: &amp;#34;collection.scanAUX&amp;#34;, &amp;#34;params&amp;#34;: [&amp;#34;/My Library/thesis/article1&amp;#34;, &amp;#34;/Users/phantom/Downloads/output.aux&amp;#34;] }&amp;#39; The available methods are:
 autoexport.add(collection, translator, path, displayOptions, replace) Add an auto-export for the given collection. The target collection will be created if it does not exist
  collection: The forward-slash separated path to the collection.</description>
     </item>
