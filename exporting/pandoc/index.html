@@ -1452,7 +1452,7 @@ Better BibTeX for Zotero
 <nav id="TableOfContents">
   <ul>
     <li><a href="#use-csl-not-bibtex-with-pandoc">Use CSL, not bibtex with pandoc</a></li>
-    <li><a href="#from-markdown-to-live-citations">From Markdown to live citations</a></li>
+    <li><a href="#from-markdown-to-zotero-live-citations">From Markdown to Zotero live citations</a></li>
   </ul>
 </nav>
     </div>
@@ -1523,7 +1523,7 @@ pandoc-citeproc do not necessarily have the same business rules,
 and this unspoken difference can be another cause of loss.</li>
 </ul>
 <p>All of these problems go away if you just skip the detour via bibtex and export (Better) CSL from Zotero and use that in your pandoc process.</p>
-<h2 id="from-markdown-to-live-citations">From Markdown to live citations</h2>
+<h2 id="from-markdown-to-zotero-live-citations">From Markdown to Zotero live citations</h2>
 <p>You can convert a Pandoc-compatible markdown source to a LibreOffice or Word document with live citation fields connecting to Zotero.</p>
 <ul>
 <li>download the <a href="../zotero.lua">Pandoc filter</a></li>
@@ -1536,6 +1536,7 @@ and this unspoken difference can be another cause of loss.</li>
   <span style="color:#66d9ef">scannable-cite</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># only relevant when your compiling to scannable-cite .odt</span>
   <span style="color:#66d9ef">client</span>: &lt;zotero or jurism&gt; <span style="color:#75715e"># defaults to zotero</span>
   <span style="color:#66d9ef">author-in-text</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># when true, enabled fake author-name-only cites by replacing it with the text of the last names of the authors</span>
+  <span style="color:#66d9ef">csl-style</span>: apa <span style="color:#75715e"># pre-fill the style</span>
 ...
 </code></pre></div><p>or you can specify them on the pandoc command line:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pandoc -s --lua-filter<span style="color:#f92672">=</span>zotero.lua --metadata<span style="color:#f92672">=</span>zotero_scannable_cite:true --metadata<span style="color:#f92672">=</span>client:jurism ...
@@ -1545,8 +1546,8 @@ document preferences and click <code>OK</code> <em>before</em> you refresh, or y
 popup for each citation. Also, the Word document is sometimes deemed
 corrupt when opening it, but running the pandoc command again without
 any changes fixes it ¯\_(ツ)_/¯</p>
-<p>Zotero needs to be running, with BBT installed, while you compile
-your document.</p>
+<p>You can also specify <code>transferable: true</code> to create a <a href="https://www.zotero.org/support/kb/moving_documents_between_word_processors">transferable document</a>. You don&rsquo;t really need this for ODT or DOCX (just use Pandoc to create those directly using this filter), but it will allow transferring your document to GDocs.</p>
+<p>Zotero needs to be running, with BBT installed, while you compile your document.</p>
 
 
 <footer class="footline">
