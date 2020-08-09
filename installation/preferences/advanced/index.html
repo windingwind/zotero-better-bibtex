@@ -1557,7 +1557,7 @@ With &lsquo;yes, but try to exclude already-sentence-cased titles&rsquo;, BBT wi
 <h4 id="expand-the-string-vars-below-during-imports">Expand the @string vars below during imports</h4>
 <p>default: <code>yes</code></p>
 <p>When enabled, BBT will prepend the @strings section below to all Bib(La)TeX imports and will expand the strings during export.</p>
-<h4 id="if-a-field-could-be-a-string-var-export-it-without-braces">If a field could be a @string var, export it without braces</h4>
+<h4 id="if-a-field-could-be-a-string-reference-export-it-as-an-unbraced-string-reference">If a field could be a @string reference, export it as an unbraced @string reference</h4>
 <p>default: <code>No</code></p>
 <p>When enabled, BBT will try to retain @string vars its exports unsurrounded by braces; when set to &lsquo;detect&rsquo;, single-word strings will be assumed to be externally-defined @string vars,
 when set to &lsquo;match&rsquo;, only @strings declared in the @strings section of the preferences will be preserved. If you don&rsquo;t know what this means, leave it off.</p>
@@ -1565,7 +1565,8 @@ when set to &lsquo;match&rsquo;, only @strings declared in the @strings section 
 <ul>
 <li>No</li>
 <li>Assume single-word fields to be @string vars</li>
-<li>Match against the @string vars below</li>
+<li>Match against the @string declarations below</li>
+<li>Match against the @string declarations and their values below</li>
 </ul>
 <h3 id="citation-keys">Citation keys</h3>
 <h4 id="warn-me-when-changing-citation-keys-in-bulk">Warn me when changing citation keys in bulk</h4>

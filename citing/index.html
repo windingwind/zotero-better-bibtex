@@ -1446,7 +1446,7 @@ Better BibTeX for Zotero
 <nav id="TableOfContents">
   <ul>
     <li><a href="#generating-citekeys-for-your-references">Generating citekeys for your references</a></li>
-    <li><a href="#set-your-own-fixated-citation-keys">Set your own, fixated citation keys</a></li>
+    <li><a href="#set-your-own-fixed-citation-keys">Set your own, fixed citation keys</a></li>
     <li><a href="#drag-and-drophotkey-citations">Drag and drop/hotkey citations</a></li>
     <li><a href="#find-duplicate-keys-through-integration-with-report-customizerhttpsgithubcomretorquerezotero-report-customizer">Find duplicate keys through integration with <a href="https://github.com/retorquere/zotero-report-customizer">Report Customizer</a></a></li>
     <li><a href="#configurable-citekey-generator">Configurable citekey generator</a>
@@ -1499,7 +1499,7 @@ people usually pick a naming scheme related to them. As the citation key is <em>
 bibliography, this is a piece of data you want to have control over. BBT offers you this control:</p>
 <ul>
 <li>Stable citation keys, without key clashes. BBT generates citation keys that take into account other existing keys in your library in a deterministic way, regardless of what part of your library you export, or the order in which you do it.</li>
-<li>BBT is conservative about citation key changes, and allows you to fixate keys to any value of your choosing.</li>
+<li>BBT is conservative about citation key changes, and allows you to fix keys to any value of your choosing.</li>
 <li>Generate citation keys from JabRef(-ish) patterns.</li>
 </ul>
 <p>You can also</p>
@@ -1507,9 +1507,9 @@ bibliography, this is a piece of data you want to have control over. BBT offers 
 <li>Drag and drop LaTeX citations using these keys to your favorite LaTeX editor</li>
 <li>Show your citation keys in the reference list view.</li>
 </ul>
-<h2 id="set-your-own-fixated-citation-keys">Set your own, fixated citation keys</h2>
+<h2 id="set-your-own-fixed-citation-keys">Set your own, fixed citation keys</h2>
 <p>By default, BBT generates the citation key from the item information, and this key may change when you edit the item. Such keys are called <code>dynamic</code> keys, which are marked with an asterisk (<code>*</code>) in the reference list view, and are displayed in italics in the item details.</p>
-<p>You can fixate the citation key (called <code>pinning</code> in BBT) for an item by adding the text <code>Citation Key: [your citekey]</code> anywhere in the
+<p>You can fix the citation key (called <code>pinning</code> in BBT) for an item by adding the text <code>Citation Key: [your citekey]</code> anywhere in the
 <code>extra</code> field of the reference on a line of its own. You can generate a pinned citation key by selecting one or more items, right-clicking, and selecting <code>Generate BibTeX key</code>, which will add the current citation key to the <code>extra</code> field, thereby pinning it. These keys are shown without the asterisk (<code>*</code>) marker in the middle column, and non-italicized in the details view, to distinguish them from dynamic keys.</p>
 <h2 id="drag-and-drophotkey-citations">Drag and drop/hotkey citations</h2>
 <p>You can drag and drop citations into your LaTeX/Markdown/Orgmode editor, and it will add a proper <code>\cite{citekey}</code>/<code>[@citekey]</code>/<code>[[zotero://select...][@citekey]</code>. The <code>cite</code> command is
