@@ -1487,6 +1487,7 @@ Better BibTeX for Zotero
         <li><a href="#relativefilepaths">relativeFilePaths</a></li>
         <li><a href="#skipwords">skipWords</a></li>
         <li><a href="#verbatimfields">verbatimFields</a></li>
+        <li><a href="#warntitlecased">warnTitleCased</a></li>
       </ul>
     </li>
   </ul>
@@ -1622,6 +1623,11 @@ to those attachments. Caching is disabled when this option is on, so it affects 
 <h3 id="verbatimfields">verbatimFields</h3>
 <p>default: <code>url,doi,file,eprint,verba,verbb,verbc</code></p>
 <p>list of fields to treat as verbatim during import. If you&rsquo;re importing e.g. Mendeley-generated BibTeX, try removing <code>file</code> from this list before import.</p>
+<h3 id="warntitlecased">warnTitleCased</h3>
+<p>default: <code>no</code></p>
+<p>Both Zotero and BBT expect titles to be in sentence-case, but a lot of sites offer import data that is Title Cased. When exporting these titles to bib(la)tex you&rsquo;re going
+to get a lot of extra unwanted braces, because all these Title Cased words will look like proper nouns to BBTs own title-casing mechanism. When this setting is on, you will be warned
+when you import/save items in Zotero with titles that look like they&rsquo;re Title Cased, so that you can inspect/correct them.</p>
 
 
 <footer class="footline">
