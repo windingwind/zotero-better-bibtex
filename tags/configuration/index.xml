@@ -5,11 +5,7 @@
     <link>/zotero-better-bibtex/tags/configuration/</link>
     <description>Recent content in configuration on Better BibTeX for Zotero</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    
-	<atom:link href="/zotero-better-bibtex/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-US</language><atom:link href="/zotero-better-bibtex/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configuration</title>
       <link>/zotero-better-bibtex/installation/preferences/</link>
