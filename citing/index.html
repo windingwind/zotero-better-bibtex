@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="generator" content="Hugo 0.76.4" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1601,7 +1601,7 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
   </li>
   <li><code>0</code>: an alias for <code>[postfix=-%(n)s]</code>. Emulates the disambiguator of the standard Zotero exports. When you use <code>[zotero]</code> in your pattern, <code>[zotero][0]</code> is implied</li>
   <li><code>&gt;X</code>: a pseudo-function which aborts the current pattern generation if what came before it is <code>X</code> characters or less (<code>[&gt;0]</code> is a typical use. You would typically use this with something like <code>[auth][&gt;0][year] | [title][year]</code> which means if there's no author you get <code>title-year</code> rather than just <code>year</code>.</li>
-  <li><code>=typeName</code>: a pseudo-function that aborts the current pattern generation if the Zotero reference type does not equal <code>typeName</code>. You can test for multiple typenames at once by separating them with slashes (<code>[=journalArticle/report]</code>). Valid typeNames are: , <code>artwork</code><code>attachment</code><code>audioRecording</code><code>bill</code><code>blogPost</code><code>book</code><code>bookSection</code><code>case</code><code>classic**</code><code>computerProgram</code><code>conferencePaper</code><code>dictionaryEntry</code><code>document</code><code>email</code><code>encyclopediaArticle</code><code>film</code><code>forumPost</code><code>gazette**</code><code>hearing</code><code>instantMessage</code><code>interview</code><code>journalArticle</code><code>letter</code><code>magazineArticle</code><code>manuscript</code><code>map</code><code>newspaperArticle</code><code>note</code><code>patent</code><code>podcast</code><code>presentation</code><code>radioBroadcast</code><code>regulation**</code><code>report</code><code>standard**</code><code>statute</code><code>thesis</code><code>treaty**</code><code>tvBroadcast</code><code>videoRecording</code><code>webpage</code>.</li>
+  <li><code>=typeName</code>: a pseudo-function that aborts the current pattern generation if the Zotero reference type does not equal <code>typeName</code>. You can test for multiple typenames at once by separating them with slashes (<code>[=journalArticle/report]</code>). Valid typeNames are: , <code>artwork</code><code>attachment</code><code>audioRecording</code><code>bill</code><code>blogPost</code><code>book</code><code>bookSection</code><code>case</code><code>classic**</code><code>computerProgram</code><code>conferencePaper</code><code>dictionaryEntry</code><code>document</code><code>email</code><code>encyclopediaArticle</code><code>film</code><code>forumPost</code><code>gazette**</code><code>hearing</code><code>instantMessage</code><code>interview</code><code>journalArticle</code><code>legalCommentary**</code><code>letter</code><code>magazineArticle</code><code>manuscript</code><code>map</code><code>newspaperArticle</code><code>note</code><code>patent</code><code>podcast</code><code>presentation</code><code>radioBroadcast</code><code>regulation**</code><code>report</code><code>standard**</code><code>statute</code><code>thesis</code><code>treaty**</code><code>tvBroadcast</code><code>videoRecording</code><code>webpage</code>.</li>
 </ul>
 
 <p><strong>Note</strong>: the functions above all have the <code>clean</code> filter (see below) automatically applied to them. If you want more control, <code>auth</code>, <code>authIni</code>, <code>edtr</code>, &hellip; and all the author-related fields that mimic the JabRef equivalents also have capitalized versions (so <code>Auth</code>, <code>AuthIni</code>, <code>Edtr</code>, &hellip;) which follow the same algorithm but do not have any cleaning (diacritic folding, space removal, stripping of invalid citekey characters) applied. These can be used to pass through the filters specified below much like the fields from the table above. See also &ldquo;usage note&rdquo; below. For all the non-author fields, you can use the unprocessed reference fields directly:</p>
@@ -1718,17 +1718,19 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
   
     <tr>
       
+        <td>Division**</td>
+      
         <td>DocketNumber</td>
       
         <td>DocumentName**</td>
       
         <td>DocumentNumber</td>
       
-        <td>Edition</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Edition</td>
       
         <td>EncyclopediaTitle</td>
       
@@ -1736,11 +1738,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>Extra</td>
       
-        <td>FilingDate</td>
-      
     </tr>
   
     <tr>
+      
+        <td>FilingDate</td>
       
         <td>FirstPage</td>
       
@@ -1748,11 +1750,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>GazetteFlag**</td>
       
-        <td>Genre</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Genre</td>
       
         <td>History</td>
       
@@ -1760,11 +1762,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>ISSN</td>
       
-        <td>Institution</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Institution</td>
       
         <td>InterviewMedium</td>
       
@@ -1772,11 +1774,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>IssueDate</td>
       
-        <td>IssuingAuthority</td>
-      
     </tr>
   
     <tr>
+      
+        <td>IssuingAuthority</td>
       
         <td>JournalAbbreviation</td>
       
@@ -1784,11 +1786,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>Label</td>
       
-        <td>Language</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Language</td>
       
         <td>LegalStatus</td>
       
@@ -1796,11 +1798,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>LetterType</td>
       
-        <td>LibraryCatalog</td>
-      
     </tr>
   
     <tr>
+      
+        <td>LibraryCatalog</td>
       
         <td>ManuscriptType</td>
       
@@ -1808,11 +1810,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>Medium</td>
       
-        <td>MeetingName</td>
-      
     </tr>
   
     <tr>
+      
+        <td>MeetingName</td>
       
         <td>MeetingNumber**</td>
       
@@ -1820,11 +1822,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>Network</td>
       
-        <td>NewsCaseDate**</td>
-      
     </tr>
   
     <tr>
+      
+        <td>NewsCaseDate**</td>
       
         <td>NumPages</td>
       
@@ -1832,11 +1834,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>NumberOfVolumes</td>
       
-        <td>OpeningDate**</td>
-      
     </tr>
   
     <tr>
+      
+        <td>OpeningDate**</td>
       
         <td>Opus**</td>
       
@@ -1844,11 +1846,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>Pages</td>
       
-        <td>ParentTreaty**</td>
-      
     </tr>
   
     <tr>
+      
+        <td>ParentTreaty**</td>
       
         <td>PatentNumber</td>
       
@@ -1856,11 +1858,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>PostType</td>
       
-        <td>PresentationType</td>
-      
     </tr>
   
     <tr>
+      
+        <td>PresentationType</td>
       
         <td>PriorityDate**</td>
       
@@ -1868,11 +1870,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>ProceedingsTitle</td>
       
-        <td>ProgramTitle</td>
-      
     </tr>
   
     <tr>
+      
+        <td>ProgramTitle</td>
       
         <td>ProgrammingLanguage</td>
       
@@ -1880,11 +1882,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>PublicationDate**</td>
       
-        <td>PublicationNumber**</td>
-      
     </tr>
   
     <tr>
+      
+        <td>PublicationNumber**</td>
       
         <td>PublicationTitle</td>
       
@@ -1892,11 +1894,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>References</td>
       
-        <td>RegnalYear**</td>
-      
     </tr>
   
     <tr>
+      
+        <td>RegnalYear**</td>
       
         <td>RegulationType**</td>
       
@@ -1904,11 +1906,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>Reign**</td>
       
-        <td>Release**</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Release**</td>
       
         <td>ReportNumber</td>
       
@@ -1916,11 +1918,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>Reporter</td>
       
-        <td>ReporterVolume</td>
-      
     </tr>
   
     <tr>
+      
+        <td>ReporterVolume</td>
       
         <td>ResolutionLabel**</td>
       
@@ -1928,11 +1930,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>RunningTime</td>
       
-        <td>Scale</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Scale</td>
       
         <td>Section</td>
       
@@ -1940,11 +1942,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>SeriesNumber</td>
       
-        <td>SeriesText</td>
-      
     </tr>
   
     <tr>
+      
+        <td>SeriesText</td>
       
         <td>SeriesTitle</td>
       
@@ -1952,11 +1954,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>SessionType**</td>
       
-        <td>ShortTitle</td>
-      
     </tr>
   
     <tr>
+      
+        <td>ShortTitle</td>
       
         <td>SigningDate**</td>
       
@@ -1964,11 +1966,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>Studio</td>
       
-        <td>Subject</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Subject</td>
       
         <td>SupplementName**</td>
       
@@ -1976,11 +1978,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>ThesisType</td>
       
-        <td>Title</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Title</td>
       
         <td>TreatyNumber**</td>
       
@@ -1988,11 +1990,11 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>University</td>
       
-        <td>Url</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Url</td>
       
         <td>VersionNumber</td>
       
@@ -2000,19 +2002,17 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
       
         <td>Volume</td>
       
-        <td>VolumeTitle**</td>
-      
     </tr>
   
     <tr>
+      
+        <td>VolumeTitle**</td>
       
         <td>WebsiteTitle</td>
       
         <td>WebsiteType</td>
       
         <td>YearAsVolume**</td>
-      
-        <td></td>
       
     </tr>
   
