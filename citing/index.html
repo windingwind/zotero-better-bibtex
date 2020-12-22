@@ -2061,7 +2061,7 @@ it will use the same abbreviation filter Zotero uses in the wordprocessor integr
 parameter, e.g <code>condense=_</code> will replace spaces with underscores. <strong>Parameters should not contain spaces</strong> unless
 you want the spaces in the value passed in to be replaced with those spaces in the parameter</li>
   
-    <li><code>fold</code>=mode? (string): tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
+    <li><code>fold</code>=mode? (&lsquo;german&rsquo; | &lsquo;japanese&rsquo;): tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
   
     <li><code>format-date</code>=format? (string): formats date as by replacing y, m and d in the format</li>
   
@@ -2080,7 +2080,7 @@ it is supposed to postfix isn&rsquo;t empty</li>
 it is supposed to prefix isn&rsquo;t empty. If you want to use a reserved character (such as <code>:</code> or <code>\</code>), you&rsquo;ll need to
 add a backslash (<code>\</code>) in front of it.</li>
   
-    <li><code>replace</code>=find (string), replace (string): replaces text, case insensitive; <code>:replace=.etal,&amp;etal</code> will replace <code>.EtAl</code> with <code>&amp;etal</code></li>
+    <li><code>replace</code>=find (string), replace (string), mode? (&lsquo;string&rsquo; | &lsquo;regex&rsquo;): replaces text, case insensitive; <code>:replace=.etal,&amp;etal</code> will replace <code>.EtAl</code> with <code>&amp;etal</code></li>
   
     <li><code>select</code>=start? (number), n? (number): selects words from the value passed in. The format is <code>select=start,number</code> (1-based), so <code>select=1,4</code>
 would select the first four words. If <code>number</code> is not given, all words from <code>start</code> to the end of the list are
