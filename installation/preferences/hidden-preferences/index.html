@@ -1484,6 +1484,7 @@ Better BibTeX for Zotero
         <li><a href="#import">import</a></li>
         <li><a href="#importcitationkey">importCitationKey</a></li>
         <li><a href="#importextra">importExtra</a></li>
+        <li><a href="#importunknowntexcommand">importUnknownTexCommand</a></li>
         <li><a href="#itemobserverdelay">itemObserverDelay</a></li>
         <li><a href="#kuroshiro">kuroshiro</a></li>
         <li><a href="#mapmath">mapMath</a></li>
@@ -1581,6 +1582,14 @@ will be replaced with a <code>\\enquote{...}</code> construct.</p>
 <h3 id="importextra">importExtra</h3>
 <p>default: <code>yes</code></p>
 <p>On import, place all bib(la)tex field Zotero doesn&rsquo;t have an existing field for in the Zotero <code>extra</code> field of the item</p>
+<h3 id="importunknowntexcommand">importUnknownTexCommand</h3>
+<p>default: <code>ignore</code></p>
+<p>What to do when encountering a TeX command the parser does not know about. Please only use values:</p>
+<ul>
+<li><code>ignore</code>: ignore the command entirely</li>
+<li><code>tex</code>: import and mark as TeX code, so on re-export it will be output as-is</li>
+<li><code>text</code>: import without marking it as TeX code, so on re-export it will be treated as regular text</li>
+</ul>
 <h3 id="itemobserverdelay">itemObserverDelay</h3>
 <p>default: <code>5</code></p>
 <p>I&rsquo;ve had reports where Zotero notifies extensions that references have changed, but if BBT then actually
