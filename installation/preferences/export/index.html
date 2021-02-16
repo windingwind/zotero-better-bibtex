@@ -1522,13 +1522,10 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h3 id="bibtex">BibTeX</h3>
 <h4 id="export-unicode-as-plain-text-latex-commands-recommended">Export unicode as plain-text latex commands (recommended)</h4>
 <p>default: <code>yes</code></p>
-<p>BibTeX has really spotty Unicode support, so you generally want this on. It will translate things like accented characters
-to their equivalent LaTeX constructs on export.</p>
+<p>BibTeX has really spotty Unicode support, so you generally want this on. It will translate things like accented characters to their equivalent LaTeX constructs on export.</p>
 <h4 id="disregard-name-prefixes-when-sorting">Disregard name prefixes when sorting</h4>
 <p>default: <code>no</code></p>
-<p>Name handling is a lot more complex than I had ever thought it to be. A <em>lot</em> more complex. BibTeX has
-really limited ways of dealing with names with particles (van, von, de, etc). If you turn this on, BBT
-will add code to have <code>van Gogh</code> sorted under <code>Gogh</code>.</p>
+<p>Name handling is a lot more complex than I had ever thought it to be. A <em>lot</em> more complex. BibTeX has really limited ways of dealing with names with particles (van, von, de, etc). If you turn this on, BBT will add code to have <code>van Gogh</code> sorted under <code>Gogh</code>.</p>
 <h4 id="add-urls-to-bibtex-export">Add URLs to BibTeX export</h4>
 <p>default: <code>no</code></p>
 <p>Most BibTeX styles do not support DOI/URL fields. Of the styles that do support them, many forget to load the required &lsquo;url&rsquo; package, so make sure to load it yourself. DOI and URL fields are so-called &lsquo;verbatim&rsquo; fields, and without the &lsquo;url&rsquo; package loaded compilation will likely fail.</p>
@@ -1543,20 +1540,14 @@ will add code to have <code>van Gogh</code> sorted under <code>Gogh</code>.</p>
 <h3 id="biblatex">BibLaTeX</h3>
 <h4 id="export-unicode-as-plain-text-latex-commands">Export unicode as plain-text latex commands</h4>
 <p>default: <code>no</code></p>
-<p>BibLaTeX actually has really good Unicode support, so you generally want this off. But for some geezers such as me it is
-simply more pleasing to have things like accented characters translated to their equivalent LaTeX constructs on export.</p>
+<p>BibLaTeX actually has really good Unicode support, so you generally want this off. But for some geezers such as me it is simply more pleasing to have things like accented characters translated to their equivalent LaTeX constructs on export.</p>
 <h4 id="use-biblatex-extended-name-format-requires-biblatex-35">Use BibLaTeX extended name format (requires biblatex 3.5)</h4>
 <p>default: <code>no</code></p>
-<p>Use the extended biber 2.7 format for names with particles - only works in BibLaTeX 3.5 or later.
-This biblatex has a new (less ambiguous) way to store creator names. It&rsquo;s technically
-superior, but the LaTeX world moves slowly, so many people won&rsquo;t have it yet. But if you&rsquo;re an early adopter,
-you can enable it here</p>
+<p>Use the extended biber 2.7 format for names with particles - only works in BibLaTeX 3.5 or later. This biblatex has a new (less ambiguous) way to store creator names. It&rsquo;s technically superior, but the LaTeX world moves slowly, so many people won&rsquo;t have it yet. But if you&rsquo;re an early adopter, you can enable it here</p>
 <h3 id="fields">Fields</h3>
 <h4 id="when-a-reference-has-both-a-doi-and-a-url-export">When a reference has both a DOI and a URL, export</h4>
 <p>default: <code>both</code></p>
-<p>Does what it says on the tin, really. If a reference has both a DOI and an URL, you can choose to have them both exported, or either one of them. Note that for BibTeX,
-you must load the <code>url</code> package when you have <code>doi</code> or <code>url</code> fields. <code>doi</code> and <code>url</code> fields are so-called <code>verbatim</code> fields with different escaping rules, and
-BibTeX compilation will likely error out without the package loaded.</p>
+<p>Does what it says on the tin, really. If a reference has both a DOI and an URL, you can choose to have them both exported, or either one of them. Note that for BibTeX, you must load the <code>url</code> package when you have <code>doi</code> or <code>url</code> fields. <code>doi</code> and <code>url</code> fields are so-called <code>verbatim</code> fields with different escaping rules, and BibTeX compilation will likely error out without the package loaded.</p>
 <p>Options:</p>
 <ul>
 <li>both</li>
@@ -1582,26 +1573,18 @@ BibTeX compilation will likely error out without the package loaded.</p>
 <p>If set, generates journal abbreviations on export using the Zotero journal abbreviator, according to the abbreviation style selected in the list below the checkbox.</p>
 <h4 id="abbreviation-style">Abbreviation style:</h4>
 <p>default: <code>&lt;not set&gt;</code></p>
-<p>Select the style for auto-abbreviation. Only applicable to Juris-M; in Zotero, the style for automatic
-abbreviation is not configurable.</p>
+<p>Select the style for auto-abbreviation. Only applicable to Juris-M; in Zotero, the style for automatic abbreviation is not configurable.</p>
 <h4 id="include-comments-about-potential-problems-with-the-references">Include comments about potential problems with the references</h4>
 <p>default: <code>no</code></p>
-<p>Generate quality reports for exported references. These show up only in BibTeX and BibLaTeX report formats and indicate things like missing required fields and
-duplicate citation keys.</p>
+<p>Generate quality reports for exported references. These show up only in BibTeX and BibLaTeX report formats and indicate things like missing required fields and duplicate citation keys.</p>
 <h4 id="include-automatic-tags-in-export">Include automatic tags in export</h4>
 <p>default: <code>yes</code></p>
-<p>Some importers or Zotero extensions (such as the ShortDOI manager for example) create tags on items that are more for item management than that
-they are descriptive of the item. When this is off, such tags will not be included in the export.</p>
+<p>Some importers or Zotero extensions (such as the ShortDOI manager for example) create tags on items that are more for item management than that they are descriptive of the item. When this is off, such tags will not be included in the export.</p>
 <h4 id="when-converting-to-plain-text-latex-commands">When converting to plain-text latex commands:</h4>
 <p>default: <code>Minimize the number of switches between math-mode and text-mode</code></p>
 <p>When a unicode character can be exported as either a math-mode or text-mode command, map to:</p>
 <ul>
-<li><code>minimal-packages</code>: if both a math-mode and a text-mode mapping is available, use the version that does not require
-extra packages to be loaded.</li>
-<li><code>conservative</code>: if both a math-mode and a text-mode mapping is available, stay in the mode of the previously mapped
-character if possible. This minimizes the number of generated <code>$</code>s in the output.</li>
-<li><code>text</code>: if both a math-mode and a text-mode mapping is available, prefer text.</li>
-<li><code>math</code>: if both a math-mode and a text-mode mapping is available, prefer math.</li>
+<li><code>minimal-packages</code>: if both a math-mode and a text-mode mapping is available, use the version that does not require    extra packages to be loaded. * <code>conservative</code>: if both a math-mode and a text-mode mapping is available, stay in the mode of the previously mapped    character if possible. This minimizes the number of generated <code>$</code>s in the output. * <code>text</code>: if both a math-mode and a text-mode mapping is available, prefer text. * <code>math</code>: if both a math-mode and a text-mode mapping is available, prefer math.</li>
 </ul>
 <p>Options:</p>
 <ul>
@@ -1612,11 +1595,7 @@ character if possible. This minimizes the number of generated <code>$</code>s in
 </ul>
 <h4 id="automatic-export">Automatic export</h4>
 <p>default: <code>On Change</code></p>
-<p>Determines when <a href="/zotero-better-bibtex/exporting/">automatic exports</a> are kicked off. Having it disabled still marks
-auto-exports as needing updates, so when you re-enable it, those exports will start. On-change means exports
-happen whenever a reference in the export changes/is added/is removed. On idle does more or less what
-<code>Disabled</code> (that is, no exports but mark as needing changes), but will kick off exports when your computer is
-idle. You mostly want this if your computer is performance-constrained (aka slow).</p>
+<p>Determines when <a href="/zotero-better-bibtex/exporting/">automatic exports</a> are kicked off. Having it disabled still marks auto-exports as needing updates, so when you re-enable it, those exports will start. On-change means exports happen whenever a reference in the export changes/is added/is removed. On idle does more or less what <code>Disabled</code> (that is, no exports but mark as needing changes), but will kick off exports when your computer is idle. You mostly want this if your computer is performance-constrained (aka slow).</p>
 <p>Options:</p>
 <ul>
 <li>Disabled</li>
