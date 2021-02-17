@@ -1535,13 +1535,16 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>If you have this on, and you experience any problem that is not the cache getting dropped on upgrade, you <em>must</em> clear the cache and reproduce the problem. When you change this setting, as with any setting change, the cache will be dropped.</p>
 <h4 id="parallel-background-exports">Parallel background exports:</h4>
 <p>default: <code>1</code></p>
-<p>BBT can now perform its exports in a separate thread, and should no longer block Zotero&rsquo;s UI pretty much regardless of how large your library is. While it&rsquo;s been tested and seems to work well, I still consider it to be experimental at this stage. You can turn it off by setting this value to <code>0</code> and get the old (blocking) behavior back.</p>
+<p>BBT can now perform its exports in a separate thread, and should no longer block Zotero&rsquo;s UI pretty much regardless of how large your library is.
+While it&rsquo;s been tested and seems to work well, I still consider it to be experimental at this stage. You can turn it off by setting this value to <code>0</code>
+and get the old (blocking) behavior back.</p>
 <h3 id="import">Import</h3>
 <h4 id="sentence-case-titles-on-import">Sentence-case titles on import:</h4>
 <p>default: <code>yes, but try to exclude already-sentence-cased titles</code></p>
 <p>Bib(La)TeX references ought to be stored in Title Case; Zotero references are expected to be entered as sentence-case.</p>
 <p>With this option on, BBT will try to sentence-case during import. This sentence-casing uses heuristics, no natural language processing is performed, and the results are not perfect.</p>
-<p>You can turn this off, but you may then also want to disable <code>Apply title-casing to titles</code> (which has its own problems, see the help entry for that option on this page). With &lsquo;yes, but try to exclude already-sentence-cased titles&rsquo;, BBT will attempt to detect titles that are already sentence cased and leave them as-is on import.</p>
+<p>You can turn this off, but you may then also want to disable <code>Apply title-casing to titles</code> (which has its own problems, see the help entry for that option on this page).
+With &lsquo;yes, but try to exclude already-sentence-cased titles&rsquo;, BBT will attempt to detect titles that are already sentence cased and leave them as-is on import.</p>
 <p>Options:</p>
 <ul>
 <li>yes, but try to exclude already-sentence-cased titles</li>
@@ -1565,7 +1568,8 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>When enabled, BBT will prepend the @strings section below to all Bib(La)TeX imports and will expand the strings during export.</p>
 <h4 id="if-a-field-could-be-a-string-reference-export-it-as-an-unbraced-string-reference">If a field could be a @string reference, export it as an unbraced @string reference</h4>
 <p>default: <code>No</code></p>
-<p>When enabled, BBT will try to retain @string vars its exports unsurrounded by braces; when set to &lsquo;detect&rsquo;, single-word strings will be assumed to be externally-defined @string vars, when set to &lsquo;match&rsquo;, only @strings declared in the @strings section of the preferences will be preserved. If you don&rsquo;t know what this means, leave it off.</p>
+<p>When enabled, BBT will try to retain @string vars its exports unsurrounded by braces; when set to &lsquo;detect&rsquo;, single-word strings will be assumed to be externally-defined @string vars,
+when set to &lsquo;match&rsquo;, only @strings declared in the @strings section of the preferences will be preserved. If you don&rsquo;t know what this means, leave it off.</p>
 <p>Options:</p>
 <ul>
 <li>No</li>
@@ -1576,7 +1580,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h3 id="citation-keys">Citation keys</h3>
 <h4 id="warn-me-when-changing-citation-keys-in-bulk">Warn me when changing citation keys in bulk</h4>
 <p>default: <code>10</code></p>
-<p>For those who are curious about what the <code>Clear/Generate BibTeX key</code> right-click options do, this will warn you if you are doing this on more than 10 (default) at the same time, to prevent your curiosity from changing all your citation keys at once.</p>
+<p>For those who are curious about what the <code>Clear/Generate BibTeX key</code> right-click options do, this will warn
+you if you are doing this on more than 10 (default) at the same time, to prevent your curiosity from changing
+all your citation keys at once.</p>
 
 
 <footer class="footline">

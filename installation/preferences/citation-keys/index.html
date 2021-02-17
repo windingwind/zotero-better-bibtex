@@ -1523,11 +1523,15 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>Set the pattern used to generate citation keys. The format of the keys is documented <a href="/zotero-better-bibtex/citing/">here</a>.</p>
 <h4 id="force-citation-key-to-plain-text">Force citation key to plain text</h4>
 <p>default: <code>yes</code></p>
-<p>If you have deviated from the default citation key format pattern by <a href="/zotero-better-bibtex/citing/">specifying your own</a>, you may wind up with non-ASCII characters in your citation keys. You can prevent that using the <code>fold</code> function at the appropriate place in your pattern, but checking this checkbox will just apply <code>fold</code> to all your keys.</p>
+<p>If you have deviated from the default citation key format pattern by <a href="/zotero-better-bibtex/citing/">specifying your own</a>, you may
+wind up with non-ASCII characters in your citation keys. You can prevent that using the <code>fold</code> function at the
+appropriate place in your pattern, but checking this checkbox will just apply <code>fold</code> to all your keys.</p>
 <h3 id="keeping-citation-keys-unique">Keeping citation keys unique</h3>
 <h4 id="keep-keys-unique">Keep keys unique</h4>
 <p>default: <code>within each library</code></p>
-<p>Auto-generated (non-pinned) keys automatically get a postfix when they would generate a duplicate. By default, the check for duplicates is restricted to the library/group the item lives in. When set to global, the check will include all libraries/groups, so auto-generated keys would be globally unique. Changing this setting <em>does not</em> affect existign keys - for this you would need to select the items and refresh the keys.</p>
+<p>Auto-generated (non-pinned) keys automatically get a postfix when they would generate a duplicate. By default, the check for duplicates is restricted
+to the library/group the item lives in. When set to global, the check will include all libraries/groups, so auto-generated keys would be globally
+unique. Changing this setting <em>does not</em> affect existign keys - for this you would need to select the items and refresh the keys.</p>
 <p>Options:</p>
 <ul>
 <li>across all libraries</li>
@@ -1535,7 +1539,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 </ul>
 <h4 id="on-conflict-with-a-pinned-key-non-pinned-keys-will-be">On conflict with a pinned key, non-pinned keys will be</h4>
 <p>default: <code>kept (causes key duplicates)</code></p>
-<p>This determines what happens if you pin a key to a value that is already in use in a different reference but not pinned there. Neither are ideal, you just get to pick your poison. If you let BBT change the non-pinned key by adding a postfix character, the citation key changes which could be problematic for existing papers. If you keep the non-pinned key as-is, your library now has duplicate keys.</p>
+<p>This determines what happens if you pin a key to a value that is already in use in a different reference but not pinned there.
+Neither are ideal, you just get to pick your poison. If you let BBT change the non-pinned key by adding a postfix character,
+the citation key changes which could be problematic for existing papers. If you keep the non-pinned key as-is, your library now has duplicate keys.</p>
 <p>Options:</p>
 <ul>
 <li>postfixed (causes key changes)</li>
@@ -1544,7 +1550,8 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h3 id="quick-copydrag-and-drop-citations">Quick copy/drag-and-drop citations</h3>
 <h4 id="quickcopy-format">QuickCopy format</h4>
 <p>default: <code>LaTeX</code></p>
-<p>Used for drag-and-drop/quick copy using Better BibTeX citekeys. In the Zotero &ldquo;Export&rdquo; pane, choose <code>Better BibTeX Quick Copy</code> as the default export format for quick copy, and choose the desired format for the drag-and-drop citations here.</p>
+<p>Used for drag-and-drop/quick copy using Better BibTeX citekeys. In the Zotero &ldquo;Export&rdquo; pane, choose <code>Better BibTeX Quick Copy</code>
+as the default export format for quick copy, and choose the desired format for the drag-and-drop citations here.</p>
 <p>Options:</p>
 <ul>
 <li>LaTeX</li>
@@ -1562,14 +1569,17 @@ really large library, but you can read about what is involved <a href="/zotero-b
 </ul>
 <h4 id="latex-command">LaTeX command</h4>
 <p>default: <code>cite</code></p>
-<p>Used for drag-and-drop/quick copy citations in <code>LaTeX</code> format. Set the desired LaTeX citation command here. If you set this to <code>citep</code>, drag-and-drop citations will yield <code>\citep{key1,key2,...}</code></p>
+<p>Used for drag-and-drop/quick copy citations in <code>LaTeX</code> format. Set the desired LaTeX citation command here. If you set this to <code>citep</code>,
+drag-and-drop citations will yield <code>\citep{key1,key2,...}</code></p>
 <h4 id="surround-pandoc-citations-with-brackets">Surround Pandoc citations with brackets</h4>
 <p>default: <code>no</code></p>
-<p>Used for drag-and-drop/quick copy citations in <code>Pandoc</code> format. You can use this option to select whether you want to have these pandoc citations surrounded with brackets or not.</p>
+<p>Used for drag-and-drop/quick copy citations in <code>Pandoc</code> format. You can use this option to select whether you want
+to have these pandoc citations surrounded with brackets or not.</p>
 <h3 id="bibtex-aux-scanner">BibTeX AUX scanner</h3>
 <h4 id="when-scanning-an-aux-file-attempt-to-import-references-from-the-attached-bib-file-when-their-citation-keys-are-not-in-zotero">When scanning an AUX file, attempt to import references from the attached bib file when their citation keys are not in Zotero</h4>
 <p>default: <code>no</code></p>
-<p>By default, when scanning for cited items in the aux file, BBT will just generate a note listing all citation keys it cannot find in Zotero. When this option is turned on, BBT will attempt to import such missing items from the bib file that the AUX file being scanned points to.</p>
+<p>By default, when scanning for cited items in the aux file, BBT will just generate a note listing all citation keys it cannot find in Zotero.
+When this option is turned on, BBT will attempt to import such missing items from the bib file that the AUX file being scanned points to.</p>
 
 
 <footer class="footline">
