@@ -1541,12 +1541,10 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>All are prefixed with <code>extensions.zotero.translators.better-bibtex</code> in the table you will find there</p>
 <h3 id="ascii">ascii</h3>
 <p>default: <code>&lt;not set&gt;</code></p>
-<p>If you have unicode turned on you can still selectively replace some characters to plain-text commands; any characters entered here will always
-be replaced by their LaTeX-command counterparts.</p>
+<p>If you have unicode turned on you can still selectively replace some characters to plain-text commands; any characters entered here will always be replaced by their LaTeX-command counterparts.</p>
 <h3 id="autoexportdelay">autoExportDelay</h3>
 <p>default: <code>1</code></p>
-<p>If you have auto-exports set up, BBT will wait this many seconds before actually kicking off the exports to buffer multiple changes in quick succession
-setting off an unreasonable number of auto-exports. Minimum is 1 second. Changes to this preference take effect after restarting Zotero.</p>
+<p>If you have auto-exports set up, BBT will wait this many seconds before actually kicking off the exports to buffer multiple changes in quick succession setting off an unreasonable number of auto-exports. Minimum is 1 second. Changes to this preference take effect after restarting Zotero.</p>
 <h3 id="autoexportidlewait">autoExportIdleWait</h3>
 <p>default: <code>10</code></p>
 <p>Number of seconds to wait after your system goes idle before kicking off auto-exports.</p>
@@ -1558,18 +1556,13 @@ setting off an unreasonable number of auto-exports. Minimum is 1 second. Changes
 <p>Support for EDTF dates in biblatex</p>
 <h3 id="cacheflushinterval">cacheFlushInterval</h3>
 <p>default: <code>5</code></p>
-<p>How often the Better BibTeX database should be saved to disk. Defaults to once every 5 seconds. Note that
-your database is always saved when your computer goes idle, or when you exit Zotero.</p>
+<p>How often the Better BibTeX database should be saved to disk. Defaults to once every 5 seconds. Note that your database is always saved when your computer goes idle, or when you exit Zotero.</p>
 <h3 id="citeprocnotecitekey">citeprocNoteCitekey</h3>
 <p>default: <code>no</code></p>
-<p>Replaces the &ldquo;note&rdquo; field with the bibtex key during citation rendering in Word/Libreoffice. Main use-case is to help migrating word documents to pandoc.
-This setting only takes effect during startup, so if you change it, you will have to restart Zotero to have this take effect (or to disable it.
-Please disable it when done). You will want to use a custom CSL style
-(such as <a href="https://raw.githubusercontent.com/retorquere/zotero-better-bibtex/master/better-bibtex-citekeys.csl">this</a>) to make this work.</p>
+<p>Replaces the &ldquo;note&rdquo; field with the bibtex key during citation rendering in Word/Libreoffice. Main use-case is to help migrating word documents to pandoc. This setting only takes effect during startup, so if you change it, you will have to restart Zotero to have this take effect (or to disable it. Please disable it when done). You will want to use a custom CSL style (such as <a href="https://raw.githubusercontent.com/retorquere/zotero-better-bibtex/master/better-bibtex-citekeys.csl">this</a>) to make this work.</p>
 <h3 id="csquotes">csquotes</h3>
 <p>default: <code>&lt;not set&gt;</code></p>
-<p>if you set <code>csquotes</code> to a string of character pairs, each pair will be assumed to be the open and close parts of a pair and
-will be replaced with a <code>\\enquote{...}</code> construct.</p>
+<p>if you set <code>csquotes</code> to a string of character pairs, each pair will be assumed to be the open and close parts of a pair and will be replaced with a <code>\\enquote{...}</code> construct.</p>
 <h3 id="git">git</h3>
 <p>default: <code>config</code></p>
 <p>Can be <code>off</code>, <code>config</code> or <code>always</code></p>
@@ -1586,32 +1579,23 @@ will be replaced with a <code>\\enquote{...}</code> construct.</p>
 <p>default: <code>ignore</code></p>
 <p>What to do when encountering a TeX command the parser does not know about. Please only use values:</p>
 <ul>
-<li><code>ignore</code>: ignore the command entirely</li>
-<li><code>tex</code>: import and mark as TeX code, so on re-export it will be output as-is</li>
-<li><code>text</code>: import without marking it as TeX code, so on re-export it will be treated as regular text</li>
+<li><code>ignore</code>: ignore the command entirely * <code>tex</code>: import and mark as TeX code, so on re-export it will be output as-is * <code>text</code>: import without marking it as TeX code, so on re-export it will be treated as regular text</li>
 </ul>
 <h3 id="itemobserverdelay">itemObserverDelay</h3>
 <p>default: <code>5</code></p>
-<p>I&rsquo;ve had reports where Zotero notifies extensions that references have changed, but if BBT then actually
-retrieves those same references, Zotero complains they &ldquo;haven&rsquo;t been saved yet&rdquo;. Super. This preference sets
-the number of microseconds BBT should wait after being notified before acting on the changed references.</p>
+<p>I&rsquo;ve had reports where Zotero notifies extensions that references have changed, but if BBT then actually retrieves those same references, Zotero complains they &ldquo;haven&rsquo;t been saved yet&rdquo;. Super. This preference sets the number of microseconds BBT should wait after being notified before acting on the changed references.</p>
 <h3 id="kuroshiro">kuroshiro</h3>
 <p>default: <code>no</code></p>
 <p>When on, BBT will load kuroshiro for romajization in citekeys. This uses a lot of memory, easily 100MB. If you don&rsquo;t have Japanese titles/names, keep this off.</p>
 <h3 id="mapmath">mapMath</h3>
 <p>default: <code>&lt;not set&gt;</code></p>
-<p>Any characters entered here will prefer a math-mode LaTeX-command counterpart over a math-mode,
-if a math-mode command is available. Only useful when <code>mapUnicode</code> is <code>conservative</code>.</p>
+<p>Any characters entered here will prefer a math-mode LaTeX-command counterpart over a math-mode, if a math-mode command is available. Only useful when <code>mapUnicode</code> is <code>conservative</code>.</p>
 <h3 id="maptext">mapText</h3>
 <p>default: <code>&lt;not set&gt;</code></p>
-<p>Any characters entered here will prefer a text-mode LaTeX-command counterpart over a math-mode, if a text-mode command is available.
-Only useful when <code>mapUnicode</code> is <code>conservative</code>. Characters specified in <code>mapMath</code> take presedence over characters specified in <code>mapText</code>.</p>
+<p>Any characters entered here will prefer a text-mode LaTeX-command counterpart over a math-mode, if a text-mode command is available. Only useful when <code>mapUnicode</code> is <code>conservative</code>. Characters specified in <code>mapMath</code> take presedence over characters specified in <code>mapText</code>.</p>
 <h3 id="newtranslatorsaskrestart">newTranslatorsAskRestart</h3>
 <p>default: <code>yes</code></p>
-<p>New translators installed in Zotero are not immediately usuable for drag-and-drop. If you want to use BBT for drag-and-drop
-(e.g. to drag and drop citekeys or citations), you will be asked whether you want to restart after installation,
-or whether you want to reinstall when it is more convenient to you. You will be asked this whenever the BBT translators update,
-but you can disable this by checking &ldquo;Do not ask again&rdquo; in that dialog.</p>
+<p>New translators installed in Zotero are not immediately usuable for drag-and-drop. If you want to use BBT for drag-and-drop (e.g. to drag and drop citekeys or citations), you will be asked whether you want to restart after installation, or whether you want to reinstall when it is more convenient to you. You will be asked this whenever the BBT translators update, but you can disable this by checking &ldquo;Do not ask again&rdquo; in that dialog.</p>
 <h3 id="parseparticles">parseParticles</h3>
 <p>default: <code>yes</code></p>
 <p>Name particle handling. Only turn on when requested and we&rsquo;re talking about it on github.</p>
@@ -1619,9 +1603,7 @@ but you can disable this by checking &ldquo;Do not ask again&rdquo; in that dial
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>You can use a custom postscript per export directory:</p>
 <ol>
-<li>Edit the hidden preference <code>postscriptOverride</code>, and set it to a filename like <code>postscript.js</code></li>
-<li>In the directory where you intend to export to, create a file called <code>postscript.js</code> (or whatever you set the preference to) and add the postscript you want there</li>
-<li>Export to that directory.</li>
+<li>Edit the hidden preference <code>postscriptOverride</code>, and set it to a filename like <code>postscript.js</code> 2. In the directory where you intend to export to, create a file called <code>postscript.js</code> (or whatever you set the preference to) and add the postscript you want there 3. Export to that directory.</li>
 </ol>
 <p>A postscript override will disable caching for that export.</p>
 <h3 id="rawimports">rawImports</h3>
@@ -1629,12 +1611,10 @@ but you can disable this by checking &ldquo;Do not ask again&rdquo; in that dial
 <p>When you set this on, BBT will import bib files leaving any LaTeX commands as-is, and add the #LaTeX tag for raw re-exports.</p>
 <h3 id="rawlatag">rawLaTag</h3>
 <p>default: <code>#LaTeX</code></p>
-<p>When an item has this tag, all its fields will be assumed to hold raw LaTeX and will undergo no further transformation.
-If you set this to <code>*</code>, all items will be assumed to have raw LaTeX.</p>
+<p>When an item has this tag, all its fields will be assumed to hold raw LaTeX and will undergo no further transformation. If you set this to <code>*</code>, all items will be assumed to have raw LaTeX.</p>
 <h3 id="relativefilepaths">relativeFilePaths</h3>
 <p>default: <code>no</code></p>
-<p>When exporting a Bib(La)TeX file, if the attachments are stored anywhere under the directory the bibliography is exported to, use relative paths
-to those attachments. Caching is disabled when this option is on, so it affects performance.</p>
+<p>When exporting a Bib(La)TeX file, if the attachments are stored anywhere under the directory the bibliography is exported to, use relative paths to those attachments. Caching is disabled when this option is on, so it affects performance.</p>
 <h3 id="skipwords">skipWords</h3>
 <p>default: <code>a,ab,aboard,about,above,across,after,against,al,along,amid,among,an,and,anti,around,as,at,before,behind,below,beneath,beside,besides,between,beyond,but,by,d,da,das,de,del,dell,dello,dei,degli,della,dell,delle,dem,den,der,des,despite,die,do,down,du,during,ein,eine,einem,einen,einer,eines,el,en,et,except,for,from,gli,i,il,in,inside,into,is,l,la,las,le,les,like,lo,los,near,nor,of,off,on,onto,or,over,past,per,plus,round,save,since,so,some,sur,than,the,through,to,toward,towards,un,una,unas,under,underneath,une,unlike,uno,unos,until,up,upon,versus,via,von,while,with,within,without,yet,zu,zum</code></p>
 <p>list of words to skip in title when generating citation keys</p>
@@ -1643,9 +1623,7 @@ to those attachments. Caching is disabled when this option is on, so it affects 
 <p>list of fields to treat as verbatim during import. If you&rsquo;re importing e.g. Mendeley-generated BibTeX, try removing <code>file</code> from this list before import.</p>
 <h3 id="warntitlecased">warnTitleCased</h3>
 <p>default: <code>no</code></p>
-<p>Both Zotero and BBT expect titles to be in sentence-case, but a lot of sites offer import data that is Title Cased. When exporting these titles to bib(la)tex you&rsquo;re going
-to get a lot of extra unwanted braces, because all these Title Cased words will look like proper nouns to BBTs own title-casing mechanism. When this setting is on, you will be warned
-when you import/save items in Zotero with titles that look like they&rsquo;re Title Cased, so that you can inspect/correct them.</p>
+<p>Both Zotero and BBT expect titles to be in sentence-case, but a lot of sites offer import data that is Title Cased. When exporting these titles to bib(la)tex you&rsquo;re going to get a lot of extra unwanted braces, because all these Title Cased words will look like proper nouns to BBTs own title-casing mechanism. When this setting is on, you will be warned when you import/save items in Zotero with titles that look like they&rsquo;re Title Cased, so that you can inspect/correct them.</p>
 
 
 <footer class="footline">
