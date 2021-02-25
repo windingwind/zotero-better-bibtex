@@ -1,157 +1,81 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/zotero-better-bibtex/installation/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/exporting/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/citing/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/exporting/auto/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/citing/cayw/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/support/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/support/faq/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/exporting/pandoc/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/exporting/pull/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/support/performance/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/citing/aux-scanner/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/exporting/scripting/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/support/translations/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/exporting/extra-fields/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/support/tests/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/exporting/advanced/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/installation/preferences/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/installation/preferences/citation-keys/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/installation/preferences/export/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/installation/preferences/advanced/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/exporting/json-rpc/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/installation/preferences/hidden-preferences/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/installation/bundled-translators/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/automatic-export/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/cache/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/citation-keys/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/cite-as-you-write/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/configuration/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/export/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/git/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/import/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/overleaf/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/preferences/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/scripting/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/sponsoring/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/</loc>
   </url>
-  
 </urlset>
