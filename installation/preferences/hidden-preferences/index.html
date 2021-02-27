@@ -1486,6 +1486,7 @@ Better BibTeX for Zotero
         <li><a href="#importextra">importExtra</a></li>
         <li><a href="#importunknowntexcommand">importUnknownTexCommand</a></li>
         <li><a href="#itemobserverdelay">itemObserverDelay</a></li>
+        <li><a href="#jieba">jieba</a></li>
         <li><a href="#kuroshiro">kuroshiro</a></li>
         <li><a href="#mapmath">mapMath</a></li>
         <li><a href="#maptext">mapText</a></li>
@@ -1584,6 +1585,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h3 id="itemobserverdelay">itemObserverDelay</h3>
 <p>default: <code>5</code></p>
 <p>I&rsquo;ve had reports where Zotero notifies extensions that references have changed, but if BBT then actually retrieves those same references, Zotero complains they &ldquo;haven&rsquo;t been saved yet&rdquo;. Super. This preference sets the number of microseconds BBT should wait after being notified before acting on the changed references.</p>
+<h3 id="jieba">jieba</h3>
+<p>default: <code>no</code></p>
+<p>When on, BBT will make <code>jieba</code> Chinese word segmentation available for citekey construction. This uses a lot of memory, easily 10MB. If you don&rsquo;t have Chinese titles/names, keep this off.</p>
 <h3 id="kuroshiro">kuroshiro</h3>
 <p>default: <code>no</code></p>
 <p>When on, BBT will load kuroshiro for romajization in citekeys. This uses a lot of memory, easily 100MB. If you don&rsquo;t have Japanese titles/names, keep this off.</p>
