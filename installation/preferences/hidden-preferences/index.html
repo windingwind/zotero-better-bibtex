@@ -1498,6 +1498,7 @@ Better BibTeX for Zotero
         <li><a href="#skipwords">skipWords</a></li>
         <li><a href="#verbatimfields">verbatimFields</a></li>
         <li><a href="#warntitlecased">warnTitleCased</a></li>
+        <li><a href="#workers">workers</a></li>
       </ul>
     </li>
   </ul>
@@ -1624,6 +1625,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h3 id="warntitlecased">warnTitleCased</h3>
 <p>default: <code>no</code></p>
 <p>Both Zotero and BBT expect titles to be in sentence-case, but a lot of sites offer import data that is Title Cased. When exporting these titles to bib(la)tex you&rsquo;re going to get a lot of extra unwanted braces, because all these Title Cased words will look like proper nouns to BBTs own title-casing mechanism. When this setting is on, you will be warned when you import/save items in Zotero with titles that look like they&rsquo;re Title Cased, so that you can inspect/correct them.</p>
+<h3 id="workers">workers</h3>
+<p>default: <code>yes</code></p>
+<p>BBT can now perform its exports in a separate thread, and should no longer block Zotero&rsquo;s UI pretty much regardless of how large your library is.</p>
 
 
 <footer class="footline">
