@@ -1535,7 +1535,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>If you have this on, and you experience any problem that is not the cache getting dropped on upgrade, you <em>must</em> clear the cache and reproduce the problem. When you change this setting, as with any setting change, the cache will be dropped.</p>
 <h4 id="parallel-background-exports">Parallel background exports:</h4>
 <p>default: <code>1</code></p>
-<p>BBT can now perform its exports in a separate thread, and should no longer block Zotero&rsquo;s UI pretty much regardless of how large your library is. The default of 1 parallel export should suit most needs, but if you have many auto-exports set up, you may want to raise the maximum parallel exports to prevent queueing of exports. It is possible to turn background exports off by setting this value to <code>0</code> in the hidden preferences; you will get the old (blocking) behavior back, but you can&rsquo;t complain about Zotero being laggy during auto-exports. All Zotero exports are blocking, and it&rsquo;s a minor miracle I got background exports to work at all.</p>
+<p>BBT can now perform its exports in a separate thread, and should no longer block Zotero&rsquo;s UI pretty much regardless of how large your library is. While it&rsquo;s been tested and seems to work well, I still consider it to be experimental at this stage. You can turn it off by setting this value to <code>0</code> and get the old (blocking) behavior back.</p>
 <h3 id="import">Import</h3>
 <h4 id="sentence-case-titles-on-import">Sentence-case titles on import:</h4>
 <p>default: <code>yes, but try to exclude already-sentence-cased titles</code></p>
@@ -1577,15 +1577,6 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h4 id="warn-me-when-changing-citation-keys-in-bulk">Warn me when changing citation keys in bulk</h4>
 <p>default: <code>10</code></p>
 <p>For those who are curious about what the <code>Clear/Generate BibTeX key</code> right-click options do, this will warn you if you are doing this on more than 10 (default) at the same time, to prevent your curiosity from changing all your citation keys at once.</p>
-<h4 id="their-citation-keys-into-an-biblatex-ids-field">their citation keys into an bib(la)tex <code>ids</code> field</h4>
-<p>default: <code>no</code></p>
-<p>When merging items, also merge their citation keys into an bib(la)tex <code>ids</code> field.</p>
-<h4 id="fields-that-are-understood-to-be-csl-fields-by-zotero">fields that are understood to be CSL fields by Zotero</h4>
-<p>default: <code>no</code></p>
-<p>When merging items, also merge fields that are understood to be CSL fields by Zotero.</p>
-<h4 id="their-tex-fields">their <code>tex.*</code> fields</h4>
-<p>default: <code>no</code></p>
-<p>When merging items, also merge their <code>tex.*</code> fields.</p>
 
 
 <footer class="footline">
