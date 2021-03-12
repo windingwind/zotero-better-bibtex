@@ -1543,22 +1543,23 @@ really large library, but you can read about what is involved <a href="/zotero-b
 </ul>
 <h3 id="quick-copydrag-and-drop-citations">Quick copy/drag-and-drop citations</h3>
 <h4 id="quickcopy-format">QuickCopy format</h4>
-<p>default: <code>LaTeX</code></p>
+<p>default: <code>LaTeX citation</code></p>
 <p>Used for drag-and-drop/quick copy using Better BibTeX citekeys. In the Zotero &ldquo;Export&rdquo; pane, choose <code>Better BibTeX Quick Copy</code> as the default export format for quick copy, and choose the desired format for the drag-and-drop citations here.</p>
 <p>Options:</p>
 <ul>
-<li>LaTeX</li>
+<li>LaTeX citation</li>
 <li>Cite Keys</li>
-<li>Pandoc</li>
+<li>Pandoc citation</li>
 <li>Org-mode citekey select link</li>
 <li>Org-mode Zotero select link</li>
-<li>org-ref</li>
-<li>RTF Scan</li>
+<li>org-ref citation</li>
+<li>RTF Scan marker</li>
 <li>Roam Cite Key</li>
 <li>Atom (<a href="https://atom.io/packages/zotero-citations">https://atom.io/packages/zotero-citations</a>)</li>
 <li>GitBook</li>
 <li>Citekey select link</li>
 <li>Zotero select link</li>
+<li>Eta template</li>
 </ul>
 <h4 id="latex-command">LaTeX command</h4>
 <p>default: <code>cite</code></p>
@@ -1566,6 +1567,10 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h4 id="surround-pandoc-citations-with-brackets">Surround Pandoc citations with brackets</h4>
 <p>default: <code>no</code></p>
 <p>Used for drag-and-drop/quick copy citations in <code>Pandoc</code> format. You can use this option to select whether you want to have these pandoc citations surrounded with brackets or not.</p>
+<h4 id="eta-template">Eta template</h4>
+<p>default: <code>&lt;not set&gt;</code></p>
+<p>Used for drag-and-drop/quick copy citations in <code>Build your own</code> format. This is going to get pretty technical, sorry.</p>
+<p>You can paste a <a href="https://eta.js.org/">Eta</a> template here. Inside the template, you will find an array <code>it.items</code>, each of which is a serialized Zotero item. To find out what an item looks like inside the template, export some items as BetterBibTeX JSON.</p>
 <h3 id="bibtex-aux-scanner">BibTeX AUX scanner</h3>
 <h4 id="when-scanning-an-aux-file-attempt-to-import-references-from-the-attached-bib-file-when-their-citation-keys-are-not-in-zotero">When scanning an AUX file, attempt to import references from the attached bib file when their citation keys are not in Zotero</h4>
 <p>default: <code>no</code></p>
