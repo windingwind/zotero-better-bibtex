@@ -1462,11 +1462,12 @@ Better BibTeX for Zotero
 <nav id="TableOfContents">
   <ul>
     <li><a href="#are-there-any-plans-to-support-firefox-57">Are there any plans to support Firefox 57+?</a></li>
+    <li><a href="#add-on-could-not-be-installed-because-it-appears-to-be-corrupt">Add-on could not be installed because it appears to be corrupt.</a></li>
     <li><a href="#bbt-is-changing-the-capitalization-of-my-titles----why">BBT is changing the capitalization of my titles &ndash; why?</a></li>
     <li><a href="#why-the-double-braces">Why the double braces?</a></li>
     <li><a href="#but-why-so-many-double-braces">But why <em>so many</em> double braces?</a></li>
     <li><a href="#importing-jabref-databases">Importing JabRef databases</a></li>
-    <li><a href="#background-exportshahahugoshortcode-s4-hbhb-have-been-disabled"><a href="HAHAHUGOSHORTCODE-s4-HBHB">Background exports</a> have been disabled</a></li>
+    <li><a href="#background-exportshahahugoshortcode-s5-hbhb-have-been-disabled"><a href="HAHAHUGOSHORTCODE-s5-HBHB">Background exports</a> have been disabled</a></li>
   </ul>
 </nav>
     </div>
@@ -1502,6 +1503,14 @@ Better BibTeX for Zotero
 days</a>. BBT is installed
 inside Zotero instead of in the browser. Please see the <a href="/zotero-better-bibtex/installation/">installation
 instructions</a> to get started with BBT.</p>
+<h2 id="add-on-could-not-be-installed-because-it-appears-to-be-corrupt">Add-on could not be installed because it appears to be corrupt.</h2>
+<p>You have downloaded the Better BibTeX plugin by clicking on the
+download link using Firefox. As Zotero and Firefox use the same
+plugin technology, Firefox think the BetterBibTeX plugin is intended
+for itself, tries to install it, and then finds out it won&rsquo;t work.
+You need to download the plugin without installinging it into Firefox
+by right-clicking the download link, choose save-as, and then install
+it into Zotero using <a href="/zotero-better-bibtex/installation/">installation instructions</a> to get started with BBT.</p>
 <h2 id="bbt-is-changing-the-capitalization-of-my-titles----why">BBT is changing the capitalization of my titles &ndash; why?</h2>
 <p>There isn&rsquo;t a straightforward one-to-one mapping for all Zotero to Bib(La)TeX
 fields. For most I can make reasonable choices, but there are some things where
@@ -1623,7 +1632,7 @@ fail to import. You can fix this by going into Jabref and selecting <code>File</
 <code>Library properties</code> option, then filling out the path to the attachments
 directory in <code>general file directory</code>.</li>
 </ul>
-<h2 id="background-exportshahahugoshortcode-s4-hbhb-have-been-disabled"><a href="/zotero-better-bibtex/exporting/#background-exports">Background exports</a> have been disabled</h2>
+<h2 id="background-exportshahahugoshortcode-s5-hbhb-have-been-disabled"><a href="/zotero-better-bibtex/exporting/#background-exports">Background exports</a> have been disabled</h2>
 <p>When BBT encounters an error during a background export, it will automatically disable them; the UI will show <code>Background exports disabled</code>. For reasons that I haven&rsquo;t yet discovered, Firefox (the platform Zotero still builds on) sometimes declines BBT&rsquo;s request for a background thread, and will decline them until Zotero is restarted. In order to let you keep on working, BBT will disable background exports, and subsequent exports will be the normal Zotero foreground exports. You can re-enable the background exports using the <code>parallel exports</code> slider in BBT&rsquo;s <code>Advanced</code> preferences, under the <code>export</code> tab, or by restarting Zotero, which will re-enable them if you haven&rsquo;t manually set the slider to <code>0</code>.</p>
 
 

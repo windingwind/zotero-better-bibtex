@@ -32,7 +32,7 @@
       
       <guid>/zotero-better-bibtex/support/faq/</guid>
       <description>Are there any plans to support Firefox 57+? BBT lives where Zotero lives, and Zotero only has standalone these days. BBT is installed inside Zotero instead of in the browser. Please see the installation instructions to get started with BBT.
-BBT is changing the capitalization of my titles &amp;ndash; why? There isn&amp;rsquo;t a straightforward one-to-one mapping for all Zotero to Bib(La)TeX fields. For most I can make reasonable choices, but there are some things where Better BibTeX takes a little more liberties with your references in order to get sensible output.</description>
+Add-on could not be installed because it appears to be corrupt. You have downloaded the Better BibTeX plugin by clicking on the download link using Firefox. As Zotero and Firefox use the same plugin technology, Firefox think the BetterBibTeX plugin is intended for itself, tries to install it, and then finds out it won&amp;rsquo;t work.</description>
     </item>
     
     <item>
