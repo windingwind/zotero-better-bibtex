@@ -1479,6 +1479,7 @@ Better BibTeX for Zotero
         <li><a href="#changing-the-reference-type-from-collection-to-book">Changing the reference type from collection to book</a></li>
         <li><a href="#set-the-reference-type-to-misc-for-arxiv-preprints-in-bibtex">Set the reference type to <code>misc</code> for arXiv preprints in BibTeX</a></li>
         <li><a href="#citing-documents-with-a-physical-archive-location">Citing documents with a physical archive location</a></li>
+        <li><a href="#export-season-for-bibtex">Export season for BibTeX</a></li>
       </ul>
     </li>
   </ul>
@@ -1551,15 +1552,18 @@ But please fix your postscripts to test for the translator context.</p>
 <p>The postscript should be a <code>javascript</code> snippet. You can access the data with following objects and methods:</p>
 <ul>
 <li>
-<p><code>reference</code> is the BibTeX reference you are building, and the reference has a number of fields.</p>
+<p><code>item</code> is the Zotero item that&rsquo;s the source of the reference.</p>
 </li>
 <li>
-<p><code>item</code> is the Zotero item that&rsquo;s the source of the reference.</p>
+<p><code>reference</code> is the BibTeX reference you are building, and the reference has a number of fields.</p>
 <p>e.g. you can access the date in zotero item <code>item.date</code>.</p>
 </li>
 <li>
 <p><code>reference.has</code> is a dictionary of fields for output.</p>
-<p>e.g. you can see whether the <code>year</code> field has been set by testing for <code>reference.has.year</code></p>
+</li>
+<li>
+<p><code>reference.date</code> is the parsed and normalized version of <code>item.date</code>.</p>
+<p>e.g. you can see whether the <code>year</code> field has been set by testing for <code>reference.has.year</code>, and when e.g. for a season-date only the year is exported in bibtex, you can find it in <code>reference.date.season</code></p>
 </li>
 <li>
 <p><code>reference.add</code> is the function to add or modify keys in <code>reference.has</code>. It accepts the following named parameters in the form of an object:</p>
@@ -1753,6 +1757,10 @@ export:</p>
 % == BibLateX quality report for MillionDemiInfirmes1968:
 % Unexpected field 'number'
 % Missing required field 'author'
+</code></pre><h3 id="export-season-for-bibtex">Export season for BibTeX</h3>
+<pre><code>if (Translator.BetterBibTeX &amp;&amp; reference.date.type === 'season') {
+  reference.add({ name: 'month', value: ['', 'spring', 'summer', 'fall', 'winter'][reference.date.season] })
+}
 </code></pre>
 
 <footer class="footline">
