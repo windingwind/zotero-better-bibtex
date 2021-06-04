@@ -1480,6 +1480,7 @@ Better BibTeX for Zotero
         <li><a href="#set-the-reference-type-to-misc-for-arxiv-preprints-in-bibtex">Set the reference type to <code>misc</code> for arXiv preprints in BibTeX</a></li>
         <li><a href="#citing-documents-with-a-physical-archive-location">Citing documents with a physical archive location</a></li>
         <li><a href="#export-season-for-bibtex">Export season for BibTeX</a></li>
+        <li><a href="#adding-rights-field-in-biblatex">Adding rights field in BibLaTeX</a></li>
       </ul>
     </li>
   </ul>
@@ -1760,6 +1761,10 @@ export:</p>
 </code></pre><h3 id="export-season-for-bibtex">Export season for BibTeX</h3>
 <pre><code>if (Translator.BetterBibTeX &amp;&amp; reference.date.type === 'season') {
   reference.add({ name: 'month', value: ['', 'spring', 'summer', 'fall', 'winter'][reference.date.season] })
+}
+</code></pre><h3 id="adding-rights-field-in-biblatex">Adding rights field in BibLaTeX</h3>
+<pre><code>if (Translator.BetterBibLaTeX) {
+  reference.add({ name: 'rights', value: item.rights});
 }
 </code></pre>
 
