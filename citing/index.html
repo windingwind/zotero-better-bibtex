@@ -1543,6 +1543,9 @@ preferences (you can get there via the Zotero preferences, or by clicking the Be
 <p><strong>note that changing the pattern used to cause all your non-pinned keys to be regenerated in Zotero 4.</strong> In Zotero 5, this is no longer the case; changing a pattern will only affect references being created/changed after you changed the pattern. If you want your keys to update after a pattern change you will have to select your references, right-click, and select <code>Refresh</code>. This will not affect keys you have pinned.</p>
 <p>If you want to get fancy, you can set multiple patterns separated by a vertical bar, of which the first will be applied
 that yields a non-empty string. If all return a empty string, a random key will be generated.</p>
+<p>A handy application for this behavior is to use the <code>tex.shortauthor</code> from the <a href="/zotero-better-bibtex/exporting/extra-fields/">extra field</a> when defined to generate short citation keys for entries with long group author names, but to default to <code>[auth:lower]</code> otherwise:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[Extra:transliterate:replace=(?\:tex\\.shortauthor\[\:\=\]\\s+(\\w+))|.*,$1,regex:clean:lower][&gt;0][year] | [auth:lower][year]
+</code></pre></div><p><strong>note the non-greedy regex pattern before the non-capturing group.</strong> Using this pattern, a reference of the &ldquo;American Psychological Association&rdquo; from 2021 and <code>tex.shortauthor: APA</code> in the extra field would get the citekey <code>apa2021</code>. Without the definition in the extra field the generated citekey would be <code>americanpsychologicalassociation2021</code>.</p>
 <h3 id="generating-citekeys">Generating citekeys</h3>
 <p>To generate your citekeys, you use a pattern composed of functions and filters. Broadly, functions grab text from your item, and filters transform that text. The full list of functions and filters is:</p>
 <h4 id="functions">Functions</h4>
@@ -1574,7 +1577,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>date</code>: The date of the publication</li>
   
-    <li><code>extra</code>: A line from the extra field</li>
+    <li><code>extra</code>: A pseudo-field from the extra field. eg if you have <code>Original date: 1970</code> in your <code>extra</code> field, you can get it as <code>extra=originalDate</code>, or <code>tex.shortauthor: APA</code> which you could get with <code>[extra=tex.shortauthor]</code></li>
   
     <li><code>firstpage</code>: The number of the first page of the publication (Caution: this will return the lowest number found in the pages field, since BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.)</li>
   
