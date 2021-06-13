@@ -1615,8 +1615,10 @@ that yields a non-empty string. If all return a empty string, a random key will 
   </li>
   <li><code>0</code>: an alias for <code>[postfix=-%(n)s]</code>. Emulates the disambiguator of the standard Zotero exports. When you use <code>[zotero]</code> in your pattern, <code>[zotero][0]</code> is implied</li>
   <li><code>&gt;X</code>: a pseudo-function which aborts the current pattern generation if what came before it is <code>X</code> characters or less (<code>[&gt;0]</code> is a typical use. You would typically use this with something like <code>[auth][&gt;0][year] | [title][year]</code> which means if there's no author you get <code>title-year</code> rather than just <code>year</code>.</li>
-  <li><code>=typeName</code>: a pseudo-function that aborts the current pattern generation if the Zotero reference type does not equal <code>typeName</code>. You can test for multiple typenames at once by separating them with slashes (<code>[=journalArticle/report]</code>). Valid typeNames are: , <code>artwork</code><code>attachment</code><code>audioRecording</code><code>bill</code><code>blogPost</code><code>book</code><code>bookSection</code><code>case</code><code>classic**</code><code>computerProgram</code><code>conferencePaper</code><code>dictionaryEntry</code><code>document</code><code>email</code><code>encyclopediaArticle</code><code>film</code><code>forumPost</code><code>gazette**</code><code>hearing</code><code>instantMessage</code><code>interview</code><code>journalArticle</code><code>legalCommentary**</code><code>letter</code><code>magazineArticle</code><code>manuscript</code><code>map</code><code>newspaperArticle</code><code>note</code><code>patent</code><code>podcast</code><code>presentation</code><code>radioBroadcast</code><code>regulation**</code><code>report</code><code>standard**</code><code>statute</code><code>thesis</code><code>treaty**</code><code>tvBroadcast</code><code>videoRecording</code><code>webpage</code>.</li>
+  <li><code>=typeName</code>: a pseudo-function that aborts the current pattern generation if the Zotero reference type does not equal <code>typeName</code>. You can test for multiple typenames at once by separating them with slashes (<code>[=journalArticle/report]</code>). Valid typeNames are: <code>artwork</code>, <code>attachment</code>, <code>audioRecording</code>, <code>bill</code>, <code>blogPost</code>, <code>book</code>, <code>bookSection</code>, <code>case</code>, <code>classic<sup>JM</sup></code>, <code>computerProgram</code>, <code>conferencePaper</code>, <code>dictionaryEntry</code>, <code>document</code>, <code>email</code>, <code>encyclopediaArticle</code>, <code>film</code>, <code>forumPost</code>, <code>gazette<sup>JM</sup></code>, <code>hearing</code>, <code>instantMessage</code>, <code>interview</code>, <code>journalArticle</code>, <code>legalCommentary<sup>JM</sup></code>, <code>letter</code>, <code>magazineArticle</code>, <code>manuscript</code>, <code>map</code>, <code>newspaperArticle</code>, <code>note</code>, <code>patent</code>, <code>podcast</code>, <code>presentation</code>, <code>radioBroadcast</code>, <code>regulation<sup>JM</sup></code>, <code>report</code>, <code>standard<sup>JM</sup></code>, <code>statute</code>, <code>thesis</code>, <code>treaty<sup>JM</sup></code>, <code>tvBroadcast</code>, <code>videoRecording</code>, <code>webpage</code>.</li>
 </ul>
+
+(type names marked <sup>JM</sup> are only available in Juris-M).
 
 <p><strong>Note</strong>: the functions above all have the <code>clean</code> filter (see below) automatically applied to them. If you want more control, <code>auth</code>, <code>authIni</code>, <code>edtr</code>, &hellip; and all the author-related fields that mimic the JabRef equivalents also have capitalized versions (so <code>Auth</code>, <code>AuthIni</code>, <code>Edtr</code>, &hellip;) which follow the same algorithm but do not have any cleaning (diacritic folding, space removal, stripping of invalid citekey characters) applied. These can be used to pass through the filters specified below much like the fields from the table above. See also &ldquo;usage note&rdquo; below. For all the non-author fields, you can use the unprocessed reference fields directly:</p>
 <h3 id="direct-access-to-unprocessed-fields">Direct access to unprocessed fields</h3>
@@ -1628,21 +1630,21 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>AccessDate</td>
       
-        <td>AdminFlag**</td>
+        <td>AdminFlag<sup>JM</sup></td>
       
-        <td>AdoptionDate**</td>
+        <td>AdoptionDate<sup>JM</sup></td>
       
     </tr>
   
     <tr>
       
-        <td>Album**</td>
+        <td>Album<sup>JM</sup></td>
       
         <td>ApplicationNumber</td>
       
         <td>Archive</td>
       
-        <td>ArchiveCollection**</td>
+        <td>ArchiveCollection<sup>JM</sup></td>
       
     </tr>
   
@@ -1654,7 +1656,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>ArtworkSize</td>
       
-        <td>AssemblyNumber**</td>
+        <td>AssemblyNumber<sup>JM</sup></td>
       
     </tr>
   
@@ -1674,7 +1676,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>BlogTitle</td>
       
-        <td>BookAbbreviation**</td>
+        <td>BookAbbreviation<sup>JM</sup></td>
       
         <td>BookTitle</td>
       
@@ -1702,7 +1704,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Company</td>
       
-        <td>ConferenceDate**</td>
+        <td>ConferenceDate<sup>JM</sup></td>
       
     </tr>
   
@@ -1722,7 +1724,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Date</td>
       
-        <td>DateAmended**</td>
+        <td>DateAmended<sup>JM</sup></td>
       
         <td>DateDecided</td>
       
@@ -1736,7 +1738,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Distributor</td>
       
-        <td>Division**</td>
+        <td>Division<sup>JM</sup></td>
       
         <td>DocketNumber</td>
       
@@ -1744,7 +1746,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <tr>
       
-        <td>DocumentName**</td>
+        <td>DocumentName<sup>JM</sup></td>
       
         <td>DocumentNumber</td>
       
@@ -1768,7 +1770,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <tr>
       
-        <td>GazetteFlag**</td>
+        <td>GazetteFlag<sup>JM</sup></td>
       
         <td>Genre</td>
       
@@ -1798,7 +1800,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>JournalAbbreviation</td>
       
-        <td>Jurisdiction**</td>
+        <td>Jurisdiction<sup>JM</sup></td>
       
     </tr>
   
@@ -1832,7 +1834,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>MeetingName</td>
       
-        <td>MeetingNumber**</td>
+        <td>MeetingNumber<sup>JM</sup></td>
       
         <td>NameOfAct</td>
       
@@ -1842,7 +1844,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Network</td>
       
-        <td>NewsCaseDate**</td>
+        <td>NewsCaseDate<sup>JM</sup></td>
       
         <td>NumPages</td>
       
@@ -1854,11 +1856,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>NumberOfVolumes</td>
       
-        <td>OpeningDate**</td>
+        <td>OpeningDate<sup>JM</sup></td>
       
-        <td>Opus**</td>
+        <td>Opus<sup>JM</sup></td>
       
-        <td>OriginalDate**</td>
+        <td>OriginalDate<sup>JM</sup></td>
       
     </tr>
   
@@ -1866,7 +1868,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Pages</td>
       
-        <td>ParentTreaty**</td>
+        <td>ParentTreaty<sup>JM</sup></td>
       
         <td>PatentNumber</td>
       
@@ -1880,7 +1882,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>PresentationType</td>
       
-        <td>PriorityDate**</td>
+        <td>PriorityDate<sup>JM</sup></td>
       
         <td>PriorityNumbers</td>
       
@@ -1900,9 +1902,9 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <tr>
       
-        <td>PublicationDate**</td>
+        <td>PublicationDate<sup>JM</sup></td>
       
-        <td>PublicationNumber**</td>
+        <td>PublicationNumber<sup>JM</sup></td>
       
         <td>PublicationTitle</td>
       
@@ -1914,19 +1916,19 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>References</td>
       
-        <td>RegnalYear**</td>
+        <td>RegnalYear<sup>JM</sup></td>
       
-        <td>RegulationType**</td>
+        <td>RegulationType<sup>JM</sup></td>
       
-        <td>RegulatoryBody**</td>
+        <td>RegulatoryBody<sup>JM</sup></td>
       
     </tr>
   
     <tr>
       
-        <td>Reign**</td>
+        <td>Reign<sup>JM</sup></td>
       
-        <td>Release**</td>
+        <td>Release<sup>JM</sup></td>
       
         <td>ReportNumber</td>
       
@@ -1940,7 +1942,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>ReporterVolume</td>
       
-        <td>ResolutionLabel**</td>
+        <td>ResolutionLabel<sup>JM</sup></td>
       
         <td>Rights</td>
       
@@ -1972,13 +1974,13 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <tr>
       
-        <td>SessionType**</td>
+        <td>SessionType<sup>JM</sup></td>
       
         <td>ShortTitle</td>
       
-        <td>SigningDate**</td>
+        <td>SigningDate<sup>JM</sup></td>
       
-        <td>Status**</td>
+        <td>Status<sup>JM</sup></td>
       
     </tr>
   
@@ -1988,7 +1990,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Subject</td>
       
-        <td>SupplementName**</td>
+        <td>SupplementName<sup>JM</sup></td>
       
         <td>System</td>
       
@@ -2000,7 +2002,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Title</td>
       
-        <td>TreatyNumber**</td>
+        <td>TreatyNumber<sup>JM</sup></td>
       
         <td>Type</td>
       
@@ -2022,7 +2024,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Volume</td>
       
-        <td>VolumeTitle**</td>
+        <td>VolumeTitle<sup>JM</sup></td>
       
         <td>WebsiteTitle</td>
       
@@ -2032,7 +2034,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <tr>
       
-        <td>YearAsVolume**</td>
+        <td>YearAsVolume<sup>JM</sup></td>
       
         <td></td>
       
@@ -2044,7 +2046,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
 </table>
 
-<p>(fields marked <code>**</code> are only available in Juris-M).</p>
+<p>(fields marked <sup>JM</sup> are only available in Juris-M).</p>
 <h4 id="flags">Flags</h4>
 <ul>
 <li><code>+initials</code> adds initials to any author name function. Specify using e.g. <code>[auth+initials]</code></li>
