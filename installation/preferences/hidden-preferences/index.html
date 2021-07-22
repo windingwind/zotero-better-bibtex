@@ -1494,6 +1494,7 @@ Better BibTeX for Zotero
         <li><a href="#parseparticles">parseParticles</a></li>
         <li><a href="#patchdates">patchDates</a></li>
         <li><a href="#postscriptoverride">postscriptOverride</a></li>
+        <li><a href="#preferencesoverride">preferencesOverride</a></li>
         <li><a href="#rawimports">rawImports</a></li>
         <li><a href="#rawlatag">rawLaTag</a></li>
         <li><a href="#relativefilepaths">relativeFilePaths</a></li>
@@ -1609,6 +1610,13 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>Edit the hidden preference <code>postscriptOverride</code>, and set it to a filename like <code>postscript.js</code> 2. In the directory where you intend to export to, create a file called <code>postscript.js</code> (or whatever you set the preference to) and add the postscript you want there 3. Export to that directory.</li>
 </ol>
 <p>A postscript override will disable caching for that export.</p>
+<h3 id="preferencesoverride">preferencesOverride</h3>
+<p>default: <code>&lt;not set&gt;</code></p>
+<p>You can use custom preferences per export directory:</p>
+<ol>
+<li>Edit the hidden preference <code>preferencesOverride</code>, and set it to a filename like <code>preferences.json</code> 2. In the directory where you intend to export to, create a file called <code>preferences.json</code> (or whatever you set the preference to) and add the desired preference overrides. You can get your current preferences by exporting to <code>BetterBibTeX JSON</code> and removing everything except <code>preferences</code>. 3. Export to that directory.</li>
+</ol>
+<p>A preferences override will disable caching for that export.</p>
 <h3 id="rawimports">rawImports</h3>
 <p>default: <code>no</code></p>
 <p>When you set this on, BBT will import bib files leaving any LaTeX commands as-is, and add the #LaTeX tag for raw re-exports.</p>
