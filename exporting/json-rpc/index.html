@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.85.0" />
+    <meta name="generator" content="Hugo 0.86.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1496,7 +1496,7 @@ Better BibTeX for Zotero
 
 
 <p>You can call into BBT using <a href="https://www.jsonrpc.org/">JSON-RPC</a> on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://localhost:23119/better-bibtex/json-rpc -X POST -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -H <span style="color:#e6db74">&#34;Accept: application/json&#34;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;collection.scanAUX&#34;, &#34;params&#34;: [&#34;/My Library/thesis/article1&#34;, &#34;/Users/phantom/Downloads/output.aux&#34;] }&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://localhost:23119/better-bibtex/json-rpc -X POST -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -H <span style="color:#e6db74">&#34;Accept: application/json&#34;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;collection.scanAUX&#34;, &#34;params&#34;: [&#34;/My Library/thesis/article1&#34;, &#34;/Users/phantom/Downloads/output.aux&#34;] }&#39;</span>
 </code></pre></div><p>The available methods are:</p>
 <h2 id="autoexportaddcollection-translator-path-displayoptions-replace">autoexport.add(collection, translator, path, displayOptions, replace)</h2>
 <p>Add an auto-export for the given collection. The target collection will be created if it does not exist</p>

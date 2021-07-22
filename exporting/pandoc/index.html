@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.85.0" />
+    <meta name="generator" content="Hugo 0.86.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1540,7 +1540,7 @@ and this unspoken difference can be another cause of loss.</li>
 <li>download the <a href="../zotero.lua">Pandoc filter</a></li>
 <li>add some metadata to your markdown file in a YAML header:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 <span style="color:#75715e"># all the regular stuff you have here</span>
 <span style="color:#f92672">zotero</span>:
   <span style="color:#f92672">library</span>: <span style="color:#ae81ff">&lt;group name&gt;</span> <span style="color:#75715e"># omitted to use your personal library</span>
@@ -1550,7 +1550,7 @@ and this unspoken difference can be another cause of loss.</li>
   <span style="color:#f92672">csl-style</span>: <span style="color:#ae81ff">apa</span> <span style="color:#75715e"># pre-fill the style</span>
 ...
 </code></pre></div><p>or you can specify them on the pandoc command line:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pandoc -s --lua-filter<span style="color:#f92672">=</span>zotero.lua --metadata<span style="color:#f92672">=</span>zotero_scannable_cite:true --metadata<span style="color:#f92672">=</span>zotero_client:jurism ...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pandoc -s --lua-filter<span style="color:#f92672">=</span>zotero.lua --metadata<span style="color:#f92672">=</span>zotero_scannable_cite:true --metadata<span style="color:#f92672">=</span>zotero_client:jurism ...
 </code></pre></div><p>And hey presto, a live LibreOffice/Word file, or an ODT file with
 scannable cites. When you first open the document with live citations, open the Zotero
 document preferences and click <code>OK</code> <em>before</em> you refresh, or you&rsquo;ll get a confirmation

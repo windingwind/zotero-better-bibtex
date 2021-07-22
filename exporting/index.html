@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.85.0" />
+    <meta name="generator" content="Hugo 0.86.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1513,10 +1513,10 @@ you can fix its citation key to a value of your choosing by adding the text <cod
 <h3 id="latex-fields">LaTeX fields</h3>
 <p>You can add your own fields to the export which are not derived from regular Zotero item fields by adding them in the <code>extra</code> field:</p>
 <p>either by using lines such as</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.origdate= 1856
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.origdate= 1856
 tex.origtitle= All This &amp; More
 </code></pre></div><p>or</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.origdate: 1856
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.origdate: 1856
 tex.origtitle: All This &amp; More
 </code></pre></div><p>The difference between lines with an <code>=</code> or an <code>:</code> is that the fields marked with <code>=</code> are considered to be valid (&ldquo;raw&rdquo;) latex and will be passed on into the generated files as-is. The lines marked with <code>:</code> are assumed to be plain-text and LaTeX special characters (such as the <code>&amp;</code> above) will be escaped.</p>
 <h3 id="csl-fields">CSL fields</h3>

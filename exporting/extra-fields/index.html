@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.85.0" />
+    <meta name="generator" content="Hugo 0.86.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1498,9 +1498,9 @@ have. These fields are supported by the citation processor inside
 Zotero, and BBT understands them too, and adds one &ldquo;cheater syntax
 of its own.</p>
 <p>You can add such fields by adding each on their own line in the following format:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Label: value
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Label: value
 </code></pre></div><p>or the older format you migh have seen, which is supported but considered depracated:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">{:csl-variable: value}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">{:csl-variable: value}
 </code></pre></div><p>The full list of labels and the Zotero/CSL variables they translate to can be found in the table at the end.</p>
 <p>These extra-fields are available to <a href="/zotero-better-bibtex/exporting/scripting/">postscripts</a> as <code>extra.kv.&lt;variable-name&gt;</code>. Which variable it is depends (sorry):</p>
 <ul>
@@ -1516,17 +1516,17 @@ of its own.</p>
 <p>Text is just that. For dates, BBT will do its darndest to parse the crazy dates so many people seem intent in using but if you want consistent results, stick to <code>YYYY-MM-DD</code>. For names, use either just text (equivalent to a single-part name in Zotero), or <code>&lt;family name&gt; || &lt;given name&gt;</code>.</p>
 <h2 id="bbt-specific">BBT-specific</h2>
 <p>There is also a BBT-specific extra-field format that looks like</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.field: value
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.field: value
 </code></pre></div><p>These fields are simply copied to the output by BBT, so if you have</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.bestfield: philosophy
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.bestfield: philosophy
 </code></pre></div><p>you will end up with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bibtex" data-lang="bibtex">  <span style="color:#75715e">bestfield = {philosophy}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bibtex" data-lang="bibtex">  <span style="color:#75715e">bestfield = {philosophy}</span>
 </code></pre></div><p>in the written bib(la)tex.</p>
 <p>You can make BBT export the field only for bibtex or biblatex by changing the prefix to <code>bibtex.</code> (so <code>bibtex.bestfield:</code>) or <code>biblatex.</code> respectively. Finally, you can use <code>=</code> instead of <code>:</code> as a delimiter, and that will indicate to BBT that what follows the <code>=</code> is &ldquo;raw LaTeX&rdquo;; BBT will not do any escaping and just copy it out unchanged. This means, for example, that you would probably want</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.corp: Black &amp; Decker
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.corp: Black &amp; Decker
 tex.formula= $\sum\limits_{i=1}^{n} -p(m_{i})\log_{2}(p(m_{i}))$
 </code></pre></div><p>and not</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.corp= Black &amp; Decker
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tex.corp= Black &amp; Decker
 tex.formula: $\sum\limits_{i=1}^{n} -p(m_{i})\log_{2}(p(m_{i}))$
 </code></pre></div><p>It is important to note that these BBT-specific fields are not recognized by any other exporter. They might end up in notes for some other exporters; there&rsquo;s nothing I can do about that.</p>
 <h2 id="labelvariable-list">Label/variable list</h2>
