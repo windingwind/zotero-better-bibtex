@@ -1584,6 +1584,8 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>firstpage</code>: The number of the first page of the publication (Caution: this will return the lowest number found in the pages field, since BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.)</li>
   
+    <li><code>inspire.hep</code>: Generates citation keys as the stock Zotero Bib(La)TeX export does. Note that this pattern inherits all the problems of the original Zotero citekey generation &ndash; you should really only use this if you have existing papers that rely on this behavior.</li>
+  
     <li><code>journal</code>: returns the journal abbreviation, or, if not found, the journal title, If &lsquo;automatic journal abbreviation&rsquo; is enabled in the BBT settings, it will use the same abbreviation filter Zotero uses in the wordprocessor integration. You might want to use the <code>abbr</code> filter on this.</li>
   
     <li><code>keywordN</code>: Tag number <code>N</code></li>
