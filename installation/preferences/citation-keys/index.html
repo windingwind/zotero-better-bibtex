@@ -769,6 +769,27 @@ Better BibTeX for Zotero
  
   
     
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/automatic-export/" title="Citation keys" class="dd-item ">
+        <a href="/zotero-better-bibtex/installation/preferences/automatic-export/">
+        Citation keys
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/zotero-better-bibtex/installation/preferences/citation-keys/" title="Citation keys" class="dd-item active">
         <a href="/zotero-better-bibtex/installation/preferences/citation-keys/">
         Citation keys
@@ -811,8 +832,29 @@ Better BibTeX for Zotero
  
   
     
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/advanced/" title="Advanced" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/advanced/">
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/import/" title="Advanced" class="dd-item ">
+        <a href="/zotero-better-bibtex/installation/preferences/import/">
+        Advanced
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/miscellaneous/" title="Advanced" class="dd-item ">
+        <a href="/zotero-better-bibtex/installation/preferences/miscellaneous/">
         Advanced
         
         </a>
@@ -1318,7 +1360,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3333333333333335em"><i class="fas fa-tag"></i>citation-keys</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>citation-keys</a></span>
         
             
             
@@ -1334,7 +1376,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>configuration</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.4678924870096006em"><i class="fas fa-tag"></i>configuration</a></span>
         
             
             
@@ -1374,7 +1416,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.3333333333333335em"><i class="fas fa-tag"></i>preferences</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.4308270834535262em"><i class="fas fa-tag"></i>preferences</a></span>
         
             
             
@@ -1474,10 +1516,9 @@ Better BibTeX for Zotero
   <ul>
     <li>
       <ul>
-        <li><a href="#citation-keys">Citation keys</a></li>
+        <li></li>
         <li><a href="#keeping-citation-keys-unique">Keeping citation keys unique</a></li>
-        <li><a href="#quick-copydrag-and-drop-citations">Quick copy/drag-and-drop citations</a></li>
-        <li><a href="#bibtex-aux-scanner">BibTeX AUX scanner</a></li>
+        <li><a href="#ideographs-in-citekeys">Ideographs in citekeys</a></li>
       </ul>
     </li>
   </ul>
@@ -1519,7 +1560,6 @@ Better BibTeX for Zotero
 only have hidden preferences). The defaults should just work, but here&rsquo;s an attempt to describe what they do.</p>
 <p><strong>Making any change here will drop your entire export cache.</strong> This is usually not a problem unless you have a
 really large library, but you can read about what is involved <a href="/zotero-better-bibtex/support/performance/">here</a>.</p>
-<h3 id="citation-keys">Citation keys</h3>
 <h4 id="citation-key-format">Citation key format</h4>
 <p>default: <code>​[auth:lower][shorttitle3_3][year]</code></p>
 <p>Set the pattern used to generate citation keys. The format of the keys is documented <a href="/zotero-better-bibtex/citing/">here</a>.</p>
@@ -1546,54 +1586,16 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>postfixed (causes key changes)</li>
 <li>kept (causes key duplicates)</li>
 </ul>
-<h3 id="quick-copydrag-and-drop-citations">Quick copy/drag-and-drop citations</h3>
-<h4 id="quickcopy-format">QuickCopy format</h4>
-<p>default: <code>LaTeX citation</code></p>
-<p>Used for drag-and-drop/quick copy using Better BibTeX citation keys. In the Zotero &ldquo;Export&rdquo; pane, choose <code>Better BibTeX Quick Copy</code> as the default export format for quick copy, and choose the desired format for the drag-and-drop citations here.</p>
-<p>Options:</p>
-<ul>
-<li>LaTeX citation</li>
-<li>Cite Keys</li>
-<li>Pandoc citation</li>
-<li>Org-mode select link</li>
-<li>org-ref citation</li>
-<li>RTF Scan marker</li>
-<li>Roam Cite Key</li>
-<li>Atom (<a href="https://atom.io/packages/zotero-citations">https://atom.io/packages/zotero-citations</a>)</li>
-<li>GitBook</li>
-<li>Zotero select link</li>
-<li>Eta template</li>
-</ul>
-<h4 id="latex-command">LaTeX command</h4>
-<p>default: <code>cite</code></p>
-<p>Used for drag-and-drop/quick copy citations in <code>LaTeX</code> format. Set the desired LaTeX citation command here. If you set this to <code>citep</code>, drag-and-drop citations will yield <code>\citep{key1,key2,...}</code></p>
-<h4 id="surround-pandoc-citations-with-brackets">Surround Pandoc citations with brackets</h4>
+<h3 id="ideographs-in-citekeys">Ideographs in citekeys</h3>
+<h4 id="apply-kuroshiro-romajization-in-japanese-namestitles-uses-a-lot-of-memory">Apply kuroshiro romajization in Japanese names/titles. Uses a lot of memory.</h4>
 <p>default: <code>no</code></p>
-<p>Used for drag-and-drop/quick copy citations in <code>Pandoc</code> format. You can use this option to select whether you want to have these pandoc citations surrounded with brackets or not.</p>
-<h4 id="org-mode-select-link">Org-mode select link</h4>
-<p>default: <code>using Zotero item key</code></p>
-<p>OrgMode to select items in your library</p>
-<p>Options:</p>
-<ul>
-<li>using Zotero item key</li>
-<li>using Better BibTeX citation key</li>
-</ul>
-<h4 id="zotero-select-link">Zotero select link</h4>
-<p>default: <code>using Zotero item key</code></p>
-<p>Hyperlink to select items in your library</p>
-<p>Options:</p>
-<ul>
-<li>using Zotero item key</li>
-<li>using Better BibTeX citation key</li>
-</ul>
-<h4 id="eta-template">Eta template</h4>
-<p>default: <code>&lt;not set&gt;</code></p>
-<p>Used for drag-and-drop/quick copy citations in <code>Build your own</code> format. This is going to get pretty technical, sorry.</p>
-<p>You can paste a <a href="https://eta.js.org/">Eta</a> template here. Inside the template, you will find an array <code>it.items</code>, each of which is a serialized Zotero item. To find out what an item looks like inside the template, export some items as BetterBibTeX JSON.</p>
-<h3 id="bibtex-aux-scanner">BibTeX AUX scanner</h3>
-<h4 id="when-scanning-an-aux-file-attempt-to-import-references-from-the-attached-bib-file-when-their-citation-keys-are-not-in-zotero">When scanning an AUX file, attempt to import references from the attached bib file when their citation keys are not in Zotero</h4>
+<p>When on, BBT will load kuroshiro for romajization in citation keys. This uses a lot of memory, easily 100MB. If you don&rsquo;t have Japanese titles/names, keep this off.</p>
+<h4 id="enable-jieba-filter-in-citekey-patterns-uses-a-lot-of-memory">Enable &lsquo;jieba&rsquo; filter in citekey patterns. Uses a lot of memory.</h4>
 <p>default: <code>no</code></p>
-<p>By default, when scanning for cited items in the aux file, BBT will just generate a note listing all citation keys it cannot find in Zotero. When this option is turned on, BBT will attempt to import such missing items from the bib file that the AUX file being scanned points to.</p>
+<p>When on, BBT will make Chinese word segmentation available for citation keys construction. This uses a lot of memory, easily 70MB. If you don&rsquo;t have Chinese titles/names, keep this off.</p>
+<h4 id="warn-me-when-changing-citation-keys-in-bulk">Warn me when changing citation keys in bulk</h4>
+<p>default: <code>10</code></p>
+<p>For those who are curious about what the <code>Clear/Generate BibTeX key</code> right-click options do, this will warn you if you are doing this on more than 10 (default) at the same time, to prevent your curiosity from changing all your citation keys at once.</p>
 
 
 <footer class="footline">
@@ -1661,6 +1663,25 @@ really large library, but you can read about what is involved <a href="/zotero-b
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1680,6 +1701,22 @@ really large library, but you can read about what is involved <a href="/zotero-b
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -2011,7 +2048,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 	 
 	 
 		
-			<a class="nav nav-prev" href="/zotero-better-bibtex/installation/preferences/" title="Configuration"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/zotero-better-bibtex/installation/preferences/automatic-export/" title="Citation keys"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/zotero-better-bibtex/installation/preferences/export/" title="Export" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>

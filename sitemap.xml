@@ -38,11 +38,15 @@
   </url><url>
     <loc>/zotero-better-bibtex/installation/preferences/</loc>
   </url><url>
+    <loc>/zotero-better-bibtex/installation/preferences/automatic-export/</loc>
+  </url><url>
     <loc>/zotero-better-bibtex/installation/preferences/citation-keys/</loc>
   </url><url>
     <loc>/zotero-better-bibtex/installation/preferences/export/</loc>
   </url><url>
-    <loc>/zotero-better-bibtex/installation/preferences/advanced/</loc>
+    <loc>/zotero-better-bibtex/installation/preferences/import/</loc>
+  </url><url>
+    <loc>/zotero-better-bibtex/installation/preferences/miscellaneous/</loc>
   </url><url>
     <loc>/zotero-better-bibtex/exporting/json-rpc/</loc>
   </url><url>

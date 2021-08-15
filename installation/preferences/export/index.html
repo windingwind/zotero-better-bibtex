@@ -769,6 +769,27 @@ Better BibTeX for Zotero
  
   
     
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/automatic-export/" title="Citation keys" class="dd-item ">
+        <a href="/zotero-better-bibtex/installation/preferences/automatic-export/">
+        Citation keys
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/zotero-better-bibtex/installation/preferences/citation-keys/" title="Citation keys" class="dd-item ">
         <a href="/zotero-better-bibtex/installation/preferences/citation-keys/">
         Citation keys
@@ -811,8 +832,29 @@ Better BibTeX for Zotero
  
   
     
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/advanced/" title="Advanced" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/advanced/">
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/import/" title="Advanced" class="dd-item ">
+        <a href="/zotero-better-bibtex/installation/preferences/import/">
+        Advanced
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/miscellaneous/" title="Advanced" class="dd-item ">
+        <a href="/zotero-better-bibtex/installation/preferences/miscellaneous/">
         Advanced
         
         </a>
@@ -1318,7 +1360,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3333333333333335em"><i class="fas fa-tag"></i>citation-keys</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>citation-keys</a></span>
         
             
             
@@ -1334,7 +1376,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>configuration</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.4678924870096006em"><i class="fas fa-tag"></i>configuration</a></span>
         
             
             
@@ -1374,7 +1416,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.3333333333333335em"><i class="fas fa-tag"></i>preferences</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.4308270834535262em"><i class="fas fa-tag"></i>preferences</a></span>
         
             
             
@@ -1474,9 +1516,11 @@ Better BibTeX for Zotero
   <ul>
     <li>
       <ul>
+        <li></li>
         <li><a href="#bibtex">BibTeX</a></li>
         <li><a href="#biblatex">BibLaTeX</a></li>
         <li><a href="#fields">Fields</a></li>
+        <li><a href="#quick-copy">Quick copy</a></li>
         <li><a href="#miscellaneous">Miscellaneous</a></li>
       </ul>
     </li>
@@ -1521,6 +1565,9 @@ Better BibTeX for Zotero
 only have hidden preferences). The defaults should just work, but here&rsquo;s an attempt to describe what they do.</p>
 <p><strong>Making any change here will drop your entire export cache.</strong> This is usually not a problem unless you have a
 really large library, but you can read about what is involved <a href="/zotero-better-bibtex/support/performance/">here</a>.</p>
+<h4 id="postscript">postscript</h4>
+<p>default: <code>&lt;not set&gt;</code></p>
+<p>Snippet of javascript to run <a href="/zotero-better-bibtex/exporting/scripting/">after each reference generation</a>.</p>
 <h3 id="bibtex">BibTeX</h3>
 <h4 id="export-unicode-as-plain-text-latex-commands-recommended">Export unicode as plain-text latex commands (recommended)</h4>
 <p>default: <code>yes</code></p>
@@ -1528,7 +1575,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h4 id="disregard-name-prefixes-when-sorting">Disregard name prefixes when sorting</h4>
 <p>default: <code>no</code></p>
 <p>Name handling is a lot more complex than I had ever thought it to be. A <em>lot</em> more complex. BibTeX has really limited ways of dealing with names with particles (van, von, de, etc). If you turn this on, BBT will add code to have <code>van Gogh</code> sorted under <code>Gogh</code>.</p>
-<h4 id="add-urls-to-bibtex-export">Add URLs to BibTeX export</h4>
+<h4 id="add-urls-to-bibtex-export">Add URLs to BibTeX export:</h4>
 <p>default: <code>no</code></p>
 <p>Most BibTeX styles do not support DOI/URL fields. Of the styles that do support them, many forget to load the required &lsquo;url&rsquo; package, so make sure to load it yourself. DOI and URL fields are so-called &lsquo;verbatim&rsquo; fields, and without the &lsquo;url&rsquo; package loaded compilation will likely fail.</p>
 <p>Options:</p>
@@ -1556,7 +1603,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>DOI</li>
 <li>URL</li>
 </ul>
-<h4 id="fields-to-omit-from-export-comma-separated">Fields to omit from export (comma-separated)</h4>
+<h4 id="fields-to-omit-from-export-comma-separated">Fields to omit from export (comma-separated):</h4>
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>If there are some fields you don&rsquo;t want in your bibtex files (such as <code>note</code> for example), add a list of them here, separated by comma&rsquo;s.</p>
 <h4 id="include-jabref-specific-metadata">Include JabRef-specific metadata:</h4>
@@ -1569,6 +1616,49 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>for JabRef 4</li>
 <li>for JabRef 5</li>
 </ul>
+<h3 id="quick-copy">Quick copy</h3>
+<h4 id="quickcopy-format">QuickCopy format</h4>
+<p>default: <code>LaTeX citation</code></p>
+<p>Used for drag-and-drop/quick copy using Better BibTeX citation keys. In the Zotero &ldquo;Export&rdquo; pane, choose <code>Better BibTeX Quick Copy</code> as the default export format for quick copy, and choose the desired format for the drag-and-drop citations here.</p>
+<p>Options:</p>
+<ul>
+<li>LaTeX citation</li>
+<li>Cite Keys</li>
+<li>Pandoc citation</li>
+<li>Org-mode select link</li>
+<li>org-ref citation</li>
+<li>RTF Scan marker</li>
+<li>Roam Cite Key</li>
+<li>Atom (<a href="https://atom.io/packages/zotero-citations">https://atom.io/packages/zotero-citations</a>)</li>
+<li>GitBook</li>
+<li>Zotero select link</li>
+<li>Eta template</li>
+</ul>
+<h4 id="latex-command">LaTeX command</h4>
+<p>default: <code>cite</code></p>
+<p>Used for drag-and-drop/quick copy citations in <code>LaTeX</code> format. Set the desired LaTeX citation command here. If you set this to <code>citep</code>, drag-and-drop citations will yield <code>\citep{key1,key2,...}</code></p>
+<h4 id="surround-pandoc-citations-with-brackets">Surround Pandoc citations with brackets</h4>
+<p>default: <code>no</code></p>
+<p>Used for drag-and-drop/quick copy citations in <code>Pandoc</code> format. You can use this option to select whether you want to have these pandoc citations surrounded with brackets or not.</p>
+<h4 id="org-mode-select-link">Org-mode select link</h4>
+<p>default: <code>using Zotero item key</code></p>
+<p>OrgMode to select items in your library</p>
+<p>Options:</p>
+<ul>
+<li>using Zotero item key</li>
+<li>using Better BibTeX citation key</li>
+</ul>
+<h4 id="zotero-select-link">Zotero select link</h4>
+<p>default: <code>using Zotero item key</code></p>
+<p>Hyperlink to select items in your library</p>
+<p>Options:</p>
+<ul>
+<li>using Zotero item key</li>
+<li>using Better BibTeX citation key</li>
+</ul>
+<h4 id="eta-template">Eta template</h4>
+<p>default: <code>&lt;not set&gt;</code></p>
+<p>Used for drag-and-drop/quick copy citations in <code>Build your own</code> format. This is going to get pretty technical, sorry. You can paste a <a href="https://eta.js.org/">Eta</a> template here. Inside the template, you will find an array <code>it.items</code>, each of which is a serialized Zotero item. To find out what an item looks like inside the template, export some items as BetterBibTeX JSON.</p>
 <h3 id="miscellaneous">Miscellaneous</h3>
 <h4 id="automatically-abbreviate-journal-title-if-none-is-set-explicitly">Automatically abbreviate journal title if none is set explicitly</h4>
 <p>default: <code>no</code></p>
@@ -1586,7 +1676,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>default: <code>Minimize the number of switches between math-mode and text-mode</code></p>
 <p>When a unicode character can be exported as either a math-mode or text-mode command, map to:</p>
 <ul>
-<li><code>minimal-packages</code>: if both a math-mode and a text-mode mapping is available, use the version that does not require    extra packages to be loaded. * <code>conservative</code>: if both a math-mode and a text-mode mapping is available, stay in the mode of the previously mapped    character if possible. This minimizes the number of generated <code>$</code>s in the output. * <code>text</code>: if both a math-mode and a text-mode mapping is available, prefer text. * <code>math</code>: if both a math-mode and a text-mode mapping is available, prefer math.</li>
+<li><code>minimal-packages</code>: if both a math-mode and a text-mode mapping is available, use the version that does not require extra packages to be loaded. * <code>conservative</code>: if both a math-mode and a text-mode mapping is available, stay in the mode of the previously mapped character if possible. This minimizes the number of generated <code>$</code>s in the output. * <code>text</code>: if both a math-mode and a text-mode mapping is available, prefer text. * <code>math</code>: if both a math-mode and a text-mode mapping is available, prefer math.</li>
 </ul>
 <p>Options:</p>
 <ul>
@@ -1595,6 +1685,22 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>Prefer text-mode replacements</li>
 <li>Prefer math-mode replacements</li>
 </ul>
+<h4 id="apply-title-casing-to-titles">Apply title-casing to titles</h4>
+<p>default: <code>yes</code></p>
+<p>If you&rsquo;re dead-set on ignoring both BibTeX/BibLaTeX best practice (see the BBT FAQ) and the Zotero recommendations on title/sentence casing, you can turn this off to suppress <a href="/zotero-better-bibtex/support/faq/#bbt-is-changing-the-capitalization-of-my-titles-why">title casing for English references</a></p>
+<h4 id="apply-case-protection-to-capitalized-words-by-enclosing-them-in-braces">Apply case-protection to capitalized words by enclosing them in braces</h4>
+<p>default: <code>yes</code></p>
+<p>If you&rsquo;re dead-set on ignoring both BibTeX/BibLaTeX best practice (see the BBT FAQ) and the Zotero recommendations on title/sentence casing, you can turn this off to suppress <a href="/zotero-better-bibtex/support/faq/#why-the-double-braces">automatic brace-protection for words with uppercase letters</a>.</p>
+<h4 id="retain-export-cache-across-upgrades">Retain export cache across upgrades</h4>
+<p>default: <code>no</code></p>
+<p>By default, BBT clears all caches whenever BBT or Zotero is upgraded. I can&rsquo;t realistically predict whether a change in Zotero or BBT is going to affect the output generated for any given item, so to be sure you always have the latest export-affecting fixes, the caches are discarded when a new version of either is detected. If you have a very large library however, of which you regularly export significant portions, you might want to retain the cached items even if that does come with the risk that you get wrong output on export that has been fixed in the interim.</p>
+<p>If you have this on, and you experience any problem that is not the cache getting dropped on upgrade, you <em>must</em> clear the cache and reproduce the problem. When you change this setting, as with any setting change, the cache will be dropped.</p>
+<h4 id="parallel-background-exports">Parallel background exports:</h4>
+<p>default: <code>1</code></p>
+<p>BBT can now perform its exports in a separate thread, and should no longer block Zotero&rsquo;s UI pretty much regardless of how large your library is. The default of 1 parallel export should suit most needs, but if you have many auto-exports set up, you may want to raise the maximum parallel exports to prevent queueing of exports. It is possible to turn background exports off by setting this value to <code>0</code> in the hidden preferences; you will get the old (blocking) behavior back, but you can&rsquo;t complain about Zotero being laggy during auto-exports. All Zotero exports are blocking, and it&rsquo;s a minor miracle I got background exports to work at all.</p>
+<h4 id="enable-caching-for-background-exports">Enable caching for background exports</h4>
+<p>default: <code>yes</code></p>
+<p>Even though BBT exports happen in a separate thread, some work needs to be done before the background export can start. Part of this work is preloading the cache. You can shorten the (blocking) preparation time by turning off the cache, at the cost of longer export times.</p>
 <h4 id="automatic-export">Automatic export</h4>
 <p>default: <code>On Change</code></p>
 <p>Determines when <a href="/zotero-better-bibtex/exporting/">automatic exports</a> are kicked off. Having it disabled still marks auto-exports as needing updates, so when you re-enable it, those exports will start. On-change means exports happen whenever a reference in the export changes/is added/is removed. On idle does more or less what <code>Disabled</code> (that is, no exports but mark as needing changes), but will kick off exports when your computer is idle. You mostly want this if your computer is performance-constrained (aka slow).</p>
@@ -1690,6 +1796,22 @@ really large library, but you can read about what is involved <a href="/zotero-b
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1709,6 +1831,22 @@ really large library, but you can read about what is involved <a href="/zotero-b
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -2027,7 +2165,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 			<a class="nav nav-prev" href="/zotero-better-bibtex/installation/preferences/citation-keys/" title="Citation keys"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/zotero-better-bibtex/installation/preferences/advanced/" title="Advanced" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/zotero-better-bibtex/installation/preferences/import/" title="Advanced" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
