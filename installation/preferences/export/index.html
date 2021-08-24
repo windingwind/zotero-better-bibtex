@@ -1493,36 +1493,45 @@ Better BibTeX for Zotero
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#export-unicode-as-plain-text-latex-commands-recommended">Export unicode as plain-text latex commands (recommended)</a></li>
-    <li><a href="#disregard-name-prefixes-when-sorting">Disregard name prefixes when sorting</a></li>
-    <li><a href="#add-urls-to-bibtex-export">Add URLs to BibTeX export:</a></li>
-    <li><a href="#export-unicode-as-plain-text-latex-commands">Export unicode as plain-text latex commands</a></li>
-    <li><a href="#use-biblatex-extended-name-format-requires-biblatex-35">Use BibLaTeX extended name format (requires biblatex 3.5)</a></li>
-    <li><a href="#when-a-reference-has-both-a-doi-and-a-url-export">When a reference has both a DOI and a URL, export</a></li>
-    <li><a href="#fields-to-omit-from-export-comma-separated">Fields to omit from export (comma-separated):</a></li>
-    <li><a href="#include-jabref-specific-metadata">Include JabRef-specific metadata:</a></li>
-    <li><a href="#quick-copydrag-and-drop-citations">Quick-Copy/drag-and-drop citations</a>
+    <li><a href="#bibtex">BibTeX</a>
       <ul>
-        <li><a href="#quick-copy-format">Quick-Copy format</a></li>
-        <li><a href="#latex-command">LaTeX command</a></li>
-        <li><a href="#surround-pandoc-citations-with-brackets">Surround Pandoc citations with brackets</a></li>
-        <li><a href="#org-mode-select-link">Org-mode select link</a></li>
-        <li><a href="#zotero-select-link">Zotero select link</a></li>
-        <li><a href="#eta-template">Eta template</a></li>
+        <li><a href="#export-unicode-as-plain-text-latex-commands-recommended">Export unicode as plain-text latex commands (recommended)</a></li>
+        <li><a href="#disregard-name-prefixes-when-sorting">Disregard name prefixes when sorting</a></li>
+        <li><a href="#add-urls-to-bibtex-export">Add URLs to BibTeX export:</a></li>
       </ul>
     </li>
-    <li><a href="#postscript">postscript</a></li>
-    <li><a href="#automatically-abbreviate-journal-title-if-none-is-set-explicitly">Automatically abbreviate journal title if none is set explicitly</a></li>
-    <li><a href="#include-comments-about-potential-problems-with-the-exported-references">Include comments about potential problems with the exported references</a></li>
-    <li><a href="#include-automatic-tags-in-export">Include automatic tags in export</a></li>
-    <li><a href="#when-converting-to-plain-text-latex-commands">When converting to plain-text latex commands:</a></li>
-    <li><a href="#apply-title-casing-to-titles">Apply title-casing to titles</a></li>
-    <li><a href="#apply-case-protection-to-capitalized-words-by-enclosing-them-in-braces">Apply case-protection to capitalized words by enclosing them in braces</a></li>
-    <li><a href="#cache">Cache</a>
+    <li><a href="#biblatex">BibLaTeX</a>
       <ul>
-        <li><a href="#retain-export-cache-across-upgrades">Retain export cache across upgrades</a></li>
-        <li><a href="#parallel-background-exports">Parallel background exports:</a></li>
-        <li><a href="#enable-caching-for-background-exports">Enable caching for background exports</a></li>
+        <li><a href="#export-unicode-as-plain-text-latex-commands">Export unicode as plain-text latex commands</a></li>
+        <li><a href="#use-biblatex-extended-name-format-requires-biblatex-35">Use BibLaTeX extended name format (requires biblatex 3.5)</a></li>
+      </ul>
+    </li>
+    <li><a href="#fields">Fields</a>
+      <ul>
+        <li><a href="#when-a-reference-has-both-a-doi-and-a-url-export">When a reference has both a DOI and a URL, export</a></li>
+        <li><a href="#fields-to-omit-from-export-comma-separated">Fields to omit from export (comma-separated):</a></li>
+        <li><a href="#include-jabref-specific-metadata">Include JabRef-specific metadata:</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-copy">Quick-Copy</a>
+      <ul>
+        <li><a href="#quick-copydrag-and-drop-citations">Quick-Copy/drag-and-drop citations</a></li>
+      </ul>
+    </li>
+    <li><a href="#postscript">postscript</a>
+      <ul>
+        <li><a href="#postscript-1">postscript</a></li>
+      </ul>
+    </li>
+    <li><a href="#miscellaneous">Miscellaneous</a>
+      <ul>
+        <li><a href="#automatically-abbreviate-journal-title-if-none-is-set-explicitly">Automatically abbreviate journal title if none is set explicitly</a></li>
+        <li><a href="#include-comments-about-potential-problems-with-the-exported-references">Include comments about potential problems with the exported references</a></li>
+        <li><a href="#include-automatic-tags-in-export">Include automatic tags in export</a></li>
+        <li><a href="#when-converting-to-plain-text-latex-commands">When converting to plain-text latex commands:</a></li>
+        <li><a href="#apply-title-casing-to-titles">Apply title-casing to titles</a></li>
+        <li><a href="#apply-case-protection-to-capitalized-words-by-enclosing-them-in-braces">Apply case-protection to capitalized words by enclosing them in braces</a></li>
+        <li><a href="#cache">Cache</a></li>
       </ul>
     </li>
   </ul>
@@ -1566,13 +1575,14 @@ Better BibTeX for Zotero
 only have hidden preferences). The defaults should just work, but here&rsquo;s an attempt to describe what they do.</p>
 <p><strong>Making any change here will drop your entire export cache.</strong> This is usually not a problem unless you have a
 really large library, but you can read about what is involved <a href="/zotero-better-bibtex/support/performance/">here</a>.</p>
-<h2 id="export-unicode-as-plain-text-latex-commands-recommended">Export unicode as plain-text latex commands (recommended)</h2>
+<h2 id="bibtex">BibTeX</h2>
+<h3 id="export-unicode-as-plain-text-latex-commands-recommended">Export unicode as plain-text latex commands (recommended)</h3>
 <p>default: <code>yes</code></p>
 <p>BibTeX has really spotty Unicode support, so you generally want this on. It will translate things like accented characters to their equivalent LaTeX constructs on export.</p>
-<h2 id="disregard-name-prefixes-when-sorting">Disregard name prefixes when sorting</h2>
+<h3 id="disregard-name-prefixes-when-sorting">Disregard name prefixes when sorting</h3>
 <p>default: <code>no</code></p>
 <p>Name handling is a lot more complex than I had ever thought it to be. A <em>lot</em> more complex. BibTeX has really limited ways of dealing with names with particles (van, von, de, etc). If you turn this on, BBT will add code to have <code>van Gogh</code> sorted under <code>Gogh</code>.</p>
-<h2 id="add-urls-to-bibtex-export">Add URLs to BibTeX export:</h2>
+<h3 id="add-urls-to-bibtex-export">Add URLs to BibTeX export:</h3>
 <p>default: <code>no</code></p>
 <p>Most BibTeX styles do not support DOI/URL fields. Of the styles that do support them, many forget to load the required &lsquo;url&rsquo; package, so make sure to load it yourself. DOI and URL fields are so-called &lsquo;verbatim&rsquo; fields, and without the &lsquo;url&rsquo; package loaded compilation will likely fail.</p>
 <p>Options:</p>
@@ -1583,13 +1593,15 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>in the &lsquo;url&rsquo; field</li>
 <li>in the &lsquo;url&rsquo; field, but assuming the &lsquo;url&rsquo; package is not loaded</li>
 </ul>
-<h2 id="export-unicode-as-plain-text-latex-commands">Export unicode as plain-text latex commands</h2>
+<h2 id="biblatex">BibLaTeX</h2>
+<h3 id="export-unicode-as-plain-text-latex-commands">Export unicode as plain-text latex commands</h3>
 <p>default: <code>no</code></p>
 <p>BibLaTeX actually has really good Unicode support, so you generally want this off. But for some geezers such as me it is simply more pleasing to have things like accented characters translated to their equivalent LaTeX constructs on export.</p>
-<h2 id="use-biblatex-extended-name-format-requires-biblatex-35">Use BibLaTeX extended name format (requires biblatex 3.5)</h2>
+<h3 id="use-biblatex-extended-name-format-requires-biblatex-35">Use BibLaTeX extended name format (requires biblatex 3.5)</h3>
 <p>default: <code>no</code></p>
 <p>Use the extended biber 2.7 format for names with particles - only works in BibLaTeX 3.5 or later. This biblatex has a new (less ambiguous) way to store creator names. It&rsquo;s technically superior, but the LaTeX world moves slowly, so many people won&rsquo;t have it yet. But if you&rsquo;re an early adopter, you can enable it here</p>
-<h2 id="when-a-reference-has-both-a-doi-and-a-url-export">When a reference has both a DOI and a URL, export</h2>
+<h2 id="fields">Fields</h2>
+<h3 id="when-a-reference-has-both-a-doi-and-a-url-export">When a reference has both a DOI and a URL, export</h3>
 <p>default: <code>both</code></p>
 <p>Does what it says on the tin, really. If a reference has both a DOI and an URL, you can choose to have them both exported, or either one of them. Note that for BibTeX, you must load the <code>url</code> package when you have <code>doi</code> or <code>url</code> fields. <code>doi</code> and <code>url</code> fields are so-called <code>verbatim</code> fields with different escaping rules, and BibTeX compilation will likely error out without the package loaded.</p>
 <p>Options:</p>
@@ -1598,10 +1610,10 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>DOI</li>
 <li>URL</li>
 </ul>
-<h2 id="fields-to-omit-from-export-comma-separated">Fields to omit from export (comma-separated):</h2>
+<h3 id="fields-to-omit-from-export-comma-separated">Fields to omit from export (comma-separated):</h3>
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>If there are some fields you don&rsquo;t want in your bibtex files (such as <code>note</code> for example), add a list of them here, separated by comma&rsquo;s.</p>
-<h2 id="include-jabref-specific-metadata">Include JabRef-specific metadata:</h2>
+<h3 id="include-jabref-specific-metadata">Include JabRef-specific metadata:</h3>
 <p>default: <code>no</code></p>
 <p>Export JabRef-specific fields: timestamps, titles for attachments, and groups for each collection an item is part of. Note that having this on will disable caching in exports, which is really undesirable specifically for auto-exports.</p>
 <p>Options:</p>
@@ -1611,8 +1623,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>for JabRef 4</li>
 <li>for JabRef 5</li>
 </ul>
-<h2 id="quick-copydrag-and-drop-citations">Quick-Copy/drag-and-drop citations</h2>
-<h3 id="quick-copy-format">Quick-Copy format</h3>
+<h2 id="quick-copy">Quick-Copy</h2>
+<h3 id="quick-copydrag-and-drop-citations">Quick-Copy/drag-and-drop citations</h3>
+<h4 id="quick-copy-format">Quick-Copy format</h4>
 <p>default: <code>LaTeX citation</code></p>
 <p>Used for drag-and-drop/quick copy using Better BibTeX citation keys. In the Zotero &ldquo;Export&rdquo; pane, choose <code>Better BibTeX Quick Copy</code> as the default export format for quick copy, and choose the desired format for the drag-and-drop citations here.</p>
 <p>Options:</p>
@@ -1629,13 +1642,13 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>Zotero select link</li>
 <li>Eta template</li>
 </ul>
-<h3 id="latex-command">LaTeX command</h3>
+<h4 id="latex-command">LaTeX command</h4>
 <p>default: <code>cite</code></p>
 <p>Used for drag-and-drop/quick copy citations in <code>LaTeX</code> format. Set the desired LaTeX citation command here. If you set this to <code>citep</code>, drag-and-drop citations will yield <code>\citep{key1,key2,...}</code></p>
-<h3 id="surround-pandoc-citations-with-brackets">Surround Pandoc citations with brackets</h3>
+<h4 id="surround-pandoc-citations-with-brackets">Surround Pandoc citations with brackets</h4>
 <p>default: <code>no</code></p>
 <p>Used for drag-and-drop/quick copy citations in <code>Pandoc</code> format. You can use this option to select whether you want to have these pandoc citations surrounded with brackets or not.</p>
-<h3 id="org-mode-select-link">Org-mode select link</h3>
+<h4 id="org-mode-select-link">Org-mode select link</h4>
 <p>default: <code>using Zotero item key</code></p>
 <p>OrgMode to select items in your library</p>
 <p>Options:</p>
@@ -1643,7 +1656,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>using Zotero item key</li>
 <li>using Better BibTeX citation key</li>
 </ul>
-<h3 id="zotero-select-link">Zotero select link</h3>
+<h4 id="zotero-select-link">Zotero select link</h4>
 <p>default: <code>using Zotero item key</code></p>
 <p>Hyperlink to select items in your library</p>
 <p>Options:</p>
@@ -1651,22 +1664,24 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>using Zotero item key</li>
 <li>using Better BibTeX citation key</li>
 </ul>
-<h3 id="eta-template">Eta template</h3>
+<h4 id="eta-template">Eta template</h4>
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>Used for drag-and-drop/quick copy citations in <code>Build your own</code> format. This is going to get pretty technical, sorry. You can paste a <a href="https://eta.js.org/">Eta</a> template here. Inside the template, you will find an array <code>it.items</code>, each of which is a serialized Zotero item. To find out what an item looks like inside the template, export some items as BetterBibTeX JSON.</p>
 <h2 id="postscript">postscript</h2>
+<h3 id="postscript-1">postscript</h3>
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>Snippet of javascript to run [after each reference generation]({{ ref . &ldquo;exporting/scripting.md&rdquo; }}).</p>
-<h2 id="automatically-abbreviate-journal-title-if-none-is-set-explicitly">Automatically abbreviate journal title if none is set explicitly</h2>
+<h2 id="miscellaneous">Miscellaneous</h2>
+<h3 id="automatically-abbreviate-journal-title-if-none-is-set-explicitly">Automatically abbreviate journal title if none is set explicitly</h3>
 <p>default: <code>no</code></p>
 <p>If set, generates journal abbreviations on export using the Zotero journal abbreviator, according to the abbreviation style selected in the list below the checkbox.</p>
-<h2 id="include-comments-about-potential-problems-with-the-exported-references">Include comments about potential problems with the exported references</h2>
+<h3 id="include-comments-about-potential-problems-with-the-exported-references">Include comments about potential problems with the exported references</h3>
 <p>default: <code>no</code></p>
 <p>Generate quality reports for exported references. These show up only in BibTeX and BibLaTeX report formats and indicate things like missing required fields and duplicate citation keys.</p>
-<h2 id="include-automatic-tags-in-export">Include automatic tags in export</h2>
+<h3 id="include-automatic-tags-in-export">Include automatic tags in export</h3>
 <p>default: <code>yes</code></p>
 <p>Some importers or Zotero extensions (such as the ShortDOI manager for example) create tags on items that are more for item management than that they are descriptive of the item. When this is off, such tags will not be included in the export.</p>
-<h2 id="when-converting-to-plain-text-latex-commands">When converting to plain-text latex commands:</h2>
+<h3 id="when-converting-to-plain-text-latex-commands">When converting to plain-text latex commands:</h3>
 <p>default: <code>Minimize the number of switches between math-mode and text-mode</code></p>
 <p>When a unicode character can be exported as either a math-mode or text-mode command, map to:</p>
 <ul>
@@ -1679,21 +1694,21 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>Prefer text-mode replacements</li>
 <li>Prefer math-mode replacements</li>
 </ul>
-<h2 id="apply-title-casing-to-titles">Apply title-casing to titles</h2>
+<h3 id="apply-title-casing-to-titles">Apply title-casing to titles</h3>
 <p>default: <code>yes</code></p>
 <p>If you&rsquo;re dead-set on ignoring both BibTeX/BibLaTeX best practice (see the BBT FAQ) and the Zotero recommendations on title/sentence casing, you can turn this off to suppress [title casing for English references]({{ ref . &ldquo;support/faq#bbt-is-changing-the-capitalization-of-my-titles-why&rdquo; }})</p>
-<h2 id="apply-case-protection-to-capitalized-words-by-enclosing-them-in-braces">Apply case-protection to capitalized words by enclosing them in braces</h2>
+<h3 id="apply-case-protection-to-capitalized-words-by-enclosing-them-in-braces">Apply case-protection to capitalized words by enclosing them in braces</h3>
 <p>default: <code>yes</code></p>
 <p>If you&rsquo;re dead-set on ignoring both BibTeX/BibLaTeX best practice (see the BBT FAQ) and the Zotero recommendations on title/sentence casing, you can turn this off to suppress [automatic brace-protection for words with uppercase letters]({{ ref . &ldquo;support/faq#why-the-double-braces&rdquo; }}).</p>
-<h2 id="cache">Cache</h2>
-<h3 id="retain-export-cache-across-upgrades">Retain export cache across upgrades</h3>
+<h3 id="cache">Cache</h3>
+<h4 id="retain-export-cache-across-upgrades">Retain export cache across upgrades</h4>
 <p>default: <code>no</code></p>
 <p>By default, BBT clears all caches whenever BBT or Zotero is upgraded. I can&rsquo;t realistically predict whether a change in Zotero or BBT is going to affect the output generated for any given item, so to be sure you always have the latest export-affecting fixes, the caches are discarded when a new version of either is detected. If you have a very large library however, of which you regularly export significant portions, you might want to retain the cached items even if that does come with the risk that you get wrong output on export that has been fixed in the interim.</p>
 <p>If you have this on, and you experience any problem that is not the cache getting dropped on upgrade, you <em>must</em> clear the cache and reproduce the problem. When you change this setting, as with any setting change, the cache will be dropped.</p>
-<h3 id="parallel-background-exports">Parallel background exports:</h3>
+<h4 id="parallel-background-exports">Parallel background exports:</h4>
 <p>default: <code>1</code></p>
 <p>BBT can now perform its exports in a separate thread, and should no longer block Zotero&rsquo;s UI pretty much regardless of how large your library is. The default of 1 parallel export should suit most needs, but if you have many auto-exports set up, you may want to raise the maximum parallel exports to prevent queueing of exports. It is possible to turn background exports off by setting this value to <code>0</code> in the hidden preferences; you will get the old (blocking) behavior back, but you can&rsquo;t complain about Zotero being laggy during auto-exports. All Zotero exports are blocking, and it&rsquo;s a minor miracle I got background exports to work at all.</p>
-<h3 id="enable-caching-for-background-exports">Enable caching for background exports</h3>
+<h4 id="enable-caching-for-background-exports">Enable caching for background exports</h4>
 <p>default: <code>yes</code></p>
 <p>Even though BBT exports happen in a separate thread, some work needs to be done before the background export can start. Part of this work is preloading the cache. You can shorten the (blocking) preparation time by turning off the cache, at the cost of longer export times.</p>
 
