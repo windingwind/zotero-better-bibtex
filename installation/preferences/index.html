@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
-    <title>Configuration :: Better BibTeX for Zotero</title>
+    <title>Citation keys :: Better BibTeX for Zotero</title>
 
     
     <link href="/zotero-better-bibtex/css/nucleus.css" rel="stylesheet">
@@ -742,13 +742,13 @@ Better BibTeX for Zotero
  
   
     
-    <li data-nav-id="/zotero-better-bibtex/installation/preferences/" title="Configuration" class="dd-item
+    <li data-nav-id="/zotero-better-bibtex/installation/preferences/" title="Citation keys" class="dd-item
         parent
         active
         
         ">
       <a href="/zotero-better-bibtex/installation/preferences/">
-          Configuration
+          Citation keys
           
       </a>
       
@@ -759,48 +759,6 @@ Better BibTeX for Zotero
           
 
         
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/automatic-export/" title="Citation keys" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/automatic-export/">
-        Citation keys
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/citation-keys/" title="Citation keys" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/citation-keys/">
-        Citation keys
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -832,9 +790,9 @@ Better BibTeX for Zotero
  
   
     
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/import/" title="Advanced" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/import/">
-        Advanced
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/automatic-export/" title="Automatic export" class="dd-item ">
+        <a href="/zotero-better-bibtex/installation/preferences/automatic-export/">
+        Automatic export
         
         </a>
     </li>
@@ -853,9 +811,30 @@ Better BibTeX for Zotero
  
   
     
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/miscellaneous/" title="Advanced" class="dd-item ">
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/import/" title="Import" class="dd-item ">
+        <a href="/zotero-better-bibtex/installation/preferences/import/">
+        Import
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/miscellaneous/" title="Miscellaneous" class="dd-item ">
         <a href="/zotero-better-bibtex/installation/preferences/miscellaneous/">
-        Advanced
+        Miscellaneous
         
         </a>
     </li>
@@ -1360,7 +1339,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>citation-keys</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3333333333333335em"><i class="fas fa-tag"></i>citation-keys</a></span>
         
             
             
@@ -1376,7 +1355,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.4678924870096006em"><i class="fas fa-tag"></i>configuration</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.4308270834535262em"><i class="fas fa-tag"></i>configuration</a></span>
         
             
             
@@ -1416,7 +1395,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.4308270834535262em"><i class="fas fa-tag"></i>preferences</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>preferences</a></span>
         
             
             
@@ -1493,7 +1472,7 @@ Better BibTeX for Zotero
             
           
           
-            <a href='/zotero-better-bibtex/'>Better BibTeX for Zotero</a> > <a href='/zotero-better-bibtex/installation/'>Installation</a> > Configuration
+            <a href='/zotero-better-bibtex/'>Better BibTeX for Zotero</a> > <a href='/zotero-better-bibtex/installation/'>Installation</a> > Citation keys
           
         
           
@@ -1506,7 +1485,25 @@ Better BibTeX for Zotero
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#force-citation-key-to-plain-text">Force citation key to plain text</a></li>
+    <li><a href="#enable-citation-key-search">Enable citation key search</a></li>
+    <li><a href="#keeping-citation-keys-unique">Keeping citation keys unique</a>
+      <ul>
+        <li><a href="#keep-keys-unique">Keep keys unique</a></li>
+        <li><a href="#on-conflict-with-a-pinned-key-non-pinned-keys-will-be">On conflict with a pinned key, non-pinned keys will be</a></li>
+      </ul>
+    </li>
+    <li><a href="#ideographs-in-citekeys">Ideographs in citekeys</a>
+      <ul>
+        <li><a href="#apply-kuroshiro-romajization-in-japanese-namestitles-uses-a-lot-of-memory">Apply kuroshiro romajization in Japanese names/titles. Uses a lot of memory.</a></li>
+        <li><a href="#enable-jieba-filter-in-citekey-patterns-uses-a-lot-of-memory">Enable &lsquo;jieba&rsquo; filter in citekey patterns. Uses a lot of memory.</a></li>
+      </ul>
+    </li>
+    <li><a href="#warn-me-when-changing-citation-keys-in-bulk">Warn me when changing citation keys in bulk</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1530,7 +1527,7 @@ Better BibTeX for Zotero
           
             <h1>
               
-              Configuration
+              Citation keys
             </h1>
           
 
@@ -1543,6 +1540,39 @@ Better BibTeX for Zotero
 only have hidden preferences). The defaults should just work, but here&rsquo;s an attempt to describe what they do.</p>
 <p><strong>Making any change here will drop your entire export cache.</strong> This is usually not a problem unless you have a
 really large library, but you can read about what is involved <a href="/zotero-better-bibtex/support/performance/">here</a>.</p>
+<h2 id="force-citation-key-to-plain-text">Force citation key to plain text</h2>
+<p>default: <code>yes</code></p>
+<p>If you have deviated from the default citation key format pattern by [specifying your own]({{ ref . &ldquo;citing&rdquo; }}), you may wind up with non-ASCII characters in your citation keys. You can prevent that using the <code>fold</code> function at the appropriate place in your pattern, but checking this checkbox will just apply <code>fold</code> to all your keys.</p>
+<h2 id="enable-citation-key-search">Enable citation key search</h2>
+<p>default: <code>yes</code></p>
+<p>Enable searching on citation keys. Slows down startup on very large libraries. Requires Zotero restart to enable/disable.</p>
+<h2 id="keeping-citation-keys-unique">Keeping citation keys unique</h2>
+<h3 id="keep-keys-unique">Keep keys unique</h3>
+<p>default: <code>within each library</code></p>
+<p>Auto-generated (non-pinned) keys automatically get a postfix when they would generate a duplicate. By default, the check for duplicates is restricted to the library/group the item lives in. When set to global, the check will include all libraries/groups, so auto-generated keys would be globally unique. Changing this setting <em>does not</em> affect existign keys - for this you would need to select the items and refresh the keys.</p>
+<p>Options:</p>
+<ul>
+<li>across all libraries</li>
+<li>within each library</li>
+</ul>
+<h3 id="on-conflict-with-a-pinned-key-non-pinned-keys-will-be">On conflict with a pinned key, non-pinned keys will be</h3>
+<p>default: <code>kept (causes key duplicates)</code></p>
+<p>This determines what happens if you pin a key to a value that is already in use in a different reference but not pinned there. Neither are ideal, you just get to pick your poison. If you let BBT change the non-pinned key by adding a postfix character, the citation key changes which could be problematic for existing papers. If you keep the non-pinned key as-is, your library now has duplicate keys.</p>
+<p>Options:</p>
+<ul>
+<li>postfixed (causes key changes)</li>
+<li>kept (causes key duplicates)</li>
+</ul>
+<h2 id="ideographs-in-citekeys">Ideographs in citekeys</h2>
+<h3 id="apply-kuroshiro-romajization-in-japanese-namestitles-uses-a-lot-of-memory">Apply kuroshiro romajization in Japanese names/titles. Uses a lot of memory.</h3>
+<p>default: <code>no</code></p>
+<p>When on, BBT will load kuroshiro for romajization in citation keys. This uses a lot of memory, easily 100MB. If you don&rsquo;t have Japanese titles/names, keep this off.</p>
+<h3 id="enable-jieba-filter-in-citekey-patterns-uses-a-lot-of-memory">Enable &lsquo;jieba&rsquo; filter in citekey patterns. Uses a lot of memory.</h3>
+<p>default: <code>no</code></p>
+<p>When on, BBT will make Chinese word segmentation available for citation keys construction. This uses a lot of memory, easily 70MB. If you don&rsquo;t have Chinese titles/names, keep this off.</p>
+<h2 id="warn-me-when-changing-citation-keys-in-bulk">Warn me when changing citation keys in bulk</h2>
+<p>default: <code>10</code></p>
+<p>For those who are curious about what the <code>Clear/Generate BibTeX key</code> right-click options do, this will warn you if you are doing this on more than 10 (default) at the same time, to prevent your curiosity from changing all your citation keys at once.</p>
 
 
 
@@ -1615,22 +1645,6 @@ really large library, but you can read about what is involved <a href="/zotero-b
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1997,7 +2011,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 			<a class="nav nav-prev" href="/zotero-better-bibtex/installation/" title="Installation"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/zotero-better-bibtex/installation/preferences/automatic-export/" title="Citation keys" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/zotero-better-bibtex/installation/preferences/export/" title="Export" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

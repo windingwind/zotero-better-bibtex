@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
-    <title>Advanced :: Better BibTeX for Zotero</title>
+    <title>Miscellaneous :: Better BibTeX for Zotero</title>
 
     
     <link href="/zotero-better-bibtex/css/nucleus.css" rel="stylesheet">
@@ -742,13 +742,13 @@ Better BibTeX for Zotero
  
   
     
-    <li data-nav-id="/zotero-better-bibtex/installation/preferences/" title="Configuration" class="dd-item
+    <li data-nav-id="/zotero-better-bibtex/installation/preferences/" title="Citation keys" class="dd-item
         parent
         
         
         ">
       <a href="/zotero-better-bibtex/installation/preferences/">
-          Configuration
+          Citation keys
           
       </a>
       
@@ -759,48 +759,6 @@ Better BibTeX for Zotero
           
 
         
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/automatic-export/" title="Citation keys" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/automatic-export/">
-        Citation keys
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/citation-keys/" title="Citation keys" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/citation-keys/">
-        Citation keys
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -832,9 +790,9 @@ Better BibTeX for Zotero
  
   
     
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/import/" title="Advanced" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/import/">
-        Advanced
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/automatic-export/" title="Automatic export" class="dd-item ">
+        <a href="/zotero-better-bibtex/installation/preferences/automatic-export/">
+        Automatic export
         
         </a>
     </li>
@@ -853,9 +811,30 @@ Better BibTeX for Zotero
  
   
     
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/miscellaneous/" title="Advanced" class="dd-item active">
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/import/" title="Import" class="dd-item ">
+        <a href="/zotero-better-bibtex/installation/preferences/import/">
+        Import
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/zotero-better-bibtex/installation/preferences/miscellaneous/" title="Miscellaneous" class="dd-item active">
         <a href="/zotero-better-bibtex/installation/preferences/miscellaneous/">
-        Advanced
+        Miscellaneous
         
         </a>
     </li>
@@ -1360,7 +1339,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>citation-keys</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/citation-keys" style="font-size:1.3333333333333335em"><i class="fas fa-tag"></i>citation-keys</a></span>
         
             
             
@@ -1376,7 +1355,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.4678924870096006em"><i class="fas fa-tag"></i>configuration</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/configuration" style="font-size:1.4308270834535262em"><i class="fas fa-tag"></i>configuration</a></span>
         
             
             
@@ -1416,7 +1395,7 @@ Better BibTeX for Zotero
             
             
             
-            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.4308270834535262em"><i class="fas fa-tag"></i>preferences</a></span>
+            <span style="white-space: nowrap"><a href="/zotero-better-bibtex/tags/preferences" style="font-size:1.3869880158145604em"><i class="fas fa-tag"></i>preferences</a></span>
         
             
             
@@ -1497,7 +1476,7 @@ Better BibTeX for Zotero
             
           
           
-            <a href='/zotero-better-bibtex/'>Better BibTeX for Zotero</a> > <a href='/zotero-better-bibtex/installation/'>Installation</a> > <a href='/zotero-better-bibtex/installation/preferences/'>Configuration</a> > Advanced
+            <a href='/zotero-better-bibtex/'>Better BibTeX for Zotero</a> > <a href='/zotero-better-bibtex/installation/'>Installation</a> > <a href='/zotero-better-bibtex/installation/preferences/'>Citation keys</a> > Miscellaneous
           
         
           
@@ -1514,13 +1493,20 @@ Better BibTeX for Zotero
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#when-merging-items-also-merge">When merging items, also merge:</a>
       <ul>
-        <li></li>
-        <li><a href="#fields">Fields</a></li>
-        <li><a href="#string-definitions-1">@string definitions</a></li>
+        <li><a href="#their-citation-keys-into-an-biblatex-ids-field">their citation keys into an bib(la)tex <code>ids</code> field</a></li>
+        <li><a href="#fields-that-are-understood-to-be-csl-fields-by-zotero">fields that are understood to be CSL fields by Zotero</a></li>
+        <li><a href="#their-tex-fields">their <code>tex.*</code> fields</a></li>
       </ul>
     </li>
+    <li><a href="#expand-the-string-vars-below-during-imports">Expand the @string vars below during imports</a></li>
+    <li><a href="#if-a-field-could-be-a-string-reference-export-it-as-an-unbraced-string-reference">If a field could be a @string reference, export it as an unbraced @string reference</a>
+      <ul>
+        <li><a href="#if-a-field-could-be-a-string-reference-export-it-as-an-unbraced-string-reference-1">If a field could be a @string reference, export it as an unbraced @string reference</a></li>
+      </ul>
+    </li>
+    <li><a href="#string-definitions">@string definitions</a></li>
   </ul>
 </nav>
     </div>
@@ -1546,7 +1532,7 @@ Better BibTeX for Zotero
           
             <h1>
               
-              Advanced
+              Miscellaneous
             </h1>
           
 
@@ -1558,24 +1544,21 @@ Better BibTeX for Zotero
 only have hidden preferences). The defaults should just work, but here&rsquo;s an attempt to describe what they do.</p>
 <p><strong>Making any change here will drop your entire export cache.</strong> This is usually not a problem unless you have a
 really large library, but you can read about what is involved <a href="/zotero-better-bibtex/support/performance/">here</a>.</p>
-<h4 id="string-definitions">@string definitions</h4>
-<p>default: <code>&lt;not set&gt;</code></p>
-<p>If you have externally maintained <code>@string</code> vars paste them here and they will be resolved for subsequent imports. These should be entered as <code>@string</code> declarations, such as <code>@string{IEEE_J_PWRE = &quot;{IEEE} Transactions on Power Electronics&quot;}</code>, not just the var name.</p>
-<h3 id="fields">Fields</h3>
-<h4 id="their-citation-keys-into-an-biblatex-ids-field">their citation keys into an bib(la)tex <code>ids</code> field</h4>
+<h2 id="when-merging-items-also-merge">When merging items, also merge:</h2>
+<h3 id="their-citation-keys-into-an-biblatex-ids-field">their citation keys into an bib(la)tex <code>ids</code> field</h3>
 <p>default: <code>no</code></p>
 <p>When merging items, also merge their citation keys into an bib(la)tex <code>ids</code> field.</p>
-<h4 id="fields-that-are-understood-to-be-csl-fields-by-zotero">fields that are understood to be CSL fields by Zotero</h4>
+<h3 id="fields-that-are-understood-to-be-csl-fields-by-zotero">fields that are understood to be CSL fields by Zotero</h3>
 <p>default: <code>no</code></p>
 <p>When merging items, also merge fields that are understood to be CSL fields by Zotero.</p>
-<h4 id="their-tex-fields">their <code>tex.*</code> fields</h4>
+<h3 id="their-tex-fields">their <code>tex.*</code> fields</h3>
 <p>default: <code>no</code></p>
 <p>When merging items, also merge their <code>tex.*</code> fields.</p>
-<h3 id="string-definitions-1">@string definitions</h3>
-<h4 id="expand-the-string-vars-below-during-imports">Expand the @string vars below during imports</h4>
+<h2 id="expand-the-string-vars-below-during-imports">Expand the @string vars below during imports</h2>
 <p>default: <code>yes</code></p>
 <p>When enabled, BBT will prepend the @strings section below to all Bib(La)TeX imports and will expand the strings during export.</p>
-<h4 id="if-a-field-could-be-a-string-reference-export-it-as-an-unbraced-string-reference">If a field could be a @string reference, export it as an unbraced @string reference</h4>
+<h2 id="if-a-field-could-be-a-string-reference-export-it-as-an-unbraced-string-reference">If a field could be a @string reference, export it as an unbraced @string reference</h2>
+<h3 id="if-a-field-could-be-a-string-reference-export-it-as-an-unbraced-string-reference-1">If a field could be a @string reference, export it as an unbraced @string reference</h3>
 <p>default: <code>No</code></p>
 <p>When enabled, BBT will try to retain @string vars its exports unsurrounded by braces; when set to &lsquo;detect&rsquo;, single-word strings will be assumed to be externally-defined @string vars, when set to &lsquo;match&rsquo;, only @strings declared in the @strings section of the preferences will be preserved. If you don&rsquo;t know what this means, leave it off.</p>
 <p>Options:</p>
@@ -1585,6 +1568,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <li>Match against the @string declarations below</li>
 <li>Match against the @string declarations and their values below</li>
 </ul>
+<h2 id="string-definitions">@string definitions</h2>
+<p>default: <code>&lt;not set&gt;</code></p>
+<p>If you have externally maintained <code>@string</code> vars paste them here and they will be resolved for subsequent imports. These should be entered as <code>@string</code> declarations, such as <code>@string{IEEE_J_PWRE = &quot;{IEEE} Transactions on Power Electronics&quot;}</code>, not just the var name.</p>
 
 
 <footer class="footline">
@@ -1654,22 +1640,6 @@ really large library, but you can read about what is involved <a href="/zotero-b
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -2037,7 +2007,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 	 
 	 
 		
-			<a class="nav nav-prev" href="/zotero-better-bibtex/installation/preferences/import/" title="Advanced"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/zotero-better-bibtex/installation/preferences/import/" title="Import"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/zotero-better-bibtex/installation/preferences/hidden-preferences/" title="Hidden preferences" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>

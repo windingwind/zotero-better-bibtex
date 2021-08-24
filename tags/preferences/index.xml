@@ -7,28 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language><atom:link href="/zotero-better-bibtex/tags/preferences/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Citation keys</title>
-      <link>/zotero-better-bibtex/installation/preferences/automatic-export/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/installation/preferences/automatic-export/</guid>
-      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
-The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
-Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
-    </item>
-    
-    <item>
-      <title>Citation keys</title>
-      <link>/zotero-better-bibtex/installation/preferences/citation-keys/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/installation/preferences/citation-keys/</guid>
-      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
-The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
-Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
-    </item>
-    
-    <item>
       <title>Export</title>
       <link>/zotero-better-bibtex/installation/preferences/export/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -40,7 +18,18 @@ Making any change here will drop your entire export cache. This is usually not a
     </item>
     
     <item>
-      <title>Advanced</title>
+      <title>Automatic export</title>
+      <link>/zotero-better-bibtex/installation/preferences/automatic-export/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/installation/preferences/automatic-export/</guid>
+      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
+The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
+Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
+    </item>
+    
+    <item>
+      <title>Import</title>
       <link>/zotero-better-bibtex/installation/preferences/import/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -51,7 +40,7 @@ Making any change here will drop your entire export cache. This is usually not a
     </item>
     
     <item>
-      <title>Advanced</title>
+      <title>Miscellaneous</title>
       <link>/zotero-better-bibtex/installation/preferences/miscellaneous/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
