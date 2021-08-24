@@ -1656,7 +1656,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>You can use custom preferences per export directory:</p>
 <ol>
-<li>Edit the hidden preference <code>preferencesOverride</code>, and set it to a filename like <code>preferences.json</code> 2. In the directory where you intend to export to, create a file called <code>preferences.json</code> (or whatever you set the preference to) and add the desired preference overrides. You can get your current preferences by exporting to <code>BetterBibTeX JSON</code> and removing everything except <code>preferences</code>. 3. Export to that directory.</li>
+<li>Edit the hidden preference <code>preferencesOverride</code>, and set it to a filename like <code>preferences.json</code> 2. In the directory where you intend to export to, create a file called <code>preferences.json</code> (or whatever you set the preference to), or called <code>[bibfile you are exporting to].json</code> and add the desired preference overrides in the format <code>{&quot;override&quot;: &quot;preferences&quot;: {&quot;skipFields&quot;: &quot;note&quot;}}</code>. You can get your current preferences by exporting to <code>BetterBibTeX JSON</code> and removing everything except config.<code>preferences</code>, and renaming <code>config</code> to <code>override</code>. 3. Export to that directory.</li>
 </ol>
 <p>A preferences override will disable caching for that export.</p>
 <h3 id="rawimports">rawImports</h3>
