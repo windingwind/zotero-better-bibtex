@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1732,7 +1732,7 @@ the Zotero item looks like to the translator.</p>
   <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">referencetype</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;collection&#39;</span>) <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">referencetype</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;book&#39;</span>
 }
 </code></pre></div><h3 id="set-the-reference-type-to-misc-for-arxiv-preprints-in-bibtex">Set the reference type to <code>misc</code> for arXiv preprints in BibTeX</h3>
-<pre><code>if (Translator.BetterBibTeX &amp;&amp; reference.referencetype === 'article' &amp;&amp; item.arXiv) {
+<pre tabindex="0"><code>if (Translator.BetterBibTeX &amp;&amp; reference.referencetype === 'article' &amp;&amp; item.arXiv) {
   if (reference.has.journal &amp;&amp; item.arXiv.source === 'publicationTitle') {
     reference.remove('journal');
   }
@@ -1758,7 +1758,7 @@ physical archive.)</p>
 location to postscripts for now. If you enable the <a href="/zotero-better-bibtex/installation/preferences/export/#include-comments-about-potential-problems-with-the-references">quality report</a>, BBT
 will list Zotero fields with data that has not been used in the
 export:</p>
-<pre><code>@letter{MillionDemiInfirmes1968,
+<pre tabindex="0"><code>@letter{MillionDemiInfirmes1968,
   title = {Un Million et Demi d'infirmes, Handicapés Physiques et Mentaux},
   date = {1968-05-31},
   url = {https://archives.strasbourg.eu/archive/fonds/FRAM67482_0592_114Z/view:115037},
@@ -1772,7 +1772,7 @@ export:</p>
 % ? Unused archiveLocation: 114 Z 1 248
 % ? Unused callNumber: 114 Z 1 248
 </code></pre><p>if you then apply a postscript such as</p>
-<pre><code>if (Translator.BetterBibLaTeX) {
+<pre tabindex="0"><code>if (Translator.BetterBibLaTeX) {
   // biblatex-mla
   if (item.archive &amp;&amp; item.archiveLocation) {
     reference.add({ name: 'type', value: reference.referencetype })
@@ -1782,7 +1782,7 @@ export:</p>
   }
 }
 </code></pre><p>you get</p>
-<pre><code>@unpublished{MillionDemiInfirmes1968,
+<pre tabindex="0"><code>@unpublished{MillionDemiInfirmes1968,
   title = {Un Million et Demi d'infirmes, Handicapés Physiques et Mentaux},
   date = {1968-05-31},
   url = {https://archives.strasbourg.eu/archive/fonds/FRAM67482_0592_114Z/view:115037},
@@ -1795,11 +1795,11 @@ export:</p>
 % Unexpected field 'number'
 % Missing required field 'author'
 </code></pre><h3 id="export-season-for-bibtex">Export season for BibTeX</h3>
-<pre><code>if (Translator.BetterBibTeX &amp;&amp; reference.date.type === 'season') {
+<pre tabindex="0"><code>if (Translator.BetterBibTeX &amp;&amp; reference.date.type === 'season') {
   reference.add({ name: 'month', value: ['', 'spring', 'summer', 'fall', 'winter'][reference.date.season] })
 }
 </code></pre><h3 id="adding-rights-field-in-biblatex">Adding rights field in BibLaTeX</h3>
-<pre><code>if (Translator.BetterBibLaTeX) {
+<pre tabindex="0"><code>if (Translator.BetterBibLaTeX) {
   reference.add({ name: 'rights', value: item.rights});
 }
 </code></pre>
