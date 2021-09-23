@@ -1601,8 +1601,6 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>date</code>: The date of the publication</li>
   
-    <li><code>extra</code>: A pseudo-field from the extra field. eg if you have <code>Original date: 1970</code> in your <code>extra</code> field, you can get it as <code>[extra=originalDate]</code>, or <code>tex.shortauthor: APA</code> which you could get with <code>[extra=tex.shortauthor]</code>. Any <code>tex.</code> field will be picked up, the other fields can be selected from <a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/">this list</a> of key names.</li>
-  
     <li><code>firstpage</code>: The number of the first page of the publication (Caution: this will return the lowest number found in the pages field, since BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.)</li>
   
     <li><code>journal</code>: returns the journal abbreviation, or, if not found, the journal title, If &lsquo;automatic journal abbreviation&rsquo; is enabled in the BBT settings, it will use the same abbreviation filter Zotero uses in the wordprocessor integration. You might want to use the <code>abbr</code> filter on this.</li>
@@ -1640,7 +1638,6 @@ that yields a non-empty string. If all return a empty string, a random key will 
   <li><code>0</code>: an alias for <code>[postfix=-%(n)s]</code>. Emulates the disambiguator of the standard Zotero exports. When you use <code>[zotero]</code> in your pattern, <code>[zotero][0]</code> is implied</li>
   <li><code>&gt;X</code>: a pseudo-function which aborts the current pattern generation if what came before it is <code>X</code> characters or less (<code>[&gt;0]</code> is a typical use. You would typically use this with something like <code>[auth][&gt;0][year] | [title][year]</code> which means if there's no author you get <code>title-year</code> rather than just <code>year</code>.</li>
   <li><code>=typeName</code>: a pseudo-function that aborts the current pattern generation if the Zotero reference type does not equal <code>typeName</code>. You can test for multiple typenames at once by separating them with slashes (<code>[=journalArticle/report]</code>). Valid typeNames are: <code>artwork</code>, <code>attachment</code>, <code>audioRecording</code>, <code>bill</code>, <code>blogPost</code>, <code>book</code>, <code>bookSection</code>, <code>case</code>, <code>classic<sup>JM</sup></code>, <code>computerProgram</code>, <code>conferencePaper</code>, <code>dictionaryEntry</code>, <code>document</code>, <code>email</code>, <code>encyclopediaArticle</code>, <code>film</code>, <code>forumPost</code>, <code>gazette<sup>JM</sup></code>, <code>hearing</code>, <code>instantMessage</code>, <code>interview</code>, <code>journalArticle</code>, <code>legalCommentary<sup>JM</sup></code>, <code>letter</code>, <code>magazineArticle</code>, <code>manuscript</code>, <code>map</code>, <code>newspaperArticle</code>, <code>note</code>, <code>patent</code>, <code>podcast</code>, <code>presentation</code>, <code>radioBroadcast</code>, <code>regulation<sup>JM</sup></code>, <code>report</code>, <code>standard<sup>JM</sup></code>, <code>statute</code>, <code>thesis</code>, <code>treaty<sup>JM</sup></code>, <code>tvBroadcast</code>, <code>videoRecording</code>, <code>webpage</code>.</li>
-  <li><code>language=de|german|ja|japanese|zh|chinese</code>: a pseudo-function that aborts the current pattern generation if the Zotero reference language field is not the specified language. You can use this e.g. to selectively apply jieba or kuroshiro transliteration.<li>
 </ul>
 
 (type names marked <sup>JM</sup> are only available in Juris-M).
@@ -2126,7 +2123,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>substring</code>=start? (number), n? (number): (<code>substring=start,n</code>) selects <code>n</code> (default: all) characters starting at <code>start</code> (default: 1)</li>
   
-    <li><code>transliterate</code>=mode? (&lsquo;minimal&rsquo; | &lsquo;german&rsquo; | &lsquo;de&rsquo; | &lsquo;japanese&rsquo; | &lsquo;ja&rsquo;): transliterates the citation key. If you don&rsquo;t specify a mode, the mode is derived from the item language field</li>
+    <li><code>transliterate</code>: transliterates the citation key</li>
   
     <li><code>upper</code>: Forces the text inserted by the field marker to be in uppercase. For example, <code>[auth:upper]</code> expands the last name of the first author in uppercase.</li>
   
