@@ -1517,6 +1517,8 @@ Better BibTeX for Zotero
     <li><a href="#rawimports">rawImports</a></li>
     <li><a href="#rawlatag">rawLaTag</a></li>
     <li><a href="#relativefilepaths">relativeFilePaths</a></li>
+    <li><a href="#separatorlist">separatorList</a></li>
+    <li><a href="#separatornames">separatorNames</a></li>
     <li><a href="#skipwords">skipWords</a></li>
     <li><a href="#startupprogress">startupProgress</a></li>
     <li><a href="#verbatimfields">verbatimFields</a></li>
@@ -1644,6 +1646,12 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h2 id="relativefilepaths">relativeFilePaths</h2>
 <p>default: <code>no</code></p>
 <p>When exporting a Bib(La)TeX file, if the attachments are stored anywhere under the directory the bibliography is exported to, use relative paths to those attachments. Caching is disabled when this option is on, so it affects performance.</p>
+<h2 id="separatorlist">separatorList</h2>
+<p>default: <code>and</code></p>
+<p>Separator between list elements in list-type fields. You will need to add <code>--listsep='|'</code> to your biber calls.</p>
+<h2 id="separatornames">separatorNames</h2>
+<p>default: <code>and</code></p>
+<p>Separator between author names. You will need to add <code>--namesep='|'</code> to your biber calls.</p>
 <h2 id="skipwords">skipWords</h2>
 <p>default: <code>a,ab,aboard,about,above,across,after,against,al,along,amid,among,an,and,anti,around,as,at,before,behind,below,beneath,beside,besides,between,beyond,but,by,d,da,das,de,del,dell,dello,dei,degli,della,dell,delle,dem,den,der,des,despite,die,do,down,du,during,ein,eine,einem,einen,einer,eines,el,en,et,except,for,from,gli,i,il,in,inside,into,is,l,la,las,le,les,like,lo,los,near,nor,of,off,on,onto,or,over,past,per,plus,round,save,since,so,some,sur,than,the,through,to,toward,towards,un,una,unas,under,underneath,une,unlike,uno,unos,until,up,upon,versus,via,von,while,with,within,without,yet,zu,zum</code></p>
 <p>list of words to skip in title when generating citation keys</p>
