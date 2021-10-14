@@ -1575,7 +1575,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <h4 id="functions">Functions</h4>
 <ul>
   
-    <li><code>auth.auth.ea</code> / <code>edtr.edtr.ea</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name of the first two authors, and &ldquo;.ea&rdquo; if there are more than two.</li>
+    <li><code>auth.auth.ea</code> / <code>edtr.auth.ea</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name of the first two authors, and &ldquo;.ea&rdquo; if there are more than two.</li>
   
     <li><code>auth.etal</code> / <code>edtr.etal</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name of the first author, and the last name of the second author if there are two authors or &ldquo;.etal&rdquo; if there are more than two.</li>
   
@@ -1608,6 +1608,8 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <li><code>journal</code>: returns the journal abbreviation, or, if not found, the journal title, If &lsquo;automatic journal abbreviation&rsquo; is enabled in the BBT settings, it will use the same abbreviation filter Zotero uses in the wordprocessor integration. You might want to use the <code>abbr</code> filter on this.</li>
   
     <li><code>keywordN</code>: Tag number <code>N</code></li>
+  
+    <li><code>language</code>: Tests whether the entry has the given language set, and skips to the next pattern if not</li>
   
     <li><code>lastpage</code>: The number of the last page of the publication (See the remark on <code>firstpage</code>)</li>
   
@@ -2091,9 +2093,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>condense</code>=sep? (string): this replaces spaces in the value passed in. You can specify what to replace it with by adding it as a parameter, e.g <code>condense=_</code> will replace spaces with underscores. <strong>Parameters should not contain spaces</strong> unless you want the spaces in the value passed in to be replaced with those spaces in the parameter</li>
   
+    <li><code>default</code>=text (string): Returns the given text if no output was generated</li>
+  
     <li><code>discard</code>: discards the input</li>
   
-    <li><code>fold</code>=mode? (&lsquo;german&rsquo; | &lsquo;japanese&rsquo; | &lsquo;chinese&rsquo;): tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
+    <li><code>fold</code>=mode? (&ldquo;german&rdquo; | &ldquo;japanese&rdquo; | &ldquo;chinese&rdquo;): tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
   
     <li><code>format-date</code>=format? (string): formats date as by replacing y, m and d in the format</li>
   
@@ -2102,6 +2106,8 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <li><code>kuromoji</code>: word segmentation for Japanese references. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
   
     <li><code>local-time</code>: transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input.</li>
+  
+    <li><code>longer</code>=n (number): If the length of the output is not longer than the given number, skip to the next pattern</li>
   
     <li><code>lower</code>: Forces the text inserted by the field marker to be in lowercase. For example, <code>[auth:lower]</code> expands the last name of the first author in lowercase.</li>
   
@@ -2115,7 +2121,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>prefix</code>=prefix (string): prefixes with its parameter, so <code>prefix=_</code> will add an underscore to the front if, and only if, the value it is supposed to prefix isn&rsquo;t empty. If you want to use a reserved character (such as <code>:</code> or <code>\</code>), you&rsquo;ll need to add a backslash (<code>\</code>) in front of it.</li>
   
-    <li><code>replace</code>=find (string), replace (string), mode? (&lsquo;string&rsquo; | &lsquo;regex&rsquo;): replaces text, case insensitive; <code>:replace=.etal,&amp;etal</code> will replace <code>.EtAl</code> with <code>&amp;etal</code></li>
+    <li><code>replace</code>=find (string), replace (string), mode? (&ldquo;string&rdquo; | &ldquo;regex&rdquo;): replaces text, case insensitive; <code>:replace=.etal,&amp;etal</code> will replace <code>.EtAl</code> with <code>&amp;etal</code></li>
   
     <li><code>select</code>=start? (number), n? (number): selects words from the value passed in. The format is <code>select=start,number</code> (1-based), so <code>select=1,4</code> would select the first four words. If <code>number</code> is not given, all words from <code>start</code> to the end of the list are selected.</li>
   
@@ -2127,7 +2133,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>substring</code>=start? (number), n? (number): (<code>substring=start,n</code>) selects <code>n</code> (default: all) characters starting at <code>start</code> (default: 1)</li>
   
-    <li><code>transliterate</code>=mode? (&lsquo;minimal&rsquo; | &lsquo;german&rsquo; | &lsquo;de&rsquo; | &lsquo;japanese&rsquo; | &lsquo;ja&rsquo; | &lsquo;zh&rsquo; | &lsquo;chinese&rsquo;): transliterates the citation key. If you don&rsquo;t specify a mode, the mode is derived from the item language field</li>
+    <li><code>transliterate</code>=mode? (&ldquo;minimal&rdquo; | &ldquo;german&rdquo; | &ldquo;de&rdquo; | &ldquo;japanese&rdquo; | &ldquo;ja&rdquo; | &ldquo;zh&rdquo; | &ldquo;chinese&rdquo;): transliterates the citation key. If you don&rsquo;t specify a mode, the mode is derived from the item language field</li>
   
     <li><code>upper</code>: Forces the text inserted by the field marker to be in uppercase. For example, <code>[auth:upper]</code> expands the last name of the first author in uppercase.</li>
   
