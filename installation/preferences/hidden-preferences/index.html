@@ -1521,7 +1521,6 @@ Better BibTeX for Zotero
     <li><a href="#separatornames">separatorNames</a></li>
     <li><a href="#skipwords">skipWords</a></li>
     <li><a href="#startupprogress">startupProgress</a></li>
-    <li><a href="#stringsoverride">stringsOverride</a></li>
     <li><a href="#verbatimfields">verbatimFields</a></li>
     <li><a href="#warntitlecased">warnTitleCased</a></li>
     <li><a href="#abbreviation-style">Abbreviation style:</a></li>
@@ -1662,13 +1661,6 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <ul>
 <li><code>popup</code>: show a popup during startup * <code>progressbar</code>: show a progressbar in the top of the frame</li>
 </ul>
-<h2 id="stringsoverride">stringsOverride</h2>
-<p>default: <code>&lt;not set&gt;</code></p>
-<p>You can use a custom @string list per export directory:</p>
-<ol>
-<li>Edit the hidden preference <code>stringstOverride</code>, and set it to a filename like <code>strings.bib</code> 2. In the directory where you intend to export to, create a file called <code>strings.bib</code> (or whatever you set the preference to) and add the @string declarations you want there 3. Export to that directory.</li>
-</ol>
-<p>A strings override will disable caching for that export.</p>
 <h2 id="verbatimfields">verbatimFields</h2>
 <p>default: <code>url,doi,file,ids,eprint,verba,verbb,verbc,groups</code></p>
 <p>list of fields to treat as verbatim during import. If you&rsquo;re importing e.g. Mendeley-generated BibTeX, which is out of spec in various ways, try removing <code>file</code> from this list before import.</p>
