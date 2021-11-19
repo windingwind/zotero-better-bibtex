@@ -2098,19 +2098,31 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>discard</code>: discards the input</li>
   
+    <li><code>eq</code>=n (number): If the length of the output is not equal to the given number, skip to the next pattern. Alias: <code>=[number]</code>.</li>
+  
     <li><code>fold</code>=mode? (&ldquo;german&rdquo; | &ldquo;japanese&rdquo; | &ldquo;chinese&rdquo;): tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
   
     <li><code>format-date</code>=format? (string): formats date as by replacing y, m and d in the format</li>
+  
+    <li><code>ge</code>=n (number): If the length of the output is not greater than or equal to the given number, skip to the next pattern. Alias: <code>&gt;=[number]</code>.</li>
+  
+    <li><code>gt</code>=n (number): If the length of the output is not greater than the given number, skip to the next pattern. Alias: <code>&gt;[number]</code>.</li>
   
     <li><code>jieba</code>: word segmentation for Chinese references. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
   
     <li><code>kuromoji</code>: word segmentation for Japanese references. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
   
+    <li><code>le</code>=n (number): If the length of the output is not lower than or equal to the given number, skip to the next pattern. Alias: <code>&lt;=[number]</code>.</li>
+  
     <li><code>local-time</code>: transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input.</li>
   
-    <li><code>longer</code>=n (number): If the length of the output is not longer than the given number, skip to the next pattern</li>
+    <li><code>longer</code>=n (number): If the length of the output is not longer than the given number, skip to the next pattern. Alias: <code>&gt;[number]</code>.</li>
   
     <li><code>lower</code>: Forces the text inserted by the field marker to be in lowercase. For example, <code>[auth:lower]</code> expands the last name of the first author in lowercase.</li>
+  
+    <li><code>lt</code>=n (number): If the length of the output is not less than the given number, skip to the next pattern. Alias: <code>&lt;[number]</code>.</li>
+  
+    <li><code>ne</code>=n (number): If the length of the output is equal to the given number, skip to the next pattern. Alias: <code>!=[number]</code>.</li>
   
     <li><code>nopunct</code>: Removes punctuation</li>
   
