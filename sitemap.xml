@@ -20,6 +20,8 @@
   </url><url>
     <loc>/zotero-better-bibtex/exporting/pandoc/</loc>
   </url><url>
+    <loc>/zotero-better-bibtex/citing/migrating/</loc>
+  </url><url>
     <loc>/zotero-better-bibtex/exporting/pull/</loc>
   </url><url>
     <loc>/zotero-better-bibtex/support/performance/</loc>
@@ -70,6 +72,8 @@
   </url><url>
     <loc>/zotero-better-bibtex/tags/import/</loc>
   </url><url>
+    <loc>/zotero-better-bibtex/tags/libreoffice/</loc>
+  </url><url>
     <loc>/zotero-better-bibtex/tags/overleaf/</loc>
   </url><url>
     <loc>/zotero-better-bibtex/tags/preferences/</loc>
@@ -79,5 +83,7 @@
     <loc>/zotero-better-bibtex/sponsoring/</loc>
   </url><url>
     <loc>/zotero-better-bibtex/tags/</loc>
+  </url><url>
+    <loc>/zotero-better-bibtex/tags/word/</loc>
   </url>
 </urlset>

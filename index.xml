@@ -48,6 +48,16 @@ Add-on could not be installed because it appears to be corrupt. You have downloa
     </item>
     
     <item>
+      <title>Migrating Word/Libreoffice documents to LaTeX/Markdown</title>
+      <link>/zotero-better-bibtex/citing/migrating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/citing/migrating/</guid>
+      <description>So you have decided that enough is enough, and you want to migrate your existing Word/Libreoffice document to LaTeX/Markdown. Plenty (well&amp;hellip;) tools exist to help with the migration of your document content, pandoc being the most prominent one, but one thing none of them will do is keep your citations intact. This will not do.
+If you install this CSL style in Zotero (or modify it further and use that), Zotero will render the in-text citations as [@citekey].</description>
+    </item>
+    
+    <item>
       <title>Pull export</title>
       <link>/zotero-better-bibtex/exporting/pull/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
