@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
-    <title>Migrating Word/Libreoffice documents to LaTeX/Markdown :: Better BibTeX for Zotero</title>
+    <title>Migrating from Word/Libreoffice :: Better BibTeX for Zotero</title>
 
     
     <link href="/zotero-better-bibtex/css/nucleus.css" rel="stylesheet">
@@ -1136,9 +1136,9 @@ Better BibTeX for Zotero
  
   
     
-      <li data-nav-id="/zotero-better-bibtex/citing/migrating/" title="Migrating Word/Libreoffice documents to LaTeX/Markdown" class="dd-item active">
+      <li data-nav-id="/zotero-better-bibtex/citing/migrating/" title="Migrating from Word/Libreoffice" class="dd-item active">
         <a href="/zotero-better-bibtex/citing/migrating/">
-        Migrating Word/Libreoffice documents to LaTeX/Markdown
+        Migrating from Word/Libreoffice
         
         </a>
     </li>
@@ -1504,7 +1504,7 @@ Better BibTeX for Zotero
             
           
           
-            <a href='/zotero-better-bibtex/'>Better BibTeX for Zotero</a> > <a href='/zotero-better-bibtex/citing/'>Citation Keys</a> > Migrating Word/Libreoffice documents to LaTeX/Markdown
+            <a href='/zotero-better-bibtex/'>Better BibTeX for Zotero</a> > <a href='/zotero-better-bibtex/citing/'>Citation Keys</a> > Migrating from Word/Libreoffice
           
         
           
@@ -1543,7 +1543,7 @@ Better BibTeX for Zotero
           
             <h1>
               
-              Migrating Word/Libreoffice documents to LaTeX/Markdown
+              Migrating from Word/Libreoffice
             </h1>
           
 
@@ -1557,9 +1557,12 @@ content, pandoc being the most prominent one, but one thing none
 of them will do is keep your citations intact. This will not do.</p>
 <p>If you install <a href="better-bibtex-citekeys.csl">this</a> CSL style in
 Zotero (or modify it further and use that), Zotero will render the
-in-text citations as <code>[@citekey]</code>. If you want LaTeX, modify the
-style accordingly. BBT does this by patching in the <code>citation-key</code>
-variable to make it available to the CSL processor.</p>
+in-text citations as <code>[@citekey]</code> when you ask Zotero to render the bibliography. If you want LaTeX, modify the
+style accordingly. You can then put your document through pandoc or whatnot to get LaTeX/Markdown.</p>
+<p>For the curious, BBT does this by patching in the <code>citation-key</code>
+variable in the CSL processing so it can be rendered using a CSL
+style. If you previously used the <code>citeprocNoteCitekey</code> preference,
+that is now gone, so you&rsquo;ll have to update the style you used.</p>
 
 
 <footer class="footline">
