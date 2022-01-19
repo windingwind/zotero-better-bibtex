@@ -1561,6 +1561,13 @@ doesn&rsquo;t already know about. You can enable &lsquo;AUX Import&rsquo; in the
 preferences, and when that is on, if the scan finds citekeys not
 already in your Zotero library, it will attempt to read those (but
 <em>only</em> those) items from the bibtex file named in the <code>aux</code> file.</p>
+<p>For BBT users who don&rsquo;t use LaTeX directly, you can create a
+custom <code>aux</code> file to use with the AUX scanner by hand. It is a
+text file formatted like this:</p>
+<pre tabindex="0"><code>\citation{CITEKEY1}
+\citation{CITEKEY2}
+</code></pre><p>Where <code>CITEKEY1</code>, <code>CITEKEY2</code> etc are the <a href="/zotero-better-bibtex/">citation keys</a>
+that you want to include in the collection.</p>
 
 
 <footer class="footline">
