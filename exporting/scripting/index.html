@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.1" />
+    <meta name="generator" content="Hugo 0.92.2" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1539,6 +1539,7 @@ Better BibTeX for Zotero
         <li><a href="#citing-documents-with-a-physical-archive-location">Citing documents with a physical archive location</a></li>
         <li><a href="#export-season-for-bibtex">Export season for BibTeX</a></li>
         <li><a href="#adding-rights-field-in-biblatex">Adding rights field in BibLaTeX</a></li>
+        <li><a href="#use--in-file-paths-to-avoid-the-bib-file-being-different-on-different-computers">Use <code>~</code> in file paths to avoid the .bib file being different on different computers</a></li>
       </ul>
     </li>
   </ul>
@@ -1838,7 +1839,19 @@ export:</p>
 <pre tabindex="0"><code>if (Translator.BetterBibLaTeX) {
   reference.add({ name: 'rights', value: item.rights});
 }
-</code></pre>
+</code></pre><h3 id="use--in-file-paths-to-avoid-the-bib-file-being-different-on-different-computers">Use <code>~</code> in file paths to avoid the .bib file being different on different computers</h3>
+<p>For example on a Linux machine you might have <code>/home/myname</code> and on MacOS it is typically <code>/Users/mypossiblyothername</code>. If you sync a bib file on both to a git repo you will see a lot of diffs everytime due to them fighting each other.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">options</span>.<span style="color:#a6e22e">exportFileData</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">attachments</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">attachments</span>.<span style="color:#a6e22e">length</span>) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">att</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">attachments</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">att</span>.<span style="color:#a6e22e">localPath</span>) {
+      <span style="color:#a6e22e">att</span>.<span style="color:#a6e22e">localPath</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">att</span>.<span style="color:#a6e22e">localPath</span>.<span style="color:#a6e22e">replace</span>(RegExp(<span style="color:#e6db74">&#34;^\/.*?\/.*?\/&#34;</span>), <span style="color:#e6db74">&#34;~/&#34;</span>)
+    }
+  }
+  <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;file&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">attachments</span>, <span style="color:#a6e22e">enc</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;attachments&#39;</span> })
+  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">cache</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> }
+}
+</code></pre></div><p>From <a href="https://forums.zotero.org/discussion/comment/399187#Comment_399187">discussion here</a>.</p>
+
 
 <footer class="footline">
 	
