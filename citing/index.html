@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.93.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1602,10 +1602,10 @@ preferences (you can get there via the Zotero preferences, or by clicking the Be
 <p>If you want to get fancy, you can set multiple patterns separated by a vertical bar, of which the first will be applied
 that yields a non-empty string. If all return a empty string, a random key will be generated.</p>
 <p>An example application for this behavior is to use the <code>tex.shortauthor</code> from the <a href="/zotero-better-bibtex/exporting/extra-fields/">extra field</a> when defined to generate short citation keys for entries with long group author names, but to default to <code>[auth:lower]</code> otherwise:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[Extra:transliterate:replace=(?\:tex\\.shortauthor\[\:\=\]\\s+(\\w+))|.*,$1,regex:clean:lower][&gt;0][year] | [auth:lower][year]
-</code></pre></div><p>although this particular case can be handled more succinctly with</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[extra=tex.shortauthor:transliterate:clean:lower][&gt;0][year] | [auth:lower][year]
-</code></pre></div><p><strong>note the non-greedy regex pattern before the non-capturing group.</strong> Using this pattern, a reference of the &ldquo;American Psychological Association&rdquo; from 2021 and <code>tex.shortauthor: APA</code> in the extra field would get the citekey <code>apa2021</code>. Without the definition in the extra field the generated citekey would be <code>americanpsychologicalassociation2021</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[Extra:transliterate:replace=(?\:tex\\.shortauthor\[\:\=\]\\s+(\\w+))|.*,$1,regex:clean:lower][&gt;0][year] | [auth:lower][year]
+</span></span></code></pre></div><p>although this particular case can be handled more succinctly with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[extra=tex.shortauthor:transliterate:clean:lower][&gt;0][year] | [auth:lower][year]
+</span></span></code></pre></div><p><strong>note the non-greedy regex pattern before the non-capturing group.</strong> Using this pattern, a reference of the &ldquo;American Psychological Association&rdquo; from 2021 and <code>tex.shortauthor: APA</code> in the extra field would get the citekey <code>apa2021</code>. Without the definition in the extra field the generated citekey would be <code>americanpsychologicalassociation2021</code>.</p>
 <h3 id="generating-citekeys">Generating citekeys</h3>
 <p>To generate your citekeys, you use a pattern composed of functions and filters. Broadly, functions grab text from your item, and filters transform that text. The full list of functions and filters is:</p>
 <h4 id="functions">Functions</h4>
@@ -1633,7 +1633,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>authorsN</code> / <code>editorsN</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name of up to N authors. If there are more authors, &ldquo;EtAl&rdquo; is appended.</li>
   
-    <li><code>authshort</code> / <code>edtrshort</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name if one author is given; the first character of up to three authors' last names if more than one author is given. A plus character is added, if there are more than three authors.</li>
+    <li><code>authshort</code> / <code>edtrshort</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name if one author is given; the first character of up to three authors&rsquo; last names if more than one author is given. A plus character is added, if there are more than three authors.</li>
   
     <li><code>date</code>: The date of the publication</li>
   
@@ -2175,7 +2175,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>select</code>=start? (number), n? (number): selects words from the value passed in. The format is <code>select=start,number</code> (1-based), so <code>select=1,4</code> would select the first four words. If <code>number</code> is not given, all words from <code>start</code> to the end of the list are selected.</li>
   
-    <li><code>skipwords</code>: <p>filters out common words like &lsquo;of&rsquo;, &lsquo;the&rsquo;, &hellip; the list of words can be seen and changed by going into <code>about:config</code> under the key <code>extensions.zotero.translators.better-bibtex.skipWords</code> as a comma-separated, case-insensitive list of words.</p>
+    <li><code>skipwords</code>: <p>filters out common words like &lsquo;of&rsquo;, &rsquo;the&rsquo;, &hellip; the list of words can be seen and changed by going into <code>about:config</code> under the key <code>extensions.zotero.translators.better-bibtex.skipWords</code> as a comma-separated, case-insensitive list of words.</p>
 <p>If you want to strip words like &lsquo;Jr.&rsquo; from names, you could use something like <code>[Auth:nopunct:skipwords:fold]</code> after adding <code>jr</code> to the skipWords list. Note that this filter is always applied if you use <code>title</code> (which is different from <code>Title</code>) or <code>shorttitle</code>.</p>
 </li>
   
