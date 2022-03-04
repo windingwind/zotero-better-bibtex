@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.93.0" />
+    <meta name="generator" content="Hugo 0.93.1" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1694,7 +1694,7 @@ the Zotero item looks like to the translator.</p>
 </span></span></code></pre></div><h3 id="add-arxiv-data">Add arXiv data</h3>
 <p>arXiv is a bit of an odd duck. It really isn&rsquo;t a journal, so it shouldn&rsquo;t be the journal title, and their own recommendations on how to include arXiv IDs is a little lacking: <a href="https://arxiv.org/help/faq/references">this</a> doesn&rsquo;t say where to include the <code>arXiv:...</code> identfier, and <a href="https://arxiv.org/help/hypertex/bibstyles">this</a> says <em>not</em> to include it. Nor does it give any recommendations on how to achieve the <a href="https://arxiv.org/help/faq/references">desired output</a>.</p>
 <p>But for arguments&rsquo; sake, let&rsquo;s say you get the desired output by including an empty <code>journaltitle</code> field (ugh) and stuff the <code>arXiv:...</code> ID in the <code>pages</code> field (<em>ugh</em>). You could do that with the following postscript:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">arXiv</span>.<span style="color:#a6e22e">id</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">arXiv</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;pages&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">arXiv</span>.<span style="color:#a6e22e">id</span> });
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">has</span>.<span style="color:#a6e22e">journaltitle</span>) { <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;journaltitle&#39;</span>, <span style="color:#a6e22e">bibtex</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{}&#39;</span> }); }
 </span></span><span style="display:flex;"><span>}
