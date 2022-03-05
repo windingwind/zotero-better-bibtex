@@ -22,7 +22,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/exporting/scripting/</guid>
-      <description>You wanted customized&amp;hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each reference generated in the Bib(La)TeX exporter. In this code, you have access to the reference just before it will be written out and cached. There is an API to do this, and it&amp;rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&amp;rsquo;ll add it here (it&amp;rsquo;s how the examples got here).</description>
+      <description>You wanted customized&amp;hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each entry generated in the Bib(La)TeX exporter. In this code, you have access to the entry just before it will be written out and cached. There is an API to do this, and it&amp;rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&amp;rsquo;ll add it here (it&amp;rsquo;s how the examples got here).</description>
     </item>
     
   </channel>

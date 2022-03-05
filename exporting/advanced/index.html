@@ -1548,10 +1548,10 @@ Better BibTeX for Zotero
 <h2 id="you-are-a-hardcore-latex-user">You are a hardcore LaTeX user</h2>
 <p>If you&rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:</p>
 <ul>
-<li>You can add literal LaTeX anywhere in your reference by surrounding it with <code>&lt;script&gt;...&lt;/script&gt;</code> (<code>&lt;pre&gt;...&lt;/pre&gt;</code> will also work for historical reasons) markers. BBT will
+<li>You can add literal LaTeX anywhere in your item by surrounding it with <code>&lt;script&gt;...&lt;/script&gt;</code> (<code>&lt;pre&gt;...&lt;/pre&gt;</code> will also work for historical reasons) markers. BBT will
 convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged.</li>
 <li>An entry tagged with <code>#LaTeX</code> (case-sensitive!) will have all fields exported as if they&rsquo;re wrapped in
-<code>&lt;script&gt;...&lt;/script&gt;</code>, so you can include LaTeX markup in your references.</li>
+<code>&lt;script&gt;...&lt;/script&gt;</code>, so you can include LaTeX markup in your items.</li>
 </ul>
 <h2 id="recognizing-initials-in-names">Recognizing initials in names</h2>
 <p>In names, you can force first names like <code>Philippe</code> to be exported to <code>{\relax Ph}ilippe</code> (which causes it to get initial <code>Ph.</code> rather than <code>P.</code> in styles that do initials) by adding a <a href="http://www.fileformat.info/info/unicode/char/0097/index.htm">end of guarded area</a> character between <code>Ph</code> and <code>ilippe</code>.</p>

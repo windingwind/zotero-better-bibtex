@@ -53,7 +53,7 @@ You can add options to the export as URL parameters:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/support/performance/</guid>
-      <description>The Better BibTeX exporters are a lot slower than the standard Zotero Bib(La)TeX exporters. If you have a small library, you will not likely notice this, but if you have several thousand references, and you are in the habit of exporting substantial parts of your library, this gets annoying really fast.
+      <description>The Better BibTeX exporters are a lot slower than the standard Zotero Bib(La)TeX exporters. If you have a small library, you will not likely notice this, but if you have several thousand items, and you are in the habit of exporting substantial parts of your library, this gets annoying really fast.
 To deal with this problem, Better BibTeX implements an extensive caching system. With a filled cache, Better BibTeX is substantially faster than the default Zotero exporters.</description>
     </item>
     
@@ -76,7 +76,7 @@ Making any change here will drop your entire export cache. This is usually not a
       <guid>/zotero-better-bibtex/installation/bundled-translators/</guid>
       <description>Better BibTeX bundles 5 translators you might care about:
 Export These translators are supported by the auto-export functionality built into Better BibTeX:
- Better BibLaTeX exports references in BibLaTeX format (but better, natch) Better BibTeX exports references in BibTeX format Better CSL JSON exports references in pandoc-compatible CSL-JSON format, with added citation keys and parsing of metadata Better CSL YAML exports the same as the Better CSL JSON exporter, but in YAML format Collected Notes exports just notes &amp;ndash; standalone notes and notes attached to references, not the extra field &amp;ndash; to HTML.</description>
+ Better BibLaTeX exports items in BibLaTeX format (but better, natch) Better BibTeX exports items in BibTeX format Better CSL JSON exports items in pandoc-compatible CSL-JSON format, with added citation keys and parsing of metadata Better CSL YAML exports the same as the Better CSL JSON exporter, but in YAML format Collected Notes exports just notes &amp;ndash; standalone notes and notes attached to items, not the extra field &amp;ndash; to HTML.</description>
     </item>
     
   </channel>

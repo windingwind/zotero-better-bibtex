@@ -1518,7 +1518,7 @@ Better BibTeX for Zotero
       <ul>
         <li><a href="#latex-fields">LaTeX fields</a></li>
         <li><a href="#csl-fields">CSL fields</a></li>
-        <li><a href="#changing-the-exported-reference-type">Changing the exported reference type</a></li>
+        <li><a href="#changing-the-exported-entry-type">Changing the exported entry type</a></li>
         <li><a href="#background-exports">Background exports</a></li>
       </ul>
     </li>
@@ -1583,10 +1583,10 @@ also be <a href="https://forums.zotero.org/discussion/3673/original-date-of-publ
 <p>Note that the default biblatex styles do not seem to support origdate; you can find possible solutions for this at Stack
 Exchange <a href="http://tex.stackexchange.com/questions/142999/the-proper-way-to-cite-the-earliest-publication-date-in-brackets-followed-by">here</a>
 and <a href="http://tex.stackexchange.com/questions/55859/getting-origyear-to-work-in-biblatex">here</a>.</p>
-<h3 id="changing-the-exported-reference-type">Changing the exported reference type</h3>
-<p>If you add a field called <code>tex.referencetype</code>, the value of that field value will be used as the reference type
-instead of the one usually inferred from the Zotero reference type. You can use this to create, for example,
-<code>@customa{citekeyhere, ....}</code> type references.</p>
+<h3 id="changing-the-exported-entry-type">Changing the exported entry type</h3>
+<p>If you add a field called <code>tex.entrytype</code>, the value of that field value will be used as the entry type
+instead of the one usually inferred from the Zotero item type. You can use this to create, for example,
+<code>@customa{citekeyhere, ....}</code> type entries.</p>
 <h3 id="background-exports">Background exports</h3>
 <p>To help out with larger libraries, BBT will export using an isolated thread (&ldquo;worker thread&rdquo;), which will prevent Zotero from locking up during exports.
 This was introduced in 5.2.0; at time of writing it passes all tests, and feedback so far has been positive, but it&rsquo;s a wild departure from how Zotero exports work, so

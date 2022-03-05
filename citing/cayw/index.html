@@ -1663,7 +1663,7 @@ the following URL parameters:</p>
 </li>
 <li><code>json</code>: the full pick information Zotero provides.</li>
 </ul>
-<p>The picker passes the following data along with your picked references if you filled them out:</p>
+<p>The picker passes the following data along with your picked items if you filled them out:</p>
 <table>
 <thead>
 <tr>
@@ -1693,14 +1693,14 @@ the following URL parameters:</p>
 <p>However not all output formats support these. Pandoc and scannable cite are the richest ones, supporting all 4. MultiMarkdown supports
 none. The <code>formatted-</code> formats will ignore these. LaTeX supports all 4, in a way:</p>
 <ul>
-<li>in the <code>latex</code> (<a href="https://ctan.org/pkg/natbib"><code>natbib</code></a>) format: if you choose <code>suppress author</code> for none or all of your references in a pick, you
+<li>in the <code>latex</code> (<a href="https://ctan.org/pkg/natbib"><code>natbib</code></a>) format: if you choose <code>suppress author</code> for none or all of your items in a pick, you
 will get the citation as you would normally enter it, such as <code>\cite{author1,author2}</code>, or
 <code>\citeyear{author1,author2}</code>. If you use <code>locator</code>, <code>prefix</code>, <code>suffix</code> in any one of them, or you use <code>suppress author</code>
 for some but not for others, the picker will write them out all separate, like <code>\cite[p. 1]{author1}\citeyear{author2}</code>,
 as natbib doesn&rsquo;t seem to have a good mechanism for combined citations that mix different prefixes/suffixes/locators.</li>
 <li>in the <a href="https://ctan.org/pkg/biblatex"><code>biblatex</code></a> format: <code>suppress author</code> is ignored unless the command is one of <code>\cite</code>, <code>\autocite</code>
-or <code>\parencite</code> AND there is one reference only, in which case the starred variant of the command is returned, which
-hides the author; for multiple references with <code>locator</code>s, <code>prefix</code>es or <code>suffix</code>es, the <code>s</code>-affixed variant of the
+or <code>\parencite</code> <strong>and</strong> there is one items only, in which case the starred variant of the command is returned, which
+hides the author; for multiple items with <code>locator</code>s, <code>prefix</code>es or <code>suffix</code>es, the <code>s</code>-affixed variant of the
 command is generated</li>
 </ul>
 <p>Some of the formatters use abbreviated labels for the results if you include a locator. The defaults are:</p>
@@ -1807,7 +1807,7 @@ command is generated</li>
 you use this option you will probably want to bind to a hotkey, either system-wide (which is going to be platform-dependent, I know
 <a href="http://www.autohotkey.com">AutoHotKey</a> works for windows, for OSX <a href="https://pqrs.org/osx/karabiner/">Karabiner</a> ought to
 do the job, and for Linux <a href="https://unix.stackexchange.com/questions/44672/assign-shortcut-key-to-run-a-script">xbindkeys</a> could do the job.</p>
-<p>For example, if you call up http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;clipboard=yes, the Zotero citation picker will pop up. If you then select two references that happen to have cite keys <code>adams2001</code> and <code>brigge2002</code>, then</p>
+<p>For example, if you call up http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;clipboard=yes, the Zotero citation picker will pop up. If you then select two items that happen to have cite keys <code>adams2001</code> and <code>brigge2002</code>, then</p>
 <ul>
 <li>the response body will be <code>[#adams2001][][#brigge2002][]</code>, and</li>
 <li><code>[#adams2001][][#brigge2002][]</code> will be left on the clipboard</li>

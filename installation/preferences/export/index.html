@@ -1544,7 +1544,7 @@ Better BibTeX for Zotero
     </li>
     <li><a href="#fields">Fields</a>
       <ul>
-        <li><a href="#when-a-reference-has-both-a-doi-and-a-url-export">When a reference has both a DOI and a URL, export</a></li>
+        <li><a href="#when-an-item-has-both-a-doi-and-a-url-export">When an item has both a DOI and a URL, export</a></li>
         <li><a href="#fields-to-omit-from-export-comma-separated">Fields to omit from export (comma-separated):</a></li>
         <li><a href="#include-jabref-specific-metadata">Include JabRef-specific metadata:</a></li>
       </ul>
@@ -1562,7 +1562,7 @@ Better BibTeX for Zotero
     <li><a href="#miscellaneous">Miscellaneous</a>
       <ul>
         <li><a href="#automatically-abbreviate-journal-title-if-none-is-set-explicitly">Automatically abbreviate journal title if none is set explicitly</a></li>
-        <li><a href="#include-comments-about-potential-problems-with-the-exported-references">Include comments about potential problems with the exported references</a></li>
+        <li><a href="#include-comments-about-potential-problems-with-the-exported-entries">Include comments about potential problems with the exported entries</a></li>
         <li><a href="#include-automatic-tags-in-export">Include automatic tags in export</a></li>
         <li><a href="#when-converting-to-plain-text-latex-commands">When converting to plain-text latex commands:</a></li>
         <li><a href="#apply-title-casing-to-titles">Apply title-casing to titles</a></li>
@@ -1637,9 +1637,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>default: <code>no</code></p>
 <p>Use the extended biber 2.7 format for names with particles - only works in BibLaTeX 3.5 or later. This biblatex has a new (less ambiguous) way to store creator names. It&rsquo;s technically superior, but the LaTeX world moves slowly, so many people won&rsquo;t have it yet. But if you&rsquo;re an early adopter, you can enable it here</p>
 <h2 id="fields">Fields</h2>
-<h3 id="when-a-reference-has-both-a-doi-and-a-url-export">When a reference has both a DOI and a URL, export</h3>
+<h3 id="when-an-item-has-both-a-doi-and-a-url-export">When an item has both a DOI and a URL, export</h3>
 <p>default: <code>both</code></p>
-<p>Does what it says on the tin, really. If a reference has both a DOI and an URL, you can choose to have them both exported, or either one of them. Note that for BibTeX, you must load the <code>url</code> package when you have <code>doi</code> or <code>url</code> fields. <code>doi</code> and <code>url</code> fields are so-called <code>verbatim</code> fields with different escaping rules, and BibTeX compilation will likely error out without the package loaded.</p>
+<p>Does what it says on the tin, really. If an item has both a DOI and an URL, you can choose to have them both exported, or either one of them. Note that for BibTeX, you must load the <code>url</code> package when you have <code>doi</code> or <code>url</code> fields. <code>doi</code> and <code>url</code> fields are so-called <code>verbatim</code> fields with different escaping rules, and BibTeX compilation will likely error out without the package loaded.</p>
 <p>Options:</p>
 <ul>
 <li>both</li>
@@ -1707,14 +1707,14 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h2 id="postscript">postscript</h2>
 <h3 id="postscript-1">postscript</h3>
 <p>default: <code>&lt;not set&gt;</code></p>
-<p>Snippet of javascript to run [after each reference generation]({{ ref . &ldquo;exporting/scripting.md&rdquo; }}).</p>
+<p>Snippet of javascript to run [after each entry generation]({{ ref . &ldquo;exporting/scripting.md&rdquo; }}).</p>
 <h2 id="miscellaneous">Miscellaneous</h2>
 <h3 id="automatically-abbreviate-journal-title-if-none-is-set-explicitly">Automatically abbreviate journal title if none is set explicitly</h3>
 <p>default: <code>no</code></p>
 <p>If set, generates journal abbreviations on export using the Zotero journal abbreviator, according to the abbreviation style selected in the list below the checkbox.</p>
-<h3 id="include-comments-about-potential-problems-with-the-exported-references">Include comments about potential problems with the exported references</h3>
+<h3 id="include-comments-about-potential-problems-with-the-exported-entries">Include comments about potential problems with the exported entries</h3>
 <p>default: <code>no</code></p>
-<p>Generate quality reports for exported references. These show up only in BibTeX and BibLaTeX report formats and indicate things like missing required fields and duplicate citation keys.</p>
+<p>Generate quality reports for exported entries. These show up only in BibTeX and BibLaTeX report formats and indicate things like missing required fields and duplicate citation keys.</p>
 <h3 id="include-automatic-tags-in-export">Include automatic tags in export</h3>
 <p>default: <code>yes</code></p>
 <p>Some importers or Zotero extensions (such as the ShortDOI manager for example) create tags on items that are more for item management than that they are descriptive of the item. When this is off, such tags will not be included in the export.</p>
@@ -1733,7 +1733,7 @@ really large library, but you can read about what is involved <a href="/zotero-b
 </ul>
 <h3 id="apply-title-casing-to-titles">Apply title-casing to titles</h3>
 <p>default: <code>yes</code></p>
-<p>If you&rsquo;re dead-set on ignoring both BibTeX/BibLaTeX best practice (see the BBT FAQ) and the Zotero recommendations on title/sentence casing, you can turn this off to suppress [title casing for English references]({{ ref . &ldquo;support/faq#bbt-is-changing-the-capitalization-of-my-titles-why&rdquo; }})</p>
+<p>If you&rsquo;re dead-set on ignoring both BibTeX/BibLaTeX best practice (see the BBT FAQ) and the Zotero recommendations on title/sentence casing, you can turn this off to suppress [title casing for English items]({{ ref . &ldquo;support/faq#bbt-is-changing-the-capitalization-of-my-titles-why&rdquo; }})</p>
 <h3 id="apply-case-protection-to-capitalized-words-by-enclosing-them-in-braces">Apply case-protection to capitalized words by enclosing them in braces</h3>
 <p>default: <code>yes</code></p>
 <p>If you&rsquo;re dead-set on ignoring both BibTeX/BibLaTeX best practice (see the BBT FAQ) and the Zotero recommendations on title/sentence casing, you can turn this off to suppress [automatic brace-protection for words with uppercase letters]({{ ref . &ldquo;support/faq#why-the-double-braces&rdquo; }}).</p>

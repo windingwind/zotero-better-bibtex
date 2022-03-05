@@ -22,7 +22,7 @@
       
       <guid>/zotero-better-bibtex/exporting/pandoc/</guid>
       <description>In addition to LaTeX, BBT plays very well with pandoc:
- you can drag and drop citations from Zotero into your markdown documents. you can cite as you write in your favorite editor with varying levels of comfort, mostly depending on how easy (VSCode, Sublime) or hard (looking at you Scrivener) it is to extend your editor. you can even convert your markdown document into a LibreOffice/Word document with actual live Zotero references as if you had entered them into Zotero all along (see below)  Use CSL, not bibtex with pandoc Many tutorials on the use of pandoc to generate documents with citations seem to use bibtex as a bibliography format.</description>
+ you can drag and drop citations from Zotero into your markdown documents. you can cite as you write in your favorite editor with varying levels of comfort, mostly depending on how easy (VSCode, Sublime) or hard (looking at you Scrivener) it is to extend your editor. you can even convert your markdown document into a LibreOffice/Word document with actual live Zotero items as if you had entered them into Zotero all along (see below)  Use CSL, not bibtex with pandoc Many tutorials on the use of pandoc to generate documents with citations seem to use bibtex as a bibliography format.</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ You can add options to the export as URL parameters:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/exporting/scripting/</guid>
-      <description>You wanted customized&amp;hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each reference generated in the Bib(La)TeX exporter. In this code, you have access to the reference just before it will be written out and cached. There is an API to do this, and it&amp;rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&amp;rsquo;ll add it here (it&amp;rsquo;s how the examples got here).</description>
+      <description>You wanted customized&amp;hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each entry generated in the Bib(La)TeX exporter. In this code, you have access to the entry just before it will be written out and cached. There is an API to do this, and it&amp;rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&amp;rsquo;ll add it here (it&amp;rsquo;s how the examples got here).</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@ You can add options to the export as URL parameters:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/exporting/extra-fields/</guid>
-      <description>In some cases the Zotero fields do not offer a place to enter the data you need to get your references just right. For this Zotero has a so-called &amp;ldquo;cheater syntax&amp;rdquo; which allows you to add extra &amp;ldquo;fields&amp;rdquo; as separate lines in the extra field all items in Zotero have. These fields are supported by the citation processor inside Zotero, and BBT understands them too, and adds one &amp;ldquo;cheater syntax of its own.</description>
+      <description>In some cases the Zotero fields do not offer a place to enter the data you need to get your exported entries just right. For this Zotero has a so-called &amp;ldquo;cheater syntax&amp;rdquo; which allows you to add extra &amp;ldquo;fields&amp;rdquo; as separate lines in the extra field all items in Zotero have. These fields are supported by the citation processor inside Zotero, and BBT understands them too, and adds one &amp;ldquo;cheater syntax of its own.</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@ You can add options to the export as URL parameters:
       
       <guid>/zotero-better-bibtex/exporting/advanced/</guid>
       <description>You are a hardcore LaTeX user If you&amp;rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
- You can add literal LaTeX anywhere in your reference by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.</description>
+ You can add literal LaTeX anywhere in your item by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.</description>
     </item>
     
     <item>

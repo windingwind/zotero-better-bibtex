@@ -14,7 +14,7 @@
       <guid>/zotero-better-bibtex/installation/bundled-translators/</guid>
       <description>Better BibTeX bundles 5 translators you might care about:
 Export These translators are supported by the auto-export functionality built into Better BibTeX:
- Better BibLaTeX exports references in BibLaTeX format (but better, natch) Better BibTeX exports references in BibTeX format Better CSL JSON exports references in pandoc-compatible CSL-JSON format, with added citation keys and parsing of metadata Better CSL YAML exports the same as the Better CSL JSON exporter, but in YAML format Collected Notes exports just notes &amp;ndash; standalone notes and notes attached to references, not the extra field &amp;ndash; to HTML.</description>
+ Better BibLaTeX exports items in BibLaTeX format (but better, natch) Better BibTeX exports items in BibTeX format Better CSL JSON exports items in pandoc-compatible CSL-JSON format, with added citation keys and parsing of metadata Better CSL YAML exports the same as the Better CSL JSON exporter, but in YAML format Collected Notes exports just notes &amp;ndash; standalone notes and notes attached to items, not the extra field &amp;ndash; to HTML.</description>
     </item>
     
   </channel>

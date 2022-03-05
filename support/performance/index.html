@@ -1564,7 +1564,7 @@ Better BibTeX for Zotero
 
 
 <p>The Better BibTeX exporters are a lot slower than the standard Zotero Bib(La)TeX exporters. If you have a small library,
-you will not likely notice this, but if you have several thousand references, and you are in the habit of exporting
+you will not likely notice this, but if you have several thousand items, and you are in the habit of exporting
 substantial parts of your library, this gets annoying really fast.</p>
 <p>To deal with this problem, Better BibTeX implements an extensive caching system. With a filled cache, Better BibTeX is
 substantially faster than the default Zotero exporters.  Specifically for <a href="/zotero-better-bibtex/exporting/">automatic background exports</a>, a filled cache is
@@ -1607,16 +1607,16 @@ and go grab coffee (or lunch, depending on the size of your library). After that
 <p><strong>note</strong>: if you have &lsquo;Export files&rsquo; enabled during export, or set the JabRef export format to <code>4</code>, the cache will not be active. If you do large (auto)exports, avoid these.</p>
 <h2 id="caching">Caching</h2>
 <h3 id="initial-state">Initial state</h3>
-<p>Initially, your cache will be empty. The first export of any reference using Better BibTeX will therefore be a little
-over twice as slow as subsequent exports. After that, it gets pretty zippy, as the process of exporting a reference
-will also cache that reference <em>for the current export settings</em>. This means if you export once with, and once without
+<p>Initially, your cache will be empty. The first export of any item using Better BibTeX will therefore be a little
+over twice as slow as subsequent exports. After that, it gets pretty zippy, as the process of exporting a item
+will also cache the output entry for that item <em>for the current export settings</em>. This means if you export once with, and once without
 notes (one of the options in the export popup), you will hit an empty cache twice. If you set up an automatic export,
-the export you do that registers it for auto-update will already be the first export, so if your references weren&rsquo;t
+the export you do that registers it for auto-update will already be the first export, so if your items weren&rsquo;t
 cached already, they will be before subsequent auto-exports.</p>
 <h3 id="cache-refresh">Cache refresh</h3>
-<p>The cache entry for a reference is retained as long as you do not make any changes to that reference. Any change you
-make will drop all cache entries for that reference (so all variants you had for different export options). The cache
-for that reference will be refreshed as soon as you export it again, either manually or
+<p>The cache entry for a item is retained as long as you do not make any changes to that item. Any change you
+make will drop all cache entries for that item (so all variants you had for different export options). The cache
+for that item will be refreshed as soon as you export it again, either manually or
 <a href="/zotero-better-bibtex/exporting/">automatically</a>.</p>
 <h3 id="cache-drop">Cache drop</h3>
 <p><em>Any</em> change you make to the Better BibTeX <a href="/zotero-better-bibtex/installation/preferences/">preferences</a> will drop the whole cache. The behavior of

@@ -1572,7 +1572,7 @@ it into Zotero using <a href="/zotero-better-bibtex/installation/">installation 
 <h2 id="bbt-is-changing-the-capitalization-of-my-titles----why">BBT is changing the capitalization of my titles &ndash; why?</h2>
 <p>There isn&rsquo;t a straightforward one-to-one mapping for all Zotero to Bib(La)TeX
 fields. For most I can make reasonable choices, but there are some things where
-Better BibTeX takes a little more liberties with your references in order to get
+Better BibTeX takes a little more liberties with your items in order to get
 sensible output.</p>
 <p>Title fields in particular are a total mess. Zotero <a href="https://zotero-manual.github.io/adding-items/#sentence-and-title-case">recommends having your
 titles in sentence
@@ -1580,15 +1580,15 @@ case</a>
 because that&rsquo;s what the embedded citation processor expects, but of course,
 BibLaTeX expects your titles to be in Title Case&hellip; <em>but only if they&rsquo;re in
 English</em>. Nice. In order to translate the Zotero recommendation into Bib(La)TeX
-best practice, BBT will title-case the titles of English references. English
-references, as far as BBT is concerned, are those references that have their
+best practice, BBT will title-case the titles of English items. English
+items, as far as BBT is concerned, are those items that have their
 language explicitly set to an English language (<code>american</code> counts as English for
-example), and those references that have no explicit language set. To do this,
+example), and those items that have no explicit language set. To do this,
 BBT uses the same title-caser that Zotero uses to produce title-cased styles
 such as Chicago.</p>
 <p>The titles so modified will then pass through your Bib(La)TeX processor, which
 will in turn try to lowercase or initial-caps some words and not others &ndash; for
-English references. But then sometimes, you want words that have capitals to
+English items. But then sometimes, you want words that have capitals to
 keep. BBT assumes that if a word has at least one capital letter (subject to
 some rather complex exceptions) you meant it to be there, and you want BibTeX to
 leave it alone no matter what. To do that, it wraps those (strings of) words in
@@ -1635,7 +1635,7 @@ surprise to me. So <code>\emph{Homo sapiens}</code> is case-protected (will not 
 recapitalized by Bib(La)TeX), but <code>{\emph{Homo sapiens}}</code> <em>is not</em>
 case-protected so it <em>will</em> be recapitalized. So to get predictable
 behavior, this is written out as <code>{{\emph{Homo sapiens}}}</code>.</li>
-<li>casing behavior over the <em>whole</em> reference field depends on <a href="https://github.com/retorquere/zotero-better-bibtex/issues/541#issuecomment-240156274">whether there&rsquo;s
+<li>casing behavior over the <em>whole</em> entry field depends on <a href="https://github.com/retorquere/zotero-better-bibtex/issues/541#issuecomment-240156274">whether there&rsquo;s
 a slash-command at the first
 position</a>
 of the title?</li>
@@ -1649,13 +1649,13 @@ now ignores exactly that pattern (see
 <a href="https://tex.stackexchange.com/a/327387/27603">here</a> and
 <a href="https://tex.stackexchange.com/a/233976/27603">here</a>).</p>
 <p>The double-bracing is the only unambiguous rule I could construct that
-consistently gets the rendered reference right (so far).</p>
+consistently gets the rendered entries right (so far).</p>
 <p>Bib(La)TeX provides a never-ending stream of edge cases, which BBT tries to
 decide algorithmically. I try to keep the resulting file as pretty as I can (I&rsquo;m
 sensitive to the aesthetics myself), but the target is best described as &ldquo;given
 reasonable input, generate well-rendering output&rdquo;, and
 reasonable-to-well-rendering in the BBT case will have to include &ldquo;follows
-Zotero recommendations for storing references&rdquo; and &ldquo;prefer intent-preserving
+Zotero recommendations for storing items&rdquo; and &ldquo;prefer intent-preserving
 LaTeX over pretty-looking LaTeX&rdquo;.</p>
 <p>Bib(La)TeX be crazy.</p>
 <h2 id="but-why-so-many-double-braces">But why <em>so many</em> double braces?</h2>
