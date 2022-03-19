@@ -1613,7 +1613,10 @@ scannable cites. When you first open the document with live citations, open the 
 document preferences and click <code>OK</code> <em>before</em> you refresh, or you&rsquo;ll get a confirmation
 popup for each citation. Also, the Word document is sometimes deemed
 corrupt when opening it, but running the pandoc command again without
-any changes fixes it ¯\_(ツ)_/¯</p>
+any changes fixes it ¯\_(ツ)_/¯
+LibreOffice doesn&rsquo;t recognise Zotero citations in DOCX,
+see <a href="https://github.com/retorquere/zotero-better-bibtex/issues/2070">issue #2070</a>,
+and you must use ODT.</p>
 <p>You can also specify <code>transferable: true</code> to create a <a href="https://www.zotero.org/support/kb/moving_documents_between_word_processors">transferable document</a>. You don&rsquo;t really need this for ODT or DOCX (just use Pandoc to create those directly using this filter), but it will allow transferring your document to GDocs.</p>
 <p>Zotero needs to be running, with BBT installed, while you compile your document.</p>
 
