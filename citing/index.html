@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.95.0" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1679,7 +1679,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   </li>
   <li><code>0</code>: an alias for <code>[postfix=-%(n)s]</code>. Emulates the disambiguator of the standard Zotero exports. When you use <code>[zotero]</code> in your pattern, <code>[zotero][0]</code> is implied</li>
   <li><code>&gt;X</code>: a pseudo-function which aborts the current pattern generation if what came before it is <code>X</code> characters or less (<code>[&gt;0]</code> is a typical use. You would typically use this with something like <code>[auth][&gt;0][year] | [title][year]</code> which means if there's no author you get <code>title-year</code> rather than just <code>year</code>.</li>
-  <li><code>=typeName</code>: a pseudo-function that aborts the current pattern generation if the Zotero item type does not equal <code>typeName</code>. You can test for multiple typenames at once by separating them with slashes (<code>[=journalArticle/report]</code>). Valid typeNames are: <code>artwork</code>, <code>attachment</code>, <code>audioRecording</code>, <code>bill</code>, <code>blogPost</code>, <code>book</code>, <code>bookSection</code>, <code>case</code>, <code>classic<sup>JM</sup></code>, <code>computerProgram</code>, <code>conferencePaper</code>, <code>dictionaryEntry</code>, <code>document</code>, <code>email</code>, <code>encyclopediaArticle</code>, <code>film</code>, <code>forumPost</code>, <code>gazette<sup>JM</sup></code>, <code>hearing</code>, <code>instantMessage</code>, <code>interview</code>, <code>journalArticle</code>, <code>legalCommentary<sup>JM</sup></code>, <code>letter</code>, <code>magazineArticle</code>, <code>manuscript</code>, <code>map</code>, <code>newspaperArticle</code>, <code>note</code>, <code>patent</code>, <code>podcast</code>, <code>presentation</code>, <code>radioBroadcast</code>, <code>regulation<sup>JM</sup></code>, <code>report</code>, <code>standard<sup>JM</sup></code>, <code>statute</code>, <code>thesis</code>, <code>treaty<sup>JM</sup></code>, <code>tvBroadcast</code>, <code>videoRecording</code>, <code>webpage</code>.</li>
+  <li><code>=typeName</code>: a pseudo-function that aborts the current pattern generation if the Zotero item type does not equal <code>typeName</code>. You can test for multiple typenames at once by separating them with slashes (<code>[=journalArticle/report]</code>). Valid typeNames are: <code>annotation<sup>Z</sup></code>, <code>artwork</code>, <code>attachment</code>, <code>audioRecording</code>, <code>bill</code>, <code>blogPost</code>, <code>book</code>, <code>bookSection</code>, <code>case</code>, <code>classic<sup>JM</sup></code>, <code>computerProgram</code>, <code>conferencePaper</code>, <code>dictionaryEntry</code>, <code>document</code>, <code>email</code>, <code>encyclopediaArticle</code>, <code>film</code>, <code>forumPost</code>, <code>gazette<sup>JM</sup></code>, <code>hearing</code>, <code>instantMessage</code>, <code>interview</code>, <code>journalArticle</code>, <code>legalCommentary<sup>JM</sup></code>, <code>letter</code>, <code>magazineArticle</code>, <code>manuscript</code>, <code>map</code>, <code>newspaperArticle</code>, <code>note</code>, <code>patent</code>, <code>podcast</code>, <code>preprint<sup>Z</sup></code>, <code>presentation</code>, <code>radioBroadcast</code>, <code>regulation<sup>JM</sup></code>, <code>report</code>, <code>standard<sup>JM</sup></code>, <code>statute</code>, <code>thesis</code>, <code>treaty<sup>JM</sup></code>, <code>tvBroadcast</code>, <code>videoRecording</code>, <code>webpage</code>.</li>
 </ul>
 
 (type names marked <sup>JM</sup> are only available in Juris-M).
@@ -1715,17 +1715,19 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <tr>
       
+        <td>ArchiveID<sup>Z</sup></td>
+      
         <td>ArchiveLocation</td>
       
         <td>ArtworkMedium</td>
       
         <td>ArtworkSize</td>
       
-        <td>AssemblyNumber<sup>JM</sup></td>
-      
     </tr>
   
     <tr>
+      
+        <td>AssemblyNumber<sup>JM</sup></td>
       
         <td>Assignee</td>
       
@@ -1733,11 +1735,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>AudioRecordingFormat</td>
       
-        <td>BillNumber</td>
-      
     </tr>
   
     <tr>
+      
+        <td>BillNumber</td>
       
         <td>BlogTitle</td>
       
@@ -1745,277 +1747,285 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>BookTitle</td>
       
-        <td>CallNumber</td>
-      
     </tr>
   
     <tr>
       
+        <td>CallNumber</td>
+      
         <td>CaseName</td>
       
+        <td>CitationKey<sup>Z</sup></td>
+      
         <td>Code</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>CodeNumber</td>
       
         <td>CodePages</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>CodeVolume</td>
       
         <td>Committee</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>Company</td>
       
         <td>ConferenceDate<sup>JM</sup></td>
       
-    </tr>
-  
-    <tr>
-      
         <td>ConferenceName</td>
       
         <td>Country</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>Court</td>
       
         <td>DOI</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>Date</td>
       
         <td>DateAmended<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
       
         <td>DateDecided</td>
       
         <td>DateEnacted</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>DictionaryTitle</td>
       
         <td>Distributor</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>Division<sup>JM</sup></td>
       
         <td>DocketNumber</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>DocumentName<sup>JM</sup></td>
       
         <td>DocumentNumber</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>Edition</td>
       
         <td>EncyclopediaTitle</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>EpisodeNumber</td>
       
         <td>FilingDate</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>FirstPage</td>
       
         <td>ForumTitle</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>GazetteFlag<sup>JM</sup></td>
       
         <td>Genre</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>History</td>
       
         <td>ISBN</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>ISSN</td>
       
         <td>Institution</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>InterviewMedium</td>
       
         <td>Issue</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>IssueDate</td>
       
         <td>IssuingAuthority</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>JournalAbbreviation</td>
       
         <td>Jurisdiction<sup>JM</sup></td>
       
-    </tr>
-  
-    <tr>
-      
         <td>Label</td>
       
         <td>Language</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>LegalStatus</td>
       
         <td>LegislativeBody</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>LetterType</td>
       
         <td>LibraryCatalog</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>ManuscriptType</td>
       
         <td>MapType</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>Medium</td>
       
         <td>MeetingName</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>MeetingNumber<sup>JM</sup></td>
       
         <td>NameOfAct</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>Network</td>
       
         <td>NewsCaseDate<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
       
         <td>NumPages</td>
       
         <td>Number</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>NumberOfVolumes</td>
       
         <td>OpeningDate<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
       
         <td>Opus<sup>JM</sup></td>
       
         <td>OriginalDate<sup>JM</sup></td>
       
-    </tr>
-  
-    <tr>
-      
         <td>Pages</td>
       
         <td>ParentTreaty<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
       
         <td>PatentNumber</td>
       
         <td>Place</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>PostType</td>
       
         <td>PresentationType</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>PriorityDate<sup>JM</sup></td>
       
         <td>PriorityNumbers</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>ProceedingsTitle</td>
       
         <td>ProgramTitle</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>ProgrammingLanguage</td>
       
         <td>PublicLawNumber</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>PublicationDate<sup>JM</sup></td>
       
         <td>PublicationNumber<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
       
         <td>PublicationTitle</td>
       
         <td>Publisher</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>References</td>
       
         <td>RegnalYear<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
       
         <td>RegulationType<sup>JM</sup></td>
       
         <td>RegulatoryBody<sup>JM</sup></td>
       
-    </tr>
-  
-    <tr>
-      
         <td>Reign<sup>JM</sup></td>
       
         <td>Release<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
       
         <td>ReportNumber</td>
       
         <td>ReportType</td>
       
+        <td>Reporter</td>
+      
+        <td>ReporterVolume</td>
+      
     </tr>
   
     <tr>
       
-        <td>Reporter</td>
-      
-        <td>ReporterVolume</td>
+        <td>Repository<sup>Z</sup></td>
       
         <td>ResolutionLabel<sup>JM</sup></td>
       
         <td>Rights</td>
       
+        <td>RunningTime</td>
+      
     </tr>
   
     <tr>
-      
-        <td>RunningTime</td>
       
         <td>Scale</td>
       
@@ -2023,11 +2033,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Series</td>
       
+        <td>SeriesNumber</td>
+      
     </tr>
   
     <tr>
-      
-        <td>SeriesNumber</td>
       
         <td>SeriesText</td>
       
@@ -2035,11 +2045,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Session</td>
       
+        <td>SessionType<sup>JM</sup></td>
+      
     </tr>
   
     <tr>
-      
-        <td>SessionType<sup>JM</sup></td>
       
         <td>ShortTitle</td>
       
@@ -2047,11 +2057,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Status<sup>JM</sup></td>
       
+        <td>Studio</td>
+      
     </tr>
   
     <tr>
-      
-        <td>Studio</td>
       
         <td>Subject</td>
       
@@ -2059,11 +2069,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>System</td>
       
+        <td>ThesisType</td>
+      
     </tr>
   
     <tr>
-      
-        <td>ThesisType</td>
       
         <td>Title</td>
       
@@ -2071,11 +2081,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Type</td>
       
+        <td>University</td>
+      
     </tr>
   
     <tr>
-      
-        <td>University</td>
       
         <td>Url</td>
       
@@ -2083,11 +2093,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>VideoRecordingFormat</td>
       
+        <td>Volume</td>
+      
     </tr>
   
     <tr>
-      
-        <td>Volume</td>
       
         <td>VolumeTitle<sup>JM</sup></td>
       
@@ -2095,17 +2105,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>WebsiteType</td>
       
-    </tr>
-  
-    <tr>
-      
         <td>YearAsVolume<sup>JM</sup></td>
-      
-        <td></td>
-      
-        <td></td>
-      
-        <td></td>
       
     </tr>
   
