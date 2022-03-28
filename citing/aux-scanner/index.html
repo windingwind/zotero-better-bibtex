@@ -1548,7 +1548,7 @@ Better BibTeX for Zotero
 
 <p>You can populate a collection, or tag items in your
 library, from an existing paper by scanning the <code>aux</code> file generated
-by bibtex. AUX Scanning can be triggered from the <code>Tools</code> menu (for
+by bibtex, or a pandoc-markdown file, for referenced used. Scanning can be triggered from the <code>Tools</code> menu (for
 tagging the cited items) or by right-clicking a collection (for
 adding them to a collection). The scanner will read your AUX files
 and will put entries you cited in the associated LaTeX document
@@ -1568,6 +1568,9 @@ text file formatted like this:</p>
 \citation{CITEKEY2}
 </code></pre><p>Where <code>CITEKEY1</code>, <code>CITEKEY2</code> etc are the <a href="/zotero-better-bibtex/">citation keys</a>
 that you want to include in the collection.</p>
+<p>For pandoc-markdown scanning, BBT needs to actually run pandoc, and for that pandoc must be in your <code>$PATH</code>. On MacOS, if you installed pandoc using homebrew, it will likely not be in the <code>PATH</code> that Zotero can see. This can be fixed using</p>
+<pre tabindex="0"><code>sudo ln -s /usr/local/bin/pandoc /usr/bin/pandoc
+</code></pre><p>Note that you should not take advice from strangers on the internet asking you to run <code>sudo &lt;anything&gt;</code>&hellip; and I only found this by applying google-fu, not any deep understanding of MacOS (which I do use). It Worked For Me, but you might want to consult a MacOS-guru pal.</p>
 
 
 <footer class="footline">
