@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.97.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1611,73 +1611,75 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <h4 id="functions">Functions</h4>
 <ul>
   
-    <li><code>$authAuthEa</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name of the first two authors, and &ldquo;.ea&rdquo; if there are more than two.</li>
+    <li><code>authAuthEa</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The last name of the first two authors, and &ldquo;.ea&rdquo; if there are more than two.</li>
   
-    <li><code>$authEtAl</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name of the first author, and the last name of the second author if there are two authors or &ldquo;EtAl&rdquo; if there are more than two. This is similar to <code>auth.etal</code>. The difference is that the authors are not separated by &ldquo;.&rdquo; and in case of more than 2 authors &ldquo;EtAl&rdquo; instead of &ldquo;.etal&rdquo; is appended.</li>
+    <li><code>authEtAl</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo; &lsquo;, <code>clean</code>?: boolean=true): The last name of the first author, and the last name of the second author if there are two authors or &ldquo;EtAl&rdquo; if there are more than two. This is similar to <code>auth.etal</code>. The difference is that the authors are not separated by &ldquo;.&rdquo; and in case of more than 2 authors &ldquo;EtAl&rdquo; instead of &ldquo;.etal&rdquo; is appended.</li>
   
-    <li><code>$authEtal2</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name of the first author, and the last name of the second author if there are two authors or &ldquo;.etal&rdquo; if there are more than two.</li>
+    <li><code>authEtal2</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The last name of the first author, and the last name of the second author if there are two authors or &ldquo;.etal&rdquo; if there are more than two.</li>
   
-    <li><code>$authForeIni</code>: The forename initial of the first author.</li>
+    <li><code>authForeIni</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>clean</code>?: boolean=true): The forename initial of the first author.</li>
   
-    <li><code>$authIniN</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The beginning of each author&rsquo;s last name, using no more than <code>N</code> characters.</li>
+    <li><code>authIni</code>(<code>n</code>?: number=0, <code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The beginning of each author&rsquo;s last name, using no more than <code>N</code> characters.</li>
   
-    <li><code>$authN_M</code>, <code>+initials</code>: The first <code>N</code> (default: all) characters of the <code>M</code>th (default: first) author&rsquo;s last name.</li>
+    <li><code>auth</code>(<code>n</code>?: number=0, <code>m</code>?: number=1, <code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>clean</code>?: boolean=true): The first <code>N</code> (default: all) characters of the <code>M</code>th (default: first) author&rsquo;s last name.</li>
   
-    <li><code>$authorIni</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The first 5 characters of the first author&rsquo;s last name, and the last name initials of the remaining authors.</li>
+    <li><code>authorIni</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The first 5 characters of the first author&rsquo;s last name, and the last name initials of the remaining authors.</li>
   
-    <li><code>$authorLastForeIni</code>: The forename initial of the last author.</li>
+    <li><code>authorLastForeIni</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>clean</code>?: boolean=true): The forename initial of the last author.</li>
   
-    <li><code>$authorLast</code>, <code>+initials</code>: The last name of the last author</li>
+    <li><code>authorLast</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>clean</code>?: boolean=true): The last name of the last author</li>
   
-    <li><code>$author</code>, <code>+&lt;joinchar&gt;</code>: Author/editor information. Parameters are: - <code>creator</code>: author or editor, - <code>initials</code>: whether to add initials or to only use initials, - <code>letters</code>: pick this many letters from the name, defaults to 0 = all, - <code>select</code>: select these authors, number or range (inclusive); negative numbers mean &ldquo;from the end&rdquo;, default = 0 = all, - <code>given</code>: use given name instead of family name, - <code>etal</code>: use this term to replace authors after <code>etalafter</code> authors have been named, - <code>etalafter</code>: add the <code>etal</code> if there are more authors selected that - <code>joiner</code>: use this character to join authors</li>
+    <li><code>authorsAlpha</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo; &lsquo;, <code>clean</code>?: boolean=true): Corresponds to the BibTeX style &ldquo;alpha&rdquo;. One author: First three letters of the last name. Two to four authors: First letters of last names concatenated. More than four authors: First letters of last names of first three authors concatenated. &ldquo;+&rdquo; at the end.</li>
   
-    <li><code>$authorsAlpha</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: Corresponds to the BibTeX style &ldquo;alpha&rdquo;. One author: First three letters of the last name. Two to four authors: First letters of last names concatenated. More than four authors: First letters of last names of first three authors concatenated. &ldquo;+&rdquo; at the end.</li>
+    <li><code>authors</code>(<code>n</code>?: number | (number, number)=0, <code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean | &ldquo;only&rdquo;=false, <code>letters</code>?: number=0, <code>etal</code>?: string=&rsquo;&rsquo;, <code>joiner</code>?: string=&rsquo; &lsquo;, <code>clean</code>?: boolean=true, <code>min</code>?: number=0, <code>max</code>?: number=0): Author/editor information. Parameters are: - <code>n</code>: select the first <code>n</code> authors (when passing a number) or the authors in this range (inclusive, when passing two values); negative numbers mean &ldquo;from the end&rdquo;, default = 0 = all, - <code>creator</code>: select type of creator (<code>author</code> or <code>editor</code>), - <code>initials</code>: whether to add initials or to only use initials, - <code>letters</code>: pick this many letters from the name, defaults to 0 = all, - <code>given</code>: use given name instead of family name, - <code>etal</code>: use this term to replace authors after <code>select</code> authors have been named, - <code>joiner</code>: use this character to join authors - <code>clean</code>: transliterates the citation key and removes unsafe characters - <code>min</code>: skip to the next pattern if there are less than <code>min</code> creators - <code>min</code>: skip to the next pattern if there are more than <code>max</code> creators</li>
   
-    <li><code>$authorsN</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name of up to N authors. If there are more authors, &ldquo;EtAl&rdquo; is appended.</li>
+    <li><code>authshort</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The last name if one author is given; the first character of up to three authors&rsquo; last names if more than one author is given. A plus character is added, if there are more than three authors.</li>
   
-    <li><code>$authshort</code>, <code>+initials</code>, <code>+&lt;joinchar&gt;</code>: The last name if one author is given; the first character of up to three authors&rsquo; last names if more than one author is given. A plus character is added, if there are more than three authors.</li>
+    <li><code>date</code>(<code>format</code>?: string=&rsquo;%Y-%m-%d'): The date of the publication</li>
   
-    <li><code>$date</code>: The date of the publication</li>
+    <li><code>extra</code>(<code>variable</code>: string): A pseudo-field from the extra field. eg if you have <code>Original       date: 1970</code> in your <code>extra</code> field, you can get it as       <code>[extra=originalDate]</code>, or <code>tex.shortauthor: APA</code> which you could       get with <code>[extra=tex.shortauthor]</code>. Any <code>tex.</code> field will be       picked up, the other fields can be selected from <a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/">this       list</a>       of key names.</li>
   
-    <li><code>$extra</code>: A pseudo-field from the extra field. eg if you have <code>Original       date: 1970</code> in your <code>extra</code> field, you can get it as       <code>[extra=originalDate]</code>, or <code>tex.shortauthor: APA</code> which you could       get with <code>[extra=tex.shortauthor]</code>. Any <code>tex.</code> field will be       picked up, the other fields can be selected from <a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/">this       list</a>       of key names.</li>
+    <li><code>firstpage</code>: The number of the first page of the publication (Caution: this will return the lowest number found in the pages field, since BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.)</li>
   
-    <li><code>$firstpage</code>: The number of the first page of the publication (Caution: this will return the lowest number found in the pages field, since BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.)</li>
+    <li><code>getField</code>(<code>name</code>: string): Gets the value of the item field</li>
   
-    <li><code>$getField</code>: Gets the value of the item field</li>
+    <li><code>inspireHep</code>: Fetches the key from inspire-hep based on DOI or arXiv ID</li>
   
-    <li><code>$inspireHep</code>: Fetches the key from inspire-hep based on DOI or arXiv ID</li>
+    <li><code>journal</code>(<code>abbrev</code>?: string=&lsquo;abbrev+auto&rsquo;): returns the journal abbreviation, or, if not found, the journal title, If &lsquo;automatic journal abbreviation&rsquo; is enabled in the BBT settings, it will use the same abbreviation filter Zotero uses in the wordprocessor integration. You might want to use the <code>abbr</code> filter on this. Abbreviation behavior can be specified as <code>abbrev+auto</code> (the default) which uses the explicit journal abbreviation if present, and tries the automatic abbreviator if not (if auto-abbrev is enabled in the preferences), <code>auto</code> (skip explicit journal abbreviation even if present), <code>abbrev</code> (no auto-abbrev even if it is enabled in the preferences) or <code>off</code> (no abbrevation).</li>
   
-    <li><code>$journal</code>: returns the journal abbreviation, or, if not found, the journal title, If &lsquo;automatic journal abbreviation&rsquo; is enabled in the BBT settings, it will use the same abbreviation filter Zotero uses in the wordprocessor integration. You might want to use the <code>abbr</code> filter on this. Abbreviation behavior can be specified as <code>abbrev+auto</code> (the default) which uses the explicit journal abbreviation if present, and tries the automatic abbreviator if not (if auto-abbrev is enabled in the preferences), <code>auto</code> (skip explicit journal abbreviation even if present), <code>abbrev</code> (no auto-abbrev even if it is enabled in the preferences) or <code>off</code> (no abbrevation).</li>
+    <li><code>keyword</code>(<code>n</code>: number): Tag number <code>N</code></li>
   
-    <li><code>$keywordN</code>: Tag number <code>N</code></li>
+    <li><code>language</code>(<code>name</code>: string&hellip;): Tests whether the item has the given language set, and skips to the next pattern if not</li>
   
-    <li><code>$language</code>: Tests whether the item has the given language set, and skips to the next pattern if not</li>
+    <li><code>lastpage</code>: The number of the last page of the publication (See the remark on <code>firstpage</code>)</li>
   
-    <li><code>$lastpage</code>: The number of the last page of the publication (See the remark on <code>firstpage</code>)</li>
+    <li><code>len</code>(<code>relation</code>: string, <code>length</code>: number): If the length of the output does not match the given number, skip to the next pattern.</li>
   
-    <li><code>$len</code>: If the length of the output does not match the given number, skip to the next pattern.</li>
+    <li><code>library</code>: returns the name of the shared group library, or nothing if the item is in your personal library</li>
   
-    <li><code>$library</code>: returns the name of the shared group library, or nothing if the item is in your personal library</li>
+    <li><code>month</code>: the month of the publication</li>
   
-    <li><code>$month</code>: the month of the publication</li>
+    <li><code>origdate</code>: the original date of the publication</li>
   
-    <li><code>$origdate</code>: the original date of the publication</li>
+    <li><code>origyear</code>: the original year of the publication</li>
   
-    <li><code>$origyear</code>: the original year of the publication</li>
+    <li><code>postfix</code>(<code>format</code>?: string=&rsquo;%(a)s&rsquo;, <code>start</code>?: number=0): a pseudo-function that sets the citekey disambiguation postfix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec for when a key is generated that already exists. Does not add any text to the citekey otherwise. You <em>must</em> include <em>exactly</em> one of the placeholders <code>%(n)s</code>&gt; (number), <code>%(a)s</code> (alpha, lowercase) or <code>e&gt;%(A)s</code> (alpha, uppercase). For the rest of the disambiguator you can use things like padding and extra text as sprintf-js allows. With <code>+1</code> the disambiguator is always included, even if there is no need for it when no duplicates exist. The default  format is <code>%(a)s</code>.</li>
   
-    <li><code>$shorttitleN_M</code>: The first <code>N</code> (default: 3) words of the title, apply capitalization to first <code>M</code> (default: 0) of those</li>
+    <li><code>shorttitle</code>(<code>n</code>?: number=3, <code>m</code>?: number=0): The first <code>N</code> (default: 3) words of the title, apply capitalization to first <code>M</code> (default: 0) of those</li>
   
-    <li><code>$shortyear</code>: The last 2 digits of the publication year</li>
+    <li><code>shortyear</code>: The last 2 digits of the publication year</li>
   
-    <li><code>$title</code>: Capitalize all the significant words of the title, and concatenate them. For example, <code>An awesome paper on JabRef</code> will become <code>AnAwesomePaperJabref</code></li>
+    <li><code>text</code>(<code>text</code>: string): Set the currennt chunk</li>
   
-    <li><code>$type</code>: Tests whether the item is of any of the given types</li>
+    <li><code>title</code>: Capitalize all the significant words of the title, and concatenate them. For example, <code>An awesome paper on JabRef</code> will become <code>AnAwesomePaperJabref</code></li>
   
-    <li><code>$veryshorttitleN_M</code>: The first <code>N</code> (default: 1) words of the title, apply capitalization to first <code>M</code> (default: 0) of those</li>
+    <li><code>type</code>(<code>allowed</code>: string&hellip;): Tests whether the item is of any of the given types</li>
   
-    <li><code>$year</code>: The year of the publication</li>
+    <li><code>veryshorttitle</code>(<code>n</code>?: number=1, <code>m</code>?: number=0): The first <code>N</code> (default: 1) words of the title, apply capitalization to first <code>M</code> (default: 0) of those</li>
   
-    <li><code>$zotero</code>: Generates citation keys as the stock Zotero Bib(La)TeX export does. Note that this pattern inherits all the problems of the original Zotero citekey generation &ndash; you should really only use this if you have existing papers that rely on this behavior.</li>
+    <li><code>year</code>: The year of the publication</li>
+  
+    <li><code>zotero</code>: Generates citation keys as the stock Zotero Bib(La)TeX export does. Note that this pattern inherits all the problems of the original Zotero citekey generation &ndash; you should really only use this if you have existing papers that rely on this behavior.</li>
   
   <li><code>postfix=&lt;spec&gt;</code>/<code>postfix+1=&lt;spec&gt;</code>:
   a pseudo-function that sets the citekey disambiguation postfix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec
@@ -2127,63 +2129,63 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <h4 id="filters">Filters</h4>
 <ul>
   
-    <li><code>_abbr</code>: Abbreviates the text. Only the first character and subsequent characters following white space will be included.</li>
+    <li><code>abbr</code>: Abbreviates the text. Only the first character and subsequent characters following white space will be included.</li>
   
-    <li><code>_acronym</code>=list? (string): Does an acronym lookup for the text. You can optionally pass the name of the list; the list must live in the Zotero/better-bibtex directory in your profile, and must use commas as the delimiter.</li>
+    <li><code>acronym</code>(<code>list</code>?: string=&lsquo;acronyms&rsquo;): Does an acronym lookup for the text. You can optionally pass the name of the list; the list must live in the Zotero/better-bibtex directory in your profile, and must use commas as the delimiter.</li>
   
-    <li><code>_alphanum</code>: clears out everything but unicode alphanumeric characters (unicode character classes <code>L</code> and <code>N</code>)</li>
+    <li><code>alphanum</code>: clears out everything but unicode alphanumeric characters (unicode character classes <code>L</code> and <code>N</code>)</li>
   
-    <li><code>_ascii</code>: removes all non-ascii characters</li>
+    <li><code>ascii</code>: removes all non-ascii characters</li>
   
-    <li><code>_capitalize</code>: uppercases the first letter of each word</li>
+    <li><code>capitalize</code>: uppercases the first letter of each word</li>
   
-    <li><code>_clean</code>: transliterates the citation key and removes unsafe characters</li>
+    <li><code>clean</code>: transliterates the citation key and removes unsafe characters</li>
   
-    <li><code>_condense</code>=sep? (string): this replaces spaces in the value passed in. You can specify what to replace it with by adding it as a parameter, e.g <code>condense=_</code> will replace spaces with underscores. <strong>Parameters should not contain spaces</strong> unless you want the spaces in the value passed in to be replaced with those spaces in the parameter</li>
+    <li><code>condense</code>(<code>sep</code>?: string=&rsquo;'): this replaces spaces in the value passed in. You can specify what to replace it with by adding it as a parameter, e.g <code>.condense(_)</code> will replace spaces with underscores. <strong>Parameter should not contain spaces</strong> unless you want the spaces in the value passed in to be replaced with those spaces in the parameter</li>
   
-    <li><code>_default</code>=text (string): Returns the given text if no output was generated</li>
+    <li><code>default</code>(<code>text</code>: string): Returns the given text if no output was generated</li>
   
-    <li><code>_discard</code>: discards the input</li>
+    <li><code>discard</code>: discards the input</li>
   
-    <li><code>_fold</code>=mode? (string): tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
+    <li><code>fold</code>(<code>mode</code>?: string): tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
   
-    <li><code>_formatDate</code>=format? (string): formats date as by replacing y, m and d in the format</li>
+    <li><code>formatDate</code>(<code>format</code>?: string=&rsquo;%Y-%m-%d'): formats date as by replacing y, m and d in the format</li>
   
-    <li><code>_jieba</code>: word segmentation for Chinese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
+    <li><code>jieba</code>: word segmentation for Chinese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
   
-    <li><code>_kuromoji</code>: word segmentation for Japanese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
+    <li><code>kuromoji</code>: word segmentation for Japanese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
   
-    <li><code>_len</code>=relation (string), n (number): If the length of the output does not match the given number, skip to the next pattern.</li>
+    <li><code>len</code>(<code>relation</code>: string, <code>n</code>: number): If the length of the output does not match the given number, skip to the next pattern.</li>
   
-    <li><code>_localTime</code>: transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input.</li>
+    <li><code>localTime</code>: transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input.</li>
   
-    <li><code>_lower</code>: Forces the text inserted by the field marker to be in lowercase. For example, <code>[auth:lower]</code> expands the last name of the first author in lowercase.</li>
+    <li><code>lower</code>: Forces the text inserted by the field marker to be in lowercase. For example, <code>[auth:lower]</code> expands the last name of the first author in lowercase.</li>
   
-    <li><code>_nopunct</code>: Removes punctuation</li>
+    <li><code>nopunct</code>: Removes punctuation</li>
   
-    <li><code>_nopunctordash</code>: Removes punctuation and word-connecting dashes</li>
+    <li><code>nopunctordash</code>: Removes punctuation and word-connecting dashes</li>
   
-    <li><code>_numeric</code>: returns the value if it&rsquo;s an integer</li>
+    <li><code>numeric</code>: returns the value if it&rsquo;s an integer</li>
   
-    <li><code>_postfix</code>=postfix (string): postfixes with its parameter, so <code>postfix=_</code> will add an underscore to the end if, and only if, the value it is supposed to postfix isn&rsquo;t empty</li>
+    <li><code>postfix</code>(<code>postfix</code>: string): postfixes with its parameter, so <code>postfix=_</code> will add an underscore to the end if, and only if, the value it is supposed to postfix isn&rsquo;t empty</li>
   
-    <li><code>_prefix</code>=prefix (string): prefixes with its parameter, so <code>prefix=_</code> will add an underscore to the front if, and only if, the value it is supposed to prefix isn&rsquo;t empty. If you want to use a reserved character (such as <code>:</code> or <code>\</code>), you&rsquo;ll need to add a backslash (<code>\</code>) in front of it.</li>
+    <li><code>prefix</code>(<code>prefix</code>: string): prefixes with its parameter, so <code>prefix=_</code> will add an underscore to the front if, and only if, the value it is supposed to prefix isn&rsquo;t empty.</li>
   
-    <li><code>_replace</code>=find (string | RegExp), replace (string): replaces text, case insensitive; <code>:replace=.etal,&amp;etal</code> will replace <code>.EtAl</code> with <code>&amp;etal</code></li>
+    <li><code>replace</code>(<code>find</code>: string | RegExp, <code>replace</code>: string): replaces text, case insensitive when passing a string; <code>.replace('.etal','&amp;etal')</code> will replace <code>.EtAl</code> with <code>&amp;etal</code></li>
   
-    <li><code>_select</code>=start? (number), n? (number): selects words from the value passed in. The format is <code>select=start,number</code> (1-based), so <code>select=1,4</code> would select the first four words. If <code>number</code> is not given, all words from <code>start</code> to the end of the list are selected.</li>
+    <li><code>select</code>(<code>start</code>?: number=1, <code>n</code>?: number): selects words from the value passed in. The format is <code>select(start,number)</code> (1-based), so <code>select(1,4)</code> or <code>select(n=4)</code> would select the first four words. If <code>n</code> is not given, all words from <code>start</code> to the end are selected.</li>
   
-    <li><code>_skipwords</code>: <p>filters out common words like &lsquo;of&rsquo;, &rsquo;the&rsquo;, &hellip; the list of words can be seen and changed by going into <code>about:config</code> under the key <code>extensions.zotero.translators.better-bibtex.skipWords</code> as a comma-separated, case-insensitive list of words.</p>
+    <li><code>skipwords</code>: <p>filters out common words like &lsquo;of&rsquo;, &rsquo;the&rsquo;, &hellip; the list of words can be seen and changed by going into <code>about:config</code> under the key <code>extensions.zotero.translators.better-bibtex.skipWords</code> as a comma-separated, case-insensitive list of words.</p>
 <p>If you want to strip words like &lsquo;Jr.&rsquo; from names, you could use something like <code>[Auth:nopunct:skipwords:fold]</code> after adding <code>jr</code> to the skipWords list. Note that this filter is always applied if you use <code>title</code> (which is different from <code>Title</code>) or <code>shorttitle</code>.</p>
 </li>
   
-    <li><code>_splitIdeographs</code>: Treat ideaographs as individual words</li>
+    <li><code>splitIdeographs</code>: Treat ideaographs as individual words</li>
   
-    <li><code>_substring</code>=start? (number), n? (number): (<code>substring=start,n</code>) selects <code>n</code> (default: all) characters starting at <code>start</code> (default: 1)</li>
+    <li><code>substring</code>(<code>start</code>?: number=1, <code>n</code>?: number): (<code>substring=start,n</code>) selects <code>n</code> (default: all) characters starting at <code>start</code> (default: 1)</li>
   
-    <li><code>_transliterate</code>=mode? (string): transliterates the citation key. If you don&rsquo;t specify a mode, the mode is derived from the item language field</li>
+    <li><code>transliterate</code>(<code>mode</code>?: string): transliterates the citation key. If you don&rsquo;t specify a mode, the mode is derived from the item language field</li>
   
-    <li><code>_upper</code>: Forces the text inserted by the field marker to be in uppercase. For example, <code>[auth:upper]</code> expands the last name of the first author in uppercase.</li>
+    <li><code>upper</code>: Forces the text inserted by the field marker to be in uppercase. For example, <code>[auth:upper]</code> expands the last name of the first author in uppercase.</li>
   
   <li><code>&gt;X</code>: a pseudo-filter which aborts the current pattern generation if what came before it is <code>X</code> characters or less (<code>[&gt;0]</code> is a typical use. You would typically use this with something like <code>[auth][journal:&gt;0][year] | [title][year]</code> which means if there's no journal you get <code>title-year</code> rather than just <code>auth+year</code>.</li>
   <li><code>(x)</code>: The string between the parentheses will be inserted if the field marker preceding this modifier resolves to an empty value. The placeholder <code>x</code> may be any string. For instance, the marker <code>[volume:(unknown)]</code> will return the entry's volume if set, and the string <code>unknown</code> if the entry's volume field is not set.
