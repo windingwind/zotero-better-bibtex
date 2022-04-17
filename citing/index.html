@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.97.1" />
+    <meta name="generator" content="Hugo 0.97.2" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1657,6 +1657,8 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>library</code>: returns the name of the shared group library, or nothing if the item is in your personal library</li>
   
+    <li><code>min</code>(<code>length</code>: number): If the length of the output is not at least <code>n</code>, jump to the next pattern</li>
+  
     <li><code>month</code>: the month of the publication</li>
   
     <li><code>origdate</code>: the original date of the publication</li>
@@ -2160,6 +2162,8 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <li><code>localTime</code>: transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input.</li>
   
     <li><code>lower</code>: Forces the text inserted by the field marker to be in lowercase. For example, <code>[auth:lower]</code> expands the last name of the first author in lowercase.</li>
+  
+    <li><code>min</code>(<code>n</code>: number): If the length of the output is not at least <code>n</code>, jump to the next pattern</li>
   
     <li><code>nopunct</code>: Removes punctuation</li>
   
