@@ -1653,11 +1653,9 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>lastpage</code>: The number of the last page of the publication (See the remark on <code>firstpage</code>)</li>
   
-    <li><code>len</code>(<code>relation</code>: string, <code>length</code>: number): If the length of the output does not match the given number, skip to the next pattern.</li>
+    <li><code>len</code>(<code>relation</code>?: string=&rsquo;&gt;&rsquo;, <code>length</code>?: number=0): If the length of the output does not match the given number, skip to the next pattern.</li>
   
     <li><code>library</code>: returns the name of the shared group library, or nothing if the item is in your personal library</li>
-  
-    <li><code>min</code>(<code>length</code>: number): If the length of the output is not at least <code>n</code>, jump to the next pattern</li>
   
     <li><code>month</code>: the month of the publication</li>
   
@@ -2157,13 +2155,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>kuromoji</code>: word segmentation for Japanese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
   
-    <li><code>len</code>(<code>relation</code>: string, <code>n</code>: number): If the length of the output does not match the given number, skip to the next pattern.</li>
+    <li><code>len</code>(<code>relation</code>?: string=&rsquo;&gt;&rsquo;, <code>length</code>?: number=0): If the length of the output does not match the given number, skip to the next pattern.</li>
   
     <li><code>localTime</code>: transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input.</li>
   
     <li><code>lower</code>: Forces the text inserted by the field marker to be in lowercase. For example, <code>[auth:lower]</code> expands the last name of the first author in lowercase.</li>
-  
-    <li><code>min</code>(<code>n</code>: number): If the length of the output is not at least <code>n</code>, jump to the next pattern</li>
   
     <li><code>nopunct</code>: Removes punctuation</li>
   
