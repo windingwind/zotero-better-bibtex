@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.97.2" />
+    <meta name="generator" content="Hugo 0.97.3" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1611,29 +1611,29 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <h4 id="functions">Functions</h4>
 <ul>
   
-    <li><code>authAuthEa</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The last name of the first two authors, and &ldquo;.ea&rdquo; if there are more than two.</li>
+    <li><code>authAuthEa</code>(<code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The last name of the first two authors, and &ldquo;.ea&rdquo; if there are more than two.</li>
   
-    <li><code>authEtAl</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo; &lsquo;, <code>clean</code>?: boolean=true): The last name of the first author, and the last name of the second author if there are two authors or &ldquo;EtAl&rdquo; if there are more than two. This is similar to <code>auth.etal</code>. The difference is that the authors are not separated by &ldquo;.&rdquo; and in case of more than 2 authors &ldquo;EtAl&rdquo; instead of &ldquo;.etal&rdquo; is appended.</li>
+    <li><code>authEtAl</code>(<code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo; &lsquo;, <code>clean</code>?: boolean=true): The last name of the first author, and the last name of the second author if there are two authors or &ldquo;EtAl&rdquo; if there are more than two. This is similar to <code>auth.etal</code>. The difference is that the authors are not separated by &ldquo;.&rdquo; and in case of more than 2 authors &ldquo;EtAl&rdquo; instead of &ldquo;.etal&rdquo; is appended.</li>
   
-    <li><code>authEtal2</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The last name of the first author, and the last name of the second author if there are two authors or &ldquo;.etal&rdquo; if there are more than two.</li>
+    <li><code>authEtal2</code>(<code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The last name of the first author, and the last name of the second author if there are two authors or &ldquo;.etal&rdquo; if there are more than two.</li>
   
-    <li><code>authForeIni</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>clean</code>?: boolean=true): The given-name initial of the first author.</li>
+    <li><code>authForeIni</code>(<code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>clean</code>?: boolean=true): The given-name initial of the first author.</li>
   
-    <li><code>authIni</code>(<code>n</code>?: number=0, <code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The beginning of each author&rsquo;s last name, using no more than <code>N</code> characters.</li>
+    <li><code>authIni</code>(<code>n</code>?: number=0, <code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The beginning of each author&rsquo;s last name, using no more than <code>N</code> characters.</li>
   
-    <li><code>auth</code>(<code>n</code>?: number=0, <code>m</code>?: number=1, <code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>clean</code>?: boolean=true): The first <code>N</code> (default: all) characters of the <code>M</code>th (default: first) author&rsquo;s last name.</li>
+    <li><code>auth</code>(<code>n</code>?: number=0, <code>m</code>?: number=1, <code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>clean</code>?: boolean=true): The first <code>N</code> (default: all) characters of the <code>M</code>th (default: first) author&rsquo;s last name.</li>
   
-    <li><code>authorIni</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The first 5 characters of the first author&rsquo;s last name, and the last name initials of the remaining authors.</li>
+    <li><code>authorIni</code>(<code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The first 5 characters of the first author&rsquo;s last name, and the last name initials of the remaining authors.</li>
   
-    <li><code>authorLastForeIni</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>clean</code>?: boolean=true): The given-name initial of the last author.</li>
+    <li><code>authorLastForeIni</code>(<code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>clean</code>?: boolean=true): The given-name initial of the last author.</li>
   
-    <li><code>authorLast</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>clean</code>?: boolean=true): The last name of the last author</li>
+    <li><code>authorLast</code>(<code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>clean</code>?: boolean=true): The last name of the last author</li>
   
-    <li><code>authorsAlpha</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo; &lsquo;, <code>clean</code>?: boolean=true): Corresponds to the BibTeX style &ldquo;alpha&rdquo;. One author: First three letters of the last name. Two to four authors: First letters of last names concatenated. More than four authors: First letters of last names of first three authors concatenated. &ldquo;+&rdquo; at the end.</li>
+    <li><code>authorsAlpha</code>(<code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo; &lsquo;, <code>clean</code>?: boolean=true): Corresponds to the BibTeX style &ldquo;alpha&rdquo;. One author: First three letters of the last name. Two to four authors: First letters of last names concatenated. More than four authors: First letters of last names of first three authors concatenated. &ldquo;+&rdquo; at the end.</li>
   
-    <li><code>authors</code>(<code>n</code>?: number | (number, number)=0, <code>creator</code>?: string=&lsquo;author&rsquo;, <code>name</code>?: string=&rsquo;%(f)s&rsquo;, <code>etal</code>?: string=&rsquo;&rsquo;, <code>joiner</code>?: string=&rsquo; &lsquo;, <code>clean</code>?: boolean=true, <code>min</code>?: number=0, <code>max</code>?: number=0): Author/editor information. Parameters are: - <code>n</code>: select the first <code>n</code> authors (when passing a number) or the authors in this range (inclusive, when passing two values); negative numbers mean &ldquo;from the end&rdquo;, default = 0 = all, - <code>creator</code>: select type of creator (<code>author</code> or <code>editor</code>), - <code>name</code>: sprintf-js template. Available named parameters are: <code>f</code> (family name), <code>g</code> (given name), <code>i</code> (initials) - <code>etal</code>: use this term to replace authors after <code>n</code> authors have been named, - <code>joiner</code>: use this character to join authors - <code>clean</code>: transliterates the citation key and removes unsafe characters - <code>min</code>: skip to the next pattern if there are less than <code>min</code> creators - <code>max</code>: skip to the next pattern if there are more than <code>max</code> creators</li>
+    <li><code>authors</code>(<code>n</code>?: number | (number, number)=0, <code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>name</code>?: string=&rsquo;%(f)s&rsquo;, <code>etal</code>?: string=&rsquo;&rsquo;, <code>joiner</code>?: string=&rsquo; &lsquo;, <code>clean</code>?: boolean=true, <code>min</code>?: number=0, <code>max</code>?: number=0): Author/editor information. Parameters are: - <code>n</code>: select the first <code>n</code> authors (when passing a number) or the authors in this range (inclusive, when passing two values); negative numbers mean &ldquo;from the end&rdquo;, default = 0 = all, - <code>creator</code>: select type of creator (<code>author</code> or <code>editor</code>), - <code>name</code>: sprintf-js template. Available named parameters are: <code>f</code> (family name), <code>g</code> (given name), <code>i</code> (initials) - <code>etal</code>: use this term to replace authors after <code>n</code> authors have been named, - <code>joiner</code>: use this character to join authors - <code>clean</code>: transliterates the citation key and removes unsafe characters - <code>min</code>: skip to the next pattern if there are less than <code>min</code> creators - <code>max</code>: skip to the next pattern if there are more than <code>max</code> creators</li>
   
-    <li><code>authshort</code>(<code>creator</code>?: string=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The last name if one author is given; the first character of up to three authors&rsquo; last names if more than one author is given. A plus character is added, if there are more than three authors.</li>
+    <li><code>authshort</code>(<code>creator</code>?: &ldquo;author&rdquo; | &ldquo;editor&rdquo;=&lsquo;author&rsquo;, <code>initials</code>?: boolean=false, <code>joiner</code>?: string=&rsquo;.&rsquo;, <code>clean</code>?: boolean=true): The last name if one author is given; the first character of up to three authors&rsquo; last names if more than one author is given. A plus character is added, if there are more than three authors.</li>
   
     <li><code>date</code>(<code>format</code>?: string=&rsquo;%Y-%m-%d'): The date of the publication</li>
   
@@ -1645,15 +1645,15 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>inspireHep</code>: Fetches the key from inspire-hep based on DOI or arXiv ID</li>
   
-    <li><code>journal</code>(<code>abbrev</code>?: string=&lsquo;abbrev+auto&rsquo;): returns the journal abbreviation, or, if not found, the journal title, If &lsquo;automatic journal abbreviation&rsquo; is enabled in the BBT settings, it will use the same abbreviation filter Zotero uses in the wordprocessor integration. You might want to use the <code>abbr</code> filter on this. Abbreviation behavior can be specified as <code>abbrev+auto</code> (the default) which uses the explicit journal abbreviation if present, and tries the automatic abbreviator if not (if auto-abbrev is enabled in the preferences), <code>auto</code> (skip explicit journal abbreviation even if present), <code>abbrev</code> (no auto-abbrev even if it is enabled in the preferences) or <code>off</code> (no abbrevation).</li>
+    <li><code>journal</code>(<code>abbrev</code>?: &ldquo;abbrev&rdquo; | &ldquo;abbrev+auto&rdquo; | &ldquo;auto&rdquo; | &ldquo;off&rdquo;=&lsquo;abbrev+auto&rsquo;): returns the journal abbreviation, or, if not found, the journal title, If &lsquo;automatic journal abbreviation&rsquo; is enabled in the BBT settings, it will use the same abbreviation filter Zotero uses in the wordprocessor integration. You might want to use the <code>abbr</code> filter on this. Abbreviation behavior can be specified as <code>abbrev+auto</code> (the default) which uses the explicit journal abbreviation if present, and tries the automatic abbreviator if not (if auto-abbrev is enabled in the preferences), <code>auto</code> (skip explicit journal abbreviation even if present), <code>abbrev</code> (no auto-abbrev even if it is enabled in the preferences) or <code>off</code> (no abbrevation).</li>
   
     <li><code>keyword</code>(<code>n</code>: number): Tag number <code>N</code></li>
   
-    <li><code>language</code>(<code>name</code>: string&hellip;): Tests whether the item has the given language set, and skips to the next pattern if not</li>
+    <li><code>language</code>(<code>name</code>: &ldquo;ame&rdquo; | &ldquo;american&rdquo; | &ldquo;australian&rdquo; | &ldquo;austrian&rdquo; | &ldquo;bri&rdquo; | &ldquo;british&rdquo; | &ldquo;canadian&rdquo; | &ldquo;chinese&rdquo; | &ldquo;chinese-hans&rdquo; | &ldquo;chinese-hans-hk&rdquo; | &ldquo;chinese-hans-mo&rdquo; | &ldquo;chinese-hans-sg&rdquo; | &ldquo;chinese-hant&rdquo; | &ldquo;chinese-hant-hk&rdquo; | &ldquo;chinese-hant-mo&rdquo; | &ldquo;chinese-simplified&rdquo; | &ldquo;chinese-simplified-hongkongsarchina&rdquo; | &ldquo;chinese-simplified-macausarchina&rdquo; | &ldquo;chinese-simplified-singapore&rdquo; | &ldquo;chinese-traditional&rdquo; | &ldquo;chinese-traditional-hongkongsarchina&rdquo; | &ldquo;chinese-traditional-macausarchina&rdquo; | &ldquo;de&rdquo; | &ldquo;de-1901&rdquo; | &ldquo;de-at&rdquo; | &ldquo;de-at-1901&rdquo; | &ldquo;de-ch&rdquo; | &ldquo;de-ch-1901&rdquo; | &ldquo;de-ch-1996&rdquo; | &ldquo;de-de&rdquo; | &ldquo;deutsch&rdquo; | &ldquo;en&rdquo; | &ldquo;en-au&rdquo; | &ldquo;en-ca&rdquo; | &ldquo;en-en&rdquo; | &ldquo;en-gb&rdquo; | &ldquo;en-nz&rdquo; | &ldquo;en-us&rdquo; | &ldquo;eng&rdquo; | &ldquo;english&rdquo; | &ldquo;english-au&rdquo; | &ldquo;english-australia&rdquo; | &ldquo;english-ca&rdquo; | &ldquo;english-canada&rdquo; | &ldquo;english-gb&rdquo; | &ldquo;english-newzealand&rdquo; | &ldquo;english-nz&rdquo; | &ldquo;english-unitedkingdom&rdquo; | &ldquo;english-unitedstates&rdquo; | &ldquo;english-us&rdquo; | &ldquo;ger&rdquo; | &ldquo;german&rdquo; | &ldquo;german-at&rdquo; | &ldquo;german-austria&rdquo; | &ldquo;german-ch&rdquo; | &ldquo;german-switzerland&rdquo; | &ldquo;gsw&rdquo; | &ldquo;ja&rdquo; | &ldquo;ja-ja&rdquo; | &ldquo;jap&rdquo; | &ldquo;japanese&rdquo; | &ldquo;new&rdquo; | &ldquo;newzealand&rdquo; | &ldquo;nsw&rdquo; | &ldquo;nswissgerman&rdquo; | &ldquo;schwiizertüütsch&rdquo; | &ldquo;swi&rdquo; | &ldquo;swiss german&rdquo; | &ldquo;swissgerman&rdquo; | &ldquo;ukenglish&rdquo; | &ldquo;usenglish&rdquo; | &ldquo;zh&rdquo; | &ldquo;zh-hans&rdquo; | &ldquo;zh-hans-hk&rdquo; | &ldquo;zh-hans-mo&rdquo; | &ldquo;zh-hans-sg&rdquo; | &ldquo;zh-hant&rdquo; | &ldquo;zh-hant-hk&rdquo; | &ldquo;zh-hant-mo&rdquo; | &ldquo;zh-zh&rdquo; | &ldquo;中文&rdquo; | &ldquo;日本語&rdquo;&hellip;): Tests whether the item has the given language set, and skips to the next pattern if not</li>
   
     <li><code>lastpage</code>: The number of the last page of the publication (See the remark on <code>firstpage</code>)</li>
   
-    <li><code>len</code>(<code>relation</code>?: string=&rsquo;&gt;&rsquo;, <code>length</code>?: number=0): If the length of the output does not match the given number, skip to the next pattern.</li>
+    <li><code>len</code>(<code>relation</code>?: &ldquo;!=&rdquo; | &ldquo;&lt;&rdquo; | &ldquo;&lt;=&rdquo; | &ldquo;=&rdquo; | &ldquo;&gt;&rdquo; | &ldquo;&gt;=&quot;=&rsquo;&gt;&rsquo;, <code>length</code>?: number=0): If the length of the output does not match the given number, skip to the next pattern.</li>
   
     <li><code>library</code>: returns the name of the shared group library, or nothing if the item is in your personal library</li>
   
@@ -2147,7 +2147,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>discard</code>: discards the input</li>
   
-    <li><code>fold</code>(<code>mode</code>?: string): tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
+    <li><code>fold</code>(<code>mode</code>?: &ldquo;chinese&rdquo; | &ldquo;german&rdquo; | &ldquo;japanese&rdquo;): tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
   
     <li><code>formatDate</code>(<code>format</code>?: string=&rsquo;%Y-%m-%d'): formats date as by replacing y, m and d in the format</li>
   
@@ -2155,7 +2155,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>kuromoji</code>: word segmentation for Japanese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
   
-    <li><code>len</code>(<code>relation</code>?: string=&rsquo;&gt;&rsquo;, <code>length</code>?: number=0): If the length of the output does not match the given number, skip to the next pattern.</li>
+    <li><code>len</code>(<code>relation</code>?: &ldquo;!=&rdquo; | &ldquo;&lt;&rdquo; | &ldquo;&lt;=&rdquo; | &ldquo;=&rdquo; | &ldquo;&gt;&rdquo; | &ldquo;&gt;=&quot;=&rsquo;&gt;&rsquo;, <code>length</code>?: number=0): If the length of the output does not match the given number, skip to the next pattern.</li>
   
     <li><code>localTime</code>: transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input.</li>
   
@@ -2183,7 +2183,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <li><code>substring</code>(<code>start</code>?: number=1, <code>n</code>?: number): (<code>substring=start,n</code>) selects <code>n</code> (default: all) characters starting at <code>start</code> (default: 1)</li>
   
-    <li><code>transliterate</code>(<code>mode</code>?: string): transliterates the citation key. If you don&rsquo;t specify a mode, the mode is derived from the item language field</li>
+    <li><code>transliterate</code>(<code>mode</code>?: &ldquo;chinese&rdquo; | &ldquo;de&rdquo; | &ldquo;german&rdquo; | &ldquo;ja&rdquo; | &ldquo;japanese&rdquo; | &ldquo;minimal&rdquo; | &ldquo;zh&rdquo;): transliterates the citation key. If you don&rsquo;t specify a mode, the mode is derived from the item language field</li>
   
     <li><code>upper</code>: Forces the text inserted by the field marker to be in uppercase. For example, <code>[auth:upper]</code> expands the last name of the first author in uppercase.</li>
   
