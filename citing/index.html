@@ -1692,6 +1692,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <p><strong>Note</strong>: All <code>auth...</code> functions will fall back to editors if no authors are present on the item.</p>
 <p><strong>Note</strong>: the functions above all have the <code>clean</code> filter (see below) applied to them by default. You can turn that off by passying <code>clean=false</code>.</p>
 <h3 id="direct-access-to-unprocessed-fields">Direct access to unprocessed fields</h3>
+<p>The above functions all retrieve information stored in the item&rsquo;s fields and process it in some way. If you don&rsquo;t want this, you can instead call field contents without any processing. To access Zotero fields, refer to them as given in the table below:</p>
 <table>
   
     <tr>
