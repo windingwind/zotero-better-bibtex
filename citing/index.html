@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.97.3" />
+    <meta name="generator" content="Hugo 0.98.0" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1606,7 +1606,8 @@ that yields a non-empty string. If all return a empty string, a random key will 
 </span></span></code></pre></div><p>You can add a verbatim text by just including it in single or double quotes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>extra(&#39;tex.shortauthor&#39;).transliterate.clean.lower.len + year | &#39;default&#39; + auth.lower + year
 </span></span></code></pre></div><h3 id="generating-citekeys">Generating citekeys</h3>
-<p>To generate your citekeys, you use a pattern composed of functions and filters. Broadly, functions grab text from your item, and filters transform that text. The full list of functions and filters is:</p>
+<p>To generate your citekeys, you use a formula composed of functions and filters. Broadly, functions grab text from your item, and filters transform that text. <strong>Note that the formula syntax has changed from a bracketed format to a javascript-ish format</strong>. The old syntax was getting harder to maintain and its inflexibility prevented new extensions to the functions being implemented cleanly. <strong>The old syntax still works</strong> and will be translated to the new format automatically and displayed below the old format if you use it. At some point not too far away, BBT will automatically upgrade old patterns and use those directly. But for now you can choose which format you use.</p>
+<p>Below you will find a full list of functions and filters you can use, in the new format only, sorry. You can till use these in the old syntax, but they support only positional parameters, where I would recommend generally to use the new syntax with named parameters.</p>
 <h4 id="functions">Functions</h4>
 <ul>
   
