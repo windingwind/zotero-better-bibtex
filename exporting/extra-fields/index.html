@@ -47,6 +47,17 @@
   }
 </script>
 
+<style>
+  details.details > summary.summary::before {
+    content: '▶️';
+  }
+
+  details.details[open] > summary.summary:before {
+    content: '🔽';
+  }
+
+   
+</style>
 
 <link rel="stylesheet" href="http://cdn.graphalchemist.com/alchemy.min.css"/>
 

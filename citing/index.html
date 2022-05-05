@@ -47,6 +47,17 @@
   }
 </script>
 
+<style>
+  details.details > summary.summary::before {
+    content: '▶️';
+  }
+
+  details.details[open] > summary.summary:before {
+    content: '🔽';
+  }
+
+   
+</style>
 
 
   </head>
@@ -1609,84 +1620,314 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <p>To generate your citekeys, you use a formula composed of functions and filters. Broadly, functions grab text from your item, and filters transform that text. <strong>Note that the formula syntax has changed from a bracketed format to a javascript-ish format</strong>. The old syntax was getting harder to maintain and its inflexibility prevented new extensions to the functions being implemented cleanly. <strong>The old syntax still works</strong> and will be translated to the new format automatically and displayed below the old format if you use it. At some point not too far away, BBT will automatically upgrade old patterns and use those directly. But for now you can choose which format you use.</p>
 <p>Below you will find a full list of functions and filters you can use, in the new format only, sorry. You can till use these in the old syntax, but they support only positional parameters, where I would recommend generally to use the new syntax with named parameters.</p>
 <h4 id="functions">Functions</h4>
-<ul>
+<dl>
   
-    <li><code>authAuthEa</code>(<code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>initials</code>: <strong>boolean</strong>, default: <code>false</code>, <code>sep</code>: <strong>string</strong>, default: <code>'.'</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): The last name of the first two authors, and &ldquo;.ea&rdquo; if there are more than two.</li>
+    <dt><code>auth</code></dt><dd><p>The first <code>n</code> (default: all) characters of the <code>m</code>th (default: first) author's last name. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>n</code></td><td><i>number</i></td><td><p>the number of characters to take from the name, 0 = all</p></td><td><code>0</code> </td></tr>
+<tr><td><code>m</code></td><td><i>number</i></td><td><p>select the <code>m</code>th author</p></td><td><code>1</code> </td></tr>
+<tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the citation key and removes unsafe characters</p></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>authEtAl</code>(<code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>initials</code>: <strong>boolean</strong>, default: <code>false</code>, <code>sep</code>: <strong>string</strong>, default: <code>' '</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): The last name of the first author, and the last name of the second author if there are two authors or &ldquo;EtAl&rdquo; if there are more than two. This is similar to <code>auth.etal</code>. The difference is that the authors are not separated by &ldquo;.&rdquo; and in case of more than 2 authors &ldquo;EtAl&rdquo; instead of &ldquo;.etal&rdquo; is appended.</li>
+    <dt><code>authAuthEa</code></dt><dd><p>The last name of the first two authors, and ".ea" if there are more than two. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>authEtal2</code>(<code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>initials</code>: <strong>boolean</strong>, default: <code>false</code>, <code>sep</code>: <strong>string</strong>, default: <code>'.'</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): The last name of the first author, and the last name of the second author if there are two authors or &ldquo;.etal&rdquo; if there are more than two.</li>
+    <dt><code>authEtAl</code></dt><dd><p>The last name of the first author, and the last name of the second author if there are two authors or "EtAl" if there are more than two. This is similar to <code>auth.etal</code>. The difference is that the authors are not separated by "." and in case of more than 2 authors "EtAl" instead of ".etal" is appended. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><code>' '</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>authForeIni</code>(<code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): The given-name initial of the first author.</li>
+    <dt><code>authEtal2</code></dt><dd><p>The last name of the first author, and the last name of the second author if there are two authors or ".etal" if there are more than two. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>authIni</code>(<code>n</code>: <strong>number</strong>, default: <code>0</code>, <code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>initials</code>: <strong>boolean</strong>, default: <code>false</code>, <code>sep</code>: <strong>string</strong>, default: <code>'.'</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): The beginning of each author&rsquo;s last name, using no more than <code>N</code> characters.</li>
+    <dt><code>authForeIni</code></dt><dd><p>The given-name initial of the first author. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>auth</code>(<code>n</code>: <strong>number</strong>, default: <code>0</code>, <code>m</code>: <strong>number</strong>, default: <code>1</code>, <code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>initials</code>: <strong>boolean</strong>, default: <code>false</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): The first <code>N</code> (default: all) characters of the <code>M</code>th (default: first) author&rsquo;s last name.</li>
+    <dt><code>authIni</code></dt><dd><p>The beginning of each author's last name, using no more than <code>n</code> characters (0 = all). </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>n</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+<tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>authorIni</code>(<code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>initials</code>: <strong>boolean</strong>, default: <code>false</code>, <code>sep</code>: <strong>string</strong>, default: <code>'.'</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): The first 5 characters of the first author&rsquo;s last name, and the last name initials of the remaining authors.</li>
+    <dt><code>authorIni</code></dt><dd><p>The first 5 characters of the first author's last name, and the last name initials of the remaining authors. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>authorLastForeIni</code>(<code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): The given-name initial of the last author.</li>
+    <dt><code>authorLast</code></dt><dd><p>The last name of the last author </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>authorLast</code>(<code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>initials</code>: <strong>boolean</strong>, default: <code>false</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): The last name of the last author</li>
+    <dt><code>authorLastForeIni</code></dt><dd><p>The given-name initial of the last author. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>authorsAlpha</code>(<code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>initials</code>: <strong>boolean</strong>, default: <code>false</code>, <code>sep</code>: <strong>string</strong>, default: <code>' '</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): Corresponds to the BibTeX style &ldquo;alpha&rdquo;. One author: First three letters of the last name. Two to four authors: First letters of last names concatenated. More than four authors: First letters of last names of first three authors concatenated. &ldquo;+&rdquo; at the end.</li>
+    <dt><code>authors</code></dt><dd><p>Author/editor information. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>n</code></td><td><i>number</i> / [<i>number</i>, <i>number</i>]</td><td><p>select the first <code>n</code> authors (when passing a number) or the authors in this range (inclusive, when passing two values); negative numbers mean "from the end", default = 0 = all</p></td><td><code>0</code> </td></tr>
+<tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select type of creator (<code>author</code> or <code>editor</code>)</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>name</code></td><td><i>string</i></td><td><p>sprintf-js template. Available named parameters are: <code>f</code> (family name), <code>g</code> (given name), <code>i</code> (initials)</p></td><td><code>'%(f)s'</code> </td></tr>
+<tr><td><code>etal</code></td><td><i>string</i></td><td><p>use this term to replace authors after <code>n</code> authors have been named</p></td><td><code>''</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>' '</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the citation key and removes unsafe characters</p></td><td><code>true</code> </td></tr>
+<tr><td><code>min</code></td><td><i>number</i></td><td><p>skip to the next pattern if there are less than <code>min</code> creators, 0 = ignore</p></td><td><code>0</code> </td></tr>
+<tr><td><code>max</code></td><td><i>number</i></td><td><p>skip to the next pattern if there are more than <code>max</code> creators, 0 = ignore</p></td><td><code>0</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>authors</code>(<code>n</code>: <strong>number</strong> | (<strong>number</strong>, <strong>number</strong>), default: <code>0</code>, <code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>name</code>: <strong>string</strong>, default: <code>'%(f)s'</code>, <code>etal</code>: <strong>string</strong>, default: <code>''</code>, <code>sep</code>: <strong>string</strong>, default: <code>' '</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>, <code>min</code>: <strong>number</strong>, default: <code>0</code>, <code>max</code>: <strong>number</strong>, default: <code>0</code>): Author/editor information. Parameters are: - <code>n</code>: select the first <code>n</code> authors (when passing a number) or the authors in this range (inclusive, when passing two values); negative numbers mean &ldquo;from the end&rdquo;, default = 0 = all, - <code>creator</code>: select type of creator (<code>author</code> or <code>editor</code>), - <code>name</code>: sprintf-js template. Available named parameters are: <code>f</code> (family name), <code>g</code> (given name), <code>i</code> (initials) - <code>etal</code>: use this term to replace authors after <code>n</code> authors have been named, - <code>sep</code>: use this character between authors - <code>clean</code>: transliterates the citation key and removes unsafe characters - <code>min</code>: skip to the next pattern if there are less than <code>min</code> creators - <code>max</code>: skip to the next pattern if there are more than <code>max</code> creators</li>
+    <dt><code>authorsAlpha</code></dt><dd><p>Corresponds to the BibTeX style "alpha". One author: First three letters of the last name. Two to four authors: First letters of last names concatenated. More than four authors: First letters of last names of first three authors concatenated. "+" at the end. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><code>' '</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>authshort</code>(<code>creator</code>: <code>author</code> | <code>editor</code>, default: <code>'author'</code>, <code>initials</code>: <strong>boolean</strong>, default: <code>false</code>, <code>sep</code>: <strong>string</strong>, default: <code>'.'</code>, <code>clean</code>: <strong>boolean</strong>, default: <code>true</code>): The last name if one author/editor is given; the first character of up to three authors&rsquo; last names if more than one author is given. A plus character is added, if there are more than three authors.</li>
+    <dt><code>authshort</code></dt><dd><p>The last name if one author/editor is given; the first character of up to three authors' last names if more than one author is given. A plus character is added, if there are more than three authors. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>date</code>(<code>format</code>: <strong>string</strong>, default: <code>'%Y-%m-%d'</code>): The date of the publication</li>
+    <dt><code>date</code></dt><dd><p>The date of the publication </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>format</code></td><td><i>string</i></td><td><code>'%Y-%m-%d'</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>extra</code>(<code>variable</code>: <strong>string</strong>): A pseudo-field from the extra field. eg if you have <code>Original       date: 1970</code> in your <code>extra</code> field, you can get it as       <code>extra(originalDate)</code>, or <code>tex.shortauthor: APA</code> which you could       get with <code>extra('tex.shortauthor')</code>. Any <code>tex.</code> field will be       picked up, the other fields can be selected from <a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/">this       list</a>       of key names.</li>
+    <dt><code>extra</code></dt><dd><p>A pseudo-field from the extra field. eg if you have <code>Original       date: 1970</code> in your <code>extra</code> field, you can get it as       <code>extra(originalDate)</code>, or <code>tex.shortauthor: APA</code> which you could       get with <code>extra('tex.shortauthor')</code>. Any <code>tex.</code> field will be       picked up, the other fields can be selected from <a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/">this       list</a>       of key names. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>variable</code></td><td><i>string</i></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>firstpage</code>: The number of the first page of the publication (Caution: this will return the lowest number found in the pages field, since BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.)</li>
+    <dt><code>firstpage</code></dt><dd><p>The number of the first page of the publication (Caution: this will return the lowest number found in the pages field, since BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.) </p></dd>
   
-    <li><code>inspireHep</code>: Fetches the key from inspire-hep based on DOI or arXiv ID</li>
+    <dt><code>inspireHep</code></dt><dd><p>Fetches the key from inspire-hep based on DOI or arXiv ID </p></dd>
   
-    <li><code>journal</code>(<code>abbrev</code>: <code>abbrev</code> | <code>abbrev+auto</code> | <code>auto</code> | <code>off</code>, default: <code>'abbrev+auto'</code>): returns the journal abbreviation, or, if not found, the journal title, If &lsquo;automatic journal abbreviation&rsquo; is enabled in the BBT settings, it will use the same abbreviation filter Zotero uses in the wordprocessor integration. You might want to use the <code>abbr</code> filter on this. Abbreviation behavior can be specified as <code>abbrev+auto</code> (the default) which uses the explicit journal abbreviation if present, and tries the automatic abbreviator if not (if auto-abbrev is enabled in the preferences), <code>auto</code> (skip explicit journal abbreviation even if present), <code>abbrev</code> (no auto-abbrev even if it is enabled in the preferences) or <code>off</code> (no abbrevation).</li>
+    <dt><code>journal</code></dt><dd><p>returns the journal abbreviation, or, if not found, the journal title, If 'automatic journal abbreviation' is enabled in the BBT settings, it will use the same abbreviation filter Zotero uses in the wordprocessor integration. You might want to use the <code>abbr</code> filter on this. Abbreviation behavior can be specified as <code>abbrev+auto</code> (the default) which uses the explicit journal abbreviation if present, and tries the automatic abbreviator if not (if auto-abbrev is enabled in the preferences), <code>auto</code> (skip explicit journal abbreviation even if present), <code>abbrev</code> (no auto-abbrev even if it is enabled in the preferences) or <code>off</code> (no abbrevation). </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>abbrev</code></td><td><code>abbrev</code> / <code>abbrev+auto</code> / <code>auto</code> / <code>off</code></td><td><code>'abbrev+auto'</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>keyword</code>(<code>n</code>: <strong>number</strong>): Tag number <code>N</code></li>
+    <dt><code>keyword</code></dt><dd><p>Tag number <code>n</code> </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>n</code></td><td><i>number</i></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>language</code>(<code>name</code>: <code>ame</code> | <code>american</code> | <code>australian</code> | <code>austrian</code> | <code>bri</code> | <code>british</code> | <code>canadian</code> | <code>chinese</code> | <code>chinese-hans</code> | <code>chinese-hans-hk</code> | <code>chinese-hans-mo</code> | <code>chinese-hans-sg</code> | <code>chinese-hant</code> | <code>chinese-hant-hk</code> | <code>chinese-hant-mo</code> | <code>chinese-simplified</code> | <code>chinese-simplified-hongkongsarchina</code> | <code>chinese-simplified-macausarchina</code> | <code>chinese-simplified-singapore</code> | <code>chinese-traditional</code> | <code>chinese-traditional-hongkongsarchina</code> | <code>chinese-traditional-macausarchina</code> | <code>de</code> | <code>de-1901</code> | <code>de-at</code> | <code>de-at-1901</code> | <code>de-ch</code> | <code>de-ch-1901</code> | <code>de-ch-1996</code> | <code>de-de</code> | <code>deutsch</code> | <code>en</code> | <code>en-au</code> | <code>en-ca</code> | <code>en-en</code> | <code>en-gb</code> | <code>en-nz</code> | <code>en-us</code> | <code>eng</code> | <code>english</code> | <code>english-au</code> | <code>english-australia</code> | <code>english-ca</code> | <code>english-canada</code> | <code>english-gb</code> | <code>english-newzealand</code> | <code>english-nz</code> | <code>english-unitedkingdom</code> | <code>english-unitedstates</code> | <code>english-us</code> | <code>ger</code> | <code>german</code> | <code>german-at</code> | <code>german-austria</code> | <code>german-ch</code> | <code>german-switzerland</code> | <code>gsw</code> | <code>ja</code> | <code>ja-ja</code> | <code>jap</code> | <code>japanese</code> | <code>new</code> | <code>newzealand</code> | <code>nsw</code> | <code>nswissgerman</code> | <code>schwiizertüütsch</code> | <code>swi</code> | <code>swiss german</code> | <code>swissgerman</code> | <code>ukenglish</code> | <code>usenglish</code> | <code>zh</code> | <code>zh-hans</code> | <code>zh-hans-hk</code> | <code>zh-hans-mo</code> | <code>zh-hans-sg</code> | <code>zh-hant</code> | <code>zh-hant-hk</code> | <code>zh-hant-mo</code> | <code>zh-zh</code> | <code>中文</code> | <code>日本語</code>&hellip;): Tests whether the item has the given language set, and skips to the next pattern if not</li>
+    <dt><code>language</code></dt><dd><p>Tests whether the item has the given language set, and skips to the next pattern if not </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>name</code></td><td><code>ame</code> / <code>american</code> / <code>australian</code> / <code>austrian</code> / <code>bri</code> / <code>british</code> / <code>canadian</code> / <code>chinese</code> / <code>chinese-hans</code> / <code>chinese-hans-hk</code> / <code>chinese-hans-mo</code> / <code>chinese-hans-sg</code> / <code>chinese-hant</code> / <code>chinese-hant-hk</code> / <code>chinese-hant-mo</code> / <code>chinese-simplified</code> / <code>chinese-simplified-hongkongsarchina</code> / <code>chinese-simplified-macausarchina</code> / <code>chinese-simplified-singapore</code> / <code>chinese-traditional</code> / <code>chinese-traditional-hongkongsarchina</code> / <code>chinese-traditional-macausarchina</code> / <code>de</code> / <code>de-1901</code> / <code>de-at</code> / <code>de-at-1901</code> / <code>de-ch</code> / <code>de-ch-1901</code> / <code>de-ch-1996</code> / <code>de-de</code> / <code>deutsch</code> / <code>en</code> / <code>en-au</code> / <code>en-ca</code> / <code>en-en</code> / <code>en-gb</code> / <code>en-nz</code> / <code>en-us</code> / <code>eng</code> / <code>english</code> / <code>english-au</code> / <code>english-australia</code> / <code>english-ca</code> / <code>english-canada</code> / <code>english-gb</code> / <code>english-newzealand</code> / <code>english-nz</code> / <code>english-unitedkingdom</code> / <code>english-unitedstates</code> / <code>english-us</code> / <code>ger</code> / <code>german</code> / <code>german-at</code> / <code>german-austria</code> / <code>german-ch</code> / <code>german-switzerland</code> / <code>gsw</code> / <code>ja</code> / <code>ja-ja</code> / <code>jap</code> / <code>japanese</code> / <code>new</code> / <code>newzealand</code> / <code>nsw</code> / <code>nswissgerman</code> / <code>schwiizertüütsch</code> / <code>swi</code> / <code>swiss german</code> / <code>swissgerman</code> / <code>ukenglish</code> / <code>usenglish</code> / <code>zh</code> / <code>zh-hans</code> / <code>zh-hans-hk</code> / <code>zh-hans-mo</code> / <code>zh-hans-sg</code> / <code>zh-hant</code> / <code>zh-hant-hk</code> / <code>zh-hant-mo</code> / <code>zh-zh</code> / <code>中文</code> / <code>日本語</code>...</td><td><p>one or more language codes</p></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>lastpage</code>: The number of the last page of the publication (See the remark on <code>firstpage</code>)</li>
+    <dt><code>lastpage</code></dt><dd><p>The number of the last page of the publication (See the remark on <code>firstpage</code>) </p></dd>
   
-    <li><code>len</code>(<code>relation</code>: <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>=</code> | <code>&gt;</code> | <code>&gt;=</code>, default: <code>'&gt;'</code>, <code>length</code>: <strong>number</strong>, default: <code>0</code>): If the length of the output does not match the given number, skip to the next pattern.</li>
+    <dt><code>len</code></dt><dd><p>If the length of the output does not match the given number, skip to the next pattern. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>relation</code></td><td><code>!=</code> / <code><</code> / <code><=</code> / <code>=</code> / <code>></code> / <code>>=</code></td><td><code>'>'</code> </td></tr>
+<tr><td><code>length</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>library</code>: returns the name of the shared group library, or nothing if the item is in your personal library</li>
+    <dt><code>library</code></dt><dd><p>returns the name of the shared group library, or nothing if the item is in your personal library </p></dd>
   
-    <li><code>month</code>: the month of the publication</li>
+    <dt><code>month</code></dt><dd><p>the month of the publication </p></dd>
   
-    <li><code>origdate</code>: the original date of the publication</li>
+    <dt><code>origdate</code></dt><dd><p>the original date of the publication </p></dd>
   
-    <li><code>origyear</code>: the original year of the publication</li>
+    <dt><code>origyear</code></dt><dd><p>the original year of the publication </p></dd>
   
-    <li><code>postfix</code>(<code>format</code>: <strong>string</strong>, default: <code>'%(a)s'</code>, <code>start</code>: <strong>number</strong>, default: <code>0</code>): a pseudo-function that sets the citekey disambiguation postfix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec for when a key is generated that already exists. Does not add any text to the citekey otherwise. You <em>must</em> include <em>exactly</em> one of the placeholders <code>%(n)s</code>&gt; (number), <code>%(a)s</code> (alpha, lowercase) or <code>e&gt;%(A)s</code> (alpha, uppercase). For the rest of the disambiguator you can use things like padding and extra text as sprintf-js allows. With <code>+1</code> the disambiguator is always included, even if there is no need for it when no duplicates exist. The default  format is <code>%(a)s</code>.</li>
+    <dt><code>postfix</code></dt><dd><p>a pseudo-function that sets the citekey disambiguation postfix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec for when a key is generated that already exists. Does not add any text to the citekey otherwise. You <em>must</em> include <em>exactly</em> one of the placeholders <code>%(n)s</code>&gt; (number), <code>%(a)s</code> (alpha, lowercase) or <code>e&gt;%(A)s</code> (alpha, uppercase). For the rest of the disambiguator you can use things like padding and extra text as sprintf-js allows. With <code>+1</code> the disambiguator is always included, even if there is no need for it when no duplicates exist. The default  format is <code>%(a)s</code>. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>format</code></td><td><i>string</i></td><td><code>'%(a)s'</code> </td></tr>
+<tr><td><code>start</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>shorttitle</code>(<code>n</code>: <strong>number</strong>, default: <code>3</code>, <code>m</code>: <strong>number</strong>, default: <code>0</code>): The first <code>N</code> (default: 3) words of the title, apply capitalization to first <code>M</code> (default: 0) of those</li>
+    <dt><code>shorttitle</code></dt><dd><p>The first <code>n</code> (default: 3) words of the title, apply capitalization to first <code>m</code> (default: 0) of those </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>n</code></td><td><i>number</i></td><td><code>3</code> </td></tr>
+<tr><td><code>m</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>shortyear</code>: The last 2 digits of the publication year</li>
+    <dt><code>shortyear</code></dt><dd><p>The last 2 digits of the publication year </p></dd>
   
-    <li><code>title</code>: Capitalize all the significant words of the title, and concatenate them. For example, <code>An awesome paper on JabRef</code> will become <code>AnAwesomePaperJabref</code></li>
+    <dt><code>title</code></dt><dd><p>Capitalize all the significant words of the title, and concatenate them. For example, <code>An awesome paper on JabRef</code> will become <code>AnAwesomePaperJabref</code> </p></dd>
   
-    <li><code>type</code>(<code>allowed</code>: <strong>string</strong>&hellip;): Tests whether the item is of any of the given types, and skips to the next pattern if not</li>
+    <dt><code>type</code></dt><dd><p>Tests whether the item is of any of the given types, and skips to the next pattern if not </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>allowed</code></td><td><i>string</i>...</td><td><p>one or more item type names</p></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>veryshorttitle</code>(<code>n</code>: <strong>number</strong>, default: <code>1</code>, <code>m</code>: <strong>number</strong>, default: <code>0</code>): The first <code>N</code> (default: 1) words of the title, apply capitalization to first <code>M</code> (default: 0) of those</li>
+    <dt><code>veryshorttitle</code></dt><dd><p>The first <code>n</code> (default: 1) words of the title, apply capitalization to first <code>m</code> (default: 0) of those </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>n</code></td><td><i>number</i></td><td><code>1</code> </td></tr>
+<tr><td><code>m</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>year</code>: The year of the publication</li>
+    <dt><code>year</code></dt><dd><p>The year of the publication </p></dd>
   
-    <li><code>zotero</code>: Generates citation keys as the stock Zotero Bib(La)TeX export does. Note that this pattern inherits all the problems of the original Zotero citekey generation &ndash; you should really only use this if you have existing papers that rely on this behavior.</li>
+    <dt><code>zotero</code></dt><dd><p>Generates citation keys as the stock Zotero Bib(La)TeX export does. Note that this pattern inherits all the problems of the original Zotero citekey generation -- you should really only use this if you have existing papers that rely on this behavior. </p></dd>
   
-  <li><code>postfix=&lt;spec&gt;</code>/<code>postfix+1=&lt;spec&gt;</code>:
-  a pseudo-function that sets the citekey disambiguation postfix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec
-  for when a key is generated that already exists. Does not add any text to the citekey otherwise.
-  You <i>must</i> include <i>exactly</i> one of the placeholders <code>%(n)s</code> (number), <code>%(a)s</code> (alpha, lowercase) or <code>%(A)s</code> (alpha, uppercase).
-  For the rest of the disambiguator you can use things like padding and extra text as sprintf-js allows. With <code>+1</code> the disambiguator is always included, even if there is no need for it because no duplicates exist. The default  format is <code>%(a)s</code>.
-  </li>
-  <li><code>0</code>: an alias for <code>[postfix=-%(n)s]</code>. Emulates the disambiguator of the standard Zotero exports. When you use <code>[zotero]</code> in your pattern, <code>[zotero][0]</code> is implied</li>
-  <li><code>&gt;X</code>: a pseudo-function which aborts the current pattern generation if what came before it is <code>X</code> characters or less (<code>[&gt;0]</code> is a typical use. You would typically use this with something like <code>[auth][&gt;0][year] | [title][year]</code> which means if there's no author you get <code>title-year</code> rather than just <code>year</code>.</li>
-  <li><code>=typeName</code>: a pseudo-function that aborts the current pattern generation if the Zotero item type does not equal <code>typeName</code>. You can test for multiple typenames at once by separating them with slashes (<code>[=journalArticle/report]</code>). Valid typeNames are: <code>annotation<sup>Z</sup></code>, <code>artwork</code>, <code>attachment</code>, <code>audioRecording</code>, <code>bill</code>, <code>blogPost</code>, <code>book</code>, <code>bookSection</code>, <code>case</code>, <code>classic<sup>JM</sup></code>, <code>computerProgram</code>, <code>conferencePaper</code>, <code>dictionaryEntry</code>, <code>document</code>, <code>email</code>, <code>encyclopediaArticle</code>, <code>film</code>, <code>forumPost</code>, <code>gazette<sup>JM</sup></code>, <code>hearing</code>, <code>instantMessage</code>, <code>interview</code>, <code>journalArticle</code>, <code>legalCommentary<sup>JM</sup></code>, <code>letter</code>, <code>magazineArticle</code>, <code>manuscript</code>, <code>map</code>, <code>newspaperArticle</code>, <code>note</code>, <code>patent</code>, <code>podcast</code>, <code>preprint<sup>Z</sup></code>, <code>presentation</code>, <code>radioBroadcast</code>, <code>regulation<sup>JM</sup></code>, <code>report</code>, <code>standard<sup>JM</sup></code>, <code>statute</code>, <code>thesis</code>, <code>treaty<sup>JM</sup></code>, <code>tvBroadcast</code>, <code>videoRecording</code>, <code>webpage</code>.</li>
-</ul>
+</dl>
 
 (type names marked <sup>JM</sup> are only available in Juris-M).
 
@@ -2120,67 +2361,187 @@ that yields a non-empty string. If all return a empty string, a random key will 
 
 <p>(fields marked <sup>JM</sup> are only available in Juris-M).</p>
 <h4 id="filters">Filters</h4>
-<ul>
+<dl>
   
-    <li><code>abbr</code>: Abbreviates the text. Only the first character and subsequent characters following white space will be included.</li>
+    <dt><code>abbr</code></dt></dd><p>Abbreviates the text. Only the first character and subsequent characters following white space will be included. </p></dd>
   
-    <li><code>acronym</code>(<code>list</code>: <strong>string</strong>, default: <code>'acronyms'</code>): Does an acronym lookup for the text. You can optionally pass the name of the list; the list must live in the Zotero/better-bibtex directory in your profile, and must use commas as the delimiter.</li>
+    <dt><code>acronym</code></dt></dd><p>Does an acronym lookup for the text. You can optionally pass the name of the list; the list must live in the Zotero/better-bibtex directory in your profile, and must use commas as the delimiter. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>list</code></td><td><i>string</i></td><td><code>'acronyms'</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>alphanum</code>: clears out everything but unicode alphanumeric characters (unicode character classes <code>L</code> and <code>N</code>)</li>
+    <dt><code>alphanum</code></dt></dd><p>clears out everything but unicode alphanumeric characters (unicode character classes <code>L</code> and <code>N</code>) </p></dd>
   
-    <li><code>ascii</code>: removes all non-ascii characters</li>
+    <dt><code>ascii</code></dt></dd><p>removes all non-ascii characters </p></dd>
   
-    <li><code>capitalize</code>: uppercases the first letter of each word</li>
+    <dt><code>capitalize</code></dt></dd><p>uppercases the first letter of each word </p></dd>
   
-    <li><code>clean</code>: transliterates the citation key and removes unsafe characters</li>
+    <dt><code>clean</code></dt></dd><p>transliterates the citation key and removes unsafe characters </p></dd>
   
-    <li><code>condense</code>(<code>sep</code>: <strong>string</strong>, default: <code>''</code>): this replaces spaces in the value passed in. You can specify what to replace it with by adding it as a parameter, e.g <code>.condense(_)</code> will replace spaces with underscores. <strong>Parameter should not contain spaces</strong> unless you want the spaces in the value passed in to be replaced with those spaces in the parameter</li>
+    <dt><code>condense</code></dt></dd><p>this replaces spaces in the value passed in. You can specify what to replace it with by adding it as a parameter, e.g <code>.condense(_)</code> will replace spaces with underscores. <strong>Parameter should not contain spaces</strong> unless you want the spaces in the value passed in to be replaced with those spaces in the parameter </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>sep</code></td><td><i>string</i></td><td><code>''</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>default</code>(<code>text</code>: <strong>string</strong>): Returns the given text if no output was generated</li>
+    <dt><code>default</code></dt></dd><p>Returns the given text if no output was generated </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>text</code></td><td><i>string</i></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>discard</code>: discards the input</li>
+    <dt><code>discard</code></dt></dd><p>discards the input </p></dd>
   
-    <li><code>fold</code>(<code>mode</code>: <code>chinese</code> | <code>german</code> | <code>japanese</code>): tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match</li>
+    <dt><code>fold</code></dt></dd><p>tries to replace diacritics with ascii look-alikes. Removes non-ascii characters it cannot match </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>mode</code></td><td><code>chinese</code> / <code>german</code> / <code>japanese</code></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>formatDate</code>(<code>format</code>: <strong>string</strong>, default: <code>'%Y-%m-%d'</code>): formats date as by replacing y, m and d in the format</li>
+    <dt><code>formatDate</code></dt></dd><p>formats date as by replacing y, m and d in the format </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>format</code></td><td><i>string</i></td><td><code>'%Y-%m-%d'</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>jieba</code>: word segmentation for Chinese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
+    <dt><code>jieba</code></dt></dd><p>word segmentation for Chinese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys </p></dd>
   
-    <li><code>kuromoji</code>: word segmentation for Japanese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys</li>
+    <dt><code>kuromoji</code></dt></dd><p>word segmentation for Japanese items. Uses substantial memory; must be enabled under Preferences -&gt; Better BibTeX -&gt; Advanced -&gt; Citekeys </p></dd>
   
-    <li><code>len</code>(<code>relation</code>: <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>=</code> | <code>&gt;</code> | <code>&gt;=</code>, default: <code>'&gt;'</code>, <code>length</code>: <strong>number</strong>, default: <code>0</code>): If the length of the output does not match the given number, skip to the next pattern.</li>
+    <dt><code>len</code></dt></dd><p>If the length of the output does not match the given number, skip to the next pattern. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>relation</code></td><td><code>!=</code> / <code><</code> / <code><=</code> / <code>=</code> / <code>></code> / <code>>=</code></td><td><code>'>'</code> </td></tr>
+<tr><td><code>length</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>localTime</code>: transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input.</li>
+    <dt><code>localTime</code></dt></dd><p>transforms date/time to local time. Mainly useful for dateAdded and dateModified as it requires an ISO-formatted input. </p></dd>
   
-    <li><code>lower</code>: Forces the text inserted by the field marker to be in lowercase. For example, <code>auth.lower</code> expands to the last name of the first author in lowercase.</li>
+    <dt><code>lower</code></dt></dd><p>Forces the text inserted by the field marker to be in lowercase. For example, <code>auth.lower</code> expands to the last name of the first author in lowercase. </p></dd>
   
-    <li><code>nopunct</code>(<code>dash</code>: <strong>string</strong>, default: <code>'-'</code>): Removes punctuation</li>
+    <dt><code>nopunct</code></dt></dd><p>Removes punctuation </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>dash</code></td><td><i>string</i></td><td><code>'-'</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>nopunctordash</code>: Removes punctuation and word-connecting dashes. alias for <code>nopunct(dash='')</code></li>
+    <dt><code>nopunctordash</code></dt></dd><p>Removes punctuation and word-connecting dashes. alias for <code>nopunct(dash='')</code> </p></dd>
   
-    <li><code>numeric</code>: returns the value if it&rsquo;s an integer</li>
+    <dt><code>numeric</code></dt></dd><p>returns the value if it's an integer </p></dd>
   
-    <li><code>postfix</code>(<code>postfix</code>: <strong>string</strong>): postfixes with its parameter, so <code>postfix(_)</code> will add an underscore to the end if, and only if, the value it is supposed to postfix isn&rsquo;t empty</li>
+    <dt><code>postfix</code></dt></dd><p>postfixes with its parameter, so <code>postfix(_)</code> will add an underscore to the end if, and only if, the value it is supposed to postfix isn't empty </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>postfix</code></td><td><i>string</i></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>prefix</code>(<code>prefix</code>: <strong>string</strong>): prefixes with its parameter, so <code>.prefix(_)</code> will add an underscore to the front if, and only if, the value it is supposed to prefix isn&rsquo;t empty.</li>
+    <dt><code>prefix</code></dt></dd><p>prefixes with its parameter, so <code>.prefix(_)</code> will add an underscore to the front if, and only if, the value it is supposed to prefix isn't empty. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>prefix</code></td><td><i>string</i></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>replace</code>(<code>find</code>: <strong>string</strong> | <strong>RegExp</strong>, <code>replace</code>: <strong>string</strong>): replaces text, case insensitive when passing a string; <code>.replace('.etal','&amp;etal')</code> will replace <code>.EtAl</code> with <code>&amp;etal</code></li>
+    <dt><code>replace</code></dt></dd><p>replaces text, case insensitive when passing a string; <code>.replace('.etal','&amp;etal')</code> will replace <code>.EtAl</code> with <code>&amp;etal</code> </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>find</code></td><td><i>string</i> / <i>RegExp</i></td><td></td></tr>
+<tr><td><code>replace</code></td><td><i>string</i></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>select</code>(<code>start</code>: <strong>number</strong>, default: <code>1</code>, <code>n</code>: <strong>number</strong>): selects words from the value passed in. The format is <code>select(start,number)</code> (1-based), so <code>select(1,4)</code> or <code>select(n=4)</code> would select the first four words. If <code>n</code> is not given, all words from <code>start</code> to the end are selected.</li>
+    <dt><code>select</code></dt></dd><p>selects words from the value passed in. The format is <code>select(start,number)</code> (1-based), so <code>select(1,4)</code> or <code>select(n=4)</code> would select the first four words. If <code>n</code> is not given, all words from <code>start</code> to the end are selected. </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>start</code></td><td><i>number</i></td><td><code>1</code> </td></tr>
+<tr><td><code>n</code></td><td><i>number</i></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>skipwords</code>: <p>filters out common words like &lsquo;of&rsquo;, &rsquo;the&rsquo;, &hellip; the list of words can be seen and changed by going into <code>about:config</code> under the key <code>extensions.zotero.translators.better-bibtex.skipWords</code> as a comma-separated, case-insensitive list of words.</p>
-<p>If you want to strip words like &lsquo;Jr.&rsquo; from names, you could use something like <code>[Auth:nopunct:skipwords:fold]</code> after adding <code>jr</code> to the skipWords list. Note that this filter is always applied if you use <code>title</code> (which is different from <code>Title</code>) or <code>shorttitle</code>.</p>
-</li>
+    <dt><code>skipwords</code></dt></dd><p>filters out common words like 'of', 'the', … the list of words can be seen and changed by going into <code>about:config</code> under the key <code>extensions.zotero.translators.better-bibtex.skipWords</code> as a comma-separated, case-insensitive list of words.</p>
+<p>If you want to strip words like 'Jr.' from names, you could use something like <code>[Auth:nopunct:skipwords:fold]</code> after adding <code>jr</code> to the skipWords list. Note that this filter is always applied if you use <code>title</code> (which is different from <code>Title</code>) or <code>shorttitle</code>. </p></dd>
   
-    <li><code>splitIdeographs</code>: Treat ideaographs as individual words</li>
+    <dt><code>splitIdeographs</code></dt></dd><p>Treat ideaographs as individual words </p></dd>
   
-    <li><code>substring</code>(<code>start</code>: <strong>number</strong>, default: <code>1</code>, <code>n</code>: <strong>number</strong>): <code>substring(start,n)</code> selects <code>n</code> (default: all) characters starting at <code>start</code> (default: 1)</li>
+    <dt><code>substring</code></dt></dd><p><code>substring(start,n)</code> selects <code>n</code> (default: all) characters starting at <code>start</code> (default: 1) </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>start</code></td><td><i>number</i></td><td><code>1</code> </td></tr>
+<tr><td><code>n</code></td><td><i>number</i></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>transliterate</code>(<code>mode</code>: <code>chinese</code> | <code>de</code> | <code>german</code> | <code>ja</code> | <code>japanese</code> | <code>minimal</code> | <code>zh</code>): transliterates the citation key. If you don&rsquo;t specify a mode, the mode is derived from the item language field</li>
+    <dt><code>transliterate</code></dt></dd><p>transliterates the citation key. If you don't specify a mode, the mode is derived from the item language field </p>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>mode</code></td><td><code>chinese</code> / <code>de</code> / <code>german</code> / <code>ja</code> / <code>japanese</code> / <code>minimal</code> / <code>zh</code></td><td></td></tr>
+            </tbody>
+          </table>
+          </details>
+        </dd>
   
-    <li><code>upper</code>: Forces the text inserted by the field marker to be in uppercase. For example, <code>[auth:upper]</code> expands the last name of the first author in uppercase.</li>
+    <dt><code>upper</code></dt></dd><p>Forces the text inserted by the field marker to be in uppercase. For example, <code>[auth:upper]</code> expands the last name of the first author in uppercase. </p></dd>
   
-</ul>
+</dl>
 
 <p><em>Usage note</em>: the functions <code>condense</code>, <code>skipwords</code>, <code>capitalize</code> and <code>select</code> rely on whitespaces for word handling. Most functions strip
 whitespace and thereby make these filter functions sort of useless. You will in general want to use the fields from the
