@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.0" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1570,6 +1570,7 @@ Better BibTeX for Zotero
     <li><a href="#stringsoverride">stringsOverride</a></li>
     <li><a href="#verbatimfields">verbatimFields</a></li>
     <li><a href="#warntitlecased">warnTitleCased</a></li>
+    <li><a href="#worker">worker</a></li>
     <li><a href="#abbreviation-style">Abbreviation style:</a></li>
     <li><a href="#citation-key-format">Citation key format</a></li>
   </ul>
@@ -1718,6 +1719,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h2 id="warntitlecased">warnTitleCased</h2>
 <p>default: <code>no</code></p>
 <p>Both Zotero and BBT expect titles to be in sentence-case, but a lot of sites offer import data that is Title Cased. When exporting these titles to bib(la)tex you&rsquo;re going to get a lot of extra unwanted braces, because all these Title Cased words will look like proper nouns to BBTs own title-casing mechanism. When this setting is on, you will be warned when you import/save items in Zotero with titles that look like they&rsquo;re Title Cased, so that you can inspect/correct them.</p>
+<h2 id="worker">worker</h2>
+<p>default: <code>yes</code></p>
+<p>BBT can perform its exports in a separate thread, and should no longer block Zotero&rsquo;s UI pretty much regardless of how large your library is. It is possible to turn background exports off by setting this value to <code>false</code> in the hidden preferences; you will get the old (blocking) behavior back, but you can&rsquo;t complain about Zotero being laggy during auto-exports; all Zotero exports are blocking, and it&rsquo;s a minor miracle I got background exports to work at all.</p>
 <h2 id="abbreviation-style">Abbreviation style:</h2>
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>Select the style for auto-abbreviation. Only applicable to Juris-M; in Zotero, the style for automatic abbreviation is not configurable.</p>
