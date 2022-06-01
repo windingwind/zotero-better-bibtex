@@ -13,7 +13,7 @@
       
       <guid>/zotero-better-bibtex/exporting/</guid>
       <description>Better BibTex adds a couple of export formats to Zotero&amp;rsquo;s export dialog and several ways to improve export for plaintext-based authoring. The Better BibTeX configuration pane can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo; where you can tweak the exports, such as
- Omitting fields from exports to slim down your bib files. Configuring how citation keys are generated. And really a ton more.  Additionally you can automate exporting (parts of) your library either using auto-export or pull export.</description>
+Omitting fields from exports to slim down your bib files. Configuring how citation keys are generated. And really a ton more. Additionally you can automate exporting (parts of) your library either using auto-export or pull export.</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ Add-on could not be installed because it appears to be corrupt. You have downloa
       <guid>/zotero-better-bibtex/exporting/pull/</guid>
       <description>You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?[collectionID].[format] 1. You can get this URL for a group, library or collection by right-clicking it and selecting Download Better BibTeX export...
 You can add options to the export as URL parameters:
- &amp;amp;exportNotes=[true|false] &amp;amp;useJournalAbbreviation=[true|false]  You can fetch your library as part of your build, using something like curl from your Makefile, or with a BibLaTeX remote statement like
+&amp;amp;exportNotes=[true|false] &amp;amp;useJournalAbbreviation=[true|false] You can fetch your library as part of your build, using something like curl from your Makefile, or with a BibLaTeX remote statement like
 \addbibresource[location=remote]{http://127.0.0.1:23119/better-bibtex/collection?/0/8CV58ZVD.biblatex} format can be:</description>
     </item>
     
@@ -76,7 +76,7 @@ Making any change here will drop your entire export cache. This is usually not a
       <guid>/zotero-better-bibtex/installation/bundled-translators/</guid>
       <description>Better BibTeX bundles 5 translators you might care about:
 Export These translators are supported by the auto-export functionality built into Better BibTeX:
- Better BibLaTeX exports items in BibLaTeX format (but better, natch) Better BibTeX exports items in BibTeX format Better CSL JSON exports items in pandoc-compatible CSL-JSON format, with added citation keys and parsing of metadata Better CSL YAML exports the same as the Better CSL JSON exporter, but in YAML format Collected Notes exports just notes &amp;ndash; standalone notes and notes attached to items, not the extra field &amp;ndash; to HTML.</description>
+Better BibLaTeX exports items in BibLaTeX format (but better, natch) Better BibTeX exports items in BibTeX format Better CSL JSON exports items in pandoc-compatible CSL-JSON format, with added citation keys and parsing of metadata Better CSL YAML exports the same as the Better CSL JSON exporter, but in YAML format Collected Notes exports just notes &amp;ndash; standalone notes and notes attached to items, not the extra field &amp;ndash; to HTML.</description>
     </item>
     
   </channel>

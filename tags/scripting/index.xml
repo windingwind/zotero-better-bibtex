@@ -13,7 +13,7 @@
       
       <guid>/zotero-better-bibtex/exporting/</guid>
       <description>Better BibTex adds a couple of export formats to Zotero&amp;rsquo;s export dialog and several ways to improve export for plaintext-based authoring. The Better BibTeX configuration pane can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo; where you can tweak the exports, such as
- Omitting fields from exports to slim down your bib files. Configuring how citation keys are generated. And really a ton more.  Additionally you can automate exporting (parts of) your library either using auto-export or pull export.</description>
+Omitting fields from exports to slim down your bib files. Configuring how citation keys are generated. And really a ton more. Additionally you can automate exporting (parts of) your library either using auto-export or pull export.</description>
     </item>
     
     <item>

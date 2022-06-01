@@ -22,7 +22,7 @@
       
       <guid>/zotero-better-bibtex/exporting/pandoc/</guid>
       <description>In addition to LaTeX, BBT plays very well with pandoc:
- you can drag and drop citations from Zotero into your markdown documents. you can cite as you write in your favorite editor with varying levels of comfort, mostly depending on how easy (VSCode, Sublime) or hard (looking at you Scrivener) it is to extend your editor. you can even convert your markdown document into a LibreOffice/Word document with actual live Zotero items as if you had entered them into Zotero all along (see below)  Use CSL, not bibtex with pandoc Many tutorials on the use of pandoc to generate documents with citations seem to use bibtex as a bibliography format.</description>
+you can drag and drop citations from Zotero into your markdown documents. you can cite as you write in your favorite editor with varying levels of comfort, mostly depending on how easy (VSCode, Sublime) or hard (looking at you Scrivener) it is to extend your editor. you can even convert your markdown document into a LibreOffice/Word document with actual live Zotero items as if you had entered them into Zotero all along (see below) Use CSL, not bibtex with pandoc Many tutorials on the use of pandoc to generate documents with citations seem to use bibtex as a bibliography format.</description>
     </item>
     
     <item>
@@ -33,7 +33,7 @@
       <guid>/zotero-better-bibtex/exporting/pull/</guid>
       <description>You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?[collectionID].[format] 1. You can get this URL for a group, library or collection by right-clicking it and selecting Download Better BibTeX export...
 You can add options to the export as URL parameters:
- &amp;amp;exportNotes=[true|false] &amp;amp;useJournalAbbreviation=[true|false]  You can fetch your library as part of your build, using something like curl from your Makefile, or with a BibLaTeX remote statement like
+&amp;amp;exportNotes=[true|false] &amp;amp;useJournalAbbreviation=[true|false] You can fetch your library as part of your build, using something like curl from your Makefile, or with a BibLaTeX remote statement like
 \addbibresource[location=remote]{http://127.0.0.1:23119/better-bibtex/collection?/0/8CV58ZVD.biblatex} format can be:</description>
     </item>
     
@@ -62,7 +62,7 @@ You can add options to the export as URL parameters:
       
       <guid>/zotero-better-bibtex/exporting/advanced/</guid>
       <description>You are a hardcore LaTeX user If you&amp;rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
- You can add literal LaTeX anywhere in your item by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.</description>
+You can add literal LaTeX anywhere in your item by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.</description>
     </item>
     
     <item>
@@ -74,7 +74,7 @@ You can add options to the export as URL parameters:
       <description>You can call into BBT using JSON-RPC on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:
 curl http://localhost:23119/better-bibtex/json-rpc -X POST -H &amp;#34;Content-Type: application/json&amp;#34; -H &amp;#34;Accept: application/json&amp;#34; --data-binary &amp;#39;{&amp;#34;jsonrpc&amp;#34;: &amp;#34;2.0&amp;#34;, &amp;#34;method&amp;#34;: &amp;#34;collection.scanAUX&amp;#34;, &amp;#34;params&amp;#34;: [&amp;#34;/My Library/thesis/article1&amp;#34;, &amp;#34;/Users/phantom/Downloads/output.aux&amp;#34;] }&amp;#39; The available methods are:
 autoexport.add(collection, translator, path, displayOptions, replace) Add an auto-export for the given collection. The target collection will be created if it does not exist
- collection: The forward-slash separated path to the collection.</description>
+collection: The forward-slash separated path to the collection.</description>
     </item>
     
   </channel>
