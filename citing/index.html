@@ -1627,7 +1627,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
           <table>
             <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>n</code></td><td><i>number</i></td><td><p>the number of characters to take from the name, 0 = all</p></td><td><code>0</code> </td></tr>
+              <tr><td><code>n</code></td><td><i>number</i></td><td><p>the number of characters to take from the name, 0 = all</p></td><td><code>+0</code> </td></tr>
 <tr><td><code>m</code></td><td><i>number</i></td><td><p>select the <code>m</code>th author</p></td><td><code>1</code> </td></tr>
 <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
 <tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
@@ -1696,7 +1696,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
           <table>
             <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>n</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+              <tr><td><code>n</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
 <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
 <tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
 <tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
@@ -1750,14 +1750,14 @@ that yields a non-empty string. If all return a empty string, a random key will 
           <table>
             <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>n</code></td><td><i>number</i> / [<i>number</i>, <i>number</i>]</td><td><p>select the first <code>n</code> authors (when passing a number) or the authors in this range (inclusive, when passing two values); negative numbers mean "from the end", default = 0 = all</p></td><td><code>0</code> </td></tr>
+              <tr><td><code>n</code></td><td><i>number</i> / [<i>number</i>, <i>number</i>]</td><td><p>select the first <code>n</code> authors (when passing a number) or the authors in this range (inclusive, when passing two values); negative numbers mean "from the end", default = 0 = all</p></td><td><code>+0</code> </td></tr>
 <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select type of creator (<code>author</code> or <code>editor</code>)</p></td><td><code>'author'</code> </td></tr>
 <tr><td><code>name</code></td><td><i>string</i></td><td><p>sprintf-js template. Available named parameters are: <code>f</code> (family name), <code>g</code> (given name), <code>i</code> (initials)</p></td><td><code>'%(f)s'</code> </td></tr>
 <tr><td><code>etal</code></td><td><i>string</i></td><td><p>use this term to replace authors after <code>n</code> authors have been named</p></td><td><code>''</code> </td></tr>
 <tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>' '</code> </td></tr>
 <tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the citation key and removes unsafe characters</p></td><td><code>true</code> </td></tr>
-<tr><td><code>min</code></td><td><i>number</i></td><td><p>skip to the next pattern if there are less than <code>min</code> creators, 0 = ignore</p></td><td><code>0</code> </td></tr>
-<tr><td><code>max</code></td><td><i>number</i></td><td><p>skip to the next pattern if there are more than <code>max</code> creators, 0 = ignore</p></td><td><code>0</code> </td></tr>
+<tr><td><code>min</code></td><td><i>number</i></td><td><p>skip to the next pattern if there are less than <code>min</code> creators, 0 = ignore</p></td><td><code>+0</code> </td></tr>
+<tr><td><code>max</code></td><td><i>number</i></td><td><p>skip to the next pattern if there are more than <code>max</code> creators, 0 = ignore</p></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1844,7 +1844,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
           <table>
             <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>name</code></td><td><code>ame</code> / <code>american</code> / <code>australian</code> / <code>austrian</code> / <code>bri</code> / <code>british</code> / <code>canadian</code> / <code>chinese</code> / <code>chinese-hans</code> / <code>chinese-hans-hk</code> / <code>chinese-hans-mo</code> / <code>chinese-hans-sg</code> / <code>chinese-hant</code> / <code>chinese-hant-hk</code> / <code>chinese-hant-mo</code> / <code>chinese-simplified</code> / <code>chinese-simplified-hongkongsarchina</code> / <code>chinese-simplified-macausarchina</code> / <code>chinese-simplified-singapore</code> / <code>chinese-traditional</code> / <code>chinese-traditional-hongkongsarchina</code> / <code>chinese-traditional-macausarchina</code> / <code>de</code> / <code>de-1901</code> / <code>de-at</code> / <code>de-at-1901</code> / <code>de-ch</code> / <code>de-ch-1901</code> / <code>de-ch-1996</code> / <code>de-de</code> / <code>deutsch</code> / <code>en</code> / <code>en-au</code> / <code>en-ca</code> / <code>en-en</code> / <code>en-gb</code> / <code>en-nz</code> / <code>en-us</code> / <code>eng</code> / <code>english</code> / <code>english-au</code> / <code>english-australia</code> / <code>english-ca</code> / <code>english-canada</code> / <code>english-gb</code> / <code>english-newzealand</code> / <code>english-nz</code> / <code>english-unitedkingdom</code> / <code>english-unitedstates</code> / <code>english-us</code> / <code>ger</code> / <code>german</code> / <code>german-at</code> / <code>german-austria</code> / <code>german-ch</code> / <code>german-switzerland</code> / <code>ja</code> / <code>ja-ja</code> / <code>jap</code> / <code>japanese</code> / <code>new</code> / <code>newzealand</code> / <code>nsw</code> / <code>nswissgerman</code> / <code>ukenglish</code> / <code>usenglish</code> / <code>zh</code> / <code>zh-hans</code> / <code>zh-hans-hk</code> / <code>zh-hans-mo</code> / <code>zh-hans-sg</code> / <code>zh-hant</code> / <code>zh-hant-hk</code> / <code>zh-hant-mo</code> / <code>zh-zh</code> / <code>中文</code> / <code>日本語</code>...</td><td><p>one or more language codes</p></td><td></td></tr>
+              <tr><td><code>name</code></td><td><code>ame</code> / <code>american</code> / <code>australian</code> / <code>austrian</code> / <code>bri</code> / <code>british</code> / <code>canadian</code> / <code>chinese</code> / <code>chinese-hans</code> / <code>chinese-hans-hk</code> / <code>chinese-hans-mo</code> / <code>chinese-hans-sg</code> / <code>chinese-hant</code> / <code>chinese-hant-hk</code> / <code>chinese-hant-mo</code> / <code>chinese-simplified</code> / <code>chinese-simplified-hongkongsarchina</code> / <code>chinese-simplified-macausarchina</code> / <code>chinese-simplified-singapore</code> / <code>chinese-traditional</code> / <code>chinese-traditional-hongkongsarchina</code> / <code>chinese-traditional-macausarchina</code> / <code>de</code> / <code>de-1901</code> / <code>de-at</code> / <code>de-at-1901</code> / <code>de-ch</code> / <code>de-ch-1901</code> / <code>de-ch-1996</code> / <code>de-de</code> / <code>deutsch</code> / <code>en</code> / <code>en-au</code> / <code>en-ca</code> / <code>en-en</code> / <code>en-gb</code> / <code>en-nz</code> / <code>en-us</code> / <code>eng</code> / <code>english</code> / <code>english-au</code> / <code>english-australia</code> / <code>english-ca</code> / <code>english-canada</code> / <code>english-gb</code> / <code>english-newzealand</code> / <code>english-nz</code> / <code>english-unitedkingdom</code> / <code>english-unitedstates</code> / <code>english-us</code> / <code>ger</code> / <code>german</code> / <code>german-at</code> / <code>german-austria</code> / <code>german-ch</code> / <code>german-switzerland</code> / <code>ja</code> / <code>ja-ja</code> / <code>jap</code> / <code>japanese</code> / <code>new</code> / <code>newzealand</code> / <code>nsw</code> / <code>nswissgerman</code> / <code>ukenglish</code> / <code>usenglish</code> / <code>zh</code> / <code>zh-hans</code> / <code>zh-hans-hk</code> / <code>zh-hans-mo</code> / <code>zh-hans-sg</code> / <code>zh-hant</code> / <code>zh-hant-hk</code> / <code>zh-hant-mo</code> / <code>zh-zh</code> / <code>中文</code> / <code>日本語</code></td><td><p>one or more language codes</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
@@ -1858,7 +1858,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
             <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
             <tbody>
               <tr><td><code>relation</code></td><td><code>!=</code> / <code><</code> / <code><=</code> / <code>=</code> / <code>></code> / <code>>=</code></td><td><code>'>'</code> </td></tr>
-<tr><td><code>length</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+<tr><td><code>length</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1878,7 +1878,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
             <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
             <tbody>
               <tr><td><code>format</code></td><td><i>string</i></td><td><code>'%(a)s'</code> </td></tr>
-<tr><td><code>start</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+<tr><td><code>start</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1890,7 +1890,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
             <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
             <tbody>
               <tr><td><code>n</code></td><td><i>number</i></td><td><code>3</code> </td></tr>
-<tr><td><code>m</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+<tr><td><code>m</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1905,7 +1905,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
           <table>
             <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>allowed</code></td><td><code>artwork</code> / <code>audioRecording</code> / <code>bill</code> / <code>blogPost</code> / <code>book</code> / <code>bookSection</code> / <code>case</code> / <code>classic</code> / <code>computerProgram</code> / <code>conferencePaper</code> / <code>dictionaryEntry</code> / <code>document</code> / <code>email</code> / <code>encyclopediaArticle</code> / <code>film</code> / <code>forumPost</code> / <code>gazette</code> / <code>hearing</code> / <code>instantMessage</code> / <code>interview</code> / <code>journalArticle</code> / <code>legalCommentary</code> / <code>letter</code> / <code>magazineArticle</code> / <code>manuscript</code> / <code>map</code> / <code>newspaperArticle</code> / <code>patent</code> / <code>podcast</code> / <code>preprint</code> / <code>presentation</code> / <code>radioBroadcast</code> / <code>regulation</code> / <code>report</code> / <code>standard</code> / <code>statute</code> / <code>thesis</code> / <code>treaty</code> / <code>tvBroadcast</code> / <code>videoRecording</code> / <code>webpage</code>...</td><td><p>one or more item type names</p></td><td></td></tr>
+              <tr><td><code>allowed</code></td><td><code>artwork</code> / <code>audioRecording</code> / <code>bill</code> / <code>blogPost</code> / <code>book</code> / <code>bookSection</code> / <code>case</code> / <code>classic</code> / <code>computerProgram</code> / <code>conferencePaper</code> / <code>dictionaryEntry</code> / <code>document</code> / <code>email</code> / <code>encyclopediaArticle</code> / <code>film</code> / <code>forumPost</code> / <code>gazette</code> / <code>hearing</code> / <code>instantMessage</code> / <code>interview</code> / <code>journalArticle</code> / <code>legalCommentary</code> / <code>letter</code> / <code>magazineArticle</code> / <code>manuscript</code> / <code>map</code> / <code>newspaperArticle</code> / <code>patent</code> / <code>podcast</code> / <code>preprint</code> / <code>presentation</code> / <code>radioBroadcast</code> / <code>regulation</code> / <code>report</code> / <code>standard</code> / <code>statute</code> / <code>thesis</code> / <code>treaty</code> / <code>tvBroadcast</code> / <code>videoRecording</code> / <code>webpage</code></td><td><p>one or more item type names</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
@@ -1917,7 +1917,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
             <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
             <tbody>
               <tr><td><code>n</code></td><td><i>number</i></td><td><code>1</code> </td></tr>
-<tr><td><code>m</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+<tr><td><code>m</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -2440,7 +2440,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
             <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
             <tbody>
               <tr><td><code>relation</code></td><td><code>!=</code> / <code><</code> / <code><=</code> / <code>=</code> / <code>></code> / <code>>=</code></td><td><code>'>'</code> </td></tr>
-<tr><td><code>length</code></td><td><i>number</i></td><td><code>0</code> </td></tr>
+<tr><td><code>length</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
