@@ -1631,7 +1631,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <tr><td><code>m</code></td><td><i>number</i></td><td><p>select the <code>m</code>th author</p></td><td><code>1</code> </td></tr>
 <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
 <tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the citation key and removes unsafe characters</p></td><td><code>true</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1640,12 +1640,12 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>authAuthEa</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
-<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
-<tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>'.'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1654,12 +1654,12 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>authEtAl</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
-<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
-<tr><td><code>sep</code></td><td><i>string</i></td><td><code>' '</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>' '</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1668,12 +1668,12 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>authEtal2</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
-<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
-<tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>'.'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1682,10 +1682,10 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>authForeIni</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1694,13 +1694,13 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>authIni</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>n</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
-<tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
-<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
-<tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+              <tr><td><code>n</code></td><td><i>number</i></td><td><p>the number of characters to take from the name, 0 = all</p></td><td><code>+0</code> </td></tr>
+<tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>'.'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1709,12 +1709,12 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>authorIni</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
-<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
-<tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>'.'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1723,11 +1723,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>authorLast</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
-<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1736,10 +1736,10 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>authorLastForeIni</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1755,7 +1755,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <tr><td><code>name</code></td><td><i>string</i></td><td><p>sprintf-js template. Available named parameters are: <code>f</code> (family name), <code>g</code> (given name), <code>i</code> (initials)</p></td><td><code>'%(f)s'</code> </td></tr>
 <tr><td><code>etal</code></td><td><i>string</i></td><td><p>use this term to replace authors after <code>n</code> authors have been named</p></td><td><code>''</code> </td></tr>
 <tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>' '</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the citation key and removes unsafe characters</p></td><td><code>true</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
 <tr><td><code>min</code></td><td><i>number</i></td><td><p>skip to the next pattern if there are less than <code>min</code> creators, 0 = ignore</p></td><td><code>+0</code> </td></tr>
 <tr><td><code>max</code></td><td><i>number</i></td><td><p>skip to the next pattern if there are more than <code>max</code> creators, 0 = ignore</p></td><td><code>+0</code> </td></tr>
             </tbody>
@@ -1766,12 +1766,12 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>authorsAlpha</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
-<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
-<tr><td><code>sep</code></td><td><i>string</i></td><td><code>' '</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>' '</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1780,12 +1780,12 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>authshort</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><code>'author'</code> </td></tr>
-<tr><td><code>initials</code></td><td><i>boolean</i></td><td><code>false</code> </td></tr>
-<tr><td><code>sep</code></td><td><i>string</i></td><td><code>'.'</code> </td></tr>
-<tr><td><code>clean</code></td><td><i>boolean</i></td><td><code>true</code> </td></tr>
+              <tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code></td><td><p>select from authors or only from editors</p></td><td><code>'author'</code> </td></tr>
+<tr><td><code>initials</code></td><td><i>boolean</i></td><td><p>add author initials</p></td><td><code>false</code> </td></tr>
+<tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>'.'</code> </td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the authors and removes unsafe characters</p></td><td><code>true</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1794,9 +1794,9 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>date</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>format</code></td><td><i>string</i></td><td><code>'%Y-%m-%d'</code> </td></tr>
+              <tr><td><code>format</code></td><td><i>string</i></td><td><p>sprintf-style format template</p></td><td><code>'%Y-%m-%d'</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1805,13 +1805,13 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>extra</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>variable</code></td><td><i>string</i></td><td></td></tr>
+              <tr><td><code>variable</code></td><td><i>string</i></td><td><p>extra-field line identifier</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
-        <p>A pseudo-field from the extra field. eg if you have <code>Original       date: 1970</code> in your <code>extra</code> field, you can get it as       <code>extra(originalDate)</code>, or <code>tex.shortauthor: APA</code> which you could       get with <code>extra('tex.shortauthor')</code>. Any <code>tex.</code> field will be       picked up, the other fields can be selected from <a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/">this       list</a>       of key names. </p></dd>
+        <p>A pseudo-field from the extra field. eg if you have <code>Original date: 1970</code> in your <code>extra</code> field, you can get it as <code>extra(originalDate)</code>, or <code>tex.shortauthor: APA</code> which you could get with <code>extra('tex.shortauthor')</code>. Any <code>tex.</code> field will be picked up, the other fields can be selected from <a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/">this list</a> of key names. </p></dd>
   
     <dt><code>firstpage</code></dt><dd><p>The number of the first page of the publication (Caution: this will return the lowest number found in the pages field, since BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.) </p></dd>
   
@@ -1820,9 +1820,9 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>journal</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>abbrev</code></td><td><code>abbrev</code> / <code>abbrev+auto</code> / <code>auto</code> / <code>off</code></td><td><code>'abbrev+auto'</code> </td></tr>
+              <tr><td><code>abbrev</code></td><td><code>abbrev</code> / <code>abbrev+auto</code> / <code>auto</code> / <code>off</code></td><td><p>abbreviation mode</p></td><td><code>'abbrev+auto'</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1837,7 +1837,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
             </tbody>
           </table>
           </details>
-        <p>Tag number <code>n</code> </p></dd>
+        <p>Tag number <code>n</code>. Mostly for legacy compatibility -- order of tags is undefined </p></dd>
   
     <dt><code>language</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
@@ -1855,10 +1855,10 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>len</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>relation</code></td><td><code>!=</code> / <code><</code> / <code><=</code> / <code>=</code> / <code>></code> / <code>>=</code></td><td><code>'>'</code> </td></tr>
-<tr><td><code>length</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
+              <tr><td><code>relation</code></td><td><code>!=</code> / <code><</code> / <code><=</code> / <code>=</code> / <code>></code> / <code>>=</code></td><td><p>comparison operator</p></td><td><code>'>'</code> </td></tr>
+<tr><td><code>length</code></td><td><i>number</i></td><td><p>value to compare length with</p></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1875,10 +1875,10 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>postfix</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>format</code></td><td><i>string</i></td><td><code>'%(a)s'</code> </td></tr>
-<tr><td><code>start</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
+              <tr><td><code>format</code></td><td><i>string</i></td><td><p>sprintf-style format template</p></td><td><code>'%(a)s'</code> </td></tr>
+<tr><td><code>start</code></td><td><i>number</i></td><td></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -1887,14 +1887,14 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>shorttitle</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>n</code></td><td><i>number</i></td><td><code>3</code> </td></tr>
-<tr><td><code>m</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
+              <tr><td><code>n</code></td><td><i>number</i></td><td><p>number of words to select</p></td><td><code>3</code> </td></tr>
+<tr><td><code>m</code></td><td><i>number</i></td><td><p>number of words to capitalize. <code>0</code> means no capitalization</p></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
-        <p>The first <code>n</code> (default: 3) words of the title, apply capitalization to first <code>m</code> (default: 0) of those </p></dd>
+        <p>The first <code>n</code> (default: 3) words of the title, apply capitalization to first <code>m</code> (default: 0) of those. </p></dd>
   
     <dt><code>shortyear</code></dt><dd><p>The last 2 digits of the publication year </p></dd>
   
@@ -1914,14 +1914,14 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>veryshorttitle</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>n</code></td><td><i>number</i></td><td><code>1</code> </td></tr>
-<tr><td><code>m</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
+              <tr><td><code>n</code></td><td><i>number</i></td><td><p>number of words to select</p></td><td><code>1</code> </td></tr>
+<tr><td><code>m</code></td><td><i>number</i></td><td><p>number of words to capitalize. <code>0</code> means no capitalization</p></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
-        <p>The first <code>n</code> (default: 1) words of the title, apply capitalization to first <code>m</code> (default: 0) of those </p></dd>
+        <p>The first <code>n</code> words of the title, apply capitalization to first <code>m</code> of those </p></dd>
   
     <dt><code>year</code></dt><dd><p>The year of the publication </p></dd>
   
@@ -2368,13 +2368,13 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>acronym</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>list</code></td><td><i>string</i></td><td><code>'acronyms'</code> </td></tr>
+              <tr><td><code>list</code></td><td><i>string</i></td><td><p>lookup list. The list must be a CSV file and live in the <code>Zotero/better-bibtex</code> directory in your Zotero profile, and must use commas as the delimiter.</p></td><td><code>'acronyms'</code> </td></tr>
             </tbody>
           </table>
           </details>
-        <p>Does an acronym lookup for the text. You can optionally pass the name of the list; the list must live in the Zotero/better-bibtex directory in your profile, and must use commas as the delimiter. </p></dd>
+        <p>Does an acronym lookup for the text. </p></dd>
   
     <dt><code>alphanum</code></dt></dd><p>clears out everything but unicode alphanumeric characters (unicode character classes <code>L</code> and <code>N</code>) </p></dd>
   
@@ -2387,20 +2387,20 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>condense</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>sep</code></td><td><i>string</i></td><td><code>''</code> </td></tr>
+              <tr><td><code>sep</code></td><td><i>string</i></td><td><p>replacement character</p></td><td><code>''</code> </td></tr>
             </tbody>
           </table>
           </details>
-        <p>this replaces spaces in the value passed in. You can specify what to replace it with by adding it as a parameter, e.g <code>.condense(_)</code> will replace spaces with underscores. <strong>Parameter should not contain spaces</strong> unless you want the spaces in the value passed in to be replaced with those spaces in the parameter </p></dd>
+        <p>replaces spaces in the value passed in. You can specify what to replace it with by adding it as a parameter, e.g <code>.condense(_)</code> will replace spaces with underscores. Equivalent to <code>.replace(/\s+/g, sep)</code>. </p></dd>
   
     <dt><code>default</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>text</code></td><td><i>string</i></td><td></td></tr>
+              <tr><td><code>text</code></td><td><i>string</i></td><td><p>literal text to return</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
@@ -2411,9 +2411,9 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>fold</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>mode</code></td><td><code>chinese</code> / <code>german</code> / <code>japanese</code></td><td></td></tr>
+              <tr><td><code>mode</code></td><td><code>chinese</code> / <code>german</code> / <code>japanese</code></td><td><p>specialized folding modes for german, japanese or chinese</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
@@ -2422,9 +2422,9 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>formatDate</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>format</code></td><td><i>string</i></td><td><code>'%Y-%m-%d'</code> </td></tr>
+              <tr><td><code>format</code></td><td><i>string</i></td><td><p>sprintf-style format template</p></td><td><code>'%Y-%m-%d'</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -2437,10 +2437,10 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>len</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>relation</code></td><td><code>!=</code> / <code><</code> / <code><=</code> / <code>=</code> / <code>></code> / <code>>=</code></td><td><code>'>'</code> </td></tr>
-<tr><td><code>length</code></td><td><i>number</i></td><td><code>+0</code> </td></tr>
+              <tr><td><code>relation</code></td><td><code>!=</code> / <code><</code> / <code><=</code> / <code>=</code> / <code>></code> / <code>>=</code></td><td><p>comparison operator</p></td><td><code>'>'</code> </td></tr>
+<tr><td><code>length</code></td><td><i>number</i></td><td><p>value to compare length with</p></td><td><code>+0</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -2453,9 +2453,10 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>match</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>match</code></td><td><i>RegExp</i> / <i>string</i></td><td></td></tr>
+              <tr><td><code>match</code></td><td><i>RegExp</i> / <i>string</i></td><td><p>regex or string to match. String matches are case-insensitive</p></td><td></td></tr>
+<tr><td><code>clean</code></td><td><i>boolean</i></td><td><p>transliterates the current output and removes unsafe characters during matching</p></td><td><code>false</code> </td></tr>
             </tbody>
           </table>
           </details>
@@ -2479,9 +2480,9 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>postfix</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>postfix</code></td><td><i>string</i></td><td></td></tr>
+              <tr><td><code>postfix</code></td><td><i>string</i></td><td><p>postfix string</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
@@ -2490,9 +2491,9 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>prefix</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>prefix</code></td><td><i>string</i></td><td></td></tr>
+              <tr><td><code>prefix</code></td><td><i>string</i></td><td><p>prefix string</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
@@ -2501,10 +2502,10 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>replace</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>find</code></td><td><i>string</i> / <i>RegExp</i></td><td></td></tr>
-<tr><td><code>replace</code></td><td><i>string</i></td><td></td></tr>
+              <tr><td><code>find</code></td><td><i>string</i> / <i>RegExp</i></td><td><p>string or regex to match. String matches are case-insensitive</p></td><td></td></tr>
+<tr><td><code>replace</code></td><td><i>string</i></td><td><p>literal text to replace the match with</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
@@ -2513,10 +2514,10 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>select</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>start</code></td><td><i>number</i></td><td><code>1</code> </td></tr>
-<tr><td><code>n</code></td><td><i>number</i></td><td></td></tr>
+              <tr><td><code>start</code></td><td><i>number</i></td><td><p>first word to select (1-based)</p></td><td><code>1</code> </td></tr>
+<tr><td><code>n</code></td><td><i>number</i></td><td><p>number of words to select. Default is all.</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
@@ -2530,21 +2531,21 @@ that yields a non-empty string. If all return a empty string, a random key will 
     <dt><code>substring</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>start</code></td><td><i>number</i></td><td><code>1</code> </td></tr>
-<tr><td><code>n</code></td><td><i>number</i></td><td></td></tr>
+              <tr><td><code>start</code></td><td><i>number</i></td><td><p>starting character (1-based)</p></td><td><code>1</code> </td></tr>
+<tr><td><code>n</code></td><td><i>number</i></td><td><p>number of characters to select (default: remainder from <code>start</code>)</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
-        <p><code>substring(start,n)</code> selects <code>n</code> (default: all) characters starting at <code>start</code> (default: 1) </p></dd>
+        <p><code>substring(start,n)</code> selects <code>n</code> (default: all) characters starting at <code>start</code> </p></dd>
   
     <dt><code>transliterate</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>mode</code></td><td><code>chinese</code> / <code>de</code> / <code>german</code> / <code>ja</code> / <code>japanese</code> / <code>minimal</code> / <code>zh</code></td><td></td></tr>
+              <tr><td><code>mode</code></td><td><code>chinese</code> / <code>de</code> / <code>german</code> / <code>ja</code> / <code>japanese</code> / <code>minimal</code> / <code>zh</code></td><td><p>specialized translateration modes for german, japanese or chinese. default is minimal</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
