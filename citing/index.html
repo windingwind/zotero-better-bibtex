@@ -1881,7 +1881,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
             </tbody>
           </table>
           </details>
-        <p>a pseudo-function that sets the citekey disambiguation postfix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec for when a key is generated that already exists. Does not add any text to the citekey otherwise. You <em>must</em> include <em>exactly</em> one of the placeholders <code>%(n)s</code>&gt; (number), <code>%(a)s</code> (alpha, lowercase) or <code>e&gt;%(A)s</code> (alpha, uppercase). For the rest of the disambiguator you can use things like padding and extra text as sprintf-js allows. With <code>+1</code> the disambiguator is always included, even if there is no need for it when no duplicates exist. The default  format is <code>%(a)s</code>. </p></dd>
+        <p>a pseudo-function that sets the citekey disambiguation postfix using an <a href="https://www.npmjs.com/package/sprintf-js">sprintf-js</a> format spec for when a key is generated that already exists. Does not add any text to the citekey otherwise. You <em>must</em> include <em>exactly one</em> of the placeholders <code>%(n)s</code> (number), <code>%(a)s</code> (alpha, lowercase) or <code>%(A)s</code> (alpha, uppercase). For the rest of the disambiguator you can use things like padding and extra text as sprintf-js allows. With <code>+1</code> the disambiguator is always included, even if there is no need for it when no duplicates exist. The default  format is <code>%(a)s</code>. </p></dd>
   
     <dt><code>shorttitle</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
