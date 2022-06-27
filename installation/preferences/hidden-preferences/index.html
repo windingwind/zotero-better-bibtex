@@ -1552,6 +1552,7 @@ Better BibTeX for Zotero
     <li><a href="#import">import</a></li>
     <li><a href="#importcitationkey">importCitationKey</a></li>
     <li><a href="#importextra">importExtra</a></li>
+    <li><a href="#importnotetoextra">importNoteToExtra</a></li>
     <li><a href="#importunknowntexcommand">importUnknownTexCommand</a></li>
     <li><a href="#itemobserverdelay">itemObserverDelay</a></li>
     <li><a href="#mapmath">mapMath</a></li>
@@ -1647,6 +1648,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h2 id="importextra">importExtra</h2>
 <p>default: <code>yes</code></p>
 <p>On import, place all bib(la)tex field Zotero doesn&rsquo;t have an existing field for in the Zotero <code>extra</code> field of the item</p>
+<h2 id="importnotetoextra">importNoteToExtra</h2>
+<p>default: <code>annote,annotation</code></p>
+<p>On import, import note-like fields in this comma-separated list to the <code>extra</code> field, unless the note has rich text.</p>
 <h2 id="importunknowntexcommand">importUnknownTexCommand</h2>
 <p>default: <code>ignore</code></p>
 <p>What to do when encountering a TeX command the parser does not know about. Please only use values:</p>
