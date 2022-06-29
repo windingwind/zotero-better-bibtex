@@ -1555,6 +1555,7 @@ Better BibTeX for Zotero
     </li>
     <li><a href="#fields">Fields</a>
       <ul>
+        <li><a href="#export-language-as">Export language as</a></li>
         <li><a href="#when-an-item-has-both-a-doi-and-a-url-export">When an item has both a DOI and a URL, export</a></li>
         <li><a href="#fields-to-omit-from-export-comma-separated">Fields to omit from export (comma-separated):</a></li>
         <li><a href="#include-jabref-specific-metadata">Include JabRef-specific metadata:</a></li>
@@ -1648,6 +1649,15 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>default: <code>no</code></p>
 <p>Use the extended biber 2.7 format for names with particles - only works in BibLaTeX 3.5 or later. This biblatex has a new (less ambiguous) way to store creator names. It&rsquo;s technically superior, but the LaTeX world moves slowly, so many people won&rsquo;t have it yet. But if you&rsquo;re an early adopter, you can enable it here</p>
 <h2 id="fields">Fields</h2>
+<h3 id="export-language-as">Export language as</h3>
+<p>default: <code>langid</code></p>
+<p>Export either langid, language or both fields based on the item language (if any).</p>
+<p>Options:</p>
+<ul>
+<li>langid</li>
+<li>language</li>
+<li>both</li>
+</ul>
 <h3 id="when-an-item-has-both-a-doi-and-a-url-export">When an item has both a DOI and a URL, export</h3>
 <p>default: <code>both</code></p>
 <p>Does what it says on the tin, really. If an item has both a DOI and an URL, you can choose to have them both exported, or either one of them. Note that for BibTeX, you must load the <code>url</code> package when you have <code>doi</code> or <code>url</code> fields. <code>doi</code> and <code>url</code> fields are so-called <code>verbatim</code> fields with different escaping rules, and BibTeX compilation will likely error out without the package loaded.</p>
