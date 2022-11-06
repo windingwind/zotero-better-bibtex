@@ -33,8 +33,7 @@ paste it in your .</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/zotero-better-bibtex/support/faq/</guid>
-      <description>Are there any plans to support Firefox 57+? BBT lives where Zotero lives, and Zotero only has standalone these days. BBT is installed inside Zotero instead of in the browser. Please see the installation instructions to get started with BBT.
-Add-on could not be installed because it appears to be corrupt. You have downloaded the Better BibTeX plugin by clicking on the download link using Firefox. As Zotero and Firefox use the same plugin technology, Firefox think the BetterBibTeX plugin is intended for itself, tries to install it, and then finds out it won&amp;rsquo;t work.</description>
+      <description>Add-on could not be installed because it appears to be corrupt. You have downloaded the Better BibTeX plugin by clicking on the download link using Firefox. As Zotero and Firefox use the same plugin technology, Firefox think the BetterBibTeX plugin is intended for itself, tries to install it, and then finds out it won&amp;rsquo;t work. You need to download the plugin without installinging it into Firefox by right-clicking the download link, choose save-as, and then install it into Zotero using installation instructions to get started with BBT.</description>
     </item>
     
     <item>
