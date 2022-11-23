@@ -1780,17 +1780,6 @@ that yields a non-empty string. If all return a empty string, a random key will 
           </details>
         <p>The last name if one author/editor is given; the first character of up to three authors' last names if more than one author is given. A plus character is added, if there are more than three authors. </p></dd>
   
-    <dt><code>clean</code></dt><dd>
-          <details class="details"><summary class="summary">parameters:</summary>
-          <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
-            <tbody>
-              <tr><td><code>enabled</code></td><td><i>boolean</i></td><td></td></tr>
-            </tbody>
-          </table>
-          </details>
-        <p>turn auto-cleaning on/off </p></dd>
-  
     <dt><code>date</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
@@ -1814,17 +1803,6 @@ that yields a non-empty string. If all return a empty string, a random key will 
         <p>A pseudo-field from the extra field. eg if you have <code>Original date: 1970</code> in your <code>extra</code> field, you can get it as <code>extra(originalDate)</code>, or <code>tex.shortauthor: APA</code> which you could get with <code>extra('tex.shortauthor')</code>. Any <code>tex.</code> field will be picked up, the other fields can be selected from <a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/">this list</a> of key names. </p></dd>
   
     <dt><code>firstpage</code></dt><dd><p>The number of the first page of the publication (Caution: this will return the lowest number found in the pages field, since BibTeX allows <code>7,41,73--97</code> or <code>43+</code>.) </p></dd>
-  
-    <dt><code>fold</code></dt><dd>
-          <details class="details"><summary class="summary">parameters:</summary>
-          <table>
-            <thead><tr><th>parameter</th><th>type</th><th>default</th></tr></thead>
-            <tbody>
-              <tr><td><code>enabled</code></td><td><i>boolean</i></td><td></td></tr>
-            </tbody>
-          </table>
-          </details>
-        <p>turn auto-cleaning on/off </p></dd>
   
     <dt><code>infix</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
