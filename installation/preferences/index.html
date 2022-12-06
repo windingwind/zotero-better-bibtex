@@ -1534,8 +1534,10 @@ Better BibTeX for Zotero
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#citation-key-formula">Citation key formula</a></li>
     <li><a href="#force-citation-key-to-plain-text">Force citation key to plain text</a></li>
     <li><a href="#enable-citation-key-search">Enable citation key search</a></li>
+    <li><a href="#automatically-pin-citation-key-after">Automatically pin citation key after</a></li>
     <li><a href="#keeping-citation-keys-unique">Keeping citation keys unique</a>
       <ul>
         <li><a href="#keep-keys-unique">Keep keys unique</a></li>
@@ -1587,12 +1589,18 @@ Better BibTeX for Zotero
 only have hidden preferences). The defaults should just work, but here&rsquo;s an attempt to describe what they do.</p>
 <p><strong>Making any change here will drop your entire export cache.</strong> This is usually not a problem unless you have a
 really large library, but you can read about what is involved <a href="/zotero-better-bibtex/support/performance/">here</a>.</p>
+<h2 id="citation-key-formula">Citation key formula</h2>
+<p>default: <code>​auth.lower + shorttitle(3,3) + year</code></p>
+<p>Set the pattern used to generate citation keys. The format of the keys is documented [here]({{ ref . &ldquo;citing&rdquo; }}).</p>
 <h2 id="force-citation-key-to-plain-text">Force citation key to plain text</h2>
 <p>default: <code>yes</code></p>
 <p>If you have deviated from the default citation key format pattern by [specifying your own]({{ ref . &ldquo;citing&rdquo; }}), you may wind up with non-ASCII characters in your citation keys. You can prevent that using the <code>fold</code> function at the appropriate place in your pattern, but checking this checkbox will just apply <code>fold</code> to all your keys.</p>
 <h2 id="enable-citation-key-search">Enable citation key search</h2>
 <p>default: <code>yes</code></p>
 <p>Enable searching on citation keys. Slows down startup on very large libraries. Requires Zotero restart to enable/disable.</p>
+<h2 id="automatically-pin-citation-key-after">Automatically pin citation key after</h2>
+<p>default: <code>0</code></p>
+<p>When &gt; 0, BBT will automatically pin the first citation keys it generates for an item after this many seconds.</p>
 <h2 id="keeping-citation-keys-unique">Keeping citation keys unique</h2>
 <h3 id="keep-keys-unique">Keep keys unique</h3>
 <p>default: <code>within each library</code></p>

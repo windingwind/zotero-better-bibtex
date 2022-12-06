@@ -1541,9 +1541,7 @@ Better BibTeX for Zotero
 <nav id="TableOfContents">
   <ul>
     <li><a href="#ascii">ascii</a></li>
-    <li><a href="#autoexportdelay">autoExportDelay</a></li>
     <li><a href="#autoexportidlewait">autoExportIdleWait</a></li>
-    <li><a href="#autopindelay">autoPinDelay</a></li>
     <li><a href="#biblatexextendeddateformat">biblatexExtendedDateFormat</a></li>
     <li><a href="#cacheflushinterval">cacheFlushInterval</a></li>
     <li><a href="#charmap">charmap</a></li>
@@ -1572,7 +1570,6 @@ Better BibTeX for Zotero
     <li><a href="#verbatimfields">verbatimFields</a></li>
     <li><a href="#warntitlecased">warnTitleCased</a></li>
     <li><a href="#abbreviation-style">Abbreviation style:</a></li>
-    <li><a href="#citation-key-format">Citation key format</a></li>
   </ul>
 </nav>
     </div>
@@ -1614,15 +1611,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h2 id="ascii">ascii</h2>
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>If you have unicode turned on you can still selectively replace some characters to plain-text commands; any characters entered here will always be replaced by their LaTeX-command counterparts.</p>
-<h2 id="autoexportdelay">autoExportDelay</h2>
-<p>default: <code>5</code></p>
-<p>If you have auto-exports set up, BBT will wait this many seconds before actually kicking off the exports to buffer multiple changes in quick succession setting off an unreasonable number of auto-exports. Minimum is 1 second. Changes to this preference take effect after restarting Zotero.</p>
 <h2 id="autoexportidlewait">autoExportIdleWait</h2>
 <p>default: <code>10</code></p>
 <p>Number of seconds to wait after your system goes idle before kicking off auto-exports.</p>
-<h2 id="autopindelay">autoPinDelay</h2>
-<p>default: <code>0</code></p>
-<p>When &gt; 0, BBT will automatically pin the first citation keys it generates for an item after this many seconds.</p>
 <h2 id="biblatexextendeddateformat">biblatexExtendedDateFormat</h2>
 <p>default: <code>yes</code></p>
 <p>Support for EDTF dates in biblatex</p>
@@ -1725,9 +1716,6 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h2 id="abbreviation-style">Abbreviation style:</h2>
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>Select the style for auto-abbreviation. Only applicable to Juris-M; in Zotero, the style for automatic abbreviation is not configurable.</p>
-<h2 id="citation-key-format">Citation key format</h2>
-<p>default: <code>​auth.lower + shorttitle(3,3) + year</code></p>
-<p>Set the pattern used to generate citation keys. The format of the keys is documented [here]({{ ref . &ldquo;citing&rdquo; }}).</p>
 
 
 <footer class="footline">
