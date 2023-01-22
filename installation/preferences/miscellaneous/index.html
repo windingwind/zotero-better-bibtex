@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Hugo 0.110.0">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1548,8 +1548,6 @@ Better BibTeX for Zotero
     <li><a href="#string-definitions">@string definitions</a>
       <ul>
         <li><a href="#expand-the-string-vars-below-during-imports">Expand the @string vars below during imports</a></li>
-        <li><a href="#if-a-field-could-be-a-string-reference-export-it-as-an-unbraced-string-reference">If a field could be a @string reference, export it as an unbraced @string reference</a></li>
-        <li><a href="#string-definitions-1">@string definitions</a></li>
       </ul>
     </li>
   </ul>
@@ -1604,20 +1602,6 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h3 id="expand-the-string-vars-below-during-imports">Expand the @string vars below during imports</h3>
 <p>default: <code>yes</code></p>
 <p>When enabled, BBT will prepend the @strings section below to all Bib(La)TeX imports and will expand the strings during export.</p>
-<h3 id="if-a-field-could-be-a-string-reference-export-it-as-an-unbraced-string-reference">If a field could be a @string reference, export it as an unbraced @string reference</h3>
-<h4 id="if-a-field-could-be-a-string-reference-export-it-as-an-unbraced-string-reference-1">If a field could be a @string reference, export it as an unbraced @string reference</h4>
-<p>default: <code>No</code></p>
-<p>When enabled, BBT will try to retain @string vars its exports unsurrounded by braces; when set to &lsquo;detect&rsquo;, single-word strings will be assumed to be externally-defined @string vars, when set to &lsquo;match&rsquo;, only @strings declared in the @strings section of the preferences will be preserved. If you don&rsquo;t know what this means, leave it off.</p>
-<p>Options:</p>
-<ul>
-<li>No</li>
-<li>Assume single-word fields to be @string vars</li>
-<li>Match against the @string declarations below</li>
-<li>Match against the @string declarations and their values below</li>
-</ul>
-<h3 id="string-definitions-1">@string definitions</h3>
-<p>default: <code>&lt;not set&gt;</code></p>
-<p>If you have externally maintained <code>@string</code> vars paste them here and they will be resolved for subsequent imports. These should be entered as <code>@string</code> declarations, such as <code>@string{IEEE_J_PWRE = &quot;{IEEE} Transactions on Power Electronics&quot;}</code>, not just the var name.</p>
 
 
 <footer class="footline">

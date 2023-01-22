@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Hugo 0.110.0">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1594,7 +1594,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>Set the pattern used to generate citation keys. The format of the keys is documented [here]({{ ref . &ldquo;citing&rdquo; }}).</p>
 <h2 id="force-citation-key-to-plain-text">Force citation key to plain text</h2>
 <p>default: <code>yes</code></p>
-<p>If you have deviated from the default citation key format pattern by [specifying your own]({{ ref . &ldquo;citing&rdquo; }}), you may wind up with non-ASCII characters in your citation keys. You can prevent that using the <code>fold</code> function at the appropriate place in your pattern, but checking this checkbox will just apply <code>fold</code> to all your keys.</p>
+<p>If you have deviated from the default citation key format pattern by [specifying your own]({{ ref . &ldquo;citing&rdquo; }}), you may
+wind up with non-ASCII characters in your citation keys. You can prevent that using the <code>fold</code> function at the
+appropriate place in your pattern, but checking this checkbox will just apply <code>fold</code> to all your keys.</p>
 <h2 id="enable-citation-key-search">Enable citation key search</h2>
 <p>default: <code>yes</code></p>
 <p>Enable searching on citation keys. Slows down startup on very large libraries. Requires Zotero restart to enable/disable.</p>
@@ -1604,7 +1606,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <h2 id="keeping-citation-keys-unique">Keeping citation keys unique</h2>
 <h3 id="keep-keys-unique">Keep keys unique</h3>
 <p>default: <code>within each library</code></p>
-<p>Auto-generated (non-pinned) keys automatically get a postfix when they would generate a duplicate. By default, the check for duplicates is restricted to the library/group the item lives in. When set to global, the check will include all libraries/groups, so auto-generated keys would be globally unique. Changing this setting <em>does not</em> affect existign keys - for this you would need to select the items and refresh the keys.</p>
+<p>Auto-generated (non-pinned) keys automatically get a postfix when they would generate a duplicate. By default, the check for duplicates is restricted
+to the library/group the item lives in. When set to global, the check will include all libraries/groups, so auto-generated keys would be globally
+unique. Changing this setting <em>does not</em> affect existign keys - for this you would need to select the items and refresh the keys.</p>
 <p>Options:</p>
 <ul>
 <li>across all libraries</li>
@@ -1612,7 +1616,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 </ul>
 <h3 id="on-conflict-with-a-pinned-key-non-pinned-keys-will-be">On conflict with a pinned key, non-pinned keys will be</h3>
 <p>default: <code>kept (causes key duplicates)</code></p>
-<p>This determines what happens if you pin a key to a value that is already in use in a different item but not pinned there. Neither are ideal, you just get to pick your poison. If you let BBT change the non-pinned key by adding a postfix character, the citation key changes which could be problematic for existing papers. If you keep the non-pinned key as-is, your library now has duplicate keys.</p>
+<p>This determines what happens if you pin a key to a value that is already in use in a different item but not pinned there.
+Neither are ideal, you just get to pick your poison. If you let BBT change the non-pinned key by adding a postfix character,
+the citation key changes which could be problematic for existing papers. If you keep the non-pinned key as-is, your library now has duplicate keys.</p>
 <p>Options:</p>
 <ul>
 <li>postfixed (causes key changes)</li>
@@ -1627,7 +1633,9 @@ really large library, but you can read about what is involved <a href="/zotero-b
 <p>When on, BBT will make Chinese word segmentation available for citation keys construction. This uses a lot of memory, easily 70MB. If you don&rsquo;t have Chinese titles/names, keep this off.</p>
 <h2 id="warn-me-when-changing-citation-keys-in-bulk">Warn me when changing citation keys in bulk</h2>
 <p>default: <code>10</code></p>
-<p>For those who are curious about what the <code>Clear/Generate BibTeX key</code> right-click options do, this will warn you if you are doing this on more than 10 (default) at the same time, to prevent your curiosity from changing all your citation keys at once.</p>
+<p>For those who are curious about what the <code>Clear/Generate BibTeX key</code> right-click options do, this will warn
+you if you are doing this on more than 10 (default) at the same time, to prevent your curiosity from changing
+all your citation keys at once.</p>
 
 
 
