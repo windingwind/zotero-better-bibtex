@@ -1547,7 +1547,7 @@ Better BibTeX for Zotero
     <li><a href="#ideographs-in-citekeys">Ideographs in citekeys</a>
       <ul>
         <li><a href="#apply-kuroshiro-romajization-in-japanese-namestitles-uses-a-lot-of-memory">Apply kuroshiro romajization in Japanese names/titles. Uses a lot of memory.</a></li>
-        <li><a href="#enable-jieba-filter-in-citekey-patterns-uses-a-lot-of-memory">Enable &lsquo;jieba&rsquo; filter in citekey patterns. Uses a lot of memory.</a></li>
+        <li><a href="#enable-jiebapinyin-filters-in-citekey-patterns-uses-a-lot-of-memory">Enable &lsquo;jieba&rsquo;/&lsquo;pinyin&rsquo; filters in citekey patterns. Uses a lot of memory.</a></li>
       </ul>
     </li>
     <li><a href="#warn-me-when-changing-citation-keys-in-bulk">Warn me when changing citation keys in bulk</a></li>
@@ -1628,9 +1628,9 @@ the citation key changes which could be problematic for existing papers. If you 
 <h3 id="apply-kuroshiro-romajization-in-japanese-namestitles-uses-a-lot-of-memory">Apply kuroshiro romajization in Japanese names/titles. Uses a lot of memory.</h3>
 <p>default: <code>no</code></p>
 <p>When on, BBT will load kuroshiro for romajization in citation keys. This uses a lot of memory, easily 100MB. If you don&rsquo;t have Japanese titles/names, keep this off.</p>
-<h3 id="enable-jieba-filter-in-citekey-patterns-uses-a-lot-of-memory">Enable &lsquo;jieba&rsquo; filter in citekey patterns. Uses a lot of memory.</h3>
+<h3 id="enable-jiebapinyin-filters-in-citekey-patterns-uses-a-lot-of-memory">Enable &lsquo;jieba&rsquo;/&lsquo;pinyin&rsquo; filters in citekey patterns. Uses a lot of memory.</h3>
 <p>default: <code>no</code></p>
-<p>When on, BBT will make Chinese word segmentation available for citation keys construction. This uses a lot of memory, easily 70MB, and adds several seconds to the startup time of BBT. If you don&rsquo;t have Chinese titles/names, keep this off.</p>
+<p>When on, BBT will make Chinese word segmentation (jieba) and transliteration (pinyin) available for citation keys generation. This uses a lot of memory, easily 70MB, and adds several seconds to the startup time of BBT. If you don&rsquo;t have Chinese titles/names, keep this off.</p>
 <h2 id="warn-me-when-changing-citation-keys-in-bulk">Warn me when changing citation keys in bulk</h2>
 <p>default: <code>10</code></p>
 <p>For those who are curious about what the <code>Clear/Generate BibTeX key</code> right-click options do, this will warn
