@@ -1565,7 +1565,7 @@ convert to/from unicode and (un)escape where required but will pass whatever is 
 <code>&lt;script&gt;...&lt;/script&gt;</code>, so you can include LaTeX markup in your items.</li>
 </ul>
 <h2 id="recognizing-initials-in-names">Recognizing initials in names</h2>
-<p>In names, you can force first names like <code>Philippe</code> to be exported to <code>{\relax Ph}ilippe</code> (which causes it to get initial <code>Ph.</code> rather than <code>P.</code> in styles that do initials) by adding a <a href="http://www.fileformat.info/info/unicode/char/0097/index.htm">end of guarded area</a> character between <code>Ph</code> and <code>ilippe</code>.</p>
+<p>In names, you can force first names like <code>Philippe</code> to be exported to <code>{\relax Ph}ilippe</code> (which causes it to get initial <code>Ph.</code> rather than <code>P.</code> in styles that do initials) by adding an <a href="https://invisible-characters.com/">invisible separator</a> (<code>⁣</code>) character between <code>Ph</code> and <code>ilippe</code>.</p>
 
 
 <footer class="footline">
