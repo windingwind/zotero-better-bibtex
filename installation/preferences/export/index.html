@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.111.0">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
 <meta name="author" content="Emiliano Heyns">
 
@@ -1570,6 +1570,7 @@ Better BibTeX for Zotero
     <li><a href="#miscellaneous">Miscellaneous</a>
       <ul>
         <li><a href="#automatically-abbreviate-journal-title-if-none-is-set-explicitly">Automatically abbreviate journal title if none is set explicitly</a></li>
+        <li><a href="#abbreviation-style">Abbreviation style:</a></li>
         <li><a href="#include-comments-about-potential-problems-with-the-exported-entries">Include comments about potential problems with the exported entries</a></li>
         <li><a href="#include-automatic-tags-in-export">Include automatic tags in export</a></li>
         <li><a href="#when-converting-to-plain-text-latex-commands">When converting to plain-text latex commands:</a></li>
@@ -1738,6 +1739,10 @@ To find out what an item looks like inside the template, export some items as Be
 <h3 id="automatically-abbreviate-journal-title-if-none-is-set-explicitly">Automatically abbreviate journal title if none is set explicitly</h3>
 <p>default: <code>no</code></p>
 <p>If set, generates journal abbreviations on export using the Zotero journal abbreviator, according to the abbreviation style selected in the list below the checkbox.</p>
+<h3 id="abbreviation-style">Abbreviation style:</h3>
+<p>default: <code>&lt;not set&gt;</code></p>
+<p>Select the style for auto-abbreviation. Only applicable to Juris-M; in Zotero, the style for automatic
+abbreviation is not configurable.</p>
 <h3 id="include-comments-about-potential-problems-with-the-exported-entries">Include comments about potential problems with the exported entries</h3>
 <p>default: <code>no</code></p>
 <p>Generate quality reports for exported entries. These show up only in BibTeX and BibLaTeX report formats and indicate things like missing required fields and
