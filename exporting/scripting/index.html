@@ -1533,6 +1533,7 @@ Better BibTeX for Zotero
     <li><a href="#you-wanted-customized">You wanted customized&hellip;</a></li>
     <li><a href="#the-api-for-better-bibtex-and-better-biblatex">The API for <code>Better BibTeX</code> and <code>Better BibLaTeX</code></a></li>
     <li><a href="#the-api-for-bettercsljson-and-bettercslyaml">The API for <code>BetterCSLJSON</code> and <code>BetterCSLYAML</code></a></li>
+    <li><a href="#item-types-and-fields">Item types and fields</a></li>
     <li><a href="#debugging">Debugging</a></li>
     <li><a href="#samples">Samples</a>
       <ul>
@@ -1671,6 +1672,570 @@ the existing creator fields on <code>tex</code>.</p>
 <li><code>zotero</code> is the Zotero item it&rsquo;s being built from.</li>
 </ul>
 <p>There isn&rsquo;t really an API. You can use regular javascript to manipulate the <code>csl</code> object, which is a <a href="http://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables">CSL-JSON</a> object.</p>
+<h2 id="item-types-and-fields">Item types and fields</h2>
+<p>In a postscript <code>zotero.itemType</code> will have one of these values:</p>
+<table>
+  
+    <tr>
+      
+        <td>annotation<sup>Z</sup></td>
+      
+        <td>artwork</td>
+      
+        <td>attachment</td>
+      
+        <td>audioRecording</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>bill</td>
+      
+        <td>blogPost</td>
+      
+        <td>book</td>
+      
+        <td>bookSection</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>case</td>
+      
+        <td>classic<sup>JM</sup></td>
+      
+        <td>computerProgram</td>
+      
+        <td>conferencePaper</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>dictionaryEntry</td>
+      
+        <td>document</td>
+      
+        <td>email</td>
+      
+        <td>encyclopediaArticle</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>film</td>
+      
+        <td>forumPost</td>
+      
+        <td>gazette<sup>JM</sup></td>
+      
+        <td>hearing</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>instantMessage</td>
+      
+        <td>interview</td>
+      
+        <td>journalArticle</td>
+      
+        <td>legalCommentary<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>letter</td>
+      
+        <td>magazineArticle</td>
+      
+        <td>manuscript</td>
+      
+        <td>map</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>newspaperArticle</td>
+      
+        <td>note</td>
+      
+        <td>patent</td>
+      
+        <td>podcast</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>preprint<sup>Z</sup></td>
+      
+        <td>presentation</td>
+      
+        <td>radioBroadcast</td>
+      
+        <td>regulation<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>report</td>
+      
+        <td>standard<sup>JM</sup></td>
+      
+        <td>statute</td>
+      
+        <td>thesis</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>treaty<sup>JM</sup></td>
+      
+        <td>tvBroadcast</td>
+      
+        <td>videoRecording</td>
+      
+        <td>webpage</td>
+      
+    </tr>
+  
+</table>
+
+<p>Other fields on the <code>zotero</code> object are:</p>
+<table>
+  
+    <tr>
+      
+        <td>DOI</td>
+      
+        <td>ISBN</td>
+      
+        <td>ISSN</td>
+      
+        <td>abstractNote</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>accessDate</td>
+      
+        <td>adminFlag<sup>JM</sup></td>
+      
+        <td>adoptionDate<sup>JM</sup></td>
+      
+        <td>album<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>applicationNumber</td>
+      
+        <td>archive</td>
+      
+        <td>archiveCollection<sup>JM</sup></td>
+      
+        <td>archiveID<sup>Z</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>archiveLocation</td>
+      
+        <td>artworkMedium</td>
+      
+        <td>artworkSize</td>
+      
+        <td>assemblyNumber<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>assignee</td>
+      
+        <td>audioFileType</td>
+      
+        <td>audioRecordingFormat</td>
+      
+        <td>billNumber</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>blogTitle</td>
+      
+        <td>bookAbbreviation<sup>JM</sup></td>
+      
+        <td>bookTitle</td>
+      
+        <td>callNumber</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>caseName</td>
+      
+        <td>code</td>
+      
+        <td>codeNumber</td>
+      
+        <td>codePages</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>codeVolume</td>
+      
+        <td>committee</td>
+      
+        <td>company</td>
+      
+        <td>conferenceDate<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>conferenceName</td>
+      
+        <td>country</td>
+      
+        <td>court</td>
+      
+        <td>date</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>dateAmended<sup>JM</sup></td>
+      
+        <td>dateDecided</td>
+      
+        <td>dateEnacted</td>
+      
+        <td>dictionaryTitle</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>distributor</td>
+      
+        <td>division<sup>JM</sup></td>
+      
+        <td>docketNumber</td>
+      
+        <td>documentName<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>documentNumber</td>
+      
+        <td>edition</td>
+      
+        <td>encyclopediaTitle</td>
+      
+        <td>episodeNumber</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>filingDate</td>
+      
+        <td>firstPage</td>
+      
+        <td>forumTitle</td>
+      
+        <td>gazetteFlag<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>genre</td>
+      
+        <td>history</td>
+      
+        <td>institution</td>
+      
+        <td>interviewMedium</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>issue</td>
+      
+        <td>issueDate</td>
+      
+        <td>issuingAuthority</td>
+      
+        <td>journalAbbreviation</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>jurisdiction<sup>JM</sup></td>
+      
+        <td>label</td>
+      
+        <td>language</td>
+      
+        <td>legalStatus</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>legislativeBody</td>
+      
+        <td>letterType</td>
+      
+        <td>libraryCatalog</td>
+      
+        <td>manuscriptType</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>mapType</td>
+      
+        <td>medium</td>
+      
+        <td>meetingName</td>
+      
+        <td>meetingNumber<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>nameOfAct</td>
+      
+        <td>network</td>
+      
+        <td>newsCaseDate<sup>JM</sup></td>
+      
+        <td>numPages</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>number</td>
+      
+        <td>numberOfVolumes</td>
+      
+        <td>openingDate<sup>JM</sup></td>
+      
+        <td>opus<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>originalDate<sup>JM</sup></td>
+      
+        <td>pages</td>
+      
+        <td>parentTreaty<sup>JM</sup></td>
+      
+        <td>patentNumber</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>place</td>
+      
+        <td>postType</td>
+      
+        <td>presentationType</td>
+      
+        <td>priorityDate<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>priorityNumbers</td>
+      
+        <td>proceedingsTitle</td>
+      
+        <td>programTitle</td>
+      
+        <td>programmingLanguage</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>publicLawNumber</td>
+      
+        <td>publicationDate<sup>JM</sup></td>
+      
+        <td>publicationNumber<sup>JM</sup></td>
+      
+        <td>publicationTitle</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>publisher</td>
+      
+        <td>references</td>
+      
+        <td>regnalYear<sup>JM</sup></td>
+      
+        <td>regulationType<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>regulatoryBody<sup>JM</sup></td>
+      
+        <td>reign<sup>JM</sup></td>
+      
+        <td>release<sup>JM</sup></td>
+      
+        <td>reportNumber</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>reportType</td>
+      
+        <td>reporter</td>
+      
+        <td>reporterVolume</td>
+      
+        <td>repository<sup>Z</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>resolutionLabel<sup>JM</sup></td>
+      
+        <td>rights</td>
+      
+        <td>runningTime</td>
+      
+        <td>scale</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>section</td>
+      
+        <td>series</td>
+      
+        <td>seriesNumber</td>
+      
+        <td>seriesText</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>seriesTitle</td>
+      
+        <td>session</td>
+      
+        <td>sessionType<sup>JM</sup></td>
+      
+        <td>shortTitle</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>signingDate<sup>JM</sup></td>
+      
+        <td>status<sup>JM</sup></td>
+      
+        <td>studio</td>
+      
+        <td>subject</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>supplementName<sup>JM</sup></td>
+      
+        <td>system</td>
+      
+        <td>thesisType</td>
+      
+        <td>title</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>treatyNumber<sup>JM</sup></td>
+      
+        <td>type</td>
+      
+        <td>university</td>
+      
+        <td>url</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>versionNumber</td>
+      
+        <td>videoRecordingFormat</td>
+      
+        <td>volume</td>
+      
+        <td>volumeTitle<sup>JM</sup></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td>websiteTitle</td>
+      
+        <td>websiteType</td>
+      
+        <td>yearAsVolume<sup>JM</sup></td>
+      
+        <td></td>
+      
+    </tr>
+  
+</table>
+
+<p>(types/fields marked <sup>Z</sup> are only available in Zotero, fields marked with <sup>JM</sup> are only available in Juris-M).</p>
 <h2 id="debugging">Debugging</h2>
 <p>There isn&rsquo;t much in place in terms of debugging, as tranlators (and
 thus postscripts) are not allowed to do any UI work. You can do
