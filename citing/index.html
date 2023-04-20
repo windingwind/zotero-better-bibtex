@@ -1917,7 +1917,7 @@ that yields a non-empty string. If all return a empty string, a random key will 
           <table>
             <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
             <tbody>
-              <tr><td><code>allowed</code></td><td><code>artwork</code> / <code>audioRecording</code> / <code>bill</code> / <code>blogPost</code> / <code>book</code> / <code>bookSection</code> / <code>case</code> / <code>classic</code> / <code>computerProgram</code> / <code>conferencePaper</code> / <code>dictionaryEntry</code> / <code>document</code> / <code>email</code> / <code>encyclopediaArticle</code> / <code>film</code> / <code>forumPost</code> / <code>gazette</code> / <code>hearing</code> / <code>instantMessage</code> / <code>interview</code> / <code>journalArticle</code> / <code>legalCommentary</code> / <code>letter</code> / <code>magazineArticle</code> / <code>manuscript</code> / <code>map</code> / <code>newspaperArticle</code> / <code>patent</code> / <code>podcast</code> / <code>preprint</code> / <code>presentation</code> / <code>radioBroadcast</code> / <code>regulation</code> / <code>report</code> / <code>standard</code> / <code>statute</code> / <code>thesis</code> / <code>treaty</code> / <code>tvBroadcast</code> / <code>videoRecording</code> / <code>webpage</code></td><td><p>one or more item type names</p></td><td></td></tr>
+              <tr><td><code>allowed</code></td><td><code>artwork</code> / <code>audioRecording</code> / <code>bill</code> / <code>blogPost</code> / <code>book</code> / <code>bookSection</code> / <code>case</code> / <code>classic</code> / <code>computerProgram</code> / <code>conferencePaper</code> / <code>dataset</code> / <code>dictionaryEntry</code> / <code>document</code> / <code>email</code> / <code>encyclopediaArticle</code> / <code>film</code> / <code>forumPost</code> / <code>gazette</code> / <code>hearing</code> / <code>instantMessage</code> / <code>interview</code> / <code>journalArticle</code> / <code>legalCommentary</code> / <code>letter</code> / <code>magazineArticle</code> / <code>manuscript</code> / <code>map</code> / <code>newspaperArticle</code> / <code>patent</code> / <code>podcast</code> / <code>preprint</code> / <code>presentation</code> / <code>radioBroadcast</code> / <code>regulation</code> / <code>report</code> / <code>standard</code> / <code>statute</code> / <code>thesis</code> / <code>treaty</code> / <code>tvBroadcast</code> / <code>videoRecording</code> / <code>webpage</code></td><td><p>one or more item type names</p></td><td></td></tr>
             </tbody>
           </table>
           </details>
@@ -1999,17 +1999,19 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <tr>
       
+        <td>Authority<sup>Z</sup></td>
+      
         <td>BillNumber</td>
       
         <td>BlogTitle</td>
       
         <td>BookAbbreviation<sup>JM</sup></td>
       
-        <td>BookTitle</td>
-      
     </tr>
   
     <tr>
+      
+        <td>BookTitle</td>
       
         <td>CallNumber</td>
       
@@ -2017,11 +2019,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Code</td>
       
-        <td>CodeNumber</td>
-      
     </tr>
   
     <tr>
+      
+        <td>CodeNumber</td>
       
         <td>CodePages</td>
       
@@ -2029,11 +2031,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Committee</td>
       
-        <td>Company</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Company</td>
       
         <td>ConferenceDate<sup>JM</sup></td>
       
@@ -2041,11 +2043,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Country</td>
       
-        <td>Court</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Court</td>
       
         <td>DOI</td>
       
@@ -2053,11 +2055,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>DateAmended<sup>JM</sup></td>
       
-        <td>DateDecided</td>
-      
     </tr>
   
     <tr>
+      
+        <td>DateDecided</td>
       
         <td>DateEnacted</td>
       
@@ -2065,11 +2067,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Distributor</td>
       
-        <td>Division<sup>JM</sup></td>
-      
     </tr>
   
     <tr>
+      
+        <td>Division<sup>JM</sup></td>
       
         <td>DocketNumber</td>
       
@@ -2077,11 +2079,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>DocumentNumber</td>
       
-        <td>Edition</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Edition</td>
       
         <td>EncyclopediaTitle</td>
       
@@ -2089,37 +2091,45 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>FilingDate</td>
       
-        <td>FirstPage</td>
-      
     </tr>
   
     <tr>
+      
+        <td>FirstPage</td>
+      
+        <td>Format<sup>Z</sup></td>
       
         <td>ForumTitle</td>
       
         <td>GazetteFlag<sup>JM</sup></td>
       
-        <td>Genre</td>
-      
-        <td>History</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Genre</td>
+      
+        <td>History</td>
       
         <td>ISBN</td>
       
         <td>ISSN</td>
       
-        <td>Institution</td>
-      
-        <td>InterviewMedium</td>
-      
     </tr>
   
     <tr>
       
+        <td>Identifier<sup>Z</sup></td>
+      
+        <td>Institution</td>
+      
+        <td>InterviewMedium</td>
+      
         <td>Issue</td>
+      
+    </tr>
+  
+    <tr>
       
         <td>IssueDate</td>
       
@@ -2127,11 +2137,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>JournalAbbreviation</td>
       
+        <td>Jurisdiction<sup>JM</sup></td>
+      
     </tr>
   
     <tr>
-      
-        <td>Jurisdiction<sup>JM</sup></td>
       
         <td>Label</td>
       
@@ -2139,11 +2149,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>LegalStatus</td>
       
+        <td>LegislativeBody</td>
+      
     </tr>
   
     <tr>
-      
-        <td>LegislativeBody</td>
       
         <td>LetterType</td>
       
@@ -2151,11 +2161,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>ManuscriptType</td>
       
+        <td>MapType</td>
+      
     </tr>
   
     <tr>
-      
-        <td>MapType</td>
       
         <td>Medium</td>
       
@@ -2163,11 +2173,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>MeetingNumber<sup>JM</sup></td>
       
+        <td>NameOfAct</td>
+      
     </tr>
   
     <tr>
-      
-        <td>NameOfAct</td>
       
         <td>Network</td>
       
@@ -2175,17 +2185,19 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>NumPages</td>
       
+        <td>Number</td>
+      
     </tr>
   
     <tr>
-      
-        <td>Number</td>
       
         <td>NumberOfVolumes</td>
       
         <td>OpeningDate<sup>JM</sup></td>
       
         <td>Opus<sup>JM</sup></td>
+      
+        <td>Organization<sup>Z</sup></td>
       
     </tr>
   
@@ -2275,17 +2287,19 @@ that yields a non-empty string. If all return a empty string, a random key will 
   
     <tr>
       
+        <td>RepositoryLocation<sup>Z</sup></td>
+      
         <td>ResolutionLabel<sup>JM</sup></td>
       
         <td>Rights</td>
       
         <td>RunningTime</td>
       
-        <td>Scale</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Scale</td>
       
         <td>Section</td>
       
@@ -2293,11 +2307,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>SeriesNumber</td>
       
-        <td>SeriesText</td>
-      
     </tr>
   
     <tr>
+      
+        <td>SeriesText</td>
       
         <td>SeriesTitle</td>
       
@@ -2305,23 +2319,23 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>SessionType<sup>JM</sup></td>
       
-        <td>ShortTitle</td>
-      
     </tr>
   
     <tr>
+      
+        <td>ShortTitle</td>
       
         <td>SigningDate<sup>JM</sup></td>
       
-        <td>Status<sup>JM</sup></td>
+        <td>Status</td>
       
         <td>Studio</td>
-      
-        <td>Subject</td>
       
     </tr>
   
     <tr>
+      
+        <td>Subject</td>
       
         <td>SupplementName<sup>JM</sup></td>
       
@@ -2329,11 +2343,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>ThesisType</td>
       
-        <td>Title</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Title</td>
       
         <td>TreatyNumber<sup>JM</sup></td>
       
@@ -2341,11 +2355,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>University</td>
       
-        <td>Url</td>
-      
     </tr>
   
     <tr>
+      
+        <td>Url</td>
       
         <td>VersionNumber</td>
       
@@ -2353,19 +2367,17 @@ that yields a non-empty string. If all return a empty string, a random key will 
       
         <td>Volume</td>
       
-        <td>VolumeTitle<sup>JM</sup></td>
-      
     </tr>
   
     <tr>
+      
+        <td>VolumeTitle<sup>JM</sup></td>
       
         <td>WebsiteTitle</td>
       
         <td>WebsiteType</td>
       
         <td>YearAsVolume<sup>JM</sup></td>
-      
-        <td></td>
       
     </tr>
   
