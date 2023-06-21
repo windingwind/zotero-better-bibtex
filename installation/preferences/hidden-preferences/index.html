@@ -1697,7 +1697,7 @@ to remove them from the <code>extra</code> field and set the corresponding date 
 <p>You can use custom preferences per export directory:</p>
 <ol>
 <li>Edit the hidden preference <code>preferencesOverride</code>, and set it to a filename like <code>preferences.json</code></li>
-<li>In the directory where you intend to export to, create a file called <code>preferences.json</code> (or whatever you set the preference to), or called <code>[bibfile you are exporting to].json</code> and add the desired preference overrides in the format <code>{&quot;override&quot;: &quot;preferences&quot;: {&quot;skipFields&quot;: &quot;note&quot;}}</code>. You can get your current preferences by exporting to <code>BetterBibTeX JSON</code> and removing everything except config.<code>preferences</code>, and renaming <code>config</code> to <code>override</code>.</li>
+<li>In the directory where you intend to export to, create a file called <code>preferences.json</code> (or whatever you set the preference to), or called <code>[bibfile you are exporting to].json</code> and add the desired preference overrides in the format <code>{&quot;override&quot;: { &quot;preferences&quot;: {&quot;skipFields&quot;: &quot;note&quot;} } }</code>. You can get your current preferences by exporting to <code>BetterBibTeX JSON</code> and removing everything except config.<code>preferences</code>, and renaming <code>config</code> to <code>override</code>.</li>
 <li>Export to that directory.</li>
 </ol>
 <p>A preferences override will disable caching for that export.</p>
