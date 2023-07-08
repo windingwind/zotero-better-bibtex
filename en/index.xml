@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Better BibTeX for Zotero</title>
+    <link>/zotero-better-bibtex/en/</link>
+    <description>Recent content on Better BibTeX for Zotero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="/zotero-better-bibtex/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automatic export</title>
+      <link>/zotero-better-bibtex/en/exporting/auto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/exporting/auto/</guid>
+      <description>To export a library, group or collection, right-click on it in the left Zotero pane and choose &amp;ldquo;Export Library…&amp;rdquo; or &amp;ldquo;Export Collection…&amp;rdquo;. With BBT&amp;rsquo;s export translators (e.g., &amp;ldquo;Better BibTeX&amp;rdquo;), checking the Keep updated option will register the export for automation. After you’ve completed the current export, any changes to the collection or library will trigger an automatic re-export to update the file. You can review/remove exports from the BBT preferences. While I&amp;rsquo;ve gone to some lengths to make sure performance is OK, don&amp;rsquo;t go overboard with the number of auto-exports you have going.</description>
+    </item>
+    
+    <item>
+      <title>Cite as you Write</title>
+      <link>/zotero-better-bibtex/en/citing/cayw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/citing/cayw/</guid>
+      <description>PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; curl and other programmatic access such as from editors access will work.
+Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!
+Editor integration vim Graciously supplied by David Lukes:
+paste it in your .</description>
+    </item>
+    
+    <item>
+      <title>Frequently Asked Questions</title>
+      <link>/zotero-better-bibtex/en/support/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/support/faq/</guid>
+      <description>Add-on could not be installed because it appears to be corrupt. You have downloaded the Better BibTeX plugin by clicking on the download link using Firefox. As Zotero and Firefox use the same plugin technology, Firefox think the BetterBibTeX plugin is intended for itself, tries to install it, and then finds out it won&amp;rsquo;t work. You need to download the plugin without installinging it into Firefox by right-clicking the download link, choose save-as, and then install it into Zotero using installation instructions to get started with BBT.</description>
+    </item>
+    
+    <item>
+      <title>Markdown/Pandoc</title>
+      <link>/zotero-better-bibtex/en/exporting/pandoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/exporting/pandoc/</guid>
+      <description>In addition to LaTeX, BBT plays very well with pandoc:
+you can drag and drop citations from Zotero into your markdown documents. you can cite as you write in your favorite editor with varying levels of comfort, mostly depending on how easy (VSCode, Sublime) or hard (looking at you Scrivener) it is to extend your editor. you can even convert your markdown document into a LibreOffice/Word document with actual live Zotero items as if you had entered them into Zotero all along (see below) Use CSL, not bibtex with pandoc Many tutorials on the use of pandoc to generate documents with citations seem to use bibtex as a bibliography format.</description>
+    </item>
+    
+    <item>
+      <title>Migrating from Word/Libreoffice</title>
+      <link>/zotero-better-bibtex/en/citing/migrating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/citing/migrating/</guid>
+      <description>So you have decided that enough is enough, and you want to migrate your existing Word/Libreoffice document to LaTeX/Markdown. Plenty (well&amp;hellip;) tools exist to help with the migration of your document content, pandoc being the most prominent one, but one thing none of them will do is keep your citations intact. This will not do.
+If you install this CSL style in Zotero (or modify it further and use that), Zotero will render the in-text citations as [@citekey] when you ask Zotero to render the bibliography.</description>
+    </item>
+    
+    <item>
+      <title>Pull export</title>
+      <link>/zotero-better-bibtex/en/exporting/pull/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/exporting/pull/</guid>
+      <description>You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?[collectionID].[format] 1. You can get this URL for a group, library or collection by right-clicking it and selecting Download Better BibTeX export...
+You can add options to the export as URL parameters:
+&amp;amp;exportNotes=[true|false] &amp;amp;useJournalAbbreviation=[true|false] You can fetch your library as part of your build, using something like curl from your Makefile, or with a BibLaTeX remote statement like
+\addbibresource[location=remote]{http://127.0.0.1:23119/better-bibtex/collection?/0/8CV58ZVD.biblatex} format can be:</description>
+    </item>
+    
+    <item>
+      <title>Performance</title>
+      <link>/zotero-better-bibtex/en/support/performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/support/performance/</guid>
+      <description>The Better BibTeX exporters are a lot slower than the standard Zotero Bib(La)TeX exporters. If you have a small library, you will not likely notice this, but if you have several thousand items, and you are in the habit of exporting substantial parts of your library, this gets annoying really fast.
+To deal with this problem, Better BibTeX implements an extensive caching system. With a filled cache, Better BibTeX is substantially faster than the default Zotero exporters.</description>
+    </item>
+    
+    <item>
+      <title>AUX Scanner</title>
+      <link>/zotero-better-bibtex/en/citing/aux-scanner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/citing/aux-scanner/</guid>
+      <description>You can populate a collection, or tag items in your library, from an existing paper by scanning the aux file generated by bibtex, or a pandoc-markdown file, for referenced used. Scanning can be triggered from the Tools menu (for tagging the cited items) or by right-clicking a collection (for adding them to a collection). The scanner will read your AUX files and will put entries you cited in the associated LaTeX document into the current collection.</description>
+    </item>
+    
+    <item>
+      <title>Scripting</title>
+      <link>/zotero-better-bibtex/en/exporting/scripting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/exporting/scripting/</guid>
+      <description>You wanted customized&amp;hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each entry generated in the Bib(La)TeX exporter. In this code, you have access to the entry just before it will be written out and cached. There is an API to do this, and it&amp;rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&amp;rsquo;ll add it here (it&amp;rsquo;s how the examples got here).</description>
+    </item>
+    
+    <item>
+      <title>Translations</title>
+      <link>/zotero-better-bibtex/en/support/translations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/support/translations/</guid>
+      <description>BBT is currently available in English, German, French and Brazilian Portuguese. You can help out by adding new translations or fixing existing ones on Crowdin.</description>
+    </item>
+    
+    <item>
+      <title>Extra fields</title>
+      <link>/zotero-better-bibtex/en/exporting/extra-fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/exporting/extra-fields/</guid>
+      <description>In some cases the Zotero fields do not offer a place to enter the data you need to get your exported entries just right. For this Zotero has a so-called &amp;ldquo;cheater syntax&amp;rdquo; which allows you to add extra &amp;ldquo;fields&amp;rdquo; as separate lines in the extra field all items in Zotero have. These fields are supported by the citation processor inside Zotero, and BBT understands them too, and adds one &amp;ldquo;cheater syntax of its own.</description>
+    </item>
+    
+    <item>
+      <title>Running the BBT test suite</title>
+      <link>/zotero-better-bibtex/en/support/tests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/support/tests/</guid>
+      <description>Please DO NOT DO THIS without an open issue on the github tracker. I&amp;rsquo;ve been running tests this way for years, but I&amp;rsquo;d still prefer to guide you through this to prevent any risks to your citation library. The test suite has only been tested on MacOS and Linux. I doubt it&amp;rsquo;ll run on Windows, and I don&amp;rsquo;t know what will go wrong when you test. If you&amp;rsquo;re on Windows, DO NOT run this on the same account that holds your actual Zotero library.</description>
+    </item>
+    
+    <item>
+      <title>Advanced</title>
+      <link>/zotero-better-bibtex/en/exporting/advanced/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/exporting/advanced/</guid>
+      <description>You are a hardcore LaTeX user If you&amp;rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
+You can add literal LaTeX anywhere in your item by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>Export</title>
+      <link>/zotero-better-bibtex/en/installation/preferences/export/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/installation/preferences/export/</guid>
+      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
+The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
+Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
+    </item>
+    
+    <item>
+      <title>Automatic export</title>
+      <link>/zotero-better-bibtex/en/installation/preferences/automatic-export/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/installation/preferences/automatic-export/</guid>
+      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
+The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
+Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
+    </item>
+    
+    <item>
+      <title>Import</title>
+      <link>/zotero-better-bibtex/en/installation/preferences/import/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/installation/preferences/import/</guid>
+      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
+The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
+Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
+    </item>
+    
+    <item>
+      <title>JSON-RPC</title>
+      <link>/zotero-better-bibtex/en/exporting/json-rpc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/exporting/json-rpc/</guid>
+      <description>You can call into BBT using JSON-RPC on the URL http://localhost:23119/better-bibtex/json-rpc . An example could look like:
+curl http://localhost:23119/better-bibtex/json-rpc -X POST -H &amp;#34;Content-Type: application/json&amp;#34; -H &amp;#34;Accept: application/json&amp;#34; --data-binary &amp;#39;{&amp;#34;jsonrpc&amp;#34;: &amp;#34;2.0&amp;#34;, &amp;#34;method&amp;#34;: &amp;#34;collection.scanAUX&amp;#34;, &amp;#34;params&amp;#34;: [&amp;#34;/My Library/thesis/article1&amp;#34;, &amp;#34;/Users/phantom/Downloads/output.aux&amp;#34;] }&amp;#39; The available methods are:
+autoexport.add(collection, translator, path, displayOptions, replace) Add an auto-export for the given collection. The target collection will be created if it does not exist
+collection: The forward-slash separated path to the collection.</description>
+    </item>
+    
+    <item>
+      <title>Miscellaneous</title>
+      <link>/zotero-better-bibtex/en/installation/preferences/miscellaneous/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/installation/preferences/miscellaneous/</guid>
+      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
+The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
+Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
+    </item>
+    
+    <item>
+      <title>Hidden preferences</title>
+      <link>/zotero-better-bibtex/en/installation/preferences/hidden-preferences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/installation/preferences/hidden-preferences/</guid>
+      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
+The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
+Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
+    </item>
+    
+    <item>
+      <title>Bundled translators</title>
+      <link>/zotero-better-bibtex/en/installation/bundled-translators/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/installation/bundled-translators/</guid>
+      <description>Better BibTeX bundles 5 translators you might care about:
+Export These translators are supported by the auto-export functionality built into Better BibTeX:
+Better BibLaTeX exports items in BibLaTeX format (but better, natch) Better BibTeX exports items in BibTeX format Better CSL JSON exports items in pandoc-compatible CSL-JSON format, with added citation keys and parsing of metadata Better CSL YAML exports the same as the Better CSL JSON exporter, but in YAML format Collected Notes exports just notes &amp;ndash; standalone notes and notes attached to items, not the extra field &amp;ndash; to HTML.</description>
+    </item>
+    
+    <item>
+      <title>Sponsoring BBT</title>
+      <link>/zotero-better-bibtex/en/sponsoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/sponsoring/</guid>
+      <description>While the development needs of BBT are to a large extent covered by the generosity towards open-source developers of services such as github, my development system does require the occasional upgrade; also, I enjoy getting the occasional frivolous tech-toy that I wouldn&amp;rsquo;t otherwise grant myself. While you should feel in no way obligated to pay for BBT, anything you can spare is very much appreciated. If you&amp;rsquo;d rather contribute a little bit each month (and a little means a lot) so I can save up for a replacement a year or so down the line, head on over to Patreon, but mind that Patreon takes a fairly large cut of what you give.</description>
+    </item>
+    
+  </channel>
+</rss>

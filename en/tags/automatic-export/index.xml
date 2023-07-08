@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>automatic export on Better BibTeX for Zotero</title>
+    <link>/zotero-better-bibtex/en/tags/automatic-export/</link>
+    <description>Recent content in automatic export on Better BibTeX for Zotero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="/zotero-better-bibtex/en/tags/automatic-export/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automatic export</title>
+      <link>/zotero-better-bibtex/en/exporting/auto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/exporting/auto/</guid>
+      <description>To export a library, group or collection, right-click on it in the left Zotero pane and choose &amp;ldquo;Export Library…&amp;rdquo; or &amp;ldquo;Export Collection…&amp;rdquo;. With BBT&amp;rsquo;s export translators (e.g., &amp;ldquo;Better BibTeX&amp;rdquo;), checking the Keep updated option will register the export for automation. After you’ve completed the current export, any changes to the collection or library will trigger an automatic re-export to update the file. You can review/remove exports from the BBT preferences. While I&amp;rsquo;ve gone to some lengths to make sure performance is OK, don&amp;rsquo;t go overboard with the number of auto-exports you have going.</description>
+    </item>
+    
+    <item>
+      <title>Export</title>
+      <link>/zotero-better-bibtex/en/installation/preferences/export/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/en/installation/preferences/export/</guid>
+      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
+The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
+Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
+    </item>
+    
+  </channel>
+</rss>
