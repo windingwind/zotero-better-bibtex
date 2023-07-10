@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>overleaf on Better BibTeX for Zotero</title>
+    <link>/zotero-better-bibtex/tags/overleaf/</link>
+    <description>Recent content in overleaf on Better BibTeX for Zotero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="/zotero-better-bibtex/tags/overleaf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automatic export</title>
+      <link>/zotero-better-bibtex/exporting/auto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/exporting/auto/</guid>
+      <description>To export a library, group or collection, right-click on it in the left Zotero pane and choose &amp;ldquo;Export Library…&amp;rdquo; or &amp;ldquo;Export Collection…&amp;rdquo;. With BBT&amp;rsquo;s export translators (e.g., &amp;ldquo;Better BibTeX&amp;rdquo;), checking the Keep updated option will register the export for automation. After you’ve completed the current export, any changes to the collection or library will trigger an automatic re-export to update the file. You can review/remove exports from the BBT preferences. While I&amp;rsquo;ve gone to some lengths to make sure performance is OK, don&amp;rsquo;t go overboard with the number of auto-exports you have going.</description>
+    </item>
+    
+    <item>
+      <title>Cite as you Write</title>
+      <link>/zotero-better-bibtex/citing/cayw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/citing/cayw/</guid>
+      <description>PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; curl and other programmatic access such as from editors access will work.
+Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!
+Editor integration vim Graciously supplied by David Lukes:
+paste it in your .</description>
+    </item>
+    
+  </channel>
+</rss>

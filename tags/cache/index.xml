@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cache on Better BibTeX for Zotero</title>
+    <link>/zotero-better-bibtex/tags/cache/</link>
+    <description>Recent content in cache on Better BibTeX for Zotero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="/zotero-better-bibtex/tags/cache/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Performance</title>
+      <link>/zotero-better-bibtex/support/performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/support/performance/</guid>
+      <description>The Better BibTeX exporters are a lot slower than the standard Zotero Bib(La)TeX exporters. If you have a small library, you will not likely notice this, but if you have several thousand items, and you are in the habit of exporting substantial parts of your library, this gets annoying really fast.
+To deal with this problem, Better BibTeX implements an extensive caching system. With a filled cache, Better BibTeX is substantially faster than the default Zotero exporters.</description>
+    </item>
+    
+    <item>
+      <title>Citation keys</title>
+      <link>/zotero-better-bibtex/installation/preferences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zotero-better-bibtex/installation/preferences/</guid>
+      <description>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
+The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
+Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.</description>
+    </item>
+    
+  </channel>
+</rss>
