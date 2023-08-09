@@ -1616,7 +1616,11 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>extra(&#39;tex.shortauthor&#39;).transliterate.clean.lower.len + year; auth.lower + year
 </span></span></code></pre></div><p>You can add a verbatim text by just including it in single or double quotes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>extra(&#39;tex.shortauthor&#39;).transliterate.clean.lower.len + year; &#39;default&#39; + auth.lower + year
-</span></span></code></pre></div><h3 id="generating-citekeys">Generating citekeys</h3>
+</span></span></code></pre></div><p>Formulas have some ternary support; you can use them in formulas instead of a function, but not in parameters; you can for example use</p>
+<pre tabindex="0"><code>(title ? title : auth).lower + year
+</code></pre><p>instead of</p>
+<pre tabindex="0"><code>title.len + year | auth + year
+</code></pre><h3 id="generating-citekeys">Generating citekeys</h3>
 <p>To generate your citekeys, you use a formula composed of functions and filters. Broadly, functions grab text from your item, and filters transform that text. <strong>Note that the formula syntax has changed from a bracketed format to a javascript-ish format</strong>. The old syntax was getting harder to maintain and its inflexibility prevented new extensions to the functions being implemented cleanly. <strong>The old syntax still works</strong> but will be translated to the new format automatically.</p>
 <p>Below you will find a full list of functions and filters you can use, in the new format only, sorry. You can still use these in the old syntax, but they support only positional parameters, where I would recommend generally to use the new syntax with named parameters.</p>
 <p>Note: a number of functions below talk about the author&rsquo;s lastname; you can read that as &ldquo;when available&rdquo;. If you have the name as a single-field name (for entities like <code>International Business Machines</code> or <code>Aristoteles</code>), Zotero doesn&rsquo;t have a last name, and the full single-field name is taken instead.</p>
