@@ -1572,13 +1572,13 @@ Better BibTeX for Zotero
 </ul>
 <p>this is all temporary, and when all is verified to be setup correctly, we&rsquo;ll undo them.</p>
 <p><code>~/Library/Application\ Support/Zotero</code> / <code>~/.zotero</code> holds the administration of your Zotero profiles. The test setup will add a new profile leaving your existing profile(s) untouched. But better safe than sorry, which is why we&rsquo;re holding a copy.</p>
-<p>The <code>mv</code> sets aside your library so that Zotero won&rsquo;t be able to find it. The <code>touch</code> creates an empty file in its place. The tests don&rsquo;t use that location, they use <code>~/.BBTZ5TEST</code> instead, but if for whatever reason that doesn&rsquo;t work, Zotero will try to write to <code>~/Zotero/something</code>, and since <code>~/Zotero</code> is now a file instead of a directory, Zotero will complain loudly if that happens, and we know we must back out.</p>
+<p>The <code>mv</code> sets aside your library so that Zotero won&rsquo;t be able to find it. The <code>touch</code> creates an empty file in its place. The tests don&rsquo;t use that location, they use <code>~/.BBTTEST</code> instead, but if for whatever reason that doesn&rsquo;t work, Zotero will try to write to <code>~/Zotero/something</code>, and since <code>~/Zotero</code> is now a file instead of a directory, Zotero will complain loudly if that happens, and we know we must back out.</p>
 <p>Now then:</p>
 <ul>
 <li>make sure you&rsquo;re in <code>zotero-better-bibtex</code></li>
 <li><code>./test/behave --tags @438</code></li>
 </ul>
-<p>and be amazed. Zotero will pop up, load the test library, executes one test, and shuts down. The log file after the tests run will be <code>~/.BBTZ5TEST.log</code>. The tests do not touch your own library.</p>
+<p>and be amazed. Zotero will pop up, load the test library, executes one test, and shuts down. The log file after the tests run will be <code>~/.BBTTEST.log</code>. The tests do not touch your own library.</p>
 <p>To restore access to your regular library so you can run either a test suite or just work with your library (but <strong>not</strong> both at the same time. <strong>always</strong> fully close Zotero between these).</p>
 <ul>
 <li><code>rm ~/Zotero</code></li>
