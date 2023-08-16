@@ -2564,8 +2564,17 @@ that yields a non-empty string. If all return a empty string, a random key will 
           </details>
         <p>selects words from the value passed in. The format is <code>select(start,number)</code> (1-based), so <code>select(1,4)</code> or <code>select(n=4)</code> would select the first four words. If <code>n</code> is not given, all words from <code>start</code> to the end are selected. </p></dd>
   
-    <dt><code>skipwords</code></dt></dd><p>filters out common words like 'of', 'the', … the list of words can be seen and changed by going into <code>about:config</code> under the key <code>extensions.zotero.translators.better-bibtex.skipWords</code> as a comma-separated, case-insensitive list of words.</p>
-<p>If you want to strip words like 'Jr.' from names, you could use something like <code>Auth.nopunct.skipwords.fold</code> after adding <code>jr</code> to the skipWords list. Note that this filter is always applied if you use <code>title</code> (which is different from <code>Title</code>) or <code>shorttitle</code>. </p></dd>
+    <dt><code>skipwords</code></dt></dd>
+          <details class="details"><summary class="summary">parameters:</summary>
+          <table>
+            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
+            <tbody>
+              <tr><td><code>nopunct</code></td><td><i>boolean</i></td><td><p>remove punctuation from words</p></td><td><code>false</code> </td></tr>
+            </tbody>
+          </table>
+          </details>
+        <p>filters out common words like 'of', 'the', … the list of words can be seen and changed by going into <code>about:config</code> under the key <code>extensions.zotero.translators.better-bibtex.skipWords</code> as a comma-separated, case-insensitive list of words.</p>
+<p>If you want to strip words like 'Jr.' from names, you could use something like <code>Auth.nopunct.skipwords.fold</code> after adding <code>jr</code> to the skipWords list. Note that this filter is always applied with <code>nopunct</code> on if you use <code>title</code> (which is different from <code>Title</code>) or <code>shorttitle</code>. </p></dd>
   
     <dt><code>substring</code></dt></dd>
           <details class="details"><summary class="summary">parameters:</summary>
