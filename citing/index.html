@@ -1622,6 +1622,10 @@ that yields a non-empty string. If all return a empty string, a random key will 
 <pre tabindex="0"><code>(title || auth).lower + year
 </code></pre><p>instead of</p>
 <pre tabindex="0"><code>title.len + year | auth + year
+</code></pre><p>and you can test for length of subsections; what you would previously do with</p>
+<pre tabindex="0"><code>auth + title + len + year
+</code></pre><p>to jump to the next formula if <code>auth</code> and <code>title</code> were both empty is now</p>
+<pre tabindex="0"><code>(auth + title).len + year
 </code></pre><h3 id="generating-citekeys">Generating citekeys</h3>
 <p>To generate your citekeys, you use a formula composed of functions and filters. Broadly, functions grab text from your item, and filters transform that text. <strong>Note that the formula syntax has changed from a bracketed format to a javascript-ish format</strong>. The old syntax was getting harder to maintain and its inflexibility prevented new extensions to the functions being implemented cleanly. <strong>The old syntax still works</strong> but will be translated to the new format automatically.</p>
 <p>Below you will find a full list of functions and filters you can use, in the new format only, sorry. You can still use these in the old syntax, but they support only positional parameters, where I would recommend generally to use the new syntax with named parameters.</p>
@@ -1869,18 +1873,6 @@ that yields a non-empty string. If all return a empty string, a random key will 
         <p>Tests whether the item has the given language set, and skips to the next pattern if not </p></dd>
   
     <dt><code>lastpage</code></dt><dd><p>The number of the last page of the publication (See the remark on <code>firstpage</code>) </p></dd>
-  
-    <dt><code>len</code></dt><dd>
-          <details class="details"><summary class="summary">parameters:</summary>
-          <table>
-            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
-            <tbody>
-              <tr><td><code>relation</code></td><td><code>!=</code> / <code><</code> / <code><=</code> / <code>=</code> / <code>></code> / <code>>=</code></td><td><p>comparison operator</p></td><td><code>">"</code> </td></tr>
-<tr><td><code>length</code></td><td><i>number</i></td><td><p>value to compare length with</p></td><td><code>0</code> </td></tr>
-            </tbody>
-          </table>
-          </details>
-        <p>If the length of the output does not match the given number, skip to the next pattern. </p></dd>
   
     <dt><code>library</code></dt><dd><p>returns the name of the shared group library, or nothing if the item is in your personal library </p></dd>
   
