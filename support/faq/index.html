@@ -1692,12 +1692,11 @@ and <em>also</em> brace-protect it.</p>
 <p>JabRef import works generally well but has a few gotchas:</p>
 <ul>
 <li>If you have dynamic (query-based) groups these will not be imported.</li>
-<li>If you have set a default folder for the pdf files in your JabRef
-preferences, the file paths in your JabRef database will be relative to that
-directory, but BBT can&rsquo;t read those preferences, so all attachments will
-fail to import. You can fix this by going into Jabref and selecting <code>File</code> -
-<code>Library properties</code> option, then filling out the path to the attachments
-directory in <code>general file directory</code>.</li>
+<li>If you have set a default folder for the PDF files in JabRef
+(<code>Options -&gt; Preferences -&gt; Linked Files -&gt; Main File Directory</code>), the file paths in your JabRef database will be relative to that
+directory, but BBT can&rsquo;t read those preferences, so all attachments would
+fail to import. Make imports work with JabRef&rsquo;s library-specific setting <code>Library -&gt; Library Properties -&gt; General File Directory</code>.
+Make sure the latter path is correct, as JabRef might continue finding files and not notify you if it contains errors.</li>
 </ul>
 <h2 id="background-exportshahahugoshortcode24s4hbhb-have-been-disabled"><a href="/zotero-better-bibtex/exporting/#background-exports">Background exports</a> have been disabled</h2>
 <p>When BBT encounters an error during a background export, it will automatically disable them; the UI will show <code>Background exports disabled</code>. For reasons that I haven&rsquo;t yet discovered, Firefox (the platform Zotero still builds on) sometimes declines BBT&rsquo;s request for a background thread, and will decline them until Zotero is restarted. In order to let you keep on working, BBT will disable background exports, and subsequent exports will be the normal Zotero foreground exports. You can re-enable the background exports using the <code>parallel exports</code> slider in BBT&rsquo;s <code>Advanced</code> preferences, under the <code>export</code> tab, or by restarting Zotero, which will re-enable them if you haven&rsquo;t manually set the slider to <code>0</code>.</p>
