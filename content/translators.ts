@@ -410,14 +410,6 @@ export const Translators = new class { // eslint-disable-line @typescript-eslint
     prepare.done()
 
     log.debug('starting tranlation with', { items: config.data.items.length, cache: Object.keys(config.data.cache).length })
-    const config: Translator.Worker.Job = {
-      preferences: { ...Preference.all, ...preferences },
-      options: displayOptions,
-      data: {
-        items: [],
-        collections: [],
-        cache: {},
-      },
     const enc = new TextEncoder()
     // stringify gets around 'object could not be cloned', and arraybuffers can be passed zero-copy. win-win
     const abconfig = enc.encode(JSON.stringify(config)).buffer
