@@ -31,6 +31,10 @@ class Queue extends Puqeue {
   }
 }
 
+function time(timestamp: number) {
+  return new Date(timestamp).toTimeString().split(' ')[0]
+}
+
 import * as translatorMetadata from '../gen/translators.json'
 
 import * as l10n from './l10n'
@@ -248,6 +252,7 @@ export const Translators = new class { // eslint-disable-line @typescript-eslint
     const translator = this.byId[job.translatorID]
 
     const start = Date.now()
+    log.debug('timed: starting translation at', time(start))
 
     const preferences = job.preferences || {}
 
@@ -280,6 +285,7 @@ export const Translators = new class { // eslint-disable-line @typescript-eslint
     }
 
     let items: any[] = []
+
     this.worker.onmessage = (e: { data: Translator.Worker.Message }) => {
       switch (e.data?.kind) {
         case 'error':
@@ -300,6 +306,7 @@ export const Translators = new class { // eslint-disable-line @typescript-eslint
         case 'done':
           void Events.emit('export-progress', { pct: 100, message: translator.label, ae: job.autoExport })
           result.resolve(typeof e.data.output === 'boolean' ? '' : e.data.output)
+          log.debug('timed: translation started at', time(start), 'took', time(Date.now() - start))
           break
 
         case 'cache':
@@ -409,7 +416,10 @@ export const Translators = new class { // eslint-disable-line @typescript-eslint
 
     prepare.done()
 
-    log.debug('starting tranlation with', { items: config.data.items.length, cache: Object.keys(config.data.cache).length })
+    log.debug('timed: translation started at', time(start), 'took', time(Date.now() - start), 'to prepare', {
+      items: config.data.items.length,
+      cache: Object.keys(config.data.cache).length,
+    })
     const enc = new TextEncoder()
     // stringify gets around 'object could not be cloned', and arraybuffers can be passed zero-copy. win-win
     const abconfig = enc.encode(JSON.stringify(config)).buffer
