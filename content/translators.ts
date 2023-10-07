@@ -378,12 +378,14 @@ export const Translators = new class { // eslint-disable-line @typescript-eslint
 
       // sleep occasionally so the UI gets a breather
       if ((Date.now() - worked) > 100) {
-        await Zotero.Promise.delay(0)
+        await Zotero.Promise.delay(10)
         worked = Date.now()
       }
 
       prepare.update()
     }
+    log.debug('timed: translation started at', time(start), 'took', time(Date.now() - start), 'to pre-serialize')
+
     if (job.path && job.canceled) return ''
 
     if (this.byId[job.translatorID].configOptions?.getCollections) {
