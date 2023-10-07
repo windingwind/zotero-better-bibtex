@@ -961,23 +961,51 @@ export class ZoteroItem {
     return this.validFields.ISSN ? this.set('ISSN', value) : this.fallback(['ISSN'], value)
   }
 
-  protected $url(value: string, field: string): boolean {
+  protected $url(value: string, field: string, title=''): boolean {
     // no escapes needed in an verbatim field but people do it anyway
     let url = value.replace(/\\/g, '')
 
-    // pluck out the URL if it is wrapped in an HREF -- discards the label unfortunately
+    // pluck out the URL if it is wrapped in an HREF
     let m
-    if (m = url.match(/<a href="([^"]+)/i)) url = m[1]
+    if (m = url.match(/<a href="([^"]+)"[^>]*>([^<]*)/i)) {
+      url = m[1]
+      title = m[2] || title
+    }
+    title = title || field
 
-    if (!url) return false
-    if (field !== 'url' && ! url.match(/^(https?:\/\/|mailto:)/i)) return false
+    if (!url) return true
 
-    if (this.item.url) return (this.item.url === url)
+    const isURL = this.isURL(url)
 
-    if (!this.validFields.url) return this.fallback(['url'], url)
+    if (field === 'url') {
+      if (this.item.url === url) return true
 
-    this.item.url = url
-    return true
+      if (this.validFields.url && !this.item.url) {
+        this.item.url = url
+        return true
+      }
+      else if (this.translation.preferences.importDetectURLs && isURL) {
+        this.item.attachments.push({ itemType: 'attachment', url, title, linkMode: 'linked_url' })
+        return true
+      }
+
+      return this.fallback(['url'], url)
+    }
+
+    if (!this.bibtex.fields.url && !this.item.url && isURL && this.validFields.url) {
+      this.item.url = url
+      return true
+    }
+
+    if (isURL) {
+      if (this.translation.preferences.importDetectURLs) {
+        this.item.attachments.push({ itemType: 'attachment', url, title, linkMode: 'linked_url' })
+        return true
+      }
+      return this.fallback(['url'], url)
+    }
+
+    return false
   }
   protected $howpublished(value: string, field: string): boolean { return this.$url(value, field) }
   protected '$remote-url'(value: string, field: string): boolean { return this.$url(value, field) }
@@ -1288,7 +1316,10 @@ export class ZoteroItem {
             break
 
           default:
-            if (value.indexOf('\n') >= 0) {
+            if (this.translation.preferences.importDetectURLs && this.isURL(value)) {
+              this.item.attachments.push({ itemType: 'attachment', url: value, title: field, linkMode: 'linked_url' })
+            }
+            else if (value.indexOf('\n') >= 0) {
               this.item.notes.push(`<p><b>${Zotero.Utilities.text2html(field, false)}</b></p>${Zotero.Utilities.text2html(value, false)}`)
             }
             else {
@@ -1374,6 +1405,15 @@ export class ZoteroItem {
     }
 
     return true
+  }
+
+  private isURL(url: string): boolean {
+    try {
+      return (new URL(url)).protocol.match(/^https?:$/) as unknown as boolean
+    }
+    catch (err) {
+      return false
+    }
   }
 
   private addToExtra(str) {
