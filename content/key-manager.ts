@@ -427,7 +427,7 @@ export const KeyManager = new class _KeyManager {
       let warn_titlecase = 0
       switch (action) {
         case 'delete':
-          await removeMany(this.keys, ids.map(itemID => ({ itemID })))
+          this.keys.findAndRemove({ itemID: { $in: ids } })
           break
 
         case 'add':
@@ -505,8 +505,7 @@ export const KeyManager = new class _KeyManager {
         }
       }
 
-      log.debug('keymanager.load: insert into blinkdb')
-      await insertMany(this.keys, [...keys.values()])
+      this.keys.insert([...keys.values()])
 
       log.debug('keymanager.load: detect missing')
       missing =  await Zotero.DB.columnQueryAsync(`SELECT itemID FROM ${items} WHERE itemID NOT IN (SELECT itemID from betterbibtex.citationkey)`)
@@ -514,16 +513,14 @@ export const KeyManager = new class _KeyManager {
       await Zotero.DB.queryAsync(`DROP TABLE temp.${items}`)
     })
 
-    log.debug('keymanager.load: set up listener')
-    use(this.keys, async ctx => {
-      log.debug('keymanager.db:', ctx.action)
-      switch (ctx.action) {
+    this.keys.on('delete', item => {
+      void this.remove(item).catch(err => log.error(`keymanager.${ctx.action}`, err))
+    })
         case 'update':
         case 'insert':
           break // handled after update
         case 'remove':
           log.debug('keymanager.db:', ctx.action, (ctx.params[1] as CitekeyRecord).itemKey)
-          void this.remove(ctx.params[1] as CitekeyRecord).catch(err => log.error(`keymanager.${ctx.action}`, err))
           break
         case 'removeMany':
           log.debug('keymanager.db:', ctx.action, (ctx.params[1] as CitekeyRecord[]).map(key => key.itemID))
