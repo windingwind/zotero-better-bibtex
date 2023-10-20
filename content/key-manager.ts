@@ -518,6 +518,7 @@ export const KeyManager = new class _KeyManager {
     })
 
     this.keys.on(['update', 'insert'], item => {
+      log.debug('keymanager.upsert', item, this.keys.data)
       void this.store(item).catch(err => log.error('keymanager.upsert', err))
     })
 
@@ -545,15 +546,18 @@ export const KeyManager = new class _KeyManager {
     current = current || this.keys.find({ itemID: item.id })
 
     const proposed = this.propose(item)
+    log.debug('keymanager.propose:', item.id, proposed)
 
     if (current && (current.pinned || !this.autopin.enabled) && (current.pinned === proposed.pinned) && (current.citationKey === proposed.citationKey)) return current.citationKey
 
     if (current) {
+      log.debug('keymanager.propose: update')
       current.pinned = proposed.pinned
       current.citationKey = proposed.citationKey
       this.keys.update(current)
     }
     else {
+      log.debug('keymanager.propose: insert')
       this.keys.insert({ itemID: item.id, libraryID: item.libraryID, itemKey: item.key, pinned: proposed.pinned, citationKey: proposed.citationKey })
     }
 
@@ -565,7 +569,8 @@ export const KeyManager = new class _KeyManager {
     // go-ahead to *start* my init.
     if (!this.keys || !this.started) return { citationKey: '', pinned: false, retry: true }
 
-    const key = this.keys.find({ itemID })
+    log.debug('keymanager.get:', { itemID, data: this.keys.data, found: this.keys.findOne({ itemID })})
+    const key = this.keys.findOne({ itemID })
     if (key) return key as Partial<CitekeyRecord> & { retry?: boolean }
     return { citationKey: '', pinned: false, retry: true }
   }
