@@ -582,7 +582,7 @@ export const KeyManager = new class _KeyManager {
     return this.keys.find(query) as CitekeyRecord[]
   }
   public all(): CitekeyRecord[] {
-    return this.keys.findWhere(() => true) as CitekeyRecord[]
+    return this.keys.where(() => true) as CitekeyRecord[]
   }
 
   public propose(item: ZoteroItem): Partial<CitekeyRecord> {
@@ -630,7 +630,7 @@ export const KeyManager = new class _KeyManager {
     `, [ libraryID, Preference.keyScope, tag ])).map((item: { itemID: number }) => item.itemID)
 
     const citekeys: Record<string, any[]> = {}
-    for (const item of this.keys.findWhere(key => Preference.keyScope === 'global' || key.libraryID === libraryID)) {
+    for (const item of this.keys.where(key => Preference.keyScope === 'global' || key.libraryID === libraryID)) {
       if (!citekeys[item.citationKey]) citekeys[item.citationKey] = []
       citekeys[item.citationKey].push({ itemID: item.itemID, tagged: tagged.includes(item.itemID), duplicate: false })
       if (citekeys[item.citationKey].length > 1) citekeys[item.citationKey].forEach(i => i.duplicate = true)
