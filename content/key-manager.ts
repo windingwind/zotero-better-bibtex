@@ -543,7 +543,7 @@ export const KeyManager = new class _KeyManager {
   public update(item: ZoteroItem, current?: CitekeyRecord): string {
     if (item.isFeedItem || !item.isRegularItem()) return null
 
-    current = current || this.keys.find({ itemID: item.id })
+    current = current || this.keys.findOne({ itemID: item.id })
 
     const proposed = this.propose(item)
     log.debug('keymanager.propose:', item.id, proposed)
