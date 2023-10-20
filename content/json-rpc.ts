@@ -162,7 +162,7 @@ class NSItem {
    * @param citekey  The citekey to search for
    */
   public async attachments(citekey: string) {
-    const key = Zotero.BetterBibTeX.KeyManager.first({ where: { citationKey: citekey.replace(/^@/, '') } })
+    const key = Zotero.BetterBibTeX.KeyManager.lfirst({ citationKey: citekey.replace(/^@/, '') })
     if (!key) throw { code: INVALID_PARAMETERS, message: `${citekey} not found` }
     const item = await getItemsAsync(key.itemID)
 
@@ -201,7 +201,7 @@ class NSItem {
    * @param includeParents Include all parent collections back to the library root
    */
   public async collections(citekeys: string[], includeParents?: boolean) {
-    const keys = Zotero.BetterBibTeX.KeyManager.find({ where: { citationKey: { in: citekeys.map(citekey => citekey.replace('@', '')) } } })
+    const keys = Zotero.BetterBibTeX.KeyManager.lfind({ citationKey: { $in: citekeys.map(citekey => citekey.replace('@', '')) } })
     if (!keys.length) throw { code: INVALID_PARAMETERS, message: `zero matches for ${citekeys.join(',')}` }
 
     const seen = {}
@@ -256,7 +256,7 @@ class NSItem {
    * @param citekeys An array of citekeys
    */
   public async notes(citekeys: string[]) {
-    const keys = Zotero.BetterBibTeX.KeyManager.find({ where: { citationKey: { in: citekeys.map(citekey => citekey.replace('@', '')) } } })
+    const keys = Zotero.BetterBibTeX.KeyManager.lfind({ citationKey: { $in: citekeys.map(citekey => citekey.replace('@', '')) } })
     if (!keys.length) throw { code: INVALID_PARAMETERS, message: `zero matches for ${citekeys.join(',')}` }
 
     const notes = {}
@@ -298,13 +298,13 @@ class NSItem {
     if (((format as any).mode || 'bibliography') !== 'bibliography') throw new Error(`mode must be bibliograpy, not ${(format as any).mode}`)
 
     const where = {
-      citationKey: { in: citekeys.map((citekey: string) => citekey.replace('@', '')) },
+      citationKey: { $in: citekeys.map((citekey: string) => citekey.replace('@', '')) },
       libraryID: Library.get(library).libraryID,
     }
     if (library === '*') delete where.libraryID
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    const items = await getItemsAsync(Zotero.BetterBibTeX.KeyManager.find({ where }).map(key => key.itemID))
+    const items = await getItemsAsync(Zotero.BetterBibTeX.KeyManager.lfind(where).map(key => key.itemID))
 
     const bibliography = Zotero.QuickCopy.getContentFromItems(items, { ...format, mode: 'bibliography' }, null, false)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -334,7 +334,7 @@ class NSItem {
         itemKey = key
       }
 
-      keys[key] = Zotero.BetterBibTeX.KeyManager.first({ where: { libraryID, itemKey } })?.citationKey || null
+      keys[key] = Zotero.BetterBibTeX.KeyManager.lfirst({ libraryID, itemKey })?.citationKey || null
     }
 
     return keys
@@ -349,11 +349,11 @@ class NSItem {
    */
   public async export(citekeys: string[], translator: string, libraryID?: string | number) {
     const where = {
-      citationKey: { in: citekeys },
+      citationKey: { $in: citekeys },
       libraryID: Library.get(libraryID).libraryID,
     }
 
-    const found = Zotero.BetterBibTeX.KeyManager.find({ where })
+    const found = Zotero.BetterBibTeX.KeyManager.lfind(where)
 
     const status: Record<string, number> = {}
     for (const citekey of citekeys) {

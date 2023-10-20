@@ -137,7 +137,7 @@ $patch$(Zotero.Items, 'merge', original => async function Zotero_Items_merge(ite
       if (merge.citationKey) {
         const otherIDs = otherItems.map(i => i.id)
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        extra.extraFields.aliases = [...extra.extraFields.aliases, ...Zotero.BetterBibTeX.KeyManager.find({ where: { itemID: { in: otherIDs } } }).map(key => key.citationKey)]
+        extra.extraFields.aliases = [...extra.extraFields.aliases, ...Zotero.BetterBibTeX.KeyManager.lfind({ itemID: { $in: otherIDs } }).map(key => key.citationKey)]
       }
 
       // add any aliases they were already holding
@@ -198,7 +198,7 @@ function parseLibraryKeyFromCitekey(libraryKey) {
   try {
     const decoded = decodeURIComponent(libraryKey)
     if (decoded[0] === '@') {
-      const item = Zotero.BetterBibTeX.KeyManager.first({ where: { citationKey: decoded.substring(1) } })
+      const item = Zotero.BetterBibTeX.KeyManager.lfirst({ citationKey: decoded.substring(1) })
 
       return item ? { libraryID: item.libraryID, key: item.itemKey } : false
     }
@@ -207,7 +207,7 @@ function parseLibraryKeyFromCitekey(libraryKey) {
     if (m) {
       const [_libraryID, citationKey] = m.slice(1)
       const libraryID: number = (!_libraryID || _libraryID === '1') ? Zotero.Libraries.userLibraryID : parseInt(_libraryID)
-      const item = Zotero.BetterBibTeX.KeyManager.first({ where: { libraryID, citationKey }})
+      const item = Zotero.BetterBibTeX.KeyManager.lfirst({ libraryID, citationKey })
       return item ? { libraryID: item.libraryID, key: item.itemKey } : false
     }
   }
@@ -224,7 +224,7 @@ $patch$(Zotero.API, 'getResultsFromParams', original => function Zotero_API_getR
       params.itemKey = params.itemKey.map((itemKey: string) => {
         const m = itemKey.match(/^(bbt:|@)(.+)/)
         if (!m) return itemKey
-        const citekey = Zotero.BetterBibTeX.KeyManager.first({ where: { libraryID, citationKey: m[2] }})
+        const citekey = Zotero.BetterBibTeX.KeyManager.lfirst({ libraryID, citationKey: m[2] })
         return citekey?.itemKey || itemKey
       })
     }
@@ -274,7 +274,8 @@ $patch$(Zotero.Item.prototype, 'setField', original => function Zotero_Item_prot
     if (typeof value !== 'string') value = ''
     if (!value) {
       this.setField('extra', Extra.get(this.getField('extra') as string, 'zotero', { citationKey: true }).extra)
-      void Zotero.BetterBibTeX.KeyManager.update(this).then(() => { Zotero.Notifier.trigger('modify', 'item', [this.id]) })
+      Zotero.BetterBibTeX.KeyManager.update(this)
+      Zotero.Notifier.trigger('modify', 'item', [this.id])
       return true
     }
     else if (value !== citekey.citationKey) {

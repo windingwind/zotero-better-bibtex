@@ -29,7 +29,7 @@ import { DB as Cache } from './db/cache'
 import { createDB, createTable, insert, insertMany, removeMany, use, update, Query } from 'blinkdb'
 import * as blink from './db/blink'
 */
-const Loki = require('loki')
+const Loki = require('lokijs')
 
 import { patch as $patch$ } from './monkey-patch'
 
@@ -82,7 +82,7 @@ export const KeyManager = new class _KeyManager {
   private keys = (new Loki('citationKeys')).addCollection('citationKeys', {
     unique: [ 'itemID' ],
     indices: [ 'itemKey', 'libraryID', 'citationKey' ],
-    clone: true
+    clone: true,
   })
 
   public query: {
@@ -139,7 +139,7 @@ export const KeyManager = new class _KeyManager {
       else {
         if (parsed.extraFields.citationKey) continue
 
-        citationKey = this.get(item.id).citationKey || await this.update(item)
+        citationKey = this.get(item.id).citationKey || this.update(item)
       }
 
       item.setField('extra', Extra.set(extra, { citationKey }))
@@ -207,7 +207,7 @@ export const KeyManager = new class _KeyManager {
       if (citationKey.old) continue // pinned, leave it alone
 
       citationKey.old = this.get(item.id).citationKey
-      citationKey.new = await this.update(item)
+      citationKey.new = this.update(item)
       if (citationKey.old === citationKey.new) continue
 
       // remove the new citekey from the aliases if present
@@ -379,7 +379,7 @@ export const KeyManager = new class _KeyManager {
 
       for (const conflict of this.keys.find(where)) {
         item = await Zotero.Items.getAsync(conflict.itemID)
-        await this.update(item, conflict)
+        this.update(item, conflict)
       }
     }
   }
@@ -422,7 +422,7 @@ export const KeyManager = new class _KeyManager {
           break
       }
     })
-    Events.on('items-changed-prep', async ({ ids, action }) => {
+    Events.on('items-changed-prep', ({ ids, action }) => {
       log.debug('keymanager: items-changed-prep:', action, ids)
       let warn_titlecase = 0
       switch (action) {
@@ -433,7 +433,7 @@ export const KeyManager = new class _KeyManager {
         case 'add':
         case 'modify':
           for (const item of Zotero.Items.get(ids).filter(i => i.isRegularItem() && !i.isFeedItem)) {
-            await this.update(item)
+            this.update(item)
             if (Preference.warnTitleCased) {
               const title = item.getField('title')
               if (title !== sentenceCase(title)) warn_titlecase += 1
@@ -514,33 +514,11 @@ export const KeyManager = new class _KeyManager {
     })
 
     this.keys.on('delete', item => {
-      void this.remove(item).catch(err => log.error(`keymanager.${ctx.action}`, err))
+      void this.remove(item).catch(err => log.error('keymanager.delete', err))
     })
-        case 'update':
-        case 'insert':
-          break // handled after update
-        case 'remove':
-          log.debug('keymanager.db:', ctx.action, (ctx.params[1] as CitekeyRecord).itemKey)
-          break
-        case 'removeMany':
-          log.debug('keymanager.db:', ctx.action, (ctx.params[1] as CitekeyRecord[]).map(key => key.itemID))
-          void this.remove(ctx.params[1] as CitekeyRecord[]).catch(err => log.error(`keymanager.${ctx.action}`, err))
-          break
-        default:
-          if (Preference.testing) throw new Error(`Unexpected middleware action ${ctx.action}`)
-      }
 
-      const result = await ctx.next(...ctx.params)
-
-      switch (ctx.action) {
-        case 'update':
-        case 'insert':
-          log.debug('keymanager.db:', ctx.action, (ctx.params[1] as CitekeyRecord).itemID)
-          void this.store(ctx.params[1] as CitekeyRecord).catch(err => log.error(`keymanager.${ctx.action}`, err))
-          break
-      }
-
-      return result
+    this.keys.on(['update', 'insert'], item => {
+      void this.store(item).catch(err => log.error('keymanager.upsert', err))
     })
 
     // generate keys for entries that don't have them yet
@@ -548,7 +526,7 @@ export const KeyManager = new class _KeyManager {
     const progress = new Progress(missing.length, 'Assigning citation keys')
     for (const itemID of missing) {
       try {
-        await this.update(await getItemsAsync(itemID))
+        this.update(await getItemsAsync(itemID))
       }
       catch (err) {
         log.error('KeyManager.rescan: update failed:', err.message || `${err}`, err.stack)
@@ -561,10 +539,10 @@ export const KeyManager = new class _KeyManager {
     log.debug('keymanager.load: done')
   }
 
-  public async update(item: ZoteroItem, current?: CitekeyRecord): Promise<string> {
+  public update(item: ZoteroItem, current?: CitekeyRecord): string {
     if (item.isFeedItem || !item.isRegularItem()) return null
 
-    current = current || blink.first(this.keys, { where: { itemID: item.id } })
+    current = current || this.keys.find({ itemID: item.id })
 
     const proposed = this.propose(item)
 
@@ -573,10 +551,10 @@ export const KeyManager = new class _KeyManager {
     if (current) {
       current.pinned = proposed.pinned
       current.citationKey = proposed.citationKey
-      await update(this.keys, current)
+      this.keys.update(current)
     }
     else {
-      await insert(this.keys, { itemID: item.id, libraryID: item.libraryID, itemKey: item.key, pinned: proposed.pinned, citationKey: proposed.citationKey })
+      this.keys.insert({ itemID: item.id, libraryID: item.libraryID, itemKey: item.key, pinned: proposed.pinned, citationKey: proposed.citationKey })
     }
 
     return proposed.citationKey
@@ -587,19 +565,19 @@ export const KeyManager = new class _KeyManager {
     // go-ahead to *start* my init.
     if (!this.keys || !this.started) return { citationKey: '', pinned: false, retry: true }
 
-    const key = blink.first(this.keys, { where: { itemID } })
-    if (key) return key
+    const key = this.keys.find({ itemID })
+    if (key) return key as Partial<CitekeyRecord> & { retry?: boolean }
     return { citationKey: '', pinned: false, retry: true }
   }
 
-  public first(query: Query<CitekeyRecord, 'itemID'>): CitekeyRecord {
-    return blink.first(this.keys, query)
+  public lfirst(query): CitekeyRecord {
+    return this.keys.findOne(query) as CitekeyRecord
   }
-  public find(query: Query<CitekeyRecord, 'itemID'>): CitekeyRecord[] {
-    return blink.many(this.keys, query)
+  public lfind(query): CitekeyRecord[] {
+    return this.keys.find(query) as CitekeyRecord[]
   }
   public all(): CitekeyRecord[] {
-    return blink.many(this.keys)
+    return this.keys.findWhere(() => true) as CitekeyRecord[]
   }
 
   public propose(item: ZoteroItem): Partial<CitekeyRecord> {
@@ -610,8 +588,8 @@ export const KeyManager = new class _KeyManager {
     citationKey = Formatter.format(item)
 
     const where = Preference.keyScope === 'global'
-      ? { citationKey: '' }
-      : { citationKey: '', libraryID: item.libraryID }
+      ? { citationKey: '', itemID: { $ne: item.id } }
+      : { citationKey: '', itemID: { $ne: item.id }, libraryID: item.libraryID }
 
     const seen: Set<string> = new Set
     // eslint-disable-next-line no-constant-condition
@@ -629,7 +607,7 @@ export const KeyManager = new class _KeyManager {
       })
 
       where.citationKey = postfixed
-      if (blink.many(this.keys, { where }).filter(i =>  i.itemID !== item.id).length) continue
+      if (this.keys.findOne(where)) continue
 
       return { citationKey: postfixed, pinned: false }
     }
@@ -647,7 +625,7 @@ export const KeyManager = new class _KeyManager {
     `, [ libraryID, Preference.keyScope, tag ])).map((item: { itemID: number }) => item.itemID)
 
     const citekeys: Record<string, any[]> = {}
-    for (const item of blink.many(this.keys, Preference.keyScope === 'global' ? undefined : { where: { libraryID } })) {
+    for (const item of this.keys.findWhere(key => Preference.keyScope === 'global' || key.libraryID === libraryID)) {
       if (!citekeys[item.citationKey]) citekeys[item.citationKey] = []
       citekeys[item.citationKey].push({ itemID: item.itemID, tagged: tagged.includes(item.itemID), duplicate: false })
       if (citekeys[item.citationKey].length > 1) citekeys[item.citationKey].forEach(i => i.duplicate = true)

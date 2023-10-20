@@ -157,7 +157,7 @@ export class TestSupport {
     let ids: number[] = []
 
     if (query.contains) ids = ids.concat(Zotero.BetterBibTeX.KeyManager.all().filter(key => key.citationKey.toLowerCase().includes(query.contains.toLowerCase())).map(key => key.itemID))
-    if (query.is) ids = ids.concat(Zotero.BetterBibTeX.KeyManager.find({ where: { citationKey: query.is } }).map(key => key.itemID))
+    if (query.is) ids = ids.concat(Zotero.BetterBibTeX.KeyManager.lfind({ citationKey: query.is }).map(key => key.itemID))
 
     const s = new Zotero.Search()
     for (const [mode, text] of Object.entries(query)) {

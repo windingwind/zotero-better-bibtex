@@ -151,7 +151,7 @@ Zotero.Server.Endpoints['/better-bibtex/export/item'] = class {
 
       const itemIDs: Record<string, number> = {}
       for (const citationKey of citationKeys) {
-        const key = Zotero.BetterBibTeX.KeyManager.find({ where: { libraryID, citationKey } })
+        const key = Zotero.BetterBibTeX.KeyManager.lfind({ libraryID, citationKey })
 
         switch (key.length) {
           case 0:
