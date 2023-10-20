@@ -423,13 +423,11 @@ export const KeyManager = new class _KeyManager {
       }
     })
     Events.on('items-changed-prep', async ({ ids, action }) => {
-      const now = Date.now()
       log.debug('keymanager: items-changed-prep:', action, ids)
       let warn_titlecase = 0
       switch (action) {
         case 'delete':
-          const deletes = ids.map(itemID => ({ itemID })) // eslint-disable-line no-case-declarations
-          await removeMany(this.keys, deletes)
+          await removeMany(this.keys, ids.map(itemID => ({ itemID })))
           break
 
         case 'add':
