@@ -329,6 +329,7 @@ export const KeyManager = new class _KeyManager {
   }
 
   async store(key: CitekeyRecord) {
+    /*
     await Zotero.DB.queryAsync('REPLACE INTO betterbibtex.citationkey (itemID, itemKey, libraryID, citationKey, pinned) VALUES (?, ?, ?, ?, ?)', [
       key.itemID,
       key.itemKey,
@@ -336,6 +337,7 @@ export const KeyManager = new class _KeyManager {
       key.citationKey,
       key.pinned ? 1 : 0,
     ])
+    */
 
     // async is just a heap of fun. Who doesn't enjoy a good race condition?
     // https://github.com/retorquere/zotero-better-bibtex/issues/774
@@ -384,7 +386,8 @@ export const KeyManager = new class _KeyManager {
     }
   }
 
-  async remove(keys: CitekeyRecord | CitekeyRecord[]) {
+  async remove(_keys: CitekeyRecord | CitekeyRecord[]) {
+    /*
     if (Array.isArray(keys)) {
       await Zotero.DB.executeTransaction(async () => {
         log.debug('removing', keys.length, 'keys')
@@ -402,6 +405,7 @@ export const KeyManager = new class _KeyManager {
     else {
       await Zotero.DB.queryTx('DELETE FROM betterbibtex.citationkey WHERE itemID = ?', [ keys.itemID ])
     }
+    */
   }
 
   private async start(): Promise<void> {
