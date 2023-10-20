@@ -25,8 +25,11 @@ import { Preference } from './prefs'
 import { Formatter } from './key-manager/formatter'
 import { DB as Cache } from './db/cache'
 
+/*
 import { createDB, createTable, insert, insertMany, removeMany, use, update, Query } from 'blinkdb'
 import * as blink from './db/blink'
+*/
+const Loki = require('loki')
 
 import { patch as $patch$ } from './monkey-patch'
 
@@ -76,10 +79,10 @@ class Progress {
 export const KeyManager = new class _KeyManager {
   public searchEnabled = false
 
-  // Table<CitekeyRecord, "itemID">
-  private keys = createTable<CitekeyRecord>(createDB({ clone: true }), 'citationKeys')({
-    primary: 'itemID',
-    indexes: ['itemKey', 'libraryID', 'citationKey'],
+  private keys = (new Loki('citationKeys')).addCollection('citationKeys', {
+    unique: [ 'itemID' ],
+    indices: [ 'itemKey', 'libraryID', 'citationKey' ],
+    clone: true
   })
 
   public query: {
@@ -165,11 +168,9 @@ export const KeyManager = new class _KeyManager {
     Cache.remove(ids, `refreshing keys for ${ids}`)
 
     const warnAt = manual ? Preference.warnBulkModify : 0
-    const affected = blink.many(this.keys, {
-      where: {
-        itemID: { in: ids },
-        pinned: { in: [0, false] },
-      },
+    const affected = this.keys.find({
+      itemID: { $in: ids },
+      pinned: { $in: [0, false] },
     }).length
     if (warnAt > 0 && affected > warnAt) {
       const ps = Components.classes['@mozilla.org/embedcomp/prompt-service;1'].getService(Components.interfaces.nsIPromptService)
@@ -370,15 +371,13 @@ export const KeyManager = new class _KeyManager {
 
     if (key.pinned && Preference.keyConflictPolicy === 'change') {
       const where = {
-        where: {
-          pinned: { in: [0, false] },
-          citationKey: { eq: key.citationKey },
-          libraryID: key.libraryID,
-        },
-      } satisfies Query<CitekeyRecord, 'itemID'>
-      if (Preference.keyScope === 'global') delete where.where.libraryID
+        pinned: { $in: [0, false] },
+        citationKey: { $eq: key.citationKey },
+        libraryID: { $eq: key.libraryID },
+      }
+      if (Preference.keyScope === 'global') delete where.libraryID
 
-      for (const conflict of blink.many(this.keys, where)) {
+      for (const conflict of this.keys.find(where)) {
         item = await Zotero.Items.getAsync(conflict.itemID)
         await this.update(item, conflict)
       }
@@ -429,13 +428,8 @@ export const KeyManager = new class _KeyManager {
       let warn_titlecase = 0
       switch (action) {
         case 'delete':
-          log.debug(now, 'keymanager.db: zotero DB', await Zotero.DB.columnQueryAsync('SELECT itemID FROM items ORDER BY itemID'))
-          log.debug(now, 'keymanager.db: citekey DB', await Zotero.DB.columnQueryAsync('SELECT itemID FROM betterbibtex.citationkey ORDER BY itemID'))
-          log.debug(now, 'keymanager.db: before remove', blink.many(this.keys))
           const deletes = ids.map(itemID => ({ itemID })) // eslint-disable-line no-case-declarations
-          log.debug(now, 'keymanager.db: delete', deletes)
           await removeMany(this.keys, deletes)
-          log.debug(now, 'keymanager.db: after remove', blink.many(this.keys))
           break
 
         case 'add':
