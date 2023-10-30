@@ -2,126 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Better BibTeX for Zotero</title>
-    <link>/zotero-better-bibtex/tags/</link>
+    <link>/zotero-better-bibtex/tags/index.html</link>
     <description>Recent content in Tags on Better BibTeX for Zotero</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="/zotero-better-bibtex/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <atom:link href="/zotero-better-bibtex/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>automatic export</title>
-      <link>/zotero-better-bibtex/tags/automatic-export/</link>
+      <link>/zotero-better-bibtex/tags/automatic-export/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/automatic-export/</guid>
+      <guid>/zotero-better-bibtex/tags/automatic-export/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>cache</title>
-      <link>/zotero-better-bibtex/tags/cache/</link>
+      <link>/zotero-better-bibtex/tags/cache/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/cache/</guid>
+      <guid>/zotero-better-bibtex/tags/cache/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>citation keys</title>
-      <link>/zotero-better-bibtex/tags/citation-keys/</link>
+      <link>/zotero-better-bibtex/tags/citation-keys/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/citation-keys/</guid>
+      <guid>/zotero-better-bibtex/tags/citation-keys/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>cite as you write</title>
-      <link>/zotero-better-bibtex/tags/cite-as-you-write/</link>
+      <link>/zotero-better-bibtex/tags/cite-as-you-write/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/cite-as-you-write/</guid>
+      <guid>/zotero-better-bibtex/tags/cite-as-you-write/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>configuration</title>
-      <link>/zotero-better-bibtex/tags/configuration/</link>
+      <link>/zotero-better-bibtex/tags/configuration/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/configuration/</guid>
+      <guid>/zotero-better-bibtex/tags/configuration/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>export</title>
-      <link>/zotero-better-bibtex/tags/export/</link>
+      <link>/zotero-better-bibtex/tags/export/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/export/</guid>
+      <guid>/zotero-better-bibtex/tags/export/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>git</title>
-      <link>/zotero-better-bibtex/tags/git/</link>
+      <link>/zotero-better-bibtex/tags/git/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/git/</guid>
+      <guid>/zotero-better-bibtex/tags/git/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>import</title>
-      <link>/zotero-better-bibtex/tags/import/</link>
+      <link>/zotero-better-bibtex/tags/import/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/import/</guid>
+      <guid>/zotero-better-bibtex/tags/import/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>libreoffice</title>
-      <link>/zotero-better-bibtex/tags/libreoffice/</link>
+      <link>/zotero-better-bibtex/tags/libreoffice/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/libreoffice/</guid>
+      <guid>/zotero-better-bibtex/tags/libreoffice/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>overleaf</title>
-      <link>/zotero-better-bibtex/tags/overleaf/</link>
+      <link>/zotero-better-bibtex/tags/overleaf/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/overleaf/</guid>
+      <guid>/zotero-better-bibtex/tags/overleaf/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>preferences</title>
-      <link>/zotero-better-bibtex/tags/preferences/</link>
+      <link>/zotero-better-bibtex/tags/preferences/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/preferences/</guid>
+      <guid>/zotero-better-bibtex/tags/preferences/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>scripting</title>
-      <link>/zotero-better-bibtex/tags/scripting/</link>
+      <link>/zotero-better-bibtex/tags/scripting/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/scripting/</guid>
+      <guid>/zotero-better-bibtex/tags/scripting/index.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>word</title>
-      <link>/zotero-better-bibtex/tags/word/</link>
+      <link>/zotero-better-bibtex/tags/word/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/zotero-better-bibtex/tags/word/</guid>
+      <guid>/zotero-better-bibtex/tags/word/index.html</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

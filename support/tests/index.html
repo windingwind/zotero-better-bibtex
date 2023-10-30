@@ -1,45 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.111.0">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.120.1">
+    <meta name="generator" content="Relearn 5.23.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Running the BBT test suite :: Better BibTeX for Zotero">
+    <meta name="twitter:description" content="Please DO NOT DO THIS without an open issue on the github tracker. I&rsquo;ve been running tests this way for years, but I&rsquo;d still prefer to guide you through this to prevent any risks to your citation library. The test suite has only been tested on MacOS and Linux. I doubt it&rsquo;ll run on Windows, and I don&rsquo;t know what will go wrong when you test. If you&rsquo;re on Windows, DO NOT run this on the same account that holds your actual Zotero library.">
+    <meta property="og:title" content="Running the BBT test suite :: Better BibTeX for Zotero">
+    <meta property="og:description" content="Please DO NOT DO THIS without an open issue on the github tracker. I&rsquo;ve been running tests this way for years, but I&rsquo;d still prefer to guide you through this to prevent any risks to your citation library. The test suite has only been tested on MacOS and Linux. I doubt it&rsquo;ll run on Windows, and I don&rsquo;t know what will go wrong when you test. If you&rsquo;re on Windows, DO NOT run this on the same account that holds your actual Zotero library.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="/zotero-better-bibtex/support/tests/index.html">
+    <meta property="article:section" content="Support :: Better BibTeX for Zotero">
+    <meta property="og:site_name" content="Better BibTeX for Zotero">
+    <title>Running the BBT test suite :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
-
-    <link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
-
-    <title>Running the BBT test suite :: Better BibTeX for Zotero</title>
-
-    
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/zotero-better-bibtex/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
     <link href="/zotero-better-bibtex/css/nucleus.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/fontawesome-all.min.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/hybrid.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/featherlight.min.css" rel="stylesheet">
+    <link href="/zotero-better-bibtex/css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/css/auto-complete.css" rel="stylesheet"></noscript>
     <link href="/zotero-better-bibtex/css/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/auto-complete.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/atom-one-dark-reasonable.css" rel="stylesheet">
+    <link href="/zotero-better-bibtex/css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/css/fonts.css" rel="stylesheet"></noscript>
     <link href="/zotero-better-bibtex/css/theme.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/tabs.css" rel="stylesheet">
-    <link href="/zotero-better-bibtex/css/hugo-theme.css" rel="stylesheet">
-    
-    <link href="/zotero-better-bibtex/css/theme-green.css" rel="stylesheet">
-    
-    
-
-    <script src="/zotero-better-bibtex/js/jquery-3.3.1.min.js"></script>
-
-    <style>
-      :root #header + #content > #left > #rlblock_left{
-          display:none !important;
-      }
-      
-        :not(pre) > code + span.copy-to-clipboard {
-            display: none;
-        }
-      
-    </style>
-    
+    <link href="/zotero-better-bibtex/css/theme-green.css" rel="stylesheet" id="R-variant-style">
+    <link href="/zotero-better-bibtex/css/variant.css" rel="stylesheet">
+    <link href="/zotero-better-bibtex/css/print.css" rel="stylesheet" media="print">
+    <link href="/zotero-better-bibtex/css/ie.css" rel="stylesheet">
+    <script src="/zotero-better-bibtex/js/url.js"></script>
+    <script src="/zotero-better-bibtex/js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="/zotero-better-bibtex/index.search.js";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_Reset_view = 'Reset view';
+      window.T_View_reset = 'View reset!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='zotero-better-bibtex/';
+      window.variants && variants.init( [ 'green' ] );
+    </script>
 <!-- WARNING: this page is generated by https://gohugo.io/ from site/content/support/tests.md. DO NOT EDIT BY HAND -->
 <script type="text/javascript">
   if (location.protocol === 'http:' && (location.port === 80 || !location.port)) {
@@ -61,14 +71,117 @@
 
 
   </head>
-  <body class="" data-url="/zotero-better-bibtex/support/tests/">
-    <nav id="sidebar" class="">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/zotero-better-bibtex/support/tests/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+              <button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)">
+                <i class="fa-fw fas fa-bars"></i>
+              </button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+              <button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)">
+                <i class="fa-fw fas fa-list-alt"></i>
+              </button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/support/index.html"><span itemprop="name">Support</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Running the BBT test suite</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+              <a class="topbar-control" href="https://github.com/retorquere/zotero-better-bibtex/edit/master/site/content/support/tests.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)">
+                <i class="fa-fw fas fa-pen"></i>
+              </a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+              <a class="topbar-control" href="/zotero-better-bibtex/support/translations/index.html" title="Translations (🡐)">
+                <i class="fa-fw fas fa-chevron-left"></i>
+              </a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+              <a class="topbar-control" href="/zotero-better-bibtex/sponsoring/index.html" title="Sponsoring BBT (🡒)">
+                <i class="fa-fw fas fa-chevron-right"></i>
+              </a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+              <button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More">
+                <i class="fa-fw fas fa-ellipsis-v"></i>
+              </button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="running-the-bbt-test-suite">Running the BBT test suite</h1>
 
+<p>Please <strong>DO NOT DO THIS</strong> without an open issue on the github tracker. I&rsquo;ve been running tests this way for years, but I&rsquo;d still prefer to guide you through this to prevent any risks to your citation library. The test suite has only been tested on MacOS and Linux. I doubt it&rsquo;ll run on Windows, and I don&rsquo;t know what will go wrong when you test. If you&rsquo;re on Windows, <strong>DO NOT</strong> run this on the same account that holds your actual Zotero library.</p>
+<p>The tests require an installed Zotero, python 3.6+, and node 12+, a working <code>gcc</code>, and libgit. On MacOS, that requires:</p>
+<ul>
+<li><code>brew install libgit2</code></li>
+<li>if <code>xcode-select -p</code> doesn&rsquo;t respond with <code>/Applications/Xcode.app/Contents/Developer</code>: <code>xcode-select --install</code> (select <code>install</code>, not <code>get Xcode</code> in the popup that follows).</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li><code>git clone https://github.com/retorquere/zotero-better-bibtex.git</code></li>
+<li><code>cd zotero-better-bibtex</code></li>
+<li><code>pip3 install -r requirements.txt</code></li>
+</ul>
+<p>then a few things I&rsquo;d really prefer you do before anything else. <strong>In principle</strong> the tests are safe to run on the user account that also has your own library. I&rsquo;ve been doing this for years. Still, it would be good to verify rather than trust this. The next steps are all reversible if things don&rsquo;t go as expected.</p>
+<ul>
+<li>Make sure Zotero is not running. If you&rsquo;re on a Mac, that means <code>cmd-Q</code></li>
+<li>copy the Zotero profiles to a safe place. The profiles live in <code>~/Library/Application\ Support/Zotero</code> if you&rsquo;re on a Mac, <code>~/.zotero</code> if you&rsquo;re on Linux.</li>
+<li><code>mv ~/Zotero ~/Zotero.saved</code></li>
+<li><code>touch ~/Zotero</code></li>
+</ul>
+<p>this is all temporary, and when all is verified to be setup correctly, we&rsquo;ll undo them.</p>
+<p><code>~/Library/Application\ Support/Zotero</code> / <code>~/.zotero</code> holds the administration of your Zotero profiles. The test setup will add a new profile leaving your existing profile(s) untouched. But better safe than sorry, which is why we&rsquo;re holding a copy.</p>
+<p>The <code>mv</code> sets aside your library so that Zotero won&rsquo;t be able to find it. The <code>touch</code> creates an empty file in its place. The tests don&rsquo;t use that location, they use <code>~/.BBTTEST</code> instead, but if for whatever reason that doesn&rsquo;t work, Zotero will try to write to <code>~/Zotero/something</code>, and since <code>~/Zotero</code> is now a file instead of a directory, Zotero will complain loudly if that happens, and we know we must back out.</p>
+<p>Now then:</p>
+<ul>
+<li>make sure you&rsquo;re in <code>zotero-better-bibtex</code></li>
+<li><code>./test/behave --tags @438</code></li>
+</ul>
+<p>and be amazed. Zotero will pop up, load the test library, executes one test, and shuts down. The log file after the tests run will be <code>~/.BBTTEST.log</code>. The tests do not touch your own library.</p>
+<p>To restore access to your regular library so you can run either a test suite or just work with your library (but <strong>not</strong> both at the same time. <strong>always</strong> fully close Zotero between these).</p>
+<ul>
+<li><code>rm ~/Zotero</code></li>
+<li><code>mv ~/Zotero.saved ~/Zotero</code></li>
+</ul>
+<p>and you can remove the copy of the profile administration you made earlier. Zotero should now start again normally opening your library.</p>
 
-
-  <div id="header-wrapper">
-    <div id="header">
-      <a id="logo" href="/zotero-better-bibtex">
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="/zotero-better-bibtex">
 <span style="vertical-align: text-top">
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -678,662 +791,112 @@ Better BibTeX for Zotero
 </span>
 </a>
 
-    </div>
-    
-        <div class="searchbox">
-    <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="search" placeholder="Search...">
-    <span data-search-clear=""><i class="fas fa-times"></i></span>
-</div>
-
-<script type="text/javascript" src="/zotero-better-bibtex/js/lunr.min.js"></script>
-<script type="text/javascript" src="/zotero-better-bibtex/js/auto-complete.js"></script>
-<script type="text/javascript">
-    
-        var baseurl = "\/zotero-better-bibtex";
-    
-</script>
-<script type="text/javascript" src="/zotero-better-bibtex/js/search.js"></script>
-
-    
-  </div>
-  
-    <section id="homelinks">
-      <ul>
-        <li>
-            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
-        </li>
-      </ul>
-    </section>
-  
-
-    <div class="highlightable">
-    <ul class="topics">
-
-        
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/zotero-better-bibtex/installation/" title="Installation" class="dd-item
-        
-        
-        
-        ">
-      <a href="/zotero-better-bibtex/installation/">
-          Installation
-          
-      </a>
-      
-      
+        </div>
+        <div class="searchbox default-animation">
+          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+          <label class="a11y-only" for="R-search-by">Search</label>
+          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/zotero-better-bibtex/js/auto-complete.js" defer></script>
+        <script src="/zotero-better-bibtex/js/lunr/lunr.min.js" defer></script>
+        <script src="/zotero-better-bibtex/js/lunr/lunr.stemmer.support.min.js" defer></script>
+        <script src="/zotero-better-bibtex/js/lunr/lunr.multi.min.js" defer></script>
+        <script src="/zotero-better-bibtex/js/lunr/lunr.en.min.js" defer></script>
+        <script src="/zotero-better-bibtex/js/search.js" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          
-          
-            
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/zotero-better-bibtex/installation/preferences/" title="Citation keys" class="dd-item
-        
-        
-        
-        ">
-      <a href="/zotero-better-bibtex/installation/preferences/">
-          Citation keys
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/export/" title="Export" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/export/">
-        Export
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/automatic-export/" title="Automatic export" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/automatic-export/">
-        Automatic export
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/import/" title="Import" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/import/">
-        Import
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/miscellaneous/" title="Miscellaneous" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/miscellaneous/">
-        Miscellaneous
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/installation/preferences/hidden-preferences/" title="Hidden preferences" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/preferences/hidden-preferences/">
-        Hidden preferences
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
         </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/installation/bundled-translators/" title="Bundled translators" class="dd-item ">
-        <a href="/zotero-better-bibtex/installation/bundled-translators/">
-        Bundled translators
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/zotero-better-bibtex/exporting/" title="Exporting items" class="dd-item
-        
-        
-        
-        ">
-      <a href="/zotero-better-bibtex/exporting/">
-          Exporting
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/exporting/auto/" title="Automatic export" class="dd-item ">
-        <a href="/zotero-better-bibtex/exporting/auto/">
-        Automatic export
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/exporting/pandoc/" title="Markdown/Pandoc" class="dd-item ">
-        <a href="/zotero-better-bibtex/exporting/pandoc/">
-        Markdown/Pandoc
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/exporting/pull/" title="Pull export" class="dd-item ">
-        <a href="/zotero-better-bibtex/exporting/pull/">
-        Pull export
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/exporting/scripting/" title="Scripting" class="dd-item ">
-        <a href="/zotero-better-bibtex/exporting/scripting/">
-        Scripting
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/exporting/extra-fields/" title="Extra fields" class="dd-item ">
-        <a href="/zotero-better-bibtex/exporting/extra-fields/">
-        Extra fields
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/exporting/advanced/" title="Advanced" class="dd-item ">
-        <a href="/zotero-better-bibtex/exporting/advanced/">
-        Advanced
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/exporting/json-rpc/" title="JSON-RPC" class="dd-item ">
-        <a href="/zotero-better-bibtex/exporting/json-rpc/">
-        JSON-RPC
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/zotero-better-bibtex/citing/" title="Citation Keys" class="dd-item
-        
-        
-        
-        ">
-      <a href="/zotero-better-bibtex/citing/">
-          Citation Keys
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/citing/cayw/" title="Cite as you Write" class="dd-item ">
-        <a href="/zotero-better-bibtex/citing/cayw/">
-        Cite as you Write
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/citing/migrating/" title="Migrating from Word/Libreoffice" class="dd-item ">
-        <a href="/zotero-better-bibtex/citing/migrating/">
-        Migrating from Word/Libreoffice
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/citing/aux-scanner/" title="AUX Scanner" class="dd-item ">
-        <a href="/zotero-better-bibtex/citing/aux-scanner/">
-        AUX Scanner
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/zotero-better-bibtex/support/" title="Support" class="dd-item
-        parent
-        
-        
-        ">
-      <a href="/zotero-better-bibtex/support/">
-          Support
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/support/faq/" title="Frequently Asked Questions" class="dd-item ">
-        <a href="/zotero-better-bibtex/support/faq/">
-        FAQ
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/support/performance/" title="Performance" class="dd-item ">
-        <a href="/zotero-better-bibtex/support/performance/">
-        Performance
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/support/translations/" title="Translations" class="dd-item ">
-        <a href="/zotero-better-bibtex/support/translations/">
-        Translations
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/zotero-better-bibtex/support/tests/" title="Running the BBT test suite" class="dd-item active">
-        <a href="/zotero-better-bibtex/support/tests/">
-        Testing
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-        
-    </ul>
-
-    
-    
-      <section id="shortcuts">
-        <h3>More</h3>
-        <ul>
-          
-              <li>
-                  <a class="padding" href="https://github.com/retorquere/zotero-better-bibtex/releases/latest"><i class='fas fa-fw fa-download'></i> Download</a>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/zotero-better-bibtex/installation/index.html" class=""><a class="padding" href="/zotero-better-bibtex/installation/index.html">Installation</a><ul id="R-subsections-07cca5796d23f5bae96340e1eaa52bc5" class="morespace collapsible-menu">
+          <li data-nav-id="/zotero-better-bibtex/installation/preferences/index.html" class="alwaysopen"><a class="padding" href="/zotero-better-bibtex/installation/preferences/index.html">Citation keys</a><ul id="R-subsections-65e86860b39784c01fbaa8af78309ac8" class="morespace collapsible-menu">
+          <li data-nav-id="/zotero-better-bibtex/installation/preferences/export/index.html" class=""><a class="padding" href="/zotero-better-bibtex/installation/preferences/export/index.html">Export</a></li>
+          <li data-nav-id="/zotero-better-bibtex/installation/preferences/automatic-export/index.html" class=""><a class="padding" href="/zotero-better-bibtex/installation/preferences/automatic-export/index.html">Automatic export</a></li>
+          <li data-nav-id="/zotero-better-bibtex/installation/preferences/import/index.html" class=""><a class="padding" href="/zotero-better-bibtex/installation/preferences/import/index.html">Import</a></li>
+          <li data-nav-id="/zotero-better-bibtex/installation/preferences/miscellaneous/index.html" class=""><a class="padding" href="/zotero-better-bibtex/installation/preferences/miscellaneous/index.html">Miscellaneous</a></li>
+          <li data-nav-id="/zotero-better-bibtex/installation/preferences/hidden-preferences/index.html" class=""><a class="padding" href="/zotero-better-bibtex/installation/preferences/hidden-preferences/index.html">Hidden preferences</a></li></ul></li>
+          <li data-nav-id="/zotero-better-bibtex/installation/bundled-translators/index.html" class=""><a class="padding" href="/zotero-better-bibtex/installation/bundled-translators/index.html">Bundled translators</a></li></ul></li>
+          <li data-nav-id="/zotero-better-bibtex/exporting/index.html" class=""><a class="padding" href="/zotero-better-bibtex/exporting/index.html">Exporting</a><ul id="R-subsections-cb17229a4de7db00a42ac659f80023d9" class="morespace collapsible-menu">
+          <li data-nav-id="/zotero-better-bibtex/exporting/auto/index.html" class=""><a class="padding" href="/zotero-better-bibtex/exporting/auto/index.html">Automatic export</a></li>
+          <li data-nav-id="/zotero-better-bibtex/exporting/pandoc/index.html" class=""><a class="padding" href="/zotero-better-bibtex/exporting/pandoc/index.html">Markdown/Pandoc</a></li>
+          <li data-nav-id="/zotero-better-bibtex/exporting/pull/index.html" class=""><a class="padding" href="/zotero-better-bibtex/exporting/pull/index.html">Pull export</a></li>
+          <li data-nav-id="/zotero-better-bibtex/exporting/scripting/index.html" class=""><a class="padding" href="/zotero-better-bibtex/exporting/scripting/index.html">Scripting</a></li>
+          <li data-nav-id="/zotero-better-bibtex/exporting/extra-fields/index.html" class=""><a class="padding" href="/zotero-better-bibtex/exporting/extra-fields/index.html">Extra fields</a></li>
+          <li data-nav-id="/zotero-better-bibtex/exporting/advanced/index.html" class=""><a class="padding" href="/zotero-better-bibtex/exporting/advanced/index.html">Advanced</a></li>
+          <li data-nav-id="/zotero-better-bibtex/exporting/json-rpc/index.html" class=""><a class="padding" href="/zotero-better-bibtex/exporting/json-rpc/index.html">JSON-RPC</a></li></ul></li>
+          <li data-nav-id="/zotero-better-bibtex/citing/index.html" class=""><a class="padding" href="/zotero-better-bibtex/citing/index.html">Citation Keys</a><ul id="R-subsections-3c7b65d3ae6b7f84c75ed8c6c777730d" class="morespace collapsible-menu">
+          <li data-nav-id="/zotero-better-bibtex/citing/cayw/index.html" class=""><a class="padding" href="/zotero-better-bibtex/citing/cayw/index.html">Cite as you Write</a></li>
+          <li data-nav-id="/zotero-better-bibtex/citing/migrating/index.html" class=""><a class="padding" href="/zotero-better-bibtex/citing/migrating/index.html">Migrating from Word/Libreoffice</a></li>
+          <li data-nav-id="/zotero-better-bibtex/citing/aux-scanner/index.html" class=""><a class="padding" href="/zotero-better-bibtex/citing/aux-scanner/index.html">AUX Scanner</a></li></ul></li>
+          <li data-nav-id="/zotero-better-bibtex/support/index.html" class="parent "><a class="padding" href="/zotero-better-bibtex/support/index.html">Support</a><ul id="R-subsections-95f783ca9effb4e4e72056aaccf9358d" class="morespace collapsible-menu">
+          <li data-nav-id="/zotero-better-bibtex/support/faq/index.html" class=""><a class="padding" href="/zotero-better-bibtex/support/faq/index.html">FAQ</a></li>
+          <li data-nav-id="/zotero-better-bibtex/support/performance/index.html" class=""><a class="padding" href="/zotero-better-bibtex/support/performance/index.html">Performance</a></li>
+          <li data-nav-id="/zotero-better-bibtex/support/translations/index.html" class=""><a class="padding" href="/zotero-better-bibtex/support/translations/index.html">Translations</a></li>
+          <li data-nav-id="/zotero-better-bibtex/support/tests/index.html" class="active"><a class="padding" href="/zotero-better-bibtex/support/tests/index.html">Testing</a></li></ul></li>
+          <li data-nav-id="/zotero-better-bibtex/sponsoring/index.html" class=""><a class="padding" href="/zotero-better-bibtex/sponsoring/index.html">Sponsoring BBT</a></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex/releases/latest"><i class='fas fa-fw fa-download'></i> Download</a></li>
+            <li><a class="padding" href="/zotero-better-bibtex/sponsoring"><i class='fas fa-fw fa-heart'></i> Sponsorship</a></li>
+            <li><a class="padding" href="https://github.com/retorquere/zotero-better-bibtex"><i class='fab fa-fw fa-github'></i> GitHub repo</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fas fa-language fa-fw"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = baseUri + this.value;">
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
               </li>
-          
-              <li>
-                  <a class="padding" href="/zotero-better-bibtex/sponsoring"><i class='fas fa-fw fa-heart'></i> Sponsorship</a>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-green" value="green" selected>Green</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
               </li>
-          
-              <li>
-                  <a class="padding" href="https://github.com/retorquere/zotero-better-bibtex"><i class='fab fa-fw fa-github'></i> GitHub repo</a>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fas fa-history fa-fw"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
               </li>
-          
-        </ul>
-      </section>
-    
-
-    
-    <section id="footer">
-      
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
     
     
     
@@ -1466,609 +1029,12 @@ Better BibTeX for Zotero
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    </section>
-  </div>
-</nav>
-
-
-
-
-        <section id="body">
-        <div id="overlay"></div>
-        <div class="padding highlightable">
-              
-              <div>
-                <div id="top-bar">
-                
-                  
-                  
-                  
-                  <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/retorquere/zotero-better-bibtex/edit/master/site/content/support/tests.md" target="blank">
-                      <i class="fas fa-code-branch"></i>
-                      <span id="top-github-link-text">Edit this page</span>
-                    </a>
-                  </div>
-                  
-                
-                
-                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <span id="sidebar-toggle-span">
-                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-                          <i class="fas fa-bars"></i>
-                        </a>
-                    </span>
-                  
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
-                  <span class="links">
-                 
-                 
-                    
-          
-          
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/zotero-better-bibtex/'>Better BibTeX for Zotero</a> > <a href='/zotero-better-bibtex/support/'>Support</a> > Running the BBT test suite
-          
-        
-          
-        
-          
-        
-                 
-                  </span>
-                </div>
-                
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents"></nav>
-    </div>
-</div>
-
-                
-              </div>
-            </div>
-            
-        <div id="head-tags">
-        
+          </div>
         </div>
-        
-        <div id="body-inner">
-          
-            <h1>
-              
-              Running the BBT test suite
-            </h1>
-          
-
-        
-
-
-<p>Please <strong>DO NOT DO THIS</strong> without an open issue on the github tracker. I&rsquo;ve been running tests this way for years, but I&rsquo;d still prefer to guide you through this to prevent any risks to your citation library. The test suite has only been tested on MacOS and Linux. I doubt it&rsquo;ll run on Windows, and I don&rsquo;t know what will go wrong when you test. If you&rsquo;re on Windows, <strong>DO NOT</strong> run this on the same account that holds your actual Zotero library.</p>
-<p>The tests require an installed Zotero, python 3.6+, and node 12+, a working <code>gcc</code>, and libgit. On MacOS, that requires:</p>
-<ul>
-<li><code>brew install libgit2</code></li>
-<li>if <code>xcode-select -p</code> doesn&rsquo;t respond with <code>/Applications/Xcode.app/Contents/Developer</code>: <code>xcode-select --install</code> (select <code>install</code>, not <code>get Xcode</code> in the popup that follows).</li>
-</ul>
-<p>Then:</p>
-<ul>
-<li><code>git clone https://github.com/retorquere/zotero-better-bibtex.git</code></li>
-<li><code>cd zotero-better-bibtex</code></li>
-<li><code>pip3 install -r requirements.txt</code></li>
-</ul>
-<p>then a few things I&rsquo;d really prefer you do before anything else. <strong>In principle</strong> the tests are safe to run on the user account that also has your own library. I&rsquo;ve been doing this for years. Still, it would be good to verify rather than trust this. The next steps are all reversible if things don&rsquo;t go as expected.</p>
-<ul>
-<li>Make sure Zotero is not running. If you&rsquo;re on a Mac, that means <code>cmd-Q</code></li>
-<li>copy the Zotero profiles to a safe place. The profiles live in <code>~/Library/Application\ Support/Zotero</code> if you&rsquo;re on a Mac, <code>~/.zotero</code> if you&rsquo;re on Linux.</li>
-<li><code>mv ~/Zotero ~/Zotero.saved</code></li>
-<li><code>touch ~/Zotero</code></li>
-</ul>
-<p>this is all temporary, and when all is verified to be setup correctly, we&rsquo;ll undo them.</p>
-<p><code>~/Library/Application\ Support/Zotero</code> / <code>~/.zotero</code> holds the administration of your Zotero profiles. The test setup will add a new profile leaving your existing profile(s) untouched. But better safe than sorry, which is why we&rsquo;re holding a copy.</p>
-<p>The <code>mv</code> sets aside your library so that Zotero won&rsquo;t be able to find it. The <code>touch</code> creates an empty file in its place. The tests don&rsquo;t use that location, they use <code>~/.BBTTEST</code> instead, but if for whatever reason that doesn&rsquo;t work, Zotero will try to write to <code>~/Zotero/something</code>, and since <code>~/Zotero</code> is now a file instead of a directory, Zotero will complain loudly if that happens, and we know we must back out.</p>
-<p>Now then:</p>
-<ul>
-<li>make sure you&rsquo;re in <code>zotero-better-bibtex</code></li>
-<li><code>./test/behave --tags @438</code></li>
-</ul>
-<p>and be amazed. Zotero will pop up, load the test library, executes one test, and shuts down. The log file after the tests run will be <code>~/.BBTTEST.log</code>. The tests do not touch your own library.</p>
-<p>To restore access to your regular library so you can run either a test suite or just work with your library (but <strong>not</strong> both at the same time. <strong>always</strong> fully close Zotero between these).</p>
-<ul>
-<li><code>rm ~/Zotero</code></li>
-<li><code>mv ~/Zotero.saved ~/Zotero</code></li>
-</ul>
-<p>and you can remove the copy of the profile administration you made earlier. Zotero should now start again normally opening your library.</p>
-
-
-<footer class="footline">
-	
-</footer>
-
-        
-        </div>
-        
-
       </div>
-
-    <div id="navigation">
-        
-        
-
-        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-
-        
-
-
-	 
-	 
-		
-			<a class="nav nav-prev" href="/zotero-better-bibtex/support/translations/" title="Translations"> <i class="fa fa-chevron-left"></i></a>
-		
-		
-			<a class="nav nav-next" href="/zotero-better-bibtex/support/faq/" title="Frequently Asked Questions" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
-		
-	
-    </div>
-
-    </section>
-
-    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-    </div>
-    <script src="/zotero-better-bibtex/js/clipboard.min.js"></script>
-    <script src="/zotero-better-bibtex/js/perfect-scrollbar.min.js"></script>
-    <script src="/zotero-better-bibtex/js/perfect-scrollbar.jquery.min.js"></script>
-    <script src="/zotero-better-bibtex/js/jquery.sticky.js"></script>
-    <script src="/zotero-better-bibtex/js/featherlight.min.js"></script>
-    <script src="/zotero-better-bibtex/js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/zotero-better-bibtex/js/modernizr.custom-3.6.0.js"></script>
-    <script src="/zotero-better-bibtex/js/learn.js"></script>
-    <script src="/zotero-better-bibtex/js/hugo-learn.js"></script>
-    
-        
-            <script src="/zotero-better-bibtex/mermaid/mermaid.js"></script>
-        
-        <script>
-            mermaid.initialize({ startOnLoad: true });
-        </script>
-    
-    
-
+    </aside>
+    <script src="/zotero-better-bibtex/js/clipboard.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/perfect-scrollbar.min.js" defer></script>
+    <script src="/zotero-better-bibtex/js/theme.js" defer></script>
   </body>
 </html>
-
