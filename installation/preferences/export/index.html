@@ -132,7 +132,6 @@ Making any change here will drop your entire export cache. This is usually not a
         <li><a href="#abbreviation-style">Abbreviation style:</a></li>
         <li><a href="#include-comments-about-potential-problems-with-the-exported-entries">Include comments about potential problems with the exported entries</a></li>
         <li><a href="#include-automatic-tags-in-export">Include automatic tags in export</a></li>
-        <li><a href="#when-converting-to-plain-text-latex-commands">When converting to plain-text latex commands:</a></li>
         <li><a href="#apply-title-casing-to-titles">Apply title-casing to titles</a></li>
         <li><a href="#apply-case-protection-to-capitalized-words-by-enclosing-them-in-braces">Apply case-protection to capitalized words by enclosing them in braces</a></li>
         <li><a href="#cache">Cache</a></li>
@@ -337,23 +336,6 @@ duplicate citation keys.</p>
 <p>default: <code>yes</code></p>
 <p>Some importers or Zotero extensions (such as the ShortDOI manager for example) create tags on items that are more for item management than that
 they are descriptive of the item. When this is off, such tags will not be included in the export.</p>
-<h3 id="when-converting-to-plain-text-latex-commands">When converting to plain-text latex commands:</h3>
-<p>default: <code>Minimize the number of switches between math-mode and text-mode</code></p>
-<p>When a unicode character can be exported as either a math-mode or text-mode command, map to:</p>
-<ul>
-<li><code>minimal-packages</code>: if both a math-mode and a text-mode mapping is available, use the version that does not require extra packages to be loaded.</li>
-<li><code>conservative</code>: if both a math-mode and a text-mode mapping is available, stay in the mode of the previously mapped character if possible. This minimizes the number of generated <code>$</code>s in the output.</li>
-<li><code>text</code>: if both a math-mode and a text-mode mapping is available, prefer text.</li>
-<li><code>math</code>: if both a math-mode and a text-mode mapping is available, prefer math.</li>
-</ul>
-<p>Options:</p>
-<ul>
-<li>Minimize additional latex packages required</li>
-<li>Minimize the number of switches between math-mode and text-mode</li>
-<li>Prefer text-mode replacements</li>
-<li>Prefer math-mode replacements</li>
-<li>Add braces to accented characters to assist simplistic latex parsers</li>
-</ul>
 <h3 id="apply-title-casing-to-titles">Apply title-casing to titles</h3>
 <p>default: <code>yes</code></p>
 <p>If you&rsquo;re dead-set on ignoring both BibTeX/BibLaTeX best practice (see the BBT FAQ) and the Zotero recommendations on title/sentence casing, you can turn this off to suppress title casing for English items</p>
@@ -367,10 +349,8 @@ they are descriptive of the item. When this is off, such tags will not be includ
 <p>If you have this on, and you experience any problem that is not the cache getting dropped on upgrade, you <em>must</em> clear the cache and reproduce the problem. When you change this setting, as with any setting change, the cache will be dropped.</p>
 <h4 id="enable-caching-for-background-exports">Enable caching for background exports</h4>
 <p>default: <code>yes</code></p>
-<p>Even though BBT exports happen in a separate thread, some
-work needs to be done before the background export can
-start. Part of this work is preloading the cache. You can
-shorten the (blocking) preparation time by turning off
+<p>Even though BBT exports happen in a separate thread, some work needs to be done before the background export can
+start. Part of this work is preloading the cache. You can shorten the (blocking) preparation time by turning off
 the cache, at the cost of longer export times.</p>
 
             <footer class="footline">
