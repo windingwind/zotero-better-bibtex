@@ -941,12 +941,12 @@ the Zotero item looks like to the translator.</p>
 <div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterBibLaTeX</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">entrytype</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;collection&#39;</span>) <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">entrytype</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;book&#39;</span>
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="set-the-entry-type-to-misc-for-arxiv-preprints-in-bibtex">Set the entry type to <code>misc</code> for arXiv preprints in BibTeX</h3>
-<div class="wrap-code highlight"><pre tabindex="0"><code>if (Translator.BetterBibTeX &amp;&amp; tex.entrytype === &#39;article&#39; &amp;&amp; zotero.arXiv) {
-  if (tex.has.journal &amp;&amp; zotero.arXiv.source === &#39;publicationTitle&#39;) {
-    tex.remove(&#39;journal&#39;);
-  }
-  if (!tex.has.journal) tex.entrytype = &#39;misc&#39;
-}</code></pre></div><h3 id="citing-documents-with-a-physical-archive-location">Citing documents with a physical archive location</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterBibTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">entrytype</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;article&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">arXiv</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">has</span>.<span style="color:#a6e22e">journal</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">arXiv</span>.<span style="color:#a6e22e">source</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;publicationTitle&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;journal&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">has</span>.<span style="color:#a6e22e">journal</span>) <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">entrytype</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;misc&#39;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="citing-documents-with-a-physical-archive-location">Citing documents with a physical archive location</h3>
 <p>This is one area where some of the supposedly most popular packages &ndash; <code>biblatex</code>,
 <code>biblatex-apa</code>, <code>biblatex-chicago</code>, <code>biblatex-mla</code> &ndash; are all over the
 place, if they explicitly support archival material at all. There
@@ -966,46 +966,46 @@ physical archive.)</p>
 location to postscripts for now. If you enable the <a href="/zotero-better-bibtex/installation/preferences/export/#include-comments-about-potential-problems-with-the-references">quality report</a>, BBT
 will list Zotero fields with data that has not been used in the
 export:</p>
-<div class="wrap-code highlight"><pre tabindex="0"><code>@letter{MillionDemiInfirmes1968,
-  title = {Un Million et Demi d&#39;infirmes, Handicapés Physiques et Mentaux},
-  date = {1968-05-31},
-  url = {https://archives.strasbourg.eu/archive/fonds/FRAM67482_0592_114Z/view:115037},
-  urldate = {2021-04-08},
-  type = {Letter}
-}
-% == BibLateX quality report for MillionDemiInfirmes1968:
-% Unexpected field &#39;title&#39;
-% Unexpected field &#39;type&#39;
-% ? Unused archive: Archives de la Ville et l&#39;Eurométropole de Strasbourg
-% ? Unused archiveLocation: 114 Z 1 248
-% ? Unused callNumber: 114 Z 1 248</code></pre></div><p>if you then apply a postscript such as</p>
-<div class="wrap-code highlight"><pre tabindex="0"><code>if (Translator.BetterBibLaTeX) {
-  // biblatex-mla
-  if (zotero.archive &amp;&amp; zotero.archiveLocation) {
-    tex.add({ name: &#39;type&#39;, value: tex.entrytype })
-    tex.entrytype = &#39;unpublished&#39;
-    tex.add({ name: &#39;library&#39;, value: zotero.archive})
-    tex.add({ name: &#39;number&#39;, value: zotero.archiveLocation })
-  }
-}</code></pre></div><p>you get</p>
-<div class="wrap-code highlight"><pre tabindex="0"><code>@unpublished{MillionDemiInfirmes1968,
-  title = {Un Million et Demi d&#39;infirmes, Handicapés Physiques et Mentaux},
-  date = {1968-05-31},
-  url = {https://archives.strasbourg.eu/archive/fonds/FRAM67482_0592_114Z/view:115037},
-  urldate = {2021-04-08},
-  type = {letter},
-  library = {Archives de la Ville et l&#39;Eurométropole de Strasbourg},
-  number = {114 Z 1 248}
-}
-% == BibLateX quality report for MillionDemiInfirmes1968:
-% Unexpected field &#39;number&#39;
-% Missing required field &#39;author&#39;</code></pre></div><h3 id="export-season-for-bibtex">Export season for BibTeX</h3>
-<div class="wrap-code highlight"><pre tabindex="0"><code>if (Translator.BetterBibTeX &amp;&amp; tex.date.type === &#39;season&#39;) {
-  tex.add({ name: &#39;month&#39;, value: [&#39;&#39;, &#39;spring&#39;, &#39;summer&#39;, &#39;fall&#39;, &#39;winter&#39;][tex.date.season] })
-}</code></pre></div><h3 id="adding-rights-field-in-biblatex">Adding rights field in BibLaTeX</h3>
-<div class="wrap-code highlight"><pre tabindex="0"><code>if (Translator.BetterBibLaTeX) {
-  tex.add({ name: &#39;rights&#39;, value: zotero.rights});
-}</code></pre></div><h3 id="use--in-file-paths-to-avoid-the-bib-file-being-different-on-different-computers">Use <code>~</code> in file paths to avoid the .bib file being different on different computers</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bibtex" data-lang="bibtex"><span style="display:flex;"><span><span style="color:#a6e22e">@letter</span>{MillionDemiInfirmes1968,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">{Un Million et Demi d&#39;infirmes, Handicapés Physiques et Mentaux}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">date</span> = <span style="color:#e6db74">{1968-05-31}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">{https://archives.strasbourg.eu/archive/fonds/FRAM67482_0592_114Z/view:115037}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">urldate</span> = <span style="color:#e6db74">{2021-04-08}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">type</span> = <span style="color:#e6db74">{Letter}</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% == BibLateX quality report for MillionDemiInfirmes1968:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Unexpected field &#39;title&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Unexpected field &#39;type&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% ? Unused archive: Archives de la Ville et l&#39;Eurométropole de Strasbourg</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% ? Unused archiveLocation: 114 Z 1 248</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% ? Unused callNumber: 114 Z 1 248</span></span></span></code></pre></div><p>if you then apply a postscript such as</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterBibLaTeX</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// biblatex-mla
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">archive</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">archiveLocation</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;type&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">entrytype</span> })
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">entrytype</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;unpublished&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;library&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">archive</span>})
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;number&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">archiveLocation</span> })
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>you get</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bibtex" data-lang="bibtex"><span style="display:flex;"><span><span style="color:#a6e22e">@unpublished</span>{MillionDemiInfirmes1968,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">{Un Million et Demi d&#39;infirmes, Handicapés Physiques et Mentaux}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">date</span> = <span style="color:#e6db74">{1968-05-31}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">{https://archives.strasbourg.eu/archive/fonds/FRAM67482_0592_114Z/view:115037}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">urldate</span> = <span style="color:#e6db74">{2021-04-08}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">type</span> = <span style="color:#e6db74">{letter}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span> = <span style="color:#e6db74">{Archives de la Ville et l&#39;Eurométropole de Strasbourg}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">number</span> = <span style="color:#e6db74">{114 Z 1 248}</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% == BibLateX quality report for MillionDemiInfirmes1968:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Unexpected field &#39;number&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Missing required field &#39;author&#39;</span></span></span></code></pre></div><h3 id="export-season-for-bibtex">Export season for BibTeX</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterBibTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;season&#39;</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;month&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;spring&#39;</span>, <span style="color:#e6db74">&#39;summer&#39;</span>, <span style="color:#e6db74">&#39;fall&#39;</span>, <span style="color:#e6db74">&#39;winter&#39;</span>][<span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">season</span>] })
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="adding-rights-field-in-biblatex">Adding rights field in BibLaTeX</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterBibLaTeX</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;rights&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">rights</span>});
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="use--in-file-paths-to-avoid-the-bib-file-being-different-on-different-computers">Use <code>~</code> in file paths to avoid the .bib file being different on different computers</h3>
 <p>For example on a Linux machine you might have <code>/home/myname</code> and on MacOS it is typically <code>/Users/mypossiblyothername</code>. If you sync a bib file on both to a git repo you will see a lot of diffs everytime due to them fighting each other.</p>
 <div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">options</span>.<span style="color:#a6e22e">exportFileData</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">attachments</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">attachments</span>.<span style="color:#a6e22e">length</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">att</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">attachments</span>) {
@@ -1021,11 +1021,11 @@ export:</p>
 <div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterCSLJSON</span>) {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">entry</span>.<span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">attachments</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">a</span> =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">localPath</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;;&#34;</span>);
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="convert-windows-attachment-paths-to-unix">Convert Windows attachment paths to Unix</h3>
-<div class="wrap-code highlight"><pre tabindex="0"><code>if (Translator.BetterTeX &amp;&amp; !Translator.options.exportFileData &amp;&amp; item.attachments &amp;&amp; Translator.exportPath.includes(&#39;\\\\&#39;)) {
-  if (item.attachments) {
-    reference.add({ name: &#39;file&#39;, bibtex: reference.enc_attachments({ value: item.attachments }, path =&gt; path.replace(/^[A-Z]:/i, &#39;&#39;).replace(/\\\\/g, &#39;/&#39;)) })
-  }
-}</code></pre></div>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">options</span>.<span style="color:#a6e22e">exportFileData</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">attachments</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">exportPath</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;\\\\&#39;</span>)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">attachments</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;file&#39;</span>, <span style="color:#a6e22e">bibtex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">reference</span>.<span style="color:#a6e22e">enc_attachments</span>({ <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">attachments</span> }, <span style="color:#a6e22e">path</span> =&gt; <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/^[A-Z]:/i</span>, <span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\\\\/g</span>, <span style="color:#e6db74">&#39;/&#39;</span>)) })
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
             <footer class="footline">
             </footer>
           </article>
