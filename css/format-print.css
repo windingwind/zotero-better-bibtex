@@ -1,4 +1,5 @@
-@import "theme-relearn-light.css";
+@import "chroma-%!s(<nil>).css";
+@import "theme-%!s(<nil>).css";
 
 #R-sidebar {
     display: none;
