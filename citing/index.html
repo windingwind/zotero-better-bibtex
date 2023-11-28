@@ -340,23 +340,6 @@ that yields a non-empty string. If all return a empty string, a random key will 
           </details>
         <p>The given-name initial of the last author. </p></dd>
   
-    <dt><code>authors</code></dt><dd>
-          <details class="details"><summary class="summary">parameters:</summary>
-          <table>
-            <thead><tr><th>parameter</th><th>type</th><th>description</th><th>default</th></tr></thead>
-            <tbody>
-              <tr><td><code>n</code></td><td><i>number</i> / [<i>number</i>, <i>number</i>]</td><td><p>select the first <code>n</code> authors (when passing a number) or the authors in this range (inclusive, when passing two values); negative numbers mean "from the end", default = 0 = all</p></td><td><code>0</code> </td></tr>
-<tr><td><code>creator</code></td><td><code>author</code> / <code>editor</code> / <code>translator</code> / <code>collaborator</code> / <code>*</code></td><td><p>select type of creator (<code>author</code> or <code>editor</code>)</p></td><td><code>"*"</code> </td></tr>
-<tr><td><code>name</code></td><td>a creator sprintf template with one or more of the variables <code>f</code> (family name) / <code>g</code> (given name) / <code>i</code> (first initial) / <code>I</code> (all initials)</td><td><p>sprintf-js template. Available named parameters are: <code>f</code> (family name), <code>g</code> (given name), <code>i</code> (initials)</p></td><td><code>"%(f)s"</code> </td></tr>
-<tr><td><code>etal</code></td><td><i>string</i></td><td><p>use this term to replace authors after <code>n</code> authors have been named</p></td><td><code>""</code> </td></tr>
-<tr><td><code>sep</code></td><td><i>string</i></td><td><p>use this character between authors</p></td><td><code>" "</code> </td></tr>
-<tr><td><code>min</code></td><td><i>number</i></td><td><p>skip to the next pattern if there are less than <code>min</code> creators, 0 = ignore</p></td><td><code>0</code> </td></tr>
-<tr><td><code>max</code></td><td><i>number</i></td><td><p>skip to the next pattern if there are more than <code>max</code> creators, 0 = ignore</p></td><td><code>0</code> </td></tr>
-            </tbody>
-          </table>
-          </details>
-        <p>Author/editor information. </p></dd>
-  
     <dt><code>authorsAlpha</code></dt><dd>
           <details class="details"><summary class="summary">parameters:</summary>
           <table>
