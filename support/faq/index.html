@@ -96,8 +96,7 @@
     <li><a href="#bbt-is-changing-the-capitalization-of-my-titles----why">BBT is changing the capitalization of my titles &ndash; why?</a></li>
     <li><a href="#why-the-double-braces">Why the double braces?</a></li>
     <li><a href="#but-why-so-many-double-braces">But why <em>so many</em> double braces?</a></li>
-    <li><a href="#importing-jabref-databases">Importing JabRef databases</a></li>
-    <li><a href="#background-exportszotero-better-bibtexexportingbackground-exports-have-been-disabled"><a href="/zotero-better-bibtex/exporting/#background-exports">Background exports</a> have been disabled</a>
+    <li><a href="#importing-jabref-databases">Importing JabRef databases</a>
       <ul>
         <li><a href="#why-zotero--bbt-instead-of-mendeley">Why Zotero + BBT instead of Mendeley?</a></li>
       </ul>
@@ -284,8 +283,6 @@ directory, but BBT can&rsquo;t read those preferences, so all attachments would
 fail to import. Make imports work with JabRef&rsquo;s library-specific setting <code>Library -&gt; Library Properties -&gt; General File Directory</code>.
 Make sure the latter path is correct, as JabRef might continue finding files and not notify you if it contains errors.</li>
 </ul>
-<h2 id="background-exportszotero-better-bibtexexportingbackground-exports-have-been-disabled"><a href="/zotero-better-bibtex/exporting/#background-exports">Background exports</a> have been disabled</h2>
-<p>When BBT encounters an error during a background export, it will automatically disable them; the UI will show <code>Background exports disabled</code>. For reasons that I haven&rsquo;t yet discovered, Firefox (the platform Zotero still builds on) sometimes declines BBT&rsquo;s request for a background thread, and will decline them until Zotero is restarted. In order to let you keep on working, BBT will disable background exports, and subsequent exports will be the normal Zotero foreground exports. You can re-enable the background exports using the <code>parallel exports</code> slider in BBT&rsquo;s <code>Advanced</code> preferences, under the <code>export</code> tab, or by restarting Zotero, which will re-enable them if you haven&rsquo;t manually set the slider to <code>0</code>.</p>
 <h3 id="why-zotero--bbt-instead-of-mendeley">Why Zotero + BBT instead of Mendeley?</h3>
 <p>Among the reasons to just prefer Zotero over Mendeley outright you will find:</p>
 <ul>
@@ -296,7 +293,7 @@ Make sure the latter path is correct, as JabRef might continue finding files and
 <ul>
 <li>Mendeley is still double-bracing titles &ndash; a behavior so wrong (yet unfortunately ubiquitous), biblatex started <a href="">ignoring double-braced titles</a> (see <a href="https://tex.stackexchange.com/a/327387/27603" target="_blank">here</a> and <a href="https://tex.stackexchange.com/a/233976/27603" target="_blank">here</a>).</li>
 <li>Mendeley uses CSL, so items should be entered in sentence case (as is the case in Zotero). But bib(la)tex expects title-case, so titles should be ocnverted to title case during export. This is difficult, so Mendeley just doesn&rsquo;t bother doing it.</li>
-<li>Verbatim fields that should per spec be exported as regular fields by Mendeley.</li>
+<li>Verbatim fields that should per spec be exported as regular fields by Mendeley. This will get you compilation errors.</li>
 </ul>
 
             <footer class="footline">
