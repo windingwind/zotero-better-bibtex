@@ -16,7 +16,7 @@
     --MAIN-TITLES-H3-color: rgba( 0, 243, 211, 1 ); /* text color of h3-h6 titles */
     --MAIN-TITLES-H4-color: rgba( 255, 255, 0, 1 ); /* text color of h4-h6 titles */
 
-    --CODE-theme: neon; /* name of the chroma styleheet file */
+    --CODE-theme: neon; /* name of the chroma stylesheet file */
     --CODE-BLOCK-color: rgba( 248, 248, 242, 1 ); /* fallback text color of block code; should be adjusted to your selected chroma style */
     --CODE-BLOCK-BG-color: rgba( 0, 0, 0, 1 ); /* fallback background color of block code; should be adjusted to your selected chroma style */
     --CODE-INLINE-color: rgba( 130, 229, 80, 1 ); /* text color of inline code */
@@ -24,9 +24,9 @@
     --CODE-INLINE-BORDER-color: rgba( 70, 70, 70, 1 ); /* border color of inline code */
 
     --BROWSER-theme: dark; /* name of the theme for browser scrollbars of the main section */
-    --MERMAID-theme: dark; /* name of the default Mermaid theme for this variant, can be overridden in config.toml */
-    --OPENAPI-theme: dark; /* name of the default OpenAPI theme for this variant, can be overridden in config.toml */
-    --OPENAPI-CODE-theme: tomorrow-night; /* name of the default OpenAPI code theme for this variant, can be overridden in config.toml */
+    --MERMAID-theme: dark; /* name of the default Mermaid theme for this variant, can be overridden in hugo.toml */
+    --OPENAPI-theme: dark; /* name of the default OpenAPI theme for this variant, can be overridden in hugo.toml */
+    --OPENAPI-CODE-theme: tomorrow-night; /* name of the default OpenAPI code theme for this variant, can be overridden in hugo.toml */
 
     --MENU-HEADER-BG-color: rgba( 0, 0, 0, 0 ); /* background color of menu header */
 

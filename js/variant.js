@@ -89,7 +89,8 @@ var variants = {
 	},
 
 	generateVariantPath: function( variant, old_path ){
-		var new_path = old_path.replace( /^(.*\/theme-).*?(\.css.*)$/, '$1' + variant + '$2' );
+        var mod = window.relearn.themeVariantModifier.replace( '.', '\\.' );
+		var new_path = old_path.replace( new RegExp(`^(.*\/theme-).*?(${mod}\.css.*)$`), '$1' + variant + '$2' );
 		return new_path;
 	},
 
@@ -575,7 +576,7 @@ var variants = {
 		{ name: 'MAIN-TITLES-H5-font',                   group: 'headings',      fallback: 'MAIN-TITLES-H4-font',         tooltip: 'text font of h5-h6 titles', },
 		{ name: 'MAIN-TITLES-H6-font',                   group: 'headings',      fallback: 'MAIN-TITLES-H5-font',         tooltip: 'text font of h6 titles', },
 
-		{ name: 'CODE-theme',                            group: 'code',           default: 'relearn-light',               tooltip: 'name of the chroma styleheet file', },
+		{ name: 'CODE-theme',                            group: 'code',           default: 'relearn-light',               tooltip: 'name of the chroma stylesheet file', },
 		{ name: 'CODE-font',                             group: 'code',           default: '"Consolas", menlo, monospace', tooltip: 'text font of code', },
 		{ name: 'CODE-BLOCK-color',                      group: 'code blocks',    default: '#000000',                     tooltip: 'fallback text color of block code; should be adjusted to your selected chroma style', },
 		{ name: 'CODE-BLOCK-BG-color',                   group: 'code blocks',    default: '#f8f8f8',                     tooltip: 'fallback background color of block code; should be adjusted to your selected chroma style', },
@@ -585,9 +586,9 @@ var variants = {
 		{ name: 'CODE-INLINE-BORDER-color',              group: 'inline code',    default: '#fbf0cb',                     tooltip: 'border color of inline code', },
 
 		{ name: 'BROWSER-theme',                         group: '3rd party',      default: 'light',                       tooltip: 'name of the theme for browser scrollbars of the main section', },
-		{ name: 'MERMAID-theme',                         group: '3rd party',      default: 'default',                     tooltip: 'name of the default Mermaid theme for this variant, can be overridden in config.toml', },
-		{ name: 'OPENAPI-theme',                         group: '3rd party',      default: 'light',                       tooltip: 'name of the default OpenAPI theme for this variant, can be overridden in config.toml', },
-		{ name: 'OPENAPI-CODE-theme',                    group: '3rd party',      default: 'obsidian',                    tooltip: 'name of the default OpenAPI code theme for this variant, can be overridden in config.toml', },
+		{ name: 'MERMAID-theme',                         group: '3rd party',      default: 'default',                     tooltip: 'name of the default Mermaid theme for this variant, can be overridden in hugo.toml', },
+		{ name: 'OPENAPI-theme',                         group: '3rd party',      default: 'light',                       tooltip: 'name of the default OpenAPI theme for this variant, can be overridden in hugo.toml', },
+		{ name: 'OPENAPI-CODE-theme',                    group: '3rd party',      default: 'obsidian',                    tooltip: 'name of the default OpenAPI code theme for this variant, can be overridden in hugo.toml', },
 
 		{ name: 'MENU-BORDER-color',                     group: 'header',         default: 'transparent',                 tooltip: 'border color between menu and content', },
 		{ name: 'MENU-TOPBAR-BORDER-color',              group: 'header',        fallback: 'MENU-HEADER-BG-color',        tooltip: 'border color of vertical line between menu and topbar', },
