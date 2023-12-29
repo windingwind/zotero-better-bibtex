@@ -97,6 +97,7 @@
     <li><a href="#automatically-pin-citation-key-after">Automatically pin citation key after</a></li>
     <li><a href="#keeping-citation-keys-unique">Keeping citation keys unique</a>
       <ul>
+        <li><a href="#ignore-upperlowercase-when-comparing-for-uniqueness">Ignore upper/lowercase when comparing for uniqueness</a></li>
         <li><a href="#keep-keys-unique">Keep keys unique</a></li>
         <li><a href="#on-conflict-with-a-pinned-key-non-pinned-keys-will-be">On conflict with a pinned key, non-pinned keys will be</a></li>
       </ul>
@@ -162,6 +163,9 @@ appropriate place in your pattern, but checking this checkbox will just apply <c
 <p>default: <code>0</code></p>
 <p>When &gt; 0, BBT will automatically pin the first citation keys it generates for an item after this many seconds.</p>
 <h2 id="keeping-citation-keys-unique">Keeping citation keys unique</h2>
+<h3 id="ignore-upperlowercase-when-comparing-for-uniqueness">Ignore upper/lowercase when comparing for uniqueness</h3>
+<p>default: <code>yes</code></p>
+<p>Treat &ldquo;AugusteComte&rdquo; and &ldquo;augustecomte&rdquo; as the same key when testing for uniqueness</p>
 <h3 id="keep-keys-unique">Keep keys unique</h3>
 <p>default: <code>within each library</code></p>
 <p>Auto-generated (non-pinned) keys automatically get a postfix when they would generate a duplicate. By default, the check for duplicates is restricted
