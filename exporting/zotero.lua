@@ -1,8 +1,8 @@
 
-  print('zotero-live-citations 242fdd8')
+  print('zotero-live-citations e9fb621')
   local mt, latest = pandoc.mediabag.fetch('https://retorque.re/zotero-better-bibtex/exporting/zotero.lua.revision')
   latest = string.sub(latest, 1, 10)
-  if '242fdd8' ~= latest then
+  if 'e9fb621' ~= latest then
     print('new version "' .. latest .. '" available at https://retorque.re/zotero-better-bibtex/exporting')
   end
 
@@ -1632,44 +1632,6 @@ local state = {
 
 module.citekeys = {}
 
-function module.authors(csl_or_item)
-  local authors = {}
-  local author
-
-  if csl_or_item.author ~= nil then
-    for _, author in ipairs(csl_or_item.author) do
-      if author.literal ~= nil then
-        table.insert(authors, author.literal)
-      elseif author.family ~= nil then
-        table.insert(authors, author.family)
-      end
-    end
-
-  elseif csl_or_item.creators ~= nil then
-    for _, author in ipairs(csl_or_item.creators) do
-      if author.name ~= nil then
-        table.insert(authors, author.name)
-      elseif author.lastName ~= nil then
-        table.insert(authors, author.lastName)
-      end
-    end
-
-  elseif csl_or_item.reporter ~= nil then
-    table.insert(authors, csl_or_item.reporter)
-  end
-
-  if utils.tablelength(authors) == 0 then
-    return nil
-  end
-
-  local last = table.remove(authors)
-  if utils.tablelength(authors) == 0 then
-    return last
-  end
-  authors = table.concat(authors, ', ')
-  return table.concat({ authors, last }, ' and ')
-end
-
 local function load_items()
   if state.fetched ~= nil then
     return
@@ -1694,7 +1656,11 @@ local function load_items()
   local mt, body = pandoc.mediabag.fetch(url, '.')
   local ok, response = pcall(json.decode, body)
   if not ok then
-    print('could not fetch Zotero items: ' .. response)
+    print('could not fetch Zotero items: ' .. response .. '(' .. body .. ')')
+    return
+  end
+  if response.error ~= nil then
+    print('could not fetch Zotero items: ' .. response.error.message)
     return
   end
   state.fetched = response.result
@@ -1770,7 +1736,8 @@ local config = {
   scannable_cite = false,
   csl_style = 'apa7',
   format = nil, -- more to document than anything else -- Lua does not store nils in tables
-  transferable = false
+  transferable = false,
+  sorted = true,
 }
 
 -- -- -- bibliography marker generator -- -- --
@@ -1847,16 +1814,18 @@ end
 -- -- -- citation marker generators -- -- --
 
 function clean_csl(item)
-  -- http://lua-users.org/wiki/CopyTable
-  item = { table.unpack(item) }
-  item.custom = nil
-  return item
+  local cleaned = { }
+  for k, v in pairs(item) do cleaned[k] = v end
+  cleaned.custom = nil
+  return setmetatable(cleaned, getmetatable(item))
 end
+
 local function zotero_ref(cite)
   local content = pandoc.utils.stringify(cite.content)
   local csl = {
     citationID = utils.next_id(8),
     properties = {
+      unsorted = not config.sorted,
       formattedCitation = content,
       plainCitation = nil, -- otherwise we get a barrage of "you have edited this citation" popups
       -- dontUpdate = false,
@@ -1883,11 +1852,12 @@ local function zotero_ref(cite)
 
       if item.mode == 'AuthorInText' then -- not formally supported in Zotero
         if config.author_in_text then
-          local authors = zotero.authors(itemData)
-          if authors == nil then
+          local authors = itemData.custom.author
+          if authors == nil or authors == '' then
             return cite
           else
             author_in_text = pandoc.utils.stringify(pandoc.Str(authors)) .. ' '
+            author_in_text = '<w:r><w:t xml:space="preserve">' .. utils.xmlescape(author_in_text) .. '</w:t></w:r>'
             citation['suppress-author'] = true
           end
         else
@@ -2082,15 +2052,16 @@ function Meta(meta)
     jsonrpc = "2.0",
     method = "item.pandoc_filter",
     params = {
+      style = config.csl_style or 'apa',
     },
   }
   if string.match(FORMAT, 'odt') and config.scannable_cite then
     -- scannable-cite takes precedence over csl-style
     config.format = 'scannable-cite'
-    zotero.request.params.csl = false
+    zotero.request.params.asCSL = false
   elseif string.match(FORMAT, 'odt') or string.match(FORMAT, 'docx') then
     config.format = FORMAT
-    zotero.request.params.csl = true
+    zotero.request.params.asCSL = true
   end
 
   if type(meta.zotero.library) ~= 'nil' then
