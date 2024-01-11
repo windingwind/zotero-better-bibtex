@@ -193,6 +193,7 @@ collection: The forward-slash separated path to the collection.">
 </ul>
 <h2 id="usergroups">user.groups()</h2>
 <p>List the libraries (also known as groups) the user has in Zotero</p>
+<p>mind that the <code>items.export</code> method had a bug where it would double-wrap the JSON-RPC response; the extra layer has been removed in 6.7.143, but if you were expecting the previous result you will have to update your code.</p>
 
             <footer class="footline">
             </footer>
