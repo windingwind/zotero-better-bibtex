@@ -48,6 +48,14 @@ biblatex for BibLaTeX bibtex for BibTeX json or csljson for CSL-JSON yaml, yml o
       <description>In some cases the Zotero fields do not offer a place to enter the data you need to get your exported entries just right. For this Zotero has a so-called &amp;ldquo;cheater syntax&amp;rdquo; which allows you to add extra &amp;ldquo;fields&amp;rdquo; as separate lines in the extra field all items in Zotero have. These fields are supported by the citation processor inside Zotero, and BBT understands them too, and adds one &amp;ldquo;cheater syntax of its own.</description>
     </item>
     <item>
+      <title>Unicode</title>
+      <link>/zotero-better-bibtex/exporting/unicode/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/zotero-better-bibtex/exporting/unicode/index.html</guid>
+      <description>LaTeX en unicode If you&amp;rsquo;re lucky and you live in the 21st century or later, you can just use unicode in BibLaTeX and you don&amp;rsquo;t have to bother about anything that follows except if you&amp;rsquo;re the curious kind.
+Some of us though are bound to outlets that still demand BibTeX, and there&amp;rsquo;s geezers like me who just prefer the aesthetic of TeX commands over fancy-schmancy unicode, or you find TeX commands easier to search for in your doc than having to memorize how to enter Ψ.</description>
+    </item>
+    <item>
       <title>Advanced</title>
       <link>/zotero-better-bibtex/exporting/advanced/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
