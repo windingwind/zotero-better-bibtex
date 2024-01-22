@@ -96,6 +96,7 @@ paste it in your .">
     <li><a href="#editor-integration">Editor integration</a>
       <ul>
         <li><a href="#vim">vim</a></li>
+        <li><a href="#emacs">emacs</a></li>
         <li><a href="#zotero-citations-for-atom">Zotero Citations for Atom</a></li>
         <li><a href="#vs-code-citation-picker-for-zotero">VS Code Citation Picker for Zotero</a></li>
         <li><a href="#scrivener-20marked-2-for-mac">Scrivener 2.0/Marked 2 for Mac</a></li>
@@ -165,7 +166,14 @@ paste it in your .">
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">noremap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">z</span> &#34;=<span style="color:#a6e22e">ZoteroCite</span>()&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#a6e22e">p</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">inoremap</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">z</span>&gt; &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">r</span>&gt;=<span style="color:#a6e22e">ZoteroCite</span>()&lt;<span style="color:#a6e22e">CR</span>&gt;</span></span></code></pre></div><p>This inserts the citation at the cursor using the shortcut ctrl-z (in insert mode) or <code>&lt;leader&gt;</code>z (in normal, visual etc. modes, <code>&lt;leader&gt;</code> being backslash by default).</p>
-<h3 id="zotero-citations-for-atom">Zotero Citations for Atom</h3>
+<h3 id="emacs">emacs</h3>
+<p>@newhallroad wrote a function in elisp, which brings up the CAYW input, adds the chosen items as pandoc citations to the buffer, and moves the point to after the citations. This is for markdown-mode. Emacs users who use org-mode may (or may not) need something different.</p>
+<div class="wrap-code highlight"><pre tabindex="0"><code>(defun alk/bbt-zotero-insert-key ()
+  &#34;Run shell command to bring up better bibtex cayw input and insert pandoc citation at point&#34;
+  (interactive)
+  (shell-command &#34;curl -s http://127.0.0.1:23119/better-bibtex/cayw?format=pandoc^&amp;brackets=true&#34; t nil) ; caret escapes ampersand 
+  (search-forward &#34;]&#34;) ; place cursor after inserted citation
+  )</code></pre></div><h3 id="zotero-citations-for-atom">Zotero Citations for Atom</h3>
 <p>A sample implementation of real integration (rather than the working-but-clunky workarounds using paste) can be found in the <a href="https://atom.io/packages/zotero-citations" target="_blank">Zotero Citations</a> package for the <a href="http://atom.io" target="_blank">Atom</a> editor.</p>
 <h3 id="vs-code-citation-picker-for-zotero">VS Code Citation Picker for Zotero</h3>
 <p>If you don&rsquo;t feel like typing citations out (and let&rsquo;s be honest, you don&rsquo;t), executing <a href="https://marketplace.visualstudio.com/items?itemName=mblode.zotero" target="_blank">VS Code Citation Picker for Zotero</a> extension for the <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> editor will call up a graphical picker which will insert these for you, formatted and all.</p>
