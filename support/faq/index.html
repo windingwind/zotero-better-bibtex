@@ -96,6 +96,7 @@
         <li><a href="#why-zotero--bbt-instead-of-mendeley">Why Zotero + BBT instead of Mendeley?</a></li>
       </ul>
     </li>
+    <li><a href="#exporting-language-fields-in-addition-to-langid">Exporting <code>language</code> fields in addition to <code>langid</code></a></li>
   </ul>
 </nav>
                 </div>
@@ -278,7 +279,72 @@ Make sure the latter path is correct, as JabRef might continue finding files and
 <li>Mendeley uses CSL, so items should be entered in sentence case (as is the case in Zotero). But bib(la)tex expects title-case, so titles should be converted to title case during export. This is difficult, so Mendeley just doesn&rsquo;t bother doing it.</li>
 <li>Verbatim fields that should per spec be exported as regular fields by Mendeley. This will get you compilation errors.</li>
 </ul>
+<h2 id="exporting-language-fields-in-addition-to-langid">Exporting <code>language</code> fields in addition to <code>langid</code></h2>
+<p>Zotero&rsquo;s <code>language</code> field exports to the biblatex field <code>langid</code> only, not bib(la)tex <code>language</code>. Zotero&rsquo;s <code>language</code> field and the biblatex <code>langid</code> field are supposed to contain only language tags that control formatting, e.g. capitalization of titles and hyphenation.</p>
+<p>Biblatex&rsquo;s `language&quot; field, by contrast, which has no equivalent in Zotero, is used to generate textual output in a formatted bibliography.</p>
+<p>Exporting Zotero&rsquo;s <code>language</code> field to the biblatex field <code>language</code> would result in what are now merely language-dependent formatting instructions all of a sudden turned into textual output as well, breaking virtually every style on the biblatex side.</p>
+<p>If you want the <code>language</code> field filled nonetheless, you can either use a BBT postscript, or the biblatex <code>langid</code> tags can still be used to selectively generate <code>language</code> fields that produce the output when rendered, assuming the aim is to eg have only items tagged as Japanese, i.e., containing biblatex <code>langid</code> fields whose contents begin with <code>ja</code> receive the string <code>[in Japanese]</code> in the formatted output.</p>
+<p>In the following, biblatex&rsquo;s <code>\DeclareSourcemap</code> mechanism is used to generate such language fields at runtime. Details can be found in the biblatex manual.</p>
+<div class="wrap-code highlight"><pre tabindex="0"><code>\documentclass{article}
+\begin{filecontents}[overwrite]{tmp.bib}
+@article{UseLanguage,
+  title = {Title of UseLanguage},
+  author = {A. U. Thor Language},
+  date = {1986},
+  journaltitle = {Journal of Engineering},
+  volume = {123},
+  number = {28},
+  pages = {1--12},
+  language = {japanese}
+}
+@article{UseLangid,
+  title = {Title of UseLangid},
+  author = {A. U. Thor Langid},
+  date = {1986},
+  journaltitle = {Journal of Engineering},
+  volume = {123},
+  number = {28},
+  pages = {1--12},
+  langid = {Japanese}
+}
+@article{UseLangidAbbrev,
+  title = {Title of UseLangidAbbrev},
+  author = {A. U. Thor LangidAbbrev},
+  date = {1986},
+  journaltitle = {Journal of Engineering},
+  volume = {123},
+  number = {28},
+  pages = {1--12},
+  langid = {ja-JP}
+}
+@article{en,
+  title = {Title of Something Completetly Different in English},
+  author = {Doe, John},
+  date = {2024},
+  journaltitle = {Journal of Whatever},
+  volume = {321},
+  number = {1},
+  pages = {33--77},
+  langid = {en}
+}
+\end{filecontents}
+\usepackage[sorting=none]{biblatex-chicago}
+%\usepackage[sorting=none]{biblatex}
+\addbibresource{tmp.bib}
 
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{\map{
+     \step[fieldsource=langid, matchi=\regexp{^ja},
+   final]
+  \step[fieldset=language, fieldvalue=Japanese]
+    }
+  }
+}
+
+\begin{document}
+\nocite{*}
+\printbibliography
+\end{document}</code></pre></div>
             <footer class="footline">
             </footer>
           </article>
