@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.122.0">
-    <meta name="generator" content="Relearn 5.23.2+tip">
+    <meta name="generator" content="Relearn 5.24.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
@@ -276,7 +276,7 @@ Make sure the latter path is correct, as JabRef might continue finding files and
 </ul>
 <p>But wrt bibtex export, I don&rsquo;t think the Mendeley engineers actively use bib(la)tex:</p>
 <ul>
-<li>Mendeley is still double-bracing titles &ndash; a behavior so wrong (yet unfortunately ubiquitous), biblatex started <a href="">ignoring double-braced titles</a> (see <a href="https://tex.stackexchange.com/a/327387/27603" target="_blank">here</a> and <a href="https://tex.stackexchange.com/a/233976/27603" target="_blank">here</a>).</li>
+<li>Mendeley is still double-bracing titles &ndash; a behavior so wrong (yet unfortunately ubiquitous), biblatex started <a>ignoring double-braced titles</a> (see <a href="https://tex.stackexchange.com/a/327387/27603" target="_blank">here</a> and <a href="https://tex.stackexchange.com/a/233976/27603" target="_blank">here</a>).</li>
 <li>Mendeley uses CSL, so items should be entered in sentence case (as is the case in Zotero). But bib(la)tex expects title-case, so titles should be converted to title case during export. This is difficult, so Mendeley just doesn&rsquo;t bother doing it.</li>
 <li>Verbatim fields that should per spec be exported as regular fields by Mendeley. This will get you compilation errors.</li>
 </ul>
