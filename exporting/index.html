@@ -145,9 +145,9 @@ you can fix its citation key to a value of your choosing by adding the text <cod
 <h3 id="latex-fields">LaTeX fields</h3>
 <p>You can add your own fields to the export which are not derived from regular Zotero item fields by adding them in the <code>extra</code> field:</p>
 <p>either by using lines such as</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>tex.origdate= 1856
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>tex.origdate= 1856
 </span></span><span style="display:flex;"><span>tex.origtitle= All This &amp; More</span></span></code></pre></div><p>or</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>tex.origdate: 1856
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>tex.origdate: 1856
 </span></span><span style="display:flex;"><span>tex.origtitle: All This &amp; More</span></span></code></pre></div><p>The difference between lines with an <code>=</code> or an <code>:</code> is that the fields marked with <code>=</code> are considered to be valid (&ldquo;raw&rdquo;) latex and will be passed on into the generated files as-is. The lines marked with <code>:</code> are assumed to be plain-text and LaTeX special characters (such as the <code>&amp;</code> above) will be escaped.</p>
 <h3 id="csl-fields">CSL fields</h3>
 <p>The final way to add fields is by using <a href="https://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables" target="_blank">CSL fields</a> in the
