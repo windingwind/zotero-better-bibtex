@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.123.8">
-    <meta name="generator" content="Relearn 5.25.0+tip">
+    <meta name="generator" content="Relearn 5.26.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
@@ -33,13 +33,10 @@
     <script src="/zotero-better-bibtex/js/url.js"></script>
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="/zotero-better-bibtex/index.search.js";
-      var root_url="/";
-      var baseUri=root_url.replace(/\/$/, '');
       window.relearn = window.relearn || {};
-      window.relearn.baseUriFull='zotero-better-bibtex/';
+      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
+      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
       window.variants && variants.init( [ 'green' ] );
@@ -133,10 +130,10 @@ means a lot) so I can save up for a replacement a year or so down
 the line, head on over to <a href="https://www.patreon.com/retorquere" target="_blank">Patreon</a>,
 but mind that Patreon takes a fairly large cut of what you give.</p>
 <p>Many, many thanks, also to the existing contributors &ndash; thanks to you I&rsquo;ve hit my first target and have been able to replace my trusty macbook air with a newer macbook pro which has much more breathing room.</p>
-<p><a href="#R-image-6ada1ba8c9b814c5b4c3cf672140b792" class="lightbox-link"><img alt="My github stats" class="noborder lightbox noshadow figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6ada1ba8c9b814c5b4c3cf672140b792"><img alt="My github stats" class="noborder lightbox noshadow lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
-<p><a href="#R-image-b4e3e0a601cb66e12e2542950a5c3812" class="lightbox-link"><img alt="Metrics" class="noborder lightbox noshadow figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b4e3e0a601cb66e12e2542950a5c3812"><img alt="Metrics" class="noborder lightbox noshadow lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
+<p><a href="#R-image-749de5c91e25e11055e268a5a646f044" class="lightbox-link"><img alt="My github stats" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-749de5c91e25e11055e268a5a646f044"><img alt="My github stats" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=retorquere&show_icons=true&hide_border=true&theme=dark"></a></p>
+<p><a href="#R-image-cb2d2779acbb44ead232edce86102aa9" class="lightbox-link"><img alt="Metrics" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cb2d2779acbb44ead232edce86102aa9"><img alt="Metrics" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://metrics.lecoq.io/retorquere?template=classic&config.timezone=Europe%2FOslo"></a></p>
 
             <footer class="footline">
             </footer>
@@ -832,7 +829,7 @@ Better BibTeX for Zotero
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = baseUri + this.value;">
+                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
                       <option id="R-en" value="/zotero-better-bibtex/sponsoring/index.html" lang="en" selected>English</option>
                     </select>
                   </div>

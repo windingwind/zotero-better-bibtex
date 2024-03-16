@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.123.8">
-    <meta name="generator" content="Relearn 5.25.0+tip">
+    <meta name="generator" content="Relearn 5.26.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
@@ -37,13 +37,10 @@ Making any change here will drop your entire export cache. This is usually not a
     <script src="/zotero-better-bibtex/js/url.js"></script>
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="/zotero-better-bibtex/index.search.js";
-      var root_url="/";
-      var baseUri=root_url.replace(/\/$/, '');
       window.relearn = window.relearn || {};
-      window.relearn.baseUriFull='zotero-better-bibtex/';
+      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
+      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
       window.variants && variants.init( [ 'green' ] );
@@ -1033,7 +1030,7 @@ Better BibTeX for Zotero
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = baseUri + this.value;">
+                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
                       <option id="R-en" value="/zotero-better-bibtex/installation/preferences/export/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
