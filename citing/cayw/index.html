@@ -229,12 +229,13 @@ the following URL parameters:</p>
 </table>
 <p>The following formats are available:</p>
 <ul>
-<li><code>latex</code>. Generates <a href="https://ctan.org/pkg/natbib" target="_blank">natbib</a> citation commands. Extra URL parameters allowed:
+<li><code>natbib</code>. Generates <a href="https://ctan.org/pkg/natbib" target="_blank">natbib</a> citation commands. Extra URL parameters allowed:
 <ul>
 <li><code>command</code>: the citation command to use (if unspecified, defaults to <code>cite</code>)</li>
 </ul>
 </li>
-<li><code>cite</code> is an alias for <code>latex</code> with the assumption you want the cite command to be <code>cite</code></li>
+<li><code>latex</code> and <code>cite</code> are aliases for <code>natbib</code> with the assumption you want the cite command to be <code>cite</code></li>
+<li><code>citep</code> and <code>citet</code> are aliases for <code>natbib</code> with the assumption you want the cite command to be <code>citep</code> or <code>citet</code>, respectively.</li>
 <li><code>biblatex</code>. Generates <a href="https://ctan.org/pkg/biblatex" target="_blank">biblatex</a> citation commands. Extra URL parameters allowed:
 <ul>
 <li><code>command</code>: the citation command to use (if unspecified, defaults to <code>autocite</code>)</li>
