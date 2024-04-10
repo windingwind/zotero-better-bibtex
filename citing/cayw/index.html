@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.26.0+tip">
+    <meta name="generator" content="Relearn 5.27.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
@@ -13,15 +13,19 @@
 Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!
 Editor integration vim Graciously supplied by David Lukes:
 paste it in your .">
+    <meta property="og:url" content="/zotero-better-bibtex/citing/cayw/index.html">
+    <meta property="og:site_name" content="Better BibTeX for Zotero">
     <meta property="og:title" content="Cite as you Write :: Better BibTeX for Zotero">
     <meta property="og:description" content="PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; curl and other programmatic access such as from editors access will work.
 Good news for TeXnicians and those down with Mark (aka Markdown, RST, whatnot): this is the time to go pester the author of your favorite editor for Zotero integration!
 Editor integration vim Graciously supplied by David Lukes:
 paste it in your .">
+    <meta property="og:locale" content="en">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="/zotero-better-bibtex/citing/cayw/index.html">
     <meta property="article:section" content="Citation Keys :: Better BibTeX for Zotero">
-    <meta property="og:site_name" content="Better BibTeX for Zotero">
+    <meta property="article:tag" content="Citation Keys">
+    <meta property="article:tag" content="Overleaf">
+    <meta property="article:tag" content="Cite as You Write">
     <title>Cite as you Write :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
@@ -40,8 +44,9 @@ paste it in your .">
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
-      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/zotero-better-bibtex';
       window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -146,6 +151,7 @@ paste it in your .">
   </ul>
 </div>
             </header>
+
 <h1 id="cite-as-you-write">Cite as you Write</h1>
 
 <p><strong>PSA: as of Zotero 5.0.71, access to the CAYW URL will no longer work from the browser for security reasons; <code>curl</code> and other programmatic access such as from editors access will work.</strong></p>
@@ -172,20 +178,20 @@ paste it in your .">
   (shell-command &#34;curl -s http://127.0.0.1:23119/better-bibtex/cayw?format=pandoc^&amp;brackets=true&#34; t nil) ; caret escapes ampersand 
   (search-forward &#34;]&#34;) ; place cursor after inserted citation
   )</code></pre></div><h3 id="zotero-citations-for-atom">Zotero Citations for Atom</h3>
-<p>A sample implementation of real integration (rather than the working-but-clunky workarounds using paste) can be found in the <a href="https://atom.io/packages/zotero-citations" target="_blank">Zotero Citations</a> package for the <a href="http://atom.io" target="_blank">Atom</a> editor.</p>
+<p>A sample implementation of real integration (rather than the working-but-clunky workarounds using paste) can be found in the <a href="https://atom.io/packages/zotero-citations" rel="external" target="_blank">Zotero Citations</a> package for the <a href="http://atom.io" rel="external" target="_blank">Atom</a> editor.</p>
 <h3 id="vs-code-citation-picker-for-zotero">VS Code Citation Picker for Zotero</h3>
-<p>If you don&rsquo;t feel like typing citations out (and let&rsquo;s be honest, you don&rsquo;t), executing <a href="https://marketplace.visualstudio.com/items?itemName=mblode.zotero" target="_blank">VS Code Citation Picker for Zotero</a> extension for the <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> editor will call up a graphical picker which will insert these for you, formatted and all.</p>
+<p>If you don&rsquo;t feel like typing citations out (and let&rsquo;s be honest, you don&rsquo;t), executing <a href="https://marketplace.visualstudio.com/items?itemName=mblode.zotero" rel="external" target="_blank">VS Code Citation Picker for Zotero</a> extension for the <a href="https://code.visualstudio.com/" rel="external" target="_blank">VS Code</a> editor will call up a graphical picker which will insert these for you, formatted and all.</p>
 <h3 id="scrivener-20marked-2-for-mac">Scrivener 2.0/Marked 2 for Mac</h3>
-<p>Dave Smith has gracefully written <a href="http://davepwsmith.github.io/academic-scrivener-howto/" target="_blank">instructions</a> on how to set up Scrivener 2.0 and Marked 2 for OSX to use the CAYW picker, including ready-to-run apps</p>
+<p>Dave Smith has gracefully written <a href="http://davepwsmith.github.io/academic-scrivener-howto/" rel="external" target="_blank">instructions</a> on how to set up Scrivener 2.0 and Marked 2 for OSX to use the CAYW picker, including ready-to-run apps</p>
 <h3 id="scrivener-10-for-windows">Scrivener 1.0 for Windows</h3>
-<p>Emilie has writen <a href="https://github.com/AmomentOfMusic/Zotero_scrivener_picker_windows" target="_blank">instructions</a> for using the CAYW picker for Scrivener 1.0 in Windows 10, with the necessary files</p>
+<p>Emilie has writen <a href="https://github.com/AmomentOfMusic/Zotero_scrivener_picker_windows" rel="external" target="_blank">instructions</a> for using the CAYW picker for Scrivener 1.0 in Windows 10, with the necessary files</p>
 <h3 id="linux">Linux</h3>
 <ul>
-<li>Emma Reisz has gracefully written <a href="https://emmareisz.github.io/zotpicknix/" target="_blank">instructions and scripts</a> for setting up CAYW on Linux.</li>
-<li>ConorIA has more versatile solution called <a href="https://gitlab.com/ConorIA/shell-scripts/tree/master/zotero4overleaf" target="_blank">zotero4overleaf</a>, which was inspired by Emma&rsquo;s scripts. This should allow use with Overleaf, which is pretty insane that it&rsquo;s possible if you think about it.</li>
+<li>Emma Reisz has gracefully written <a href="https://emmareisz.github.io/zotpicknix/" rel="external" target="_blank">instructions and scripts</a> for setting up CAYW on Linux.</li>
+<li>ConorIA has more versatile solution called <a href="https://gitlab.com/ConorIA/shell-scripts/tree/master/zotero4overleaf" rel="external" target="_blank">zotero4overleaf</a>, which was inspired by Emma&rsquo;s scripts. This should allow use with Overleaf, which is pretty insane that it&rsquo;s possible if you think about it.</li>
 </ul>
 <h3 id="overleaf">Overleaf</h3>
-<p>David Lukes takes Overleaf integration one step further with a GreaseMonkey/TamperMonkey <a href="https://github.com/dlukes/zotero-sharelatex-cayw" target="_blank">userscript</a> which not only allows popping up the CAYW picker straight from your browser, no other tools required, but adds a hotkey to refresh your bib file on Overleaf. This should work with the free subscription, no fiddling with git or dropbox required.</p>
+<p>David Lukes takes Overleaf integration one step further with a GreaseMonkey/TamperMonkey <a href="https://github.com/dlukes/zotero-sharelatex-cayw" rel="external" target="_blank">userscript</a> which not only allows popping up the CAYW picker straight from your browser, no other tools required, but adds a hotkey to refresh your bib file on Overleaf. This should work with the free subscription, no fiddling with git or dropbox required.</p>
 <h2 id="diy">DIY</h2>
 <p>BBT exposes an URL at http://127.0.0.1:23119/better-bibtex/cayw <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. The url accepts
 the following URL parameters:</p>
@@ -229,14 +235,14 @@ the following URL parameters:</p>
 </table>
 <p>The following formats are available:</p>
 <ul>
-<li><code>natbib</code>. Generates <a href="https://ctan.org/pkg/natbib" target="_blank">natbib</a> citation commands. Extra URL parameters allowed:
+<li><code>natbib</code>. Generates <a href="https://ctan.org/pkg/natbib" rel="external" target="_blank">natbib</a> citation commands. Extra URL parameters allowed:
 <ul>
 <li><code>command</code>: the citation command to use (if unspecified, defaults to <code>cite</code>)</li>
 </ul>
 </li>
 <li><code>latex</code> and <code>cite</code> are aliases for <code>natbib</code> with the assumption you want the cite command to be <code>cite</code></li>
 <li><code>citep</code> and <code>citet</code> are aliases for <code>natbib</code> with the assumption you want the cite command to be <code>citep</code> or <code>citet</code>, respectively.</li>
-<li><code>biblatex</code>. Generates <a href="https://ctan.org/pkg/biblatex" target="_blank">biblatex</a> citation commands. Extra URL parameters allowed:
+<li><code>biblatex</code>. Generates <a href="https://ctan.org/pkg/biblatex" rel="external" target="_blank">biblatex</a> citation commands. Extra URL parameters allowed:
 <ul>
 <li><code>command</code>: the citation command to use (if unspecified, defaults to <code>autocite</code>)</li>
 </ul>
@@ -244,9 +250,9 @@ the following URL parameters:</p>
 <li><code>mmd</code>: MultiMarkdown</li>
 <li><code>pandoc</code>. Accepts additional URL parameter <code>brackets</code>; any non-empty value surrounds the citation with brackets</li>
 <li><code>asciidoctor-bibtex</code></li>
-<li><code>typst</code> Generates <a href="https://typst.app/docs/reference/model/cite/" target="_blank">typst</a> citation commands</li>
+<li><code>typst</code> Generates <a href="https://typst.app/docs/reference/model/cite/" rel="external" target="_blank">typst</a> citation commands</li>
 <li><code>jupyter</code></li>
-<li><code>scannable-cite</code> for the <a href="https://zotero-odf-scan.github.io/zotero-odf-scan/" target="_blank">ODF scanner</a></li>
+<li><code>scannable-cite</code> for the <a href="https://zotero-odf-scan.github.io/zotero-odf-scan/" rel="external" target="_blank">ODF scanner</a></li>
 <li><code>formatted-citation</code>: output formatted citation as per the current Zotero quick-export setting, if it is set to a citation style, and not an export format</li>
 <li><code>formatted-bibliography</code>: output formatted bibliography as per the current Zotero quick-export setting, if it is set to a citation style, and not an export format</li>
 <li><code>translate</code> invokes a Zotero export translator. Extra URL parameters allowed:
@@ -257,7 +263,7 @@ the following URL parameters:</p>
 </ul>
 </li>
 <li><code>json</code>: the full pick information Zotero provides.</li>
-<li><code>eta</code>: formats the pick using <a href="https://eta.js.org/" target="_blank">Eta</a>, with the picks exposed as <code>it.items</code>. To see what the items look like, use the <code>json</code> formatter. URL parameter required:
+<li><code>eta</code>: formats the pick using <a href="https://eta.js.org/" rel="external" target="_blank">Eta</a>, with the picks exposed as <code>it.items</code>. To see what the items look like, use the <code>json</code> formatter. URL parameter required:
 <ul>
 <li><code>template</code>: the Eta template to render</li>
 </ul>
@@ -294,12 +300,12 @@ the following URL parameters:</p>
 <p>However not all output formats support these. Pandoc and scannable cite are the richest ones, supporting all 4. MultiMarkdown supports
 none. The <code>formatted-</code> formats will ignore these. LaTeX supports all 4, in a way:</p>
 <ul>
-<li>in the <code>latex</code> (<a href="https://ctan.org/pkg/natbib" target="_blank"><code>natbib</code></a>) format: if you choose <code>suppress author</code> for none or all of your items in a pick, you
+<li>in the <code>latex</code> (<a href="https://ctan.org/pkg/natbib" rel="external" target="_blank"><code>natbib</code></a>) format: if you choose <code>suppress author</code> for none or all of your items in a pick, you
 will get the citation as you would normally enter it, such as <code>\cite{author1,author2}</code>, or
 <code>\citeyear{author1,author2}</code>. If you use <code>locator</code>, <code>prefix</code>, <code>suffix</code> in any one of them, or you use <code>suppress author</code>
 for some but not for others, the picker will write them out all separate, like <code>\cite[p. 1]{author1}\citeyear{author2}</code>,
 as natbib doesn&rsquo;t seem to have a good mechanism for combined citations that mix different prefixes/suffixes/locators.</li>
-<li>in the <a href="https://ctan.org/pkg/biblatex" target="_blank"><code>biblatex</code></a> format: <code>suppress author</code> is ignored unless the command is one of <code>\cite</code>, <code>\autocite</code>
+<li>in the <a href="https://ctan.org/pkg/biblatex" rel="external" target="_blank"><code>biblatex</code></a> format: <code>suppress author</code> is ignored unless the command is one of <code>\cite</code>, <code>\autocite</code>
 or <code>\parencite</code> <strong>and</strong> there is one items only, in which case the starred variant of the command is returned, which
 hides the author; for multiple items with <code>locator</code>s, <code>prefix</code>es or <code>suffix</code>es, the <code>s</code>-affixed variant of the
 command is generated</li>
@@ -406,8 +412,8 @@ command is generated</li>
 <p>In your call to the CAYW URL, you can override the abbreviations by adding them to the query, e.g. http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;page=&amp;Section=sec., page-picks will have no label, and Section-picks will get <code>sec.</code> rather than <code>Sec.</code>.</p>
 <p>The <code>clipboard</code> option can be used as a workaround for editors that haven&rsquo;t gotten around to integrating this yet. If
 you use this option you will probably want to bind to a hotkey, either system-wide (which is going to be platform-dependent, I know
-<a href="http://www.autohotkey.com" target="_blank">AutoHotKey</a> works for windows, for OSX <a href="https://pqrs.org/osx/karabiner/" target="_blank">Karabiner</a> ought to
-do the job, and for Linux <a href="https://unix.stackexchange.com/questions/44672/assign-shortcut-key-to-run-a-script" target="_blank">xbindkeys</a> could do the job.</p>
+<a href="http://www.autohotkey.com" rel="external" target="_blank">AutoHotKey</a> works for windows, for OSX <a href="https://pqrs.org/osx/karabiner/" rel="external" target="_blank">Karabiner</a> ought to
+do the job, and for Linux <a href="https://unix.stackexchange.com/questions/44672/assign-shortcut-key-to-run-a-script" rel="external" target="_blank">xbindkeys</a> could do the job.</p>
 <p>For example, if you call up http://127.0.0.1:23119/better-bibtex/cayw?format=mmd&amp;clipboard=yes, the Zotero citation picker will pop up. If you then select two items that happen to have cite keys <code>adams2001</code> and <code>brigge2002</code>, then</p>
 <ul>
 <li>the response body will be <code>[#adams2001][][#brigge2002][]</code>, and</li>
@@ -1043,12 +1049,15 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <div class="searchbox default-animation">
-          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
-          <label class="a11y-only" for="R-search-by">Search</label>
-          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
         <script>
           var contentLangs=['en'];
         </script>
@@ -1061,7 +1070,7 @@ Better BibTeX for Zotero
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
         </ul>
         <hr class="padding">
       </div>
@@ -1112,12 +1121,12 @@ Better BibTeX for Zotero
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-language fa-fw"></i>
+                  <i class="fa-fw fas fa-language"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
-                      <option id="R-en" value="/zotero-better-bibtex/citing/cayw/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/citing/cayw/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -1125,12 +1134,12 @@ Better BibTeX for Zotero
               </li>
               <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <i class="fa-fw fas fa-paint-brush"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-green" value="green" selected>Green</option>
+                      <option id="R-select-variant-green" value="green" selected>Green</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -1139,7 +1148,7 @@ Better BibTeX for Zotero
               </li>
               <li class="footerVisitedLinks">
                 <div class="padding menu-control">
-                  <i class="fas fa-history fa-fw"></i>
+                  <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <button onclick="clearHistory();">Clear History</button>

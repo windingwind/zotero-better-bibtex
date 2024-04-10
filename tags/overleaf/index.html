@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.26.0+tip">
+    <meta name="generator" content="Relearn 5.27.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Overleaf :: Tag :: Better BibTeX for Zotero">
     <meta name="twitter:description" content="Make Zotero more useful for us LaTeX holdouts">
-    <meta property="og:title" content="Overleaf :: Tag :: Better BibTeX for Zotero">
-    <meta property="og:description" content="Make Zotero more useful for us LaTeX holdouts">
-    <meta property="og:type" content="website">
     <meta property="og:url" content="/zotero-better-bibtex/tags/overleaf/index.html">
     <meta property="og:site_name" content="Better BibTeX for Zotero">
+    <meta property="og:title" content="Overleaf :: Tag :: Better BibTeX for Zotero">
+    <meta property="og:description" content="Make Zotero more useful for us LaTeX holdouts">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
     <title>Overleaf :: Tag :: Better BibTeX for Zotero</title>
     <link href="/zotero-better-bibtex/tags/overleaf/index.xml" rel="alternate" type="application/rss+xml" title="Overleaf :: Tag :: Better BibTeX for Zotero"><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
@@ -34,8 +35,9 @@
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
-      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/zotero-better-bibtex';
       window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -96,7 +98,7 @@
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/tags/index.html"><span itemprop="name">Tags</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Tag :: Overleaf</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Overleaf</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/zotero-better-bibtex/tags/libreoffice/index.html" title="Tag :: Libreoffice (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
@@ -123,7 +125,7 @@
 <h1 id="tag--overleaf">Tag :: Overleaf</h1>
 <h2 id="a">A</h2>
 <ul class="columnize">
-  <li><a href="/zotero-better-bibtex/exporting/auto/index.html">Automatic export</a><div class="breadcrumbs highlightable" title="Better BibTeX for Zotero &gt; Exporting items">Better BibTeX for Zotero &gt; Exporting items</div></li>
+  <li><a href="/zotero-better-bibtex/exporting/auto/index.html">Automatic export</a><div class="breadcrumbs highlightable" title="Better BibTeX for Zotero &gt; Exporting">Better BibTeX for Zotero &gt; Exporting</div></li>
 </ul>
 <h2 id="c">C</h2>
 <ul class="columnize">
@@ -750,12 +752,15 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <div class="searchbox default-animation">
-          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
-          <label class="a11y-only" for="R-search-by">Search</label>
-          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
         <script>
           var contentLangs=['en'];
         </script>
@@ -768,7 +773,7 @@ Better BibTeX for Zotero
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
         </ul>
         <hr class="padding">
       </div>
@@ -819,12 +824,12 @@ Better BibTeX for Zotero
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-language fa-fw"></i>
+                  <i class="fa-fw fas fa-language"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
-                      <option id="R-en" value="/zotero-better-bibtex/tags/overleaf/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/tags/overleaf/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -832,12 +837,12 @@ Better BibTeX for Zotero
               </li>
               <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <i class="fa-fw fas fa-paint-brush"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-green" value="green" selected>Green</option>
+                      <option id="R-select-variant-green" value="green" selected>Green</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -846,7 +851,7 @@ Better BibTeX for Zotero
               </li>
               <li class="footerVisitedLinks">
                 <div class="padding menu-control">
-                  <i class="fas fa-history fa-fw"></i>
+                  <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <button onclick="clearHistory();">Clear History</button>

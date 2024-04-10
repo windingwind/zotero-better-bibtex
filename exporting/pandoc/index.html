@@ -4,20 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.26.0+tip">
+    <meta name="generator" content="Relearn 5.27.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Markdown/Pandoc :: Better BibTeX for Zotero">
     <meta name="twitter:description" content="In addition to LaTeX, BBT plays very well with pandoc:
 you can drag and drop citations from Zotero into your markdown documents. you can cite as you write in your favorite editor with varying levels of comfort, mostly depending on how easy (VSCode, Sublime) or hard (looking at you Scrivener) it is to extend your editor. you can even convert your markdown document into a LibreOffice/Word document with actual live Zotero items as if you had entered them into Zotero all along (see below) Use CSL, not bibtex with pandoc Many tutorials on the use of pandoc to generate documents with citations seem to use bibtex as a bibliography format.">
+    <meta property="og:url" content="/zotero-better-bibtex/exporting/pandoc/index.html">
+    <meta property="og:site_name" content="Better BibTeX for Zotero">
     <meta property="og:title" content="Markdown/Pandoc :: Better BibTeX for Zotero">
     <meta property="og:description" content="In addition to LaTeX, BBT plays very well with pandoc:
 you can drag and drop citations from Zotero into your markdown documents. you can cite as you write in your favorite editor with varying levels of comfort, mostly depending on how easy (VSCode, Sublime) or hard (looking at you Scrivener) it is to extend your editor. you can even convert your markdown document into a LibreOffice/Word document with actual live Zotero items as if you had entered them into Zotero all along (see below) Use CSL, not bibtex with pandoc Many tutorials on the use of pandoc to generate documents with citations seem to use bibtex as a bibliography format.">
+    <meta property="og:locale" content="en">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="/zotero-better-bibtex/exporting/pandoc/index.html">
     <meta property="article:section" content="Exporting items :: Better BibTeX for Zotero">
-    <meta property="og:site_name" content="Better BibTeX for Zotero">
     <title>Markdown/Pandoc :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
@@ -36,8 +37,9 @@ you can drag and drop citations from Zotero into your markdown documents. you ca
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
-      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/zotero-better-bibtex';
       window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -96,7 +98,7 @@ you can drag and drop citations from Zotero into your markdown documents. you ca
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/exporting/index.html"><span itemprop="name">Exporting items</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/exporting/index.html"><span itemprop="name">Exporting</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Markdown/Pandoc</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
@@ -124,6 +126,7 @@ you can drag and drop citations from Zotero into your markdown documents. you ca
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="markdownpandoc">Markdown/Pandoc</h1>
 
 <p>In addition to LaTeX, BBT plays very well with pandoc:</p>
@@ -186,9 +189,9 @@ popup for each citation. Also, the Word document is sometimes deemed
 corrupt when opening it, but running the pandoc command again without
 any changes fixes it ¯\_(ツ)_/¯
 LibreOffice doesn&rsquo;t recognise Zotero citations in DOCX,
-see <a href="https://github.com/retorquere/zotero-better-bibtex/issues/2070" target="_blank">issue #2070</a>,
+see <a href="https://github.com/retorquere/zotero-better-bibtex/issues/2070" rel="external" target="_blank">issue #2070</a>,
 and you must use ODT.</p>
-<p>You can also specify <code>transferable: true</code> to create a <a href="https://www.zotero.org/support/kb/moving_documents_between_word_processors" target="_blank">transferable document</a>. You don&rsquo;t really need this for ODT or DOCX (just use Pandoc to create those directly using this filter), but it will allow transferring your document to GDocs.</p>
+<p>You can also specify <code>transferable: true</code> to create a <a href="https://www.zotero.org/support/kb/moving_documents_between_word_processors" rel="external" target="_blank">transferable document</a>. You don&rsquo;t really need this for ODT or DOCX (just use Pandoc to create those directly using this filter), but it will allow transferring your document to GDocs.</p>
 <p>Zotero needs to be running, with BBT installed, while you compile your document.</p>
 <p>With regards to sorting citations within a cluster, this is how Zotero does it by default, where pandoc keeps citations in the order you entered them. You can override this by setting <code>sorted</code> to <code>false</code>, for example to retain a prefix at the front, but it may generated citations that are not style-compliant.</p>
 
@@ -813,12 +816,15 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <div class="searchbox default-animation">
-          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
-          <label class="a11y-only" for="R-search-by">Search</label>
-          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
         <script>
           var contentLangs=['en'];
         </script>
@@ -831,7 +837,7 @@ Better BibTeX for Zotero
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
         </ul>
         <hr class="padding">
       </div>
@@ -882,12 +888,12 @@ Better BibTeX for Zotero
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-language fa-fw"></i>
+                  <i class="fa-fw fas fa-language"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
-                      <option id="R-en" value="/zotero-better-bibtex/exporting/pandoc/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/exporting/pandoc/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -895,12 +901,12 @@ Better BibTeX for Zotero
               </li>
               <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <i class="fa-fw fas fa-paint-brush"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-green" value="green" selected>Green</option>
+                      <option id="R-select-variant-green" value="green" selected>Green</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -909,7 +915,7 @@ Better BibTeX for Zotero
               </li>
               <li class="footerVisitedLinks">
                 <div class="padding menu-control">
-                  <i class="fas fa-history fa-fw"></i>
+                  <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <button onclick="clearHistory();">Clear History</button>

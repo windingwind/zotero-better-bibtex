@@ -4,18 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.26.0+tip">
+    <meta name="generator" content="Relearn 5.27.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Automatic export :: Better BibTeX for Zotero">
     <meta name="twitter:description" content="To export a library, group or collection, right-click on it in the left Zotero pane and choose &ldquo;Export Library…&rdquo; or &ldquo;Export Collection…&rdquo;. With BBT&rsquo;s export translators (e.g., &ldquo;Better BibTeX&rdquo;), checking the Keep updated option will register the export for automation. After you’ve completed the current export, any changes to the collection or library will trigger an automatic re-export to update the file. You can review/remove exports from the BBT preferences. While I&rsquo;ve gone to some lengths to make sure performance is OK, don&rsquo;t go overboard with the number of auto-exports you have going.">
-    <meta property="og:title" content="Automatic export :: Better BibTeX for Zotero">
-    <meta property="og:description" content="To export a library, group or collection, right-click on it in the left Zotero pane and choose &ldquo;Export Library…&rdquo; or &ldquo;Export Collection…&rdquo;. With BBT&rsquo;s export translators (e.g., &ldquo;Better BibTeX&rdquo;), checking the Keep updated option will register the export for automation. After you’ve completed the current export, any changes to the collection or library will trigger an automatic re-export to update the file. You can review/remove exports from the BBT preferences. While I&rsquo;ve gone to some lengths to make sure performance is OK, don&rsquo;t go overboard with the number of auto-exports you have going.">
-    <meta property="og:type" content="article">
     <meta property="og:url" content="/zotero-better-bibtex/exporting/auto/index.html">
-    <meta property="article:section" content="Exporting items :: Better BibTeX for Zotero">
     <meta property="og:site_name" content="Better BibTeX for Zotero">
+    <meta property="og:title" content="Automatic export :: Better BibTeX for Zotero">
+    <meta property="og:description" content="To export a library, group or collection, right-click on it in the left Zotero pane and choose &amp;ldquo;Export Library…&amp;rdquo; or &amp;ldquo;Export Collection…&amp;rdquo;. With BBT&amp;rsquo;s export translators (e.g., &amp;ldquo;Better BibTeX&amp;rdquo;), checking the Keep updated option will register the export for automation. After you’ve completed the current export, any changes to the collection or library will trigger an automatic re-export to update the file. You can review/remove exports from the BBT preferences. While I&amp;rsquo;ve gone to some lengths to make sure performance is OK, don&amp;rsquo;t go overboard with the number of auto-exports you have going.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exporting items :: Better BibTeX for Zotero">
+    <meta property="article:tag" content="Export">
+    <meta property="article:tag" content="Automatic Export">
+    <meta property="article:tag" content="Overleaf">
+    <meta property="article:tag" content="Git">
     <title>Automatic export :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
@@ -34,8 +39,9 @@
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
-      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/zotero-better-bibtex';
       window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -100,7 +106,7 @@
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/exporting/index.html"><span itemprop="name">Exporting items</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/exporting/index.html"><span itemprop="name">Exporting</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Automatic export</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
@@ -136,6 +142,7 @@
   </ul>
 </div>
             </header>
+
 <h1 id="automatic-export">Automatic export</h1>
 
 <p>To export a library, group or collection, right-click on it in the left Zotero pane and choose &ldquo;Export Library…&rdquo; or &ldquo;Export Collection…&rdquo;.
@@ -198,7 +205,7 @@ from here, that can only be done by initiating an export.</p>
 4.When adding new sources, refresh both the Zotero client, and click the &ldquo;refresh&rdquo;-button in the file on Overleaf</p>
 <p>If working in a group, this can be accomplished by repeating step 1 for each person into the same cloud-shared folder. When doing step 1, make sure to use the same filename as the original bib-file. This will overwrite the bib-file every time the library is refreshed.</p>
 <h3 id="git-support">git support</h3>
-<p>BBT auto-export works nicely with git services (such as Overleaf, which is where I use it myself; the instructions for setting up Overleaf for git can be found <a href="https://www.overleaf.com/blog/195-new-collaborate-online-and-offline-with-overleaf-and-git-beta" target="_blank">here</a>, but any git service (gitlab, github, etc) should work exactly the same. I&rsquo;m toying with various online services <a href="https://github.com/retorquere/zotero-better-bibtex/projects/2" target="_blank">here</a>.</p>
+<p>BBT auto-export works nicely with git services (such as Overleaf, which is where I use it myself; the instructions for setting up Overleaf for git can be found <a href="https://www.overleaf.com/blog/195-new-collaborate-online-and-offline-with-overleaf-and-git-beta" rel="external" target="_blank">here</a>, but any git service (gitlab, github, etc) should work exactly the same. I&rsquo;m toying with various online services <a href="https://github.com/retorquere/zotero-better-bibtex/projects/2" rel="external" target="_blank">here</a>.</p>
 <p><strong>Note that this is more for the technically inclined,</strong> you will need to be comfortable with the command line to set this up. I can&rsquo;t think of a real benefit to using git over cloud-sync unless, like me, you like to keep a backup history in git.</p>
 <p>To activate git support, first clone the repo that holds your article/thesis/whatnot from your provider (github, overleaf, etc), run <code>git config zotero.betterbibtex.push true</code> in a command shell in that clone, and set up an auto export to that directory; at each update, BBT will now also push your library to the git service. For the technically curious, that means it does:</p>
 <ol>
@@ -213,7 +220,7 @@ from here, that can only be done by initiating an export.</p>
 <p>If you only want BBTs citation keys on Overleaf, you can simply pin
 them and use the regular Overleaf-Zotero integration. This will get
 you the pinned keys, but the bibtex is generated by the standard
-Zotero exporters. If you want this to be done by default, set <a href="https://retorque.re/zotero-better-bibtex/installation/preferences/hidden-preferences/#autopindelay" target="_blank">autoPinDelay</a> to a non-zero value.</p>
+Zotero exporters. If you want this to be done by default, set <a href="https://retorque.re/zotero-better-bibtex/installation/preferences/hidden-preferences/#autopindelay" rel="external" target="_blank">autoPinDelay</a> to a non-zero value.</p>
 
             <footer class="footline">
             </footer>
@@ -836,12 +843,15 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <div class="searchbox default-animation">
-          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
-          <label class="a11y-only" for="R-search-by">Search</label>
-          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
         <script>
           var contentLangs=['en'];
         </script>
@@ -854,7 +864,7 @@ Better BibTeX for Zotero
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
         </ul>
         <hr class="padding">
       </div>
@@ -905,12 +915,12 @@ Better BibTeX for Zotero
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-language fa-fw"></i>
+                  <i class="fa-fw fas fa-language"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
-                      <option id="R-en" value="/zotero-better-bibtex/exporting/auto/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/exporting/auto/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -918,12 +928,12 @@ Better BibTeX for Zotero
               </li>
               <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <i class="fa-fw fas fa-paint-brush"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-green" value="green" selected>Green</option>
+                      <option id="R-select-variant-green" value="green" selected>Green</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -932,7 +942,7 @@ Better BibTeX for Zotero
               </li>
               <li class="footerVisitedLinks">
                 <div class="padding menu-control">
-                  <i class="fas fa-history fa-fw"></i>
+                  <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <button onclick="clearHistory();">Clear History</button>

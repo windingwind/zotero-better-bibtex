@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.26.0+tip">
+    <meta name="generator" content="Relearn 5.27.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
@@ -12,14 +12,19 @@
     <meta name="twitter:description" content="The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &lsquo;Better BibTeX&rsquo;.
 The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&rsquo;s an attempt to describe what they do.
 Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.">
-    <meta property="og:title" content="Export :: Better BibTeX for Zotero">
-    <meta property="og:description" content="The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &lsquo;Better BibTeX&rsquo;.
-The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&rsquo;s an attempt to describe what they do.
-Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.">
-    <meta property="og:type" content="article">
     <meta property="og:url" content="/zotero-better-bibtex/installation/preferences/export/index.html">
-    <meta property="article:section" content="Citation keys :: Better BibTeX for Zotero">
     <meta property="og:site_name" content="Better BibTeX for Zotero">
+    <meta property="og:title" content="Export :: Better BibTeX for Zotero">
+    <meta property="og:description" content="The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &amp;lsquo;Better BibTeX&amp;rsquo;.
+The configuration of Better BibTeX is a little baroque compared to the standard Zotero Bib(La)TeX exporters (which only have hidden preferences). The defaults should just work, but here&amp;rsquo;s an attempt to describe what they do.
+Making any change here will drop your entire export cache. This is usually not a problem unless you have a really large library, but you can read about what is involved here.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Installation :: Better BibTeX for Zotero">
+    <meta property="article:tag" content="Automatic Export">
+    <meta property="article:tag" content="Configuration">
+    <meta property="article:tag" content="Export">
+    <meta property="article:tag" content="Preferences">
     <title>Export :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
@@ -38,8 +43,9 @@ Making any change here will drop your entire export cache. This is usually not a
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
-      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='\/zotero-better-bibtex';
       window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -176,6 +182,7 @@ Making any change here will drop your entire export cache. This is usually not a
   </ul>
 </div>
             </header>
+
 <h1 id="export">Export</h1>
 
 <p>The Better BibTeX Configuration can be found under the regular Zotero preferences pane, tab &lsquo;Better BibTeX&rsquo;.</p>
@@ -300,7 +307,7 @@ to have these pandoc citations surrounded with brackets or not.</p>
 <h4 id="eta-template">Eta template</h4>
 <p>default: <code>&lt;not set&gt;</code></p>
 <p>Used for drag-and-drop/quick copy citations in <code>Build your own</code> format. This is going to get pretty technical, sorry.
-You can paste a <a href="https://eta.js.org/" target="_blank">Eta</a> template here. Inside the template, you will find an array <code>it.items</code>, each of which is a serialized Zotero item.
+You can paste a <a href="https://eta.js.org/" rel="external" target="_blank">Eta</a> template here. Inside the template, you will find an array <code>it.items</code>, each of which is a serialized Zotero item.
 To find out what an item looks like inside the template, export some items as BetterBibTeX JSON.</p>
 <h2 id="postscript">postscript</h2>
 <h2 id="miscellaneous">Miscellaneous</h2>
@@ -957,12 +964,15 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <div class="searchbox default-animation">
-          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
-          <label class="a11y-only" for="R-search-by">Search</label>
-          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
         <script>
           var contentLangs=['en'];
         </script>
@@ -975,7 +985,7 @@ Better BibTeX for Zotero
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
         </ul>
         <hr class="padding">
       </div>
@@ -1026,12 +1036,12 @@ Better BibTeX for Zotero
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-language fa-fw"></i>
+                  <i class="fa-fw fas fa-language"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
-                      <option id="R-en" value="/zotero-better-bibtex/installation/preferences/export/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/installation/preferences/export/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -1039,12 +1049,12 @@ Better BibTeX for Zotero
               </li>
               <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <i class="fa-fw fas fa-paint-brush"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-green" value="green" selected>Green</option>
+                      <option id="R-select-variant-green" value="green" selected>Green</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -1053,7 +1063,7 @@ Better BibTeX for Zotero
               </li>
               <li class="footerVisitedLinks">
                 <div class="padding menu-control">
-                  <i class="fas fa-history fa-fw"></i>
+                  <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <button onclick="clearHistory();">Clear History</button>

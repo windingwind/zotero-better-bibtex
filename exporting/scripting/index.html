@@ -4,18 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.26.0+tip">
+    <meta name="generator" content="Relearn 5.27.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Scripting :: Better BibTeX for Zotero">
     <meta name="twitter:description" content="You wanted customized&hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each entry generated in the Bib(La)TeX exporter. In this code, you have access to the entry just before it will be written out and cached. There is an API to do this, and it&rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&rsquo;ll add it here (it&rsquo;s how the examples got here).">
-    <meta property="og:title" content="Scripting :: Better BibTeX for Zotero">
-    <meta property="og:description" content="You wanted customized&hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each entry generated in the Bib(La)TeX exporter. In this code, you have access to the entry just before it will be written out and cached. There is an API to do this, and it&rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&rsquo;ll add it here (it&rsquo;s how the examples got here).">
-    <meta property="og:type" content="article">
     <meta property="og:url" content="/zotero-better-bibtex/exporting/scripting/index.html">
-    <meta property="article:section" content="Exporting items :: Better BibTeX for Zotero">
     <meta property="og:site_name" content="Better BibTeX for Zotero">
+    <meta property="og:title" content="Scripting :: Better BibTeX for Zotero">
+    <meta property="og:description" content="You wanted customized&amp;hellip; You got customized. If you go into the Advanced tab of the Better BibTeX preferences you will find a text box (empty by default) where you can edit a javascript snippet which will be executed for each entry generated in the Bib(La)TeX exporter. In this code, you have access to the entry just before it will be written out and cached. There is an API to do this, and it&amp;rsquo;s fairly stable, but usually you can just open a new issue and ask me to write it, and I&amp;rsquo;ll add it here (it&amp;rsquo;s how the examples got here).">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exporting items :: Better BibTeX for Zotero">
+    <meta property="article:tag" content="Scripting">
     <title>Scripting :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
@@ -34,8 +36,9 @@
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
-      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/zotero-better-bibtex';
       window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -118,7 +121,7 @@
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/exporting/index.html"><span itemprop="name">Exporting items</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/exporting/index.html"><span itemprop="name">Exporting</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Scripting</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
@@ -151,6 +154,7 @@
   </ul>
 </div>
             </header>
+
 <h1 id="scripting">Scripting</h1>
 
 <h2 id="you-wanted-customized">You wanted customized&hellip;</h2>
@@ -238,7 +242,7 @@ the existing creator fields on <code>tex</code>.</p>
 <li><code>csl</code> is the CSL object being built. Any changes made to this object will directly change the CSL object being output.</li>
 <li><code>zotero</code> is the Zotero item it&rsquo;s being built from.</li>
 </ul>
-<p>There isn&rsquo;t really an API. You can use regular javascript to manipulate the <code>csl</code> object, which is a <a href="http://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables" target="_blank">CSL-JSON</a> object.</p>
+<p>There isn&rsquo;t really an API. You can use regular javascript to manipulate the <code>csl</code> object, which is a <a href="http://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables" rel="external" target="_blank">CSL-JSON</a> object.</p>
 <h2 id="item-types-and-fields">Item types and fields</h2>
 <p>In a postscript <code>zotero.itemType</code> will have one of these values:</p>
 <table>
@@ -852,7 +856,7 @@ the Zotero item looks like to the translator.</p>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">doi</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39;doi:&#39;</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) { <span style="color:#a6e22e">doi</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;doi:&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">doi</span>; }
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;note&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;[&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">doi</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;]&#39;</span> });
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="add-arxiv-data">Add arXiv data</h3>
-<p>arXiv is a bit of an odd duck. It really isn&rsquo;t a journal, so it shouldn&rsquo;t be the journal title, and their own recommendations on how to include arXiv IDs is a little lacking: <a href="https://arxiv.org/help/faq/references" target="_blank">this</a> doesn&rsquo;t say where to include the <code>arXiv:...</code> identfier, and <a href="https://arxiv.org/help/hypertex/bibstyles" target="_blank">this</a> says <em>not</em> to include it. Nor does it give any recommendations on how to achieve the <a href="https://arxiv.org/help/faq/references" target="_blank">desired output</a>.</p>
+<p>arXiv is a bit of an odd duck. It really isn&rsquo;t a journal, so it shouldn&rsquo;t be the journal title, and their own recommendations on how to include arXiv IDs is a little lacking: <a href="https://arxiv.org/help/faq/references" rel="external" target="_blank">this</a> doesn&rsquo;t say where to include the <code>arXiv:...</code> identfier, and <a href="https://arxiv.org/help/hypertex/bibstyles" rel="external" target="_blank">this</a> says <em>not</em> to include it. Nor does it give any recommendations on how to achieve the <a href="https://arxiv.org/help/faq/references" rel="external" target="_blank">desired output</a>.</p>
 <p>But for arguments&rsquo; sake, let&rsquo;s say you get the desired output by including an empty <code>journaltitle</code> field (ugh) and stuff the <code>arXiv:...</code> ID in the <code>pages</code> field (<em>ugh</em>). You could do that with the following postscript:</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">arXiv</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;pages&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">arXiv</span>.<span style="color:#a6e22e">id</span> });
@@ -887,7 +891,7 @@ the Zotero item looks like to the translator.</p>
   edition = {1}
 }
 </code></pre>
-<p>Further details <a href="https://github.com/retorquere/zotero-better-bibtex/issues/512" target="_blank">Export to Biblatex/Bibtex. Custom field order. #512</a>.</p>
+<p>Further details <a href="https://github.com/retorquere/zotero-better-bibtex/issues/512" rel="external" target="_blank">Export to Biblatex/Bibtex. Custom field order. #512</a>.</p>
 <h3 id="detect-and-protect-latex-math-formulas">Detect and protect LaTeX math formulas</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterTeX</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">has</span>.<span style="color:#a6e22e">title</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/(\$.*?\$)/g</span>, <span style="color:#e6db74">&#39;&lt;script&gt;{$1}&lt;/script&gt;&#39;</span>) });
@@ -997,9 +1001,9 @@ export:</p>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tex</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;file&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">zotero</span>.<span style="color:#a6e22e">attachments</span>, <span style="color:#a6e22e">enc</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;attachments&#39;</span> })
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">cache</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>From <a href="https://forums.zotero.org/discussion/comment/399187#Comment_399187" target="_blank">discussion here</a>.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>From <a href="https://forums.zotero.org/discussion/comment/399187#Comment_399187" rel="external" target="_blank">discussion here</a>.</p>
 <h3 id="adding-file-field-for-csl-json-export">Adding file field for CSL JSON export</h3>
-<p>It can be useful to have paths to attachment files included in json files, which is currently not the case, see <a href="https://github.com/retorquere/zotero-better-bibtex/issues/518" target="_blank">issue 518</a>.</p>
+<p>It can be useful to have paths to attachment files included in json files, which is currently not the case, see <a href="https://github.com/retorquere/zotero-better-bibtex/issues/518" rel="external" target="_blank">issue 518</a>.</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Translator</span>.<span style="color:#a6e22e">BetterCSLJSON</span>) {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">entry</span>.<span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">attachments</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">a</span> =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">localPath</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;;&#34;</span>);
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="convert-windows-attachment-paths-to-unix">Convert Windows attachment paths to Unix</h3>
@@ -1629,12 +1633,15 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <div class="searchbox default-animation">
-          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
-          <label class="a11y-only" for="R-search-by">Search</label>
-          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
         <script>
           var contentLangs=['en'];
         </script>
@@ -1647,7 +1654,7 @@ Better BibTeX for Zotero
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
         </ul>
         <hr class="padding">
       </div>
@@ -1698,12 +1705,12 @@ Better BibTeX for Zotero
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-language fa-fw"></i>
+                  <i class="fa-fw fas fa-language"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
-                      <option id="R-en" value="/zotero-better-bibtex/exporting/scripting/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/exporting/scripting/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -1711,12 +1718,12 @@ Better BibTeX for Zotero
               </li>
               <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <i class="fa-fw fas fa-paint-brush"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-green" value="green" selected>Green</option>
+                      <option id="R-select-variant-green" value="green" selected>Green</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -1725,7 +1732,7 @@ Better BibTeX for Zotero
               </li>
               <li class="footerVisitedLinks">
                 <div class="padding menu-control">
-                  <i class="fas fa-history fa-fw"></i>
+                  <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <button onclick="clearHistory();">Clear History</button>

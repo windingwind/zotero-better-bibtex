@@ -4,20 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.26.0+tip">
+    <meta name="generator" content="Relearn 5.27.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Migrating from Word/Libreoffice :: Better BibTeX for Zotero">
     <meta name="twitter:description" content="So you have decided that enough is enough, and you want to migrate your existing Word/Libreoffice document to LaTeX/Markdown. Plenty (well&hellip;) tools exist to help with the migration of your document content, pandoc being the most prominent one, but one thing none of them will do is keep your citations intact. This will not do.
 If you install this CSL style in Zotero (or modify it further and use that), Zotero will render the in-text citations as [@citekey] when you ask Zotero to render the bibliography.">
-    <meta property="og:title" content="Migrating from Word/Libreoffice :: Better BibTeX for Zotero">
-    <meta property="og:description" content="So you have decided that enough is enough, and you want to migrate your existing Word/Libreoffice document to LaTeX/Markdown. Plenty (well&hellip;) tools exist to help with the migration of your document content, pandoc being the most prominent one, but one thing none of them will do is keep your citations intact. This will not do.
-If you install this CSL style in Zotero (or modify it further and use that), Zotero will render the in-text citations as [@citekey] when you ask Zotero to render the bibliography.">
-    <meta property="og:type" content="article">
     <meta property="og:url" content="/zotero-better-bibtex/citing/migrating/index.html">
-    <meta property="article:section" content="Citation Keys :: Better BibTeX for Zotero">
     <meta property="og:site_name" content="Better BibTeX for Zotero">
+    <meta property="og:title" content="Migrating from Word/Libreoffice :: Better BibTeX for Zotero">
+    <meta property="og:description" content="So you have decided that enough is enough, and you want to migrate your existing Word/Libreoffice document to LaTeX/Markdown. Plenty (well&amp;hellip;) tools exist to help with the migration of your document content, pandoc being the most prominent one, but one thing none of them will do is keep your citations intact. This will not do.
+If you install this CSL style in Zotero (or modify it further and use that), Zotero will render the in-text citations as [@citekey] when you ask Zotero to render the bibliography.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Citation Keys :: Better BibTeX for Zotero">
+    <meta property="article:tag" content="Citation Keys">
+    <meta property="article:tag" content="Word">
+    <meta property="article:tag" content="Libreoffice">
     <title>Migrating from Word/Libreoffice :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
@@ -36,8 +40,9 @@ If you install this CSL style in Zotero (or modify it further and use that), Zot
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
-      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/zotero-better-bibtex';
       window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -126,6 +131,7 @@ If you install this CSL style in Zotero (or modify it further and use that), Zot
   </ul>
 </div>
             </header>
+
 <h1 id="migrating-from-wordlibreoffice">Migrating from Word/Libreoffice</h1>
 
 <p>So you have decided that enough is enough, and you want to migrate
@@ -763,12 +769,15 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <div class="searchbox default-animation">
-          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
-          <label class="a11y-only" for="R-search-by">Search</label>
-          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
         <script>
           var contentLangs=['en'];
         </script>
@@ -781,7 +790,7 @@ Better BibTeX for Zotero
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
         </ul>
         <hr class="padding">
       </div>
@@ -832,12 +841,12 @@ Better BibTeX for Zotero
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-language fa-fw"></i>
+                  <i class="fa-fw fas fa-language"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
-                      <option id="R-en" value="/zotero-better-bibtex/citing/migrating/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/citing/migrating/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -845,12 +854,12 @@ Better BibTeX for Zotero
               </li>
               <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <i class="fa-fw fas fa-paint-brush"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-green" value="green" selected>Green</option>
+                      <option id="R-select-variant-green" value="green" selected>Green</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -859,7 +868,7 @@ Better BibTeX for Zotero
               </li>
               <li class="footerVisitedLinks">
                 <div class="padding menu-control">
-                  <i class="fas fa-history fa-fw"></i>
+                  <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <button onclick="clearHistory();">Clear History</button>

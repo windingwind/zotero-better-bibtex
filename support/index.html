@@ -4,17 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.26.0+tip">
+    <meta name="generator" content="Relearn 5.27.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Support :: Better BibTeX for Zotero">
     <meta name="twitter:description" content="Make Zotero more useful for us LaTeX holdouts">
-    <meta property="og:title" content="Support :: Better BibTeX for Zotero">
-    <meta property="og:description" content="Make Zotero more useful for us LaTeX holdouts">
-    <meta property="og:type" content="website">
     <meta property="og:url" content="/zotero-better-bibtex/support/index.html">
     <meta property="og:site_name" content="Better BibTeX for Zotero">
+    <meta property="og:title" content="Support :: Better BibTeX for Zotero">
+    <meta property="og:description" content="Before all else, thank you for taking the time for submitting an issue, and I&amp;rsquo;m sorry that I&amp;rsquo;ve probably interrupted your flow.
+Your report matters to me. I love hearing my software helps you, and it pains me to know that things aren&amp;rsquo;t working for you.
+If you have any questions on the use of the plugin, please do not hesitate to file a GitHub issue to ask for help.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
     <title>Support :: Better BibTeX for Zotero</title>
     <link href="/zotero-better-bibtex/support/index.xml" rel="alternate" type="application/rss+xml" title="Support :: Better BibTeX for Zotero"><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
@@ -34,8 +37,9 @@
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
-      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='\/zotero-better-bibtex';
       window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -130,7 +134,7 @@ make sure I get your problem fixed as quick as possible. The guidelines are very
 express my ideal bug submission. I of course prefer very clearly documented issue reports over fuzzy ones, but I prefer
 fuzzy ones over missed ones.</p>
 <h2 id="submitting-an-issue">Submitting an issue</h2>
-<p>You can report problems with BBT by <a href="https://github.com/retorquere/zotero-better-bibtex/issues/new/choose" target="_blank">opening a new issue</a> on github.
+<p>You can report problems with BBT by <a href="https://github.com/retorquere/zotero-better-bibtex/issues/new/choose" rel="external" target="_blank">opening a new issue</a> on github.
 Unfortunately, my time is extremely limited for a number of very great reasons (you shall have to trust me on this). Because of this, I
 cannot accept bug reports or support requests on anything but the latest version. By the time I get to your issue, the latest
 version might have bumped up already, and you will have to upgrade (you might have auto-upgraded already however) and
@@ -158,7 +162,7 @@ more issues.</li>
 these options:
 <ul>
 <li>Post an URL in the issue where I can download your sample, or</li>
-<li>Put the sample in a <a href="https://gist.github.com/" target="_blank">gist</a> and post the URL of the gist into the issue</li>
+<li>Put the sample in a <a href="https://gist.github.com/" rel="external" target="_blank">gist</a> and post the URL of the gist into the issue</li>
 </ul>
 </li>
 <li><strong>If your problem pertains to BBT interfering with other plugins</strong> (which wouldn&rsquo;t be the first time), and this interference
@@ -794,12 +798,15 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <div class="searchbox default-animation">
-          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
-          <label class="a11y-only" for="R-search-by">Search</label>
-          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
         <script>
           var contentLangs=['en'];
         </script>
@@ -812,7 +819,7 @@ Better BibTeX for Zotero
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
         </ul>
         <hr class="padding">
       </div>
@@ -863,12 +870,12 @@ Better BibTeX for Zotero
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-language fa-fw"></i>
+                  <i class="fa-fw fas fa-language"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
-                      <option id="R-en" value="/zotero-better-bibtex/support/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/support/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -876,12 +883,12 @@ Better BibTeX for Zotero
               </li>
               <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <i class="fa-fw fas fa-paint-brush"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-green" value="green" selected>Green</option>
+                      <option id="R-select-variant-green" value="green" selected>Green</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -890,7 +897,7 @@ Better BibTeX for Zotero
               </li>
               <li class="footerVisitedLinks">
                 <div class="padding menu-control">
-                  <i class="fas fa-history fa-fw"></i>
+                  <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <button onclick="clearHistory();">Clear History</button>

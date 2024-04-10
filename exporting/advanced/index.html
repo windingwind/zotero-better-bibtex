@@ -4,20 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.26.0+tip">
+    <meta name="generator" content="Relearn 5.27.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Advanced :: Better BibTeX for Zotero">
     <meta name="twitter:description" content="You are a hardcore LaTeX user If you&rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
 You can add literal LaTeX anywhere in your item by surrounding it with &lt;script&gt;...&lt;/script&gt; (&lt;pre&gt;...&lt;/pre&gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&rsquo;re wrapped in &lt;script&gt;.">
-    <meta property="og:title" content="Advanced :: Better BibTeX for Zotero">
-    <meta property="og:description" content="You are a hardcore LaTeX user If you&rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
-You can add literal LaTeX anywhere in your item by surrounding it with &lt;script&gt;...&lt;/script&gt; (&lt;pre&gt;...&lt;/pre&gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&rsquo;re wrapped in &lt;script&gt;.">
-    <meta property="og:type" content="article">
     <meta property="og:url" content="/zotero-better-bibtex/exporting/advanced/index.html">
-    <meta property="article:section" content="Exporting items :: Better BibTeX for Zotero">
     <meta property="og:site_name" content="Better BibTeX for Zotero">
+    <meta property="og:title" content="Advanced :: Better BibTeX for Zotero">
+    <meta property="og:description" content="You are a hardcore LaTeX user If you&amp;rsquo;d really just rather hand-code your LaTeX constructs, BBT makes that possible:
+You can add literal LaTeX anywhere in your item by surrounding it with &amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; (&amp;lt;pre&amp;gt;...&amp;lt;/pre&amp;gt; will also work for historical reasons) markers. BBT will convert to/from unicode and (un)escape where required but will pass whatever is enclosed in the pre tags unchanged. An entry tagged with #LaTeX (case-sensitive!) will have all fields exported as if they&amp;rsquo;re wrapped in &amp;lt;script&amp;gt;.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exporting items :: Better BibTeX for Zotero">
     <title>Advanced :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
@@ -36,8 +37,9 @@ You can add literal LaTeX anywhere in your item by surrounding it with &lt;scrip
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
-      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/zotero-better-bibtex';
       window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -96,7 +98,7 @@ You can add literal LaTeX anywhere in your item by surrounding it with &lt;scrip
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/exporting/index.html"><span itemprop="name">Exporting items</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/exporting/index.html"><span itemprop="name">Exporting</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Advanced</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
@@ -124,6 +126,7 @@ You can add literal LaTeX anywhere in your item by surrounding it with &lt;scrip
           <article class="default">
             <header class="headline">
             </header>
+
 <h1 id="advanced">Advanced</h1>
 
 <h2 id="you-are-a-hardcore-latex-user">You are a hardcore LaTeX user</h2>
@@ -758,12 +761,15 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <div class="searchbox default-animation">
-          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
-          <label class="a11y-only" for="R-search-by">Search</label>
-          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
         <script>
           var contentLangs=['en'];
         </script>
@@ -776,7 +782,7 @@ Better BibTeX for Zotero
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
         </ul>
         <hr class="padding">
       </div>
@@ -827,12 +833,12 @@ Better BibTeX for Zotero
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-language fa-fw"></i>
+                  <i class="fa-fw fas fa-language"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
-                      <option id="R-en" value="/zotero-better-bibtex/exporting/advanced/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/exporting/advanced/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -840,12 +846,12 @@ Better BibTeX for Zotero
               </li>
               <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <i class="fa-fw fas fa-paint-brush"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-green" value="green" selected>Green</option>
+                      <option id="R-select-variant-green" value="green" selected>Green</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -854,7 +860,7 @@ Better BibTeX for Zotero
               </li>
               <li class="footerVisitedLinks">
                 <div class="padding menu-control">
-                  <i class="fas fa-history fa-fw"></i>
+                  <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <button onclick="clearHistory();">Clear History</button>

@@ -4,18 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
-    <meta name="generator" content="Relearn 5.26.0+tip">
+    <meta name="generator" content="Relearn 5.27.0+tip">
     <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Frequently Asked Questions :: Better BibTeX for Zotero">
     <meta name="twitter:description" content="Add-on could not be installed because it appears to be corrupt. You have downloaded the Better BibTeX plugin by clicking on the download link using Firefox. As Zotero and Firefox use the same plugin technology, Firefox think the BetterBibTeX plugin is intended for itself, tries to install it, and then finds out it won&rsquo;t work. You need to download the plugin without installinging it into Firefox by right-clicking the download link, choose save-as, and then install it into Zotero using installation instructions to get started with BBT.">
-    <meta property="og:title" content="Frequently Asked Questions :: Better BibTeX for Zotero">
-    <meta property="og:description" content="Add-on could not be installed because it appears to be corrupt. You have downloaded the Better BibTeX plugin by clicking on the download link using Firefox. As Zotero and Firefox use the same plugin technology, Firefox think the BetterBibTeX plugin is intended for itself, tries to install it, and then finds out it won&rsquo;t work. You need to download the plugin without installinging it into Firefox by right-clicking the download link, choose save-as, and then install it into Zotero using installation instructions to get started with BBT.">
-    <meta property="og:type" content="article">
     <meta property="og:url" content="/zotero-better-bibtex/support/faq/index.html">
-    <meta property="article:section" content="Support :: Better BibTeX for Zotero">
     <meta property="og:site_name" content="Better BibTeX for Zotero">
+    <meta property="og:title" content="Frequently Asked Questions :: Better BibTeX for Zotero">
+    <meta property="og:description" content="Add-on could not be installed because it appears to be corrupt. You have downloaded the Better BibTeX plugin by clicking on the download link using Firefox. As Zotero and Firefox use the same plugin technology, Firefox think the BetterBibTeX plugin is intended for itself, tries to install it, and then finds out it won&amp;rsquo;t work. You need to download the plugin without installinging it into Firefox by right-clicking the download link, choose save-as, and then install it into Zotero using installation instructions to get started with BBT.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Support :: Better BibTeX for Zotero">
+    <meta property="article:tag" content="Export">
     <title>Frequently Asked Questions :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
@@ -34,8 +36,9 @@
     <script src="/zotero-better-bibtex/js/variant.js"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.baseUri='\/zotero-better-bibtex\/css\/theme.css'.replace(/(.*)css\/theme\.css/, '$1').replace(/\/*$/, '');
-      window.relearn.baseUriFull='\/zotero-better-bibtex\//'.replace(/\/*$/, '');
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/zotero-better-bibtex';
       window.index_js_url="/zotero-better-bibtex/index.search.js";
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -103,7 +106,7 @@
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/index.html"><span itemprop="name">Better BibTeX for Zotero</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/zotero-better-bibtex/support/index.html"><span itemprop="name">Support</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Frequently Asked Questions</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">FAQ</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
 				
@@ -135,6 +138,7 @@
   </ul>
 </div>
             </header>
+
 <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
 
 <h2 id="add-on-could-not-be-installed-because-it-appears-to-be-corrupt">Add-on could not be installed because it appears to be corrupt.</h2>
@@ -150,7 +154,7 @@ it into Zotero using <a href="/zotero-better-bibtex/installation/">installation 
 fields. For most I can make reasonable choices, but there are some things where
 Better BibTeX takes a little more liberties with your items in order to get
 sensible output.</p>
-<p>Title fields in particular are a total mess. Zotero <a href="https://zotero-manual.github.io/adding-items/#sentence-and-title-case" target="_blank">recommends having your
+<p>Title fields in particular are a total mess. Zotero <a href="https://zotero-manual.github.io/adding-items/#sentence-and-title-case" rel="external" target="_blank">recommends having your
 titles in sentence
 case</a>
 because that&rsquo;s what the embedded citation processor expects, but of course,
@@ -201,8 +205,8 @@ Bib(La)TeX will differ, and you can&rsquo;t complain about this.</p>
 single braces (<code>{...}</code>)?</p>
 <p>This is not because of some arcane aesthetic preference, but because the
 Bib(La)TeX case protection rules are incredibly convoluted
-(<a href="https://github.com/retorquere/zotero-better-bibtex/issues/541" target="_blank">#541</a>,
-<a href="https://github.com/retorquere/zotero-better-bibtex/issues/383" target="_blank">#383</a>). For
+(<a href="https://github.com/retorquere/zotero-better-bibtex/issues/541" rel="external" target="_blank">#541</a>,
+<a href="https://github.com/retorquere/zotero-better-bibtex/issues/383" rel="external" target="_blank">#383</a>). For
 example, here are some &ldquo;interesting&rdquo; cases that BBT has learned to deal with.
 Did you know that</p>
 <ul>
@@ -211,19 +215,19 @@ surprise to me. So <code>\emph{Homo sapiens}</code> is case-protected (will not 
 recapitalized by Bib(La)TeX), but <code>{\emph{Homo sapiens}}</code> <em>is not</em>
 case-protected so it <em>will</em> be recapitalized. So to get predictable
 behavior, this is written out as <code>{{\emph{Homo sapiens}}}</code>.</li>
-<li>casing behavior over the <em>whole</em> entry field depends on <a href="https://github.com/retorquere/zotero-better-bibtex/issues/541#issuecomment-240156274" target="_blank">whether there&rsquo;s
+<li>casing behavior over the <em>whole</em> entry field depends on <a href="https://github.com/retorquere/zotero-better-bibtex/issues/541#issuecomment-240156274" rel="external" target="_blank">whether there&rsquo;s
 a slash-command at the first
 position</a>
 of the title?</li>
-<li><a href="https://github.com/retorquere/zotero-better-bibtex/issues/541#issuecomment-240999396" target="_blank">apparently</a>,
+<li><a href="https://github.com/retorquere/zotero-better-bibtex/issues/541#issuecomment-240999396" rel="external" target="_blank">apparently</a>,
 to make sure that <code>Reading HLA Hart's: &lt;i&gt;The Concept of Law&lt;/i&gt;</code> renders as
 expected means I have to output the astoundingly ugly <code>{Reading {{HLA Hart}}'s: {{{\emph{The Concept}}}}{\emph{ of }}{{{\emph{Law}}}}}</code>?</li>
 </ul>
 <p>To make matters even more complex, so many people have in the past wrongly
 recommended to &ldquo;just wrap everything in one extra set of braces&rdquo; that biblatex
 now ignores exactly that pattern (see
-<a href="https://tex.stackexchange.com/a/327387/27603" target="_blank">here</a> and
-<a href="https://tex.stackexchange.com/a/233976/27603" target="_blank">here</a>).</p>
+<a href="https://tex.stackexchange.com/a/327387/27603" rel="external" target="_blank">here</a> and
+<a href="https://tex.stackexchange.com/a/233976/27603" rel="external" target="_blank">here</a>).</p>
 <p>The double-bracing is the only unambiguous rule I could construct that
 consistently gets the rendered entries right (so far).</p>
 <p>Bib(La)TeX provides a never-ending stream of edge cases, which BBT tries to
@@ -269,11 +273,11 @@ Make sure the latter path is correct, as JabRef might continue finding files and
 <p>Among the reasons to just prefer Zotero over Mendeley outright you will find:</p>
 <ul>
 <li>Mendeley is owned by Elsevier.</li>
-<li>Mendeley thinks you <a href="https://www.zotero.org/support/kb/mendeley_import#mendeley_database_encryption" target="_blank">cannot be trusted with your own data</a></li>
+<li>Mendeley thinks you <a href="https://www.zotero.org/support/kb/mendeley_import#mendeley_database_encryption" rel="external" target="_blank">cannot be trusted with your own data</a></li>
 </ul>
 <p>But wrt bibtex export, I don&rsquo;t think the Mendeley engineers actively use bib(la)tex:</p>
 <ul>
-<li>Mendeley is still double-bracing titles &ndash; a behavior so wrong (yet unfortunately ubiquitous), biblatex started <a href="/zotero-better-bibtex/support/faq/index.html">ignoring double-braced titles</a> (see <a href="https://tex.stackexchange.com/a/327387/27603" target="_blank">here</a> and <a href="https://tex.stackexchange.com/a/233976/27603" target="_blank">here</a>).</li>
+<li>Mendeley is still double-bracing titles &ndash; a behavior so wrong (yet unfortunately ubiquitous), biblatex started <a href="/zotero-better-bibtex/support/faq/index.html">ignoring double-braced titles</a> (see <a href="https://tex.stackexchange.com/a/327387/27603" rel="external" target="_blank">here</a> and <a href="https://tex.stackexchange.com/a/233976/27603" rel="external" target="_blank">here</a>).</li>
 <li>Mendeley uses CSL, so items should be entered in sentence case (as is the case in Zotero). But bib(la)tex expects title-case, so titles should be converted to title case during export. This is difficult, so Mendeley just doesn&rsquo;t bother doing it.</li>
 <li>Verbatim fields that should per spec be exported as regular fields by Mendeley. This will get you compilation errors.</li>
 </ul>
@@ -964,12 +968,15 @@ Better BibTeX for Zotero
 </a>
 
         </div>
-        <div class="searchbox default-animation">
-          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
-          <label class="a11y-only" for="R-search-by">Search</label>
-          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
         <script>
           var contentLangs=['en'];
         </script>
@@ -982,7 +989,7 @@ Better BibTeX for Zotero
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
-          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a class="padding" href="/zotero-better-bibtex/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
         </ul>
         <hr class="padding">
       </div>
@@ -1033,12 +1040,12 @@ Better BibTeX for Zotero
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-language fa-fw"></i>
+                  <i class="fa-fw fas fa-language"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
-                    <select id="R-select-language" onchange="location = window.relearn.baseUri + this.value;">
-                      <option id="R-en" value="/zotero-better-bibtex/support/faq/index.html" lang="en" selected>English</option>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/zotero-better-bibtex/support/faq/index.html" lang="en" selected>English</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -1046,12 +1053,12 @@ Better BibTeX for Zotero
               </li>
               <li id="R-select-variant-container" class="footerVariantSwitch">
                 <div class="padding menu-control">
-                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <i class="fa-fw fas fa-paint-brush"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-green" value="green" selected>Green</option>
+                      <option id="R-select-variant-green" value="green" selected>Green</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -1060,7 +1067,7 @@ Better BibTeX for Zotero
               </li>
               <li class="footerVisitedLinks">
                 <div class="padding menu-control">
-                  <i class="fas fa-history fa-fw"></i>
+                  <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
                   <div class="control-style">
                     <button onclick="clearHistory();">Clear History</button>
