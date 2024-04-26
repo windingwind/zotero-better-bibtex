@@ -3,9 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.125.3">
+    <meta name="generator" content="Hugo 0.125.4">
     <meta name="generator" content="Relearn 5.27.0+tip">
-    <meta name="description" content="Make Zotero more useful for us LaTeX holdouts">
+    <meta name="description" content="You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?[collectionID].[format] 1. You can get this URL for a group, library or collection by right-clicking it and selecting Download Better BibTeX export...
+You can add options to the export as URL parameters:
+&amp;exportNotes=[true|false] &amp;useJournalAbbreviation=[true|false] You can fetch your library as part of your build, using something like curl from your Makefile, or with a BibLaTeX remote statement like
+\addbibresource[location=remote]{http://127.0.0.1:23119/better-bibtex/collection?/0/8CV58ZVD.biblatex}format can be:
+biblatex for BibLaTeX bibtex for BibTeX json or csljson for CSL-JSON yaml, yml or cslyaml for CSL-JSON in YAML format jzon for BetterBibTeX JSON debug format the value of translatorID taken from the header of any existing Zotero translator to get an export in that translator format Pull export will only work if you are compiling your document on the same system your Zotero client with BBT runs on.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Pull export :: Better BibTeX for Zotero">
@@ -26,9 +30,16 @@ biblatex for BibLaTeX bibtex for BibTeX json or csljson for CSL-JSON yaml, yml o
     <meta property="og:type" content="article">
     <meta property="article:section" content="Exporting items :: Better BibTeX for Zotero">
     <meta property="article:tag" content="Export">
+    <meta itemprop="name" content="Pull export :: Better BibTeX for Zotero">
+    <meta itemprop="description" content="You can fetch your bibliography on the url http://127.0.0.1:23119/better-bibtex/collection?[collectionID].[format] 1. You can get this URL for a group, library or collection by right-clicking it and selecting Download Better BibTeX export...
+You can add options to the export as URL parameters:
+&amp;exportNotes=[true|false] &amp;useJournalAbbreviation=[true|false] You can fetch your library as part of your build, using something like curl from your Makefile, or with a BibLaTeX remote statement like
+\addbibresource[location=remote]{http://127.0.0.1:23119/better-bibtex/collection?/0/8CV58ZVD.biblatex}format can be:
+biblatex for BibLaTeX bibtex for BibTeX json or csljson for CSL-JSON yaml, yml or cslyaml for CSL-JSON in YAML format jzon for BetterBibTeX JSON debug format the value of translatorID taken from the header of any existing Zotero translator to get an export in that translator format Pull export will only work if you are compiling your document on the same system your Zotero client with BBT runs on.">
+    <meta itemprop="wordCount" content="195">
+    <meta itemprop="keywords" content="Export">
     <title>Pull export :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/zotero-better-bibtex/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
     <link href="/zotero-better-bibtex/css/nucleus.css" rel="stylesheet">
     <link href="/zotero-better-bibtex/css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/zotero-better-bibtex/css/auto-complete.css" rel="stylesheet"></noscript>
