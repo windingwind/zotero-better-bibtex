@@ -728,15 +728,19 @@ export class BetterBibTeX {
 
         const NoParse = { noParseParams: true }
 
+        let now = Date.now()
         for (const ddl of require('./db/citation-key.sql')) {
           await Zotero.DB.queryAsync(ddl, [], NoParse)
         }
+        log.debug('citation-key.sql took', -now + (now = Date.now()))
         for (const ddl of require('./db/auto-export.sql')) {
           await Zotero.DB.queryAsync(ddl, [], NoParse)
         }
+        log.debug('auto-export.sql took', -now + (now = Date.now()))
         for (const ddl of require('../gen/auto-export-triggers.sql')) {
           await Zotero.DB.queryAsync(ddl, [], NoParse)
         }
+        log.debug('auto-export-triggers.sql took', -now + (now = Date.now()))
 
         if (tables.betterbibtex) {
           if (!(await Zotero.DB.queryAsync('PRAGMA betterbibtex.table_info("better-bibtex")')).find(info => info.name === 'migrated')) {
@@ -786,6 +790,9 @@ export class BetterBibTeX {
             status[name] = migrated
           }
           log.debug('migrated:', status)
+
+          const remaining = await Zotero.DB.valueQueryAsync('SELECT count(*) FROM betterbibtex."better-bibtex" WHERE migrated IS NULL')
+          if (!remaining) await Zotero.DB.queryAsync('DROP TABLE betterbibtex."better-bibtex"')
         }
       },
       shutdown: async () => {
