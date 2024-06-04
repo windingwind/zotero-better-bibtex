@@ -39,6 +39,7 @@ class Emitter extends Emittery<{
   private listeners: any[] = []
   public idle: Partial<Record<IdleTopic, IdleState>> = {}
   public itemObserverDelay = 5
+  public held = true
 
   public startup(): void {
     this.listeners.push(new WindowListener)
@@ -78,6 +79,13 @@ export const Events = new Emitter({
   },
 })
 
+/*
+const emit = Events.emit.bind(Events);
+(Events as unknown as any).emit = function heldEmit(eventName, eventData) {
+  if (!this.held) return emit(eventName, eventData) // eslint-disable-line @typescript-eslint/no-unsafe-return
+}
+*/
+
 class WindowListener {
   constructor() {
     Services.wm.addListener(this)
@@ -107,6 +115,8 @@ class IdleListener {
   }
 
   observe(_subject: string, topic: IdleState, _data: any) {
+    if (Events.held) return
+
     if ((topic as any) === 'back') topic = 'active'
     log.debug('idle:', now(), this.topic, topic)
     Events.idle[this.topic] = topic

@@ -810,6 +810,7 @@ export class BetterBibTeX {
       id: 'done',
       description: 'user interface',
       startup: async () => {
+        Events.held = false
         Ready.resolve(true)
         await this.load(Zotero.getMainWindow())
 
