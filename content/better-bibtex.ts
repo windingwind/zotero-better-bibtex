@@ -905,10 +905,6 @@ export class BetterBibTeX {
           })
         },
         onItemChange: ({ setEnabled, body, item }) => {
-          if (pending.size) { // will force-refresh the middle pane without stealing focus
-            Zotero.Notifier.trigger('refresh', 'item', [...pending])
-            pending.clear()
-          }
           const textbox = body.ownerDocument.getElementById('better-bibtex-citation-key')
           if (item.isRegularItem() && !item.isFeedItem) {
             const citekey = item.getField('citationKey')
@@ -921,6 +917,11 @@ export class BetterBibTeX {
           else {
             textbox.dataset.itemid = ''
             setEnabled(false)
+          }
+
+          if (pending.size) { // will force-refresh the middle pane without stealing focus
+            Zotero.Notifier.trigger('refresh', 'item', [...pending].filter(id => id !== item.id))
+            pending.clear()
           }
         },
         onDestroy: () => {
