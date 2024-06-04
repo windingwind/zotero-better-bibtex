@@ -98,6 +98,7 @@ export class Orchestrator {
 
   private async run(phase: PhaseID, reason: Reason, progress?: Progress): Promise<void> {
     const duration = (dur: number) => (new Date(dur)).toISOString().split('T')[1].replace(/Z/, '')
+    const now = () => (new Date).toISOString().replace(/Z/, '')
 
     const tasks: Task[] = this.ordered.filter(task => task[phase])
     if (phase === 'shutdown') tasks.reverse()
@@ -121,13 +122,13 @@ export class Orchestrator {
 
       progress?.(phase, task.id, finished.length, total, task.description)
 
-      log.debug('orchestrator: starting', task.id, JSON.stringify(task.description))
+      log.debug('orchestrator: starting', `${task.id}:`, JSON.stringify(task.description), now())
 
       task.started = Date.now()
       await task[phase](reason, task)
       task.finished = Date.now()
 
-      log.debug('orchestrator:', task.id, 'took', duration(task.finished - task.started))
+      log.debug('orchestrator:', `${task.id}:`, 'took', duration(task.finished - task.started), now())
       finished.unshift(task.finished)
       runtime[task.id === 'start' ? 'zotero' : 'bbt'] += task.finished - task.started
 

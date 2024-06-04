@@ -716,33 +716,36 @@ export class BetterBibTeX {
       },
     })
 
+    const now = (): string => (new Date).toISOString().replace(/Z/, '')
+
     orchestrator.add({
       id: 'sqlite',
       startup: async () => {
+        log.debug('sqlite: started', now())
         let now = Date.now()
         await Zotero.DB.queryAsync('ATTACH DATABASE ? AS betterbibtex', [$OS.Path.join(Zotero.DataDirectory.dir, 'better-bibtex.sqlite')])
-        log.debug('sqlite: attach took', -now + (now = Date.now()), 'ms')
+        log.debug('sqlite: attach took', -now + (now = Date.now()), 'ms', now())
 
         const tables: Record<string, boolean> = {}
         for (const table of await Zotero.DB.columnQueryAsync("SELECT LOWER(REPLACE(name, '-', '')) FROM betterbibtex.sqlite_master where type='table'")) {
           tables[table] = true
         }
-        log.debug('sqlite: table detect took', -now + (now = Date.now()), 'ms')
+        log.debug('sqlite: table detect took', -now + (now = Date.now()), 'ms', now())
 
         const NoParse = { noParseParams: true }
 
         for (const ddl of require('./db/citation-key.sql')) {
           await Zotero.DB.queryAsync(ddl, [], NoParse)
         }
-        log.debug('sqlite: citation-key.sql took', -now + (now = Date.now()), 'ms')
+        log.debug('sqlite: citation-key.sql took', -now + (now = Date.now()), 'ms', now())
         for (const ddl of require('./db/auto-export.sql')) {
           await Zotero.DB.queryAsync(ddl, [], NoParse)
         }
-        log.debug('sqlite: auto-export.sql took', -now + (now = Date.now()), 'ms')
+        log.debug('sqlite: auto-export.sql took', -now + (now = Date.now()), 'ms', now())
         for (const ddl of require('../gen/auto-export-triggers.sql')) {
           await Zotero.DB.queryAsync(ddl, [], NoParse)
         }
-        log.debug('sqlite: auto-export-triggers.sql took', -now + (now = Date.now()), 'ms')
+        log.debug('sqlite: auto-export-triggers.sql took', -now + (now = Date.now()), 'ms', now())
 
         if (tables.betterbibtex) {
           if (!(await Zotero.DB.queryAsync('PRAGMA betterbibtex.table_info("better-bibtex")')).find(info => info.name === 'migrated')) {
@@ -796,7 +799,7 @@ export class BetterBibTeX {
           const remaining = await Zotero.DB.valueQueryAsync('SELECT count(*) FROM betterbibtex."better-bibtex" WHERE migrated IS NULL')
           if (!remaining) await Zotero.DB.queryAsync('DROP TABLE betterbibtex."better-bibtex"')
         }
-        log.debug('sqlite: table migration took', -now + (now = Date.now()), 'ms')
+        log.debug('sqlite: table migration took', -now + (now = Date.now()), 'ms', 'now finished', now())
       },
       shutdown: async () => {
         await Zotero.DB.queryAsync('DETACH DATABASE betterbibtex')
