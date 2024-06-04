@@ -20,7 +20,7 @@ type ReasonId = keyof typeof BOOTSTRAP_REASONS
 export type Reason = typeof BOOTSTRAP_REASONS[ReasonId]
 
 function log(msg) {
-  msg = `{better-bibtex} bootstrap: ${msg}`
+  msg = `{better-bibtex} ${(new Date).toISOString().split('T')[1].replace(/Z/, '')} bootstrap: ${msg}`
   if (Zotero?.debug) {
     Zotero.debug(`Better BibTeX bootstrap: ${msg}`)
   }
