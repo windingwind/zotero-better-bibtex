@@ -8,6 +8,8 @@ import { is7 } from './client'
 type IdleState = 'active' | 'idle'
 export type Action = 'modify' | 'delete' | 'add'
 
+const now = () => (new Date).toISOString().replace(/Z/, '')
+
 type IdleObserver = {
   observe: (subject: string, topic: IdleState, data: any) => void
 }
@@ -106,7 +108,7 @@ class IdleListener {
 
   observe(_subject: string, topic: IdleState, _data: any) {
     if ((topic as any) === 'back') topic = 'active'
-    log.debug(`idle: ${new Date}, ${this.topic} ${topic}`)
+    log.debug('idle:', now(), this.topic, topic)
     Events.idle[this.topic] = topic
     void Events.emit('idle', { state: topic, topic: this.topic })
   }

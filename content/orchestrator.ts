@@ -112,7 +112,7 @@ export class Orchestrator {
       bbt: 0,
     }
     const finished: number[] = []
-    log.debug(phase, 'orchestrator started:', reason)
+    log.debug(phase, 'orchestrator:', now(), 'started:', reason)
     while (tasks.length) {
       const task = tasks.shift()
 
@@ -136,7 +136,7 @@ export class Orchestrator {
     }
 
     log.prefix = ''
-    log.debug('orchestrator: startup took', duration(runtime.bbt), 'after waiting', duration(runtime.zotero), 'for zotero')
+    log.debug('orchestrator:', now(), 'startup took', duration(runtime.bbt), 'after waiting', duration(runtime.zotero), 'for zotero')
   }
 
   private gantt(phase: PhaseID) {
