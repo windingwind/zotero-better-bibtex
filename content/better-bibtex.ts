@@ -723,9 +723,8 @@ export class BetterBibTeX {
       startup: async () => {
         log.debug('sqlite: started', ts())
         let now = Date.now()
-        await Zotero.DB.executeTransaction(async () => {
-          await Zotero.DB.queryAsync('ATTACH DATABASE ? AS betterbibtex', [$OS.Path.join(Zotero.DataDirectory.dir, 'better-bibtex.sqlite')])
-        })
+        await Zotero.DB.waitForTransaction('attach BBT database')
+        await Zotero.DB.queryAsync('ATTACH DATABASE ? AS betterbibtex', [$OS.Path.join(Zotero.DataDirectory.dir, 'better-bibtex.sqlite')])
         log.debug('sqlite: attach took', -now + (now = Date.now()), 'ms', ts())
 
         const tables: Record<string, boolean> = {}
