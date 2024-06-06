@@ -705,9 +705,10 @@ export class BetterBibTeX {
         // https://groups.google.com/d/msg/zotero-dev/QYNGxqTSpaQ/uvGObVNlCgAJ
         // this is what really takes long
         await Zotero.initializationPromise
-
         // and this
         await Zotero.Translators.init()
+        // why is the a **5 minute transaction** running here??
+        await Zotero.DB.waitForTransaction('start BBT startup')
 
         this.dir = $OS.Path.join(Zotero.DataDirectory.dir, 'better-bibtex')
         await $OS.File.makeDir(this.dir, { ignoreExisting: true })
