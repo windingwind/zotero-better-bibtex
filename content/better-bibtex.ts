@@ -47,6 +47,8 @@ import { sentenceCase, HTMLParser, HTMLParserOptions } from './text'
 import { log } from './logger'
 import { Events } from './events'
 
+log.debug(`FormData=${typeof FormData}`)
+
 import { Translators } from './translators'
 import { DB as Cache } from './db/cache'
 import { Serializer } from './item-export-format'

@@ -78,6 +78,7 @@ export async function startup({ resourceURI, rootURI = resourceURI.spec }, reaso
 
     setDefaultPrefs(rootURI)
 
+    const $window = Zotero.getMainWindow()
     Services.scriptloader.loadSubScriptWithOptions(`${rootURI}content/better-bibtex.js`, {
       charset: 'utf=8',
       // ignoreCache: true,
@@ -88,8 +89,9 @@ export async function startup({ resourceURI, rootURI = resourceURI.spec }, reaso
         rootURI,
 
         // to pacify libraries that do env-detection
-        window: Zotero.getMainWindow(),
-        document: Zotero.getMainWindow().document,
+        window: $window,
+        document: $window.document,
+        // FormData: $window.FormData,
 
         setTimeout,
         clearTimeout,
@@ -107,7 +109,7 @@ export async function startup({ resourceURI, rootURI = resourceURI.spec }, reaso
       defaultXUL: true,
     })
     log('startup done')
-    onMainWindowLoad({ window: Zotero.getMainWindow() })
+    onMainWindowLoad({ window: $window })
   }
   catch (err) {
     alert({ title: 'Better BibTeX startup failed', text: `${err}` })
