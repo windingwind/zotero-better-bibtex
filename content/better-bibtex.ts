@@ -700,15 +700,17 @@ export class BetterBibTeX {
 
     orchestrator.add({
       id: 'start',
-      description: 'waiting for zotero',
+      description: 'waiting for Zotero',
       startup: async () => {
-        // https://groups.google.com/d/msg/zotero-dev/QYNGxqTSpaQ/uvGObVNlCgAJ
-        // this is what really takes long
-        await Zotero.initializationPromise
-        // and this
-        await Zotero.Translators.init()
-        // why is the a **5 minute transaction** running here??
-        await Zotero.DB.waitForTransaction('start BBT startup')
+        await Promise.all([
+          // https://groups.google.com/d/msg/zotero-dev/QYNGxqTSpaQ/uvGObVNlCgAJ
+          // this is what really takes long
+          Zotero.initializationPromise,
+          // and this too
+          Zotero.Translators.init(),
+          // why is there a **5 minute transaction** running here??
+          Zotero.DB.waitForTransaction('start BBT startup'),
+        ])
 
         this.dir = $OS.Path.join(Zotero.DataDirectory.dir, 'better-bibtex')
         await $OS.File.makeDir(this.dir, { ignoreExisting: true })

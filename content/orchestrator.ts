@@ -136,7 +136,7 @@ export class Orchestrator {
     }
 
     log.prefix = ''
-    log.debug('orchestrator:', now(), 'startup took', duration(runtime.bbt), 'after waiting', duration(runtime.zotero), 'for zotero')
+    log.debug('orchestrator:', now(), 'BBT startup took', duration(runtime.bbt), 'after waiting', duration(runtime.zotero), 'for Zotero')
   }
 
   private gantt(phase: PhaseID) {
