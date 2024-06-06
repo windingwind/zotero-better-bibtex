@@ -709,7 +709,7 @@ export class BetterBibTeX {
           // and this too
           Zotero.Translators.init(),
           // why is there a **5 minute transaction** running here??
-          Zotero.DB.waitForTransaction('start BBT startup'),
+          Zotero.DB.waitForTransaction('start BBT startup'), // or while (Zotero.DB.inTransaction())
         ])
 
         this.dir = $OS.Path.join(Zotero.DataDirectory.dir, 'better-bibtex')
