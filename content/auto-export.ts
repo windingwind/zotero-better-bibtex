@@ -501,7 +501,12 @@ export const AutoExport = new class _AutoExport { // eslint-disable-line @typesc
   }
 
   public async all(): Promise<Job[]> {
-    const paths = await Zotero.DB.columnQueryAsync('SELECT path FROM betterbibtex.autoexport ORDER BY path')
+    const paths = (await Zotero.DB.columnQueryAsync('SELECT path FROM betterbibtex.autoexport ORDER BY path'))
+      .filter((path: string) => {
+        if (typeof path !== 'string') flash(`ae:sql:all: ${typeof path} path ${path}`)
+        return path
+      })
+    if (!paths.length) return []
     return await Promise.all(paths.map(path => this.get(path))) as Job[]
   }
 

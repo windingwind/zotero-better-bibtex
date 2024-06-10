@@ -67,6 +67,7 @@ class NSAutoExport {
 
     const coll = await getCollection(collection, true)
 
+
     const ae = await AutoExport.get(path)
     if (ae && ae.translatorID === translatorID && ae.type === 'collection' && ae.id === coll.id) {
       await AutoExport.schedule(ae.type, [ae.id])

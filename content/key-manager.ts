@@ -484,7 +484,7 @@ export const KeyManager = new class _KeyManager {
 
       blink.insertMany(this.keys, [...keys.values()])
 
-      missing =  await ZoteroDB.columnQueryAsync(`${$items} SELECT itemID FROM _items WHERE itemID NOT IN (SELECT itemID from betterbibtex.citationkey)`)
+      missing = await ZoteroDB.columnQueryAsync(`${$items} SELECT itemID FROM _items WHERE itemID NOT IN (SELECT itemID from betterbibtex.citationkey)`)
     })
 
     const notify = (itemIDs: number[], action: Action) => {
