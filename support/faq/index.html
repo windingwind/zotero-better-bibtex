@@ -20,7 +20,7 @@
     <meta property="article:tag" content="Export">
     <meta itemprop="name" content="Frequently Asked Questions :: Better BibTeX for Zotero">
     <meta itemprop="description" content="Add-on could not be installed because it appears to be corrupt. You have downloaded the Better BibTeX plugin by clicking on the download link using Firefox. As Zotero and Firefox use the same plugin technology, Firefox think the BetterBibTeX plugin is intended for itself, tries to install it, and then finds out it won’t work. You need to download the plugin without installinging it into Firefox by right-clicking the download link, choose save-as, and then install it into Zotero using installation instructions to get started with BBT.">
-    <meta itemprop="wordCount" content="1831">
+    <meta itemprop="wordCount" content="1897">
     <meta itemprop="keywords" content="Export">
     <title>Frequently Asked Questions :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
@@ -346,7 +346,9 @@ Make sure the latter path is correct, as JabRef might continue finding files and
 \begin{document}
 \nocite{*}
 \printbibliography
-\end{document}</code></pre></div>
+\end{document}</code></pre></div><p>If you just want the bib(la)tex <code>language</code> field to show whatever is in your Zotero <code>language</code> field, you can do it with this postscript:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>if (Translator.BetterTeX) { tex.add({ name: &#39;language&#39;, value: zotero.language }) }</code></pre></div><p>If you want the language field translated (to the best of BBTs abilities) to what would otherwise show up in <code>langid</code>, you can use:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>if (Translator.BetterTeX) { tex.add({ name: &#39;language&#39;, value: tex.langid() }) }</code></pre></div>
             <footer class="footline">
             </footer>
           </article>
