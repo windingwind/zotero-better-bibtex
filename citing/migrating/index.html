@@ -26,7 +26,7 @@ If you install this CSL style in Zotero (or modify it further and use that), Zot
     <meta itemprop="name" content="Migrating from Word/Libreoffice :: Better BibTeX for Zotero">
     <meta itemprop="description" content="So you have decided that enough is enough, and you want to migrate your existing Word/Libreoffice document to LaTeX/Markdown. Plenty (well…) tools exist to help with the migration of your document content, pandoc being the most prominent one, but one thing none of them will do is keep your citations intact. This will not do.
 If you install this CSL style in Zotero (or modify it further and use that), Zotero will render the in-text citations as [@citekey] when you ask Zotero to render the bibliography.">
-    <meta itemprop="wordCount" content="178">
+    <meta itemprop="wordCount" content="190">
     <meta itemprop="keywords" content="Citation Keys,Word,Libreoffice">
     <title>Migrating from Word/Libreoffice :: Better BibTeX for Zotero</title><link rel="icon" href="/zotero-better-bibtex/better-bibtex.ico" type="image/x-icon">
 
@@ -149,7 +149,8 @@ style accordingly. You can then put your document through pandoc or whatnot to g
 variable in the CSL processing so it can be rendered using a CSL
 style. If you previously used the <code>citeprocNoteCitekey</code> preference,
 that is now gone, so you&rsquo;ll have to update the style you used.</p>
-<p>Update: pandoc now supports docx+citations as input format and will export your word documents into pandoc-compatible markdown with citations! That should be a much snoother experience!</p>
+<p>Update: pandoc now supports docx+citations as input format and will export your word documents into pandoc-compatible markdown with citations! That should be a much smoother experience:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>pandoc -f docx+citations -t markdown -i Aristotle.docx -o Aristotle.md</code></pre></div><p>should do the trick!</p>
 
             <footer class="footline">
             </footer>
