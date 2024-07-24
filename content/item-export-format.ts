@@ -78,9 +78,14 @@ export const Serializer = new class { // eslint-disable-line @typescript-eslint/
         default:
           serialized.attachments = item.getAttachments().map(id => {
             const att = Zotero.Items.get(id)
+            if (typeof att.toJSON !== 'function') {
+              const citationKey = Zotero.BetterBibTeX.KeyManager.get(item.id).citationKey
+              Zotero.debug(`weird attachment on: ${citationKey}`)
+              return null
+            }
             // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             return this.fastAttachment({ ...att.toJSON(), uri: Zotero.URI.getItemURI(att) }, att)
-          })
+          }).filter(att => att)
 
           serialized.notes = item.getNotes().map(id => {
             const note = Zotero.Items.get(id)
