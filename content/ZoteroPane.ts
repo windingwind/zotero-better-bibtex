@@ -393,7 +393,7 @@ class ZoteroPane {
           translatorID: Translators.bySlug.BetterBibTeXJSON.translatorID,
           displayOptions: { exportNotes: true, dropAttachments: true, Normalize: true },
           scope,
-          timeout: 40,
+          // timeout: 40,
         })
       }
       catch (err) {
